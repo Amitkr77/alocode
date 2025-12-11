@@ -1,160 +1,155 @@
-Alocodes Website
-Alocodes – Learn. Code. Create.
+# Alocodes – Learn. Code. Create.
 
-A modern, responsive website for Alocodes, an EdTech platform offering job-ready training in Data Science, AI, Full-Stack Development, Cloud & DevOps, and Python + DSA.
-Powered by AlomonX Technology, this site showcases courses, live training, placement support, and more to attract students and drive enrollments.
+A modern, responsive website for **Alocodes**, an EdTech platform offering job-ready training in **Data Science, AI, Full-Stack Development, Cloud & DevOps, and Python + DSA**.  
+Powered by **AlomonX Technology**, this site showcases courses, live training, placement support, and more to attract students and drive enrollments.
 
-License: MIT
-Tech: Bootstrap • HTML5 • CSS3
+**License:** MIT  
+**Tech:** Bootstrap · HTML5 · CSS3
 
-🌟 Features
+---
 
-Responsive Design: Mobile-first UI using Bootstrap 5 for seamless device experience.
+## 🌟 Features
 
-Interactive Elements: Hero CTAs, course cards with hover effects, testimonials carousel, forms, and more.
+- **Responsive Design** – Mobile-first layout using Bootstrap 5.
+- **Interactive Elements** – Hero CTAs, course cards with hover effects, testimonial carousel, contact form.
+- **SEO-Optimized** – Meta tags, semantic HTML, keyword-rich content.
+- **Key Pages** – Home, About Us, Courses, Live Training, Placement Support, Why Choose Us, Testimonials, FAQs, Contact.
+- **Engagement Tools** – Downloadable brochures, demo signup, placement chat widgets.
+- **Performance Optimized** – Lightweight and fast-loading.
 
-SEO-Optimized: Semantic HTML + keyword-rich content (e.g., best Data Science course in Patna).
+---
 
-Key Pages:
-Home, About Us, Courses, Live Training, Placement Support, Why Choose Us, Testimonials, FAQ & Stats, Contact/Enroll.
+## 🛠 Tech Stack
 
-Engagement Tools: Downloadable brochures, email-gated forms, live demo signups, placement chat widgets.
+- **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript  
+- **Fonts:** Google Fonts (Inter)  
+- **Deployment:** Netlify, Vercel, GitHub Pages  
+- **Assets:** Placeholder images, icons, PDFs  
 
-Performance: Lightweight static site with optimized CSS/JS for fast loading.
+---
 
-Based on Website Structure v2.0 (Dec 11, 2025) — includes a full Home page and placeholders for others.
+## 📁 Project Structure
 
-🛠 Tech Stack
-
-Frontend: HTML5, CSS3 (Custom + Bootstrap 5), Vanilla JavaScript
-
-Fonts: Inter (Google Fonts)
-
-Hosting: Netlify, Vercel, GitHub Pages
-
-Assets: Emoji icons, placeholder images/videos, downloadable PDFs
-
-📁 Project Structure
+```
 alocodes-website/
-├── index.html                     # Home page (full implementation)
-├── about.html                     # About Us page
-├── courses.html                   # Courses page (detailed cards)
-├── live-training.html             # Live Training page
-├── placement.html                 # Placement Support page
-├── why-us.html                    # Why Choose Us page
-├── testimonials.html              # Testimonials page
-├── faq.html                       # FAQ & Stats page
-├── contact.html                   # Contact / Enroll page
+├── index.html
+├── about.html
+├── courses.html
+├── live-training.html
+├── placement.html
+├── why-us.html
+├── testimonials.html
+├── faq.html
+├── contact.html
 ├── assets/
-│   ├── css/
-│   │   └── custom.css             # Custom styles
-│   ├── js/
-│   │   └── main.js                # Basic interactions (validation, toggles)
+│   ├── css/custom.css
+│   ├── js/main.js
 │   └── img/
-│       ├── hero-bg.jpg            # Hero backgrounds
-│       └── course-icons/          # Icons (🔵🟢☁️🟡)
-├── docs/
-│   └── website-structure-v2.pdf   # Enhanced PDF blueprint
-└── README.md                      # This file
+├── docs/website-structure-v2.pdf
+└── README.md
+```
 
-🚀 Quick Start
-Prerequisites
+---
 
-Any modern browser
+## 🚀 Quick Start
 
-VS Code recommended
+### Prerequisites
+- Browser (Chrome/Firefox)
+- Code editor (VS Code recommended)
+- Optional: Node.js for local server
 
-(Optional) Node.js for local server/livereload
+### Local Development
 
-Clone the Repository
+**Clone the repo:**
+```bash
 git clone https://github.com/yourusername/alocodes-website.git
 cd alocodes-website
+```
 
-Open in Browser
+**Open in browser:**
+- Double-click `index.html`, or  
+- Use Live Server in VS Code
 
-Double-click index.html, OR
+**Customize:**
+- Replace images in `/assets/img/`
+- Update CTAs, text, phone, email  
+- Integrate EmailJS or Formspree for forms
 
-Use VS Code → Live Server extension → Right-click → Open with Live Server
+---
 
-Customize
+## 🚀 Deployment
 
-Update text in HTML files
+### GitHub Pages
+Push to `gh-pages` branch and enable Pages.
 
-Replace images in /assets/img/
+### Netlify
+Drag & drop project folder.
 
-Add working forms via EmailJS, Formspree, or APIs
+### Vercel
+Connect GitHub → Auto deploy.
 
-Deploy
+---
 
-GitHub Pages: Push to gh-pages branch → enable in repo settings
+## 📖 Usage
 
-Netlify: Drag-and-drop folder
+- Visitors explore pages and click CTAs to enroll/download.
+- Admins update course details in HTML files.
+- Add Google Analytics/Tag Manager inside `<head>` for tracking.
 
-Vercel: Connect GitHub repo → auto deploy
+---
 
-Live example (placeholder):
-https://alocodes.netlify.app
+## 🔧 Enhancements Planned
 
-📖 Usage
+- React-based course filtering  
+- Calendly integration  
+- Video testimonials  
+- SEO blog section  
+- Google Tag Manager tracking  
 
-Visitors:
-Browse via navbar → click CTAs → enroll/download brochure.
+---
 
-Admins:
-Update course information in courses.html
-Add testimonials or new images under /assets/img/
+## 🤝 Contributing
 
-Tip:
-Add Google Analytics or GTM in <head> for CTA tracking.
-
-🔧 Enhancements Planned
-
-React version with dynamic course filtering
-
-Calendly integration for demo bookings
-
-Embedded YouTube/Vimeo testimonials
-
-Blog for SEO (e.g., Top Python Tips)
-
-Google Tag Manager for event tracking
-
-🤝 Contributing
-
-Contributions are welcome!
-
+```
+# Fork the repo
+# Create a new branch
 git checkout -b feature/amazing-feature
-git commit -m "feat: Add amazing feature"
+
+# Commit changes
+git commit -m "feat: add amazing feature"
+
+# Push to branch
 git push origin feature/amazing-feature
+```
 
+Open a Pull Request using **Conventional Commits**.
 
-Then open a Pull Request.
+---
 
-Please follow Conventional Commits.
+## 📄 License
 
-📄 License
+This project is licensed under the **MIT License**.
 
-This project is licensed under the MIT License.
-See the LICENSE file for details.
+---
 
-👥 Acknowledgments
+## 👥 Acknowledgments
 
-Original Website Structure → Alocodes Team
+- Alocodes Website Structure PDF  
+- Grok (xAI) – content improvements  
+- Bootstrap, Unsplash, AlomonX Technology  
+- Built for 1,000+ students aspiring for tech careers  
 
-Enhancements → Grok (xAI) & AlomonX
+---
 
-Visual Assets → Bootstrap team, Unsplash
+## 📞 Contact
 
-Built for 1,000++ students launching their tech careers
+**Website:** www.alocodes.in  
+**Email:** info@alocodes.in  
+**Phone:** +91 12345 67890  
+**Location:** Kankarbagh, Patna, Bihar  
+**Social:** @AlocodesOfficial (X) · LinkedIn: Alocodes EdTech  
 
-📞 Contact
+---
 
-Website: www.alocodes.in
-
-Email: info@alocodes.in
-
-Phone: +91 12345 67890
-Location: Kankarbagh, Patna, Bihar
-Social: @AlocodesOfficial on X • LinkedIn: Alocodes EdTech
-
-🚀 Ready to code your future? Enroll Now!
+## 🚀 Ready to code your future?  
+### **Enroll Now!**
