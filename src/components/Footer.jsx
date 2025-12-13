@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -67,7 +68,7 @@ const Footer = () => {
                 placeholder="Enter your email"
               />
               <button className="bg-primary text-background-dark p-2 rounded-lg hover:bg-primary/90">
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                <span className="material-symbols-outlined text-lg"> <ArrowRight/></span>
               </button>
             </div>
           </div>

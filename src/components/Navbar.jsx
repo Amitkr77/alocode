@@ -52,12 +52,12 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden sm:flex gap-3">
-            <button className="flex items-center justify-center rounded-full h-10 px-6 bg-transparent border border-primary text-primary hover:bg-primary/10 transition-colors text-sm font-bold">
+            {/* <button className="flex items-center justify-center rounded-full h-10 px-6 bg-transparent border border-primary text-primary hover:bg-primary/10 transition-colors text-sm font-bold">
               Log In
-            </button>
-            <button className="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold shadow-[0_0_15px_rgba(43,238,121,0.3)]">
+            </button> */}
+            <Link href="/enroll" className="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold shadow-[0_0_15px_rgba(43,238,121,0.3)]">
               Enroll Now
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
