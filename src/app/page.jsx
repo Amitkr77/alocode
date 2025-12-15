@@ -13,6 +13,7 @@ import {
   TrendingUp,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const containerVariants = {
@@ -91,14 +92,15 @@ export default function Home() {
                 variants={itemVariants}
                 className="flex flex-wrap gap-4 justify-center w-full mt-4"
               >
-                <motion.button
+                <motion.Link
+                  href="/enroll"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="min-w-40 h-14 px-8 rounded-full bg-primary text-background-dark text-base font-bold hover:shadow-[0_0_20px_rgba(43,238,121,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Enroll Now
                   <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                </motion.Link>
 
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: "#234832" }}

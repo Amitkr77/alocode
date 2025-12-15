@@ -1,10 +1,27 @@
+import {
+  CircleArrowOutUpRightIcon,
+  MapPin,
+  Phone,
+  Users2,
+  Mail,
+  Share2,
+  Globe,
+  MapPlus,
+  MapPinned,
+  ArrowBigRight,
+  User,
+  PhoneIcon,
+  MailIcon,
+  ArrowDownToLineIcon,
+  CalendarIcon,
+} from "lucide-react";
 import React from "react";
 
 export default function page() {
   return (
     <div className="bg-background-dark  dark:text-white antialiased selection:bg-primary selection:text-[#112218]">
       {/* Main Content Container */}
-      <main className="flex flex-col grow mt-15">
+      <main className="flex flex-col grow pt-15">
         <div className="flex flex-1 justify-center py-5 sm:px-4 md:px-10 lg:px-20 xl:px-40">
           <div className="layout-content-container flex flex-col max-w-7xlflex-1">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pt-8">
@@ -48,12 +65,10 @@ export default function page() {
                   {/* Address */}
                   <div className="flex flex-col gap-3 rounded-4xl border border-[#326747] bg-surface-dark p-6 hover:border-primary transition-colors group">
                     <div className="text-primary group-hover:scale-110 transition-transform duration-300">
-                      <span className="material-symbols-outlined text-3xl!">
-                        location_on
-                      </span>
+                      <MapPin className="material-symbols-outlined text-3xl!" />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h2 className="font-bold text-lg">Visit Us</h2>
+                      <h2 className="font-bold text-lg text-white">Visit Us</h2>
                       <p className="text-slate-500 dark:text-[#92c9a8] text-sm">
                         123 Tech Park, Innovation Way
                         <br />
@@ -64,12 +79,10 @@ export default function page() {
                   {/* Phone */}
                   <div className="flex flex-col gap-3 rounded-4xl border border-[#326747] bg-surface-dark p-6 hover:border-primary transition-colors group">
                     <div className="text-primary group-hover:scale-110 transition-transform duration-300">
-                      <span className="material-symbols-outlined text-3xl!">
-                        call
-                      </span>
+                      <Phone className="material-symbols-outlined text-3xl!" />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h2 className="font-bold text-lg">Call or WhatsApp</h2>
+                      <h2 className="font-bold text-lg text-white">Call or WhatsApp</h2>
                       <p className="text-slate-500 dark:text-[#92c9a8] text-sm">
                         +1 234 567 890
                       </p>
@@ -78,21 +91,17 @@ export default function page() {
                         href="#"
                       >
                         Chat now
-                        <span className="material-symbols-outlined text-sm!">
-                          arrow_outward
-                        </span>
+                        <CircleArrowOutUpRightIcon className="material-symbols-outlined text-sm!" />
                       </a>
                     </div>
                   </div>
                   {/* Email */}
                   <div className="flex flex-col gap-3 rounded-4xl border border-[#326747] bg-surface-dark p-6 hover:border-primary transition-colors group">
                     <div className="text-primary group-hover:scale-110 transition-transform duration-300">
-                      <span className="material-symbols-outlined text-3xl!">
-                        mail
-                      </span>
+                      <Mail className="material-symbols-outlined text-3xl!" />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h2 className="font-bold text-lg">Email Us</h2>
+                      <h2 className="font-bold text-lg text-white">Email Us</h2>
                       <p className="text-slate-500 dark:text-[#92c9a8] text-sm">
                         admissions@alocodes.com
                       </p>
@@ -100,29 +109,27 @@ export default function page() {
                   </div>
                   {/* Socials */}
                   <div className="flex flex-col justify-between gap-3 rounded-4xl border border-[#326747] bg-surface-dark p-6 hover:border-primary transition-colors">
-                    <h2 className="font-bold text-lg">Follow Us</h2>
+                    <h2 className="font-bold text-lg text-white">Follow Us</h2>
                     <div className="flex gap-4 mt-auto">
                       <a
                         className="text-[#92c9a8] hover:text-primary transition-colors"
                         href="#"
                       >
-                        <span className="material-symbols-outlined">
-                          public
-                        </span>
+                        <Globe className="material-symbols-outlined" />
                       </a>{" "}
                       {/* Placeholder for social icon */}
                       <a
                         className="text-[#92c9a8] hover:text-primary transition-colors"
                         href="#"
                       >
-                        <span className="material-symbols-outlined">group</span>
+                        <Users2 className="material-symbols-outlined" />
                       </a>{" "}
                       {/* Placeholder for social icon */}
                       <a
                         className="text-[#92c9a8] hover:text-primary transition-colors"
                         href="#"
                       >
-                        <span className="material-symbols-outlined">share</span>
+                        <Share2 className="material-symbols-outlined" />
                       </a>{" "}
                       {/* Placeholder for social icon */}
                     </div>
@@ -142,9 +149,7 @@ export default function page() {
                     ></div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="bg-primary text-[#112218] rounded-full p-3 shadow-lg animate-bounce">
-                        <span className="material-symbols-outlined block">
-                          location_on
-                        </span>
+                        <MapPinned className="material-symbols-outlined block" />
                       </div>
                     </div>
                   </div>
@@ -154,10 +159,13 @@ export default function page() {
               <div className="order-1 lg:order-2 px-4 lg:px-0">
                 <div className="sticky top-24 bg-surface-dark rounded-4xl p-6 md:p-10 border border-[#326747] shadow-2xl">
                   <div className="flex items-center justify-between mb-8">
-                    <h2 className="text-2xl md:text-3xl font-bold">
+                    <h2 className="text-2xl md:text-3xl font-black text-white">
+                      Enrollment Form
+                    </h2>
+                    <span className="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30 flex items-center gap-1">
                       <span className="block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                       Filling Fast
-                    </h2>
+                    </span>
                   </div>
                   <form className="flex flex-col gap-5">
                     {/* Name */}
@@ -175,9 +183,7 @@ export default function page() {
                           placeholder="e.g. Alex Johnson"
                           type="text"
                         />
-                        <span className="material-symbols-outlined absolute right-4 top-3 text-[#326747]">
-                          person
-                        </span>
+                        <User className="material-symbols-outlined absolute right-4 top-3 text-[#326747]" />
                       </div>
                     </div>
                     {/* Contact Row */}
@@ -196,9 +202,7 @@ export default function page() {
                             placeholder="+1 (555) 000-0000"
                             type="tel"
                           />
-                          <span className="material-symbols-outlined absolute right-4 top-3 text-[#326747]">
-                            call
-                          </span>
+                          <PhoneIcon className="material-symbols-outlined absolute right-4 top-3 text-[#326747]" />
                         </div>
                       </div>
                       <div className="group">
@@ -215,9 +219,7 @@ export default function page() {
                             placeholder="alex@example.com"
                             type="email"
                           />
-                          <span className="material-symbols-outlined absolute right-4 top-3 text-[#326747]">
-                            mail
-                          </span>
+                          <MailIcon className="material-symbols-outlined absolute right-4 top-3 text-[#326747]" />
                         </div>
                       </div>
                     </div>
@@ -234,7 +236,10 @@ export default function page() {
                           id="course"
                           className="w-full appearance-none bg-background-light dark:bg-[#112218] border border-transparent focus:border-primary text-slate-900 dark:text-white rounded-full px-5 py-3 outline-none transition-all ring-1 ring-[#326747] focus:ring-primary/50 cursor-pointer"
                         >
-                          <option disabled defaultValue={"Full Stack Web Development"}>
+                          <option
+                            disabled
+                            defaultValue={"Full Stack Web Development"}
+                          >
                             Choose a specialization...
                           </option>
                           <option>Full Stack Web Development</option>
@@ -242,9 +247,7 @@ export default function page() {
                           <option>UI/UX Design Masterclass</option>
                           <option>Mobile App Development (React Native)</option>
                         </select>
-                        <span className="material-symbols-outlined absolute right-4 top-3 text-[#326747] pointer-events-none">
-                          expand_more
-                        </span>
+                        <ArrowDownToLineIcon className="material-symbols-outlined absolute right-4 top-3 text-[#326747] pointer-events-none" />
                       </div>
                     </div>
                     {/* Date Picker */}
@@ -261,9 +264,7 @@ export default function page() {
                           className="w-full appearance-none bg-background-light dark:bg-[#112218] border border-transparent focus:border-primary text-slate-900 dark:text-white rounded-full px-5 py-3 outline-none transition-all ring-1 ring-[#326747] focus:ring-primary/50 schema-dark"
                           type="date"
                         />
-                        <span className="material-symbols-outlined absolute right-4 top-3 text-[#326747] pointer-events-none">
-                          calendar_today
-                        </span>
+                        <CalendarIcon className="material-symbols-outlined absolute right-4 top-3 text-[#326747] pointer-events-none bg-white" />
                       </div>
                     </div>
                     {/* Message */}
@@ -287,9 +288,7 @@ export default function page() {
                       type="button"
                     >
                       Submit & Get a Callback
-                      <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-                        arrow_forward
-                      </span>
+                      <ArrowBigRight className="material-symbols-outlined transition-transform group-hover:translate-x-1" />
                     </button>
                     <p className="text-xs text-center text-slate-500 dark:text-[#5c7e6a] mt-2">
                       By submitting, you agree to our Terms of Service and

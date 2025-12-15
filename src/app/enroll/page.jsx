@@ -1,19 +1,18 @@
-import { ArrowRight, ChevronRight } from "lucide-react";
+"use client";
 import React from "react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Briefcase, ChevronRight, Info, Mail, Phone, School, Shield, User } from "lucide-react";
 
-export default function Page() {
+
+export default function page() {
   return (
-    <main className="relative pt-20 pb-20 min-h-screen">
+    <section className="relative pt-20 min-h-screen flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div
-          className="w-full h-full bg-cover bg-center fixed"
-          data-alt="Abstract code background with blue gradient"
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `
-              linear-gradient(135deg, rgba(16, 34, 45, 0.96) 0%, rgba(16, 34, 23, 0.97) 100%),
-              url("https://lh3.googleusercontent.com/aida-public/AB6AXuBka3HKYMHiuvrC_Ws6mq8gC0GvMKfPf3AVVHpx8E7DdqpK0GnPKcpXKzjptwTOS6vuFB7OUSNMxb8DE1Epljmyh43O7EITQJzwezGGnLIe1aGZbO6dOsb6bNsBt6eD8BCRaF-MhAzTbb7y9kEsBsKQVThy1c7JyJ1VvThOMr3loVXMf92eGy5dppP99TyKTz-Lgt3Bo-AdfpiN4OEUlIlKOwjSPNY_BGADvKuK0q21WHc8xxT0i2YgIxFANHobnMRjbn1xWdXoQQBq")
-            `,
+            backgroundImage: `linear-gradient(135deg, rgba(16, 34, 45, 0.95) 0%, rgba(16, 34, 23, 0.85) 60%, rgba(43, 238, 121, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBka3HKYMHiuvrC_Ws6mq8gC0GvMKfPf3AVVHpx8E7DdqpK0GnPKcpXKzjptwTOS6vuFB7OUSNMxb8DE1Epljmyh43O7EITQJzwezGGnLIe1aGZbO6dOsb6bNsBt6eD8BCRaF-MhAzTbb7y9kEsBsKQVThy1c7JyJ1VvThOMr3loVXMf92eGy5dppP99TyKTz-Lgt3Bo-AdfpiN4OEUlIlKOwjSPNY_BGADvKuK0q21WHc8xxT0i2YgIxFANHobnMRjbn1xWdXoQQBq")`,
           }}
         />
       </div>
@@ -24,7 +23,7 @@ export default function Page() {
             Home
           </Link>
           <span className="material-symbols-outlined text-xs">
-            <ChevronRight/>
+            <ChevronRight />
           </span>
           <span className="text-white font-medium">Enrollment</span>
         </div>
@@ -54,7 +53,7 @@ export default function Page() {
               <div className="space-y-6 mb-8">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-surface-dark border border-surface-border flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">school</span>
+                    <School className="material-symbols-outlined" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold">
@@ -68,7 +67,7 @@ export default function Page() {
 
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-surface-dark border border-surface-border flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">work</span>
+                    <Briefcase className="material-symbols-outlined" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold">
@@ -82,9 +81,7 @@ export default function Page() {
 
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-surface-dark border border-surface-border flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">
-                      verified_user
-                    </span>
+                    <Shield className="material-symbols-outlined" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold">
@@ -121,11 +118,10 @@ export default function Page() {
                         Full Name
                       </label>
                       <div className="relative">
-                        <span className="material-symbols-outlined absolute left-3 top-3 text-gray-500">
-                          person
-                        </span>
+                        <User className="material-symbols-outlined absolute left-3 top-3 text-gray-500" />
+
                         <input
-                          className="w-full bg-background-dark border border-surface-border rounded-xl px-4 py-2.5 pl-10 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          className="w-full bg-background-dark border border-surface-border rounded-xl px-4 py-2.5 pl-18 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           id="name"
                           name="name"
                           placeholder="e.g. Alex Johnson"
@@ -142,9 +138,8 @@ export default function Page() {
                         Phone Number
                       </label>
                       <div className="relative">
-                        <span className="material-symbols-outlined absolute left-3 top-3 text-gray-500">
-                          call
-                        </span>
+                        <Phone className="material-symbols-outlined absolute left-3 top-3 text-gray-500" />
+
                         <input
                           className="w-full bg-background-dark border border-surface-border rounded-xl px-4 py-2.5 pl-10 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           id="phone"
@@ -163,9 +158,8 @@ export default function Page() {
                         Email Address
                       </label>
                       <div className="relative">
-                        <span className="material-symbols-outlined absolute left-3 top-3 text-gray-500">
-                          mail
-                        </span>
+                        <Mail className="material-symbols-outlined absolute left-3 top-3 text-gray-500" />
+
                         <input
                           className="w-full bg-background-dark border border-surface-border rounded-xl px-4 py-2.5 pl-10 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           id="email"
@@ -208,9 +202,7 @@ export default function Page() {
                             Cybersecurity Essentials
                           </option>
                         </select>
-                        <span className="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none">
-                          expand_more
-                        </span>
+                        <ChevronRight className="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none" />
                       </div>
                     </div>
 
@@ -254,9 +246,8 @@ export default function Page() {
 
                 <div className="pt-6 border-t border-white/5">
                   <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-6 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-primary shrink-0">
-                      info
-                    </span>
+                    <Info className="material-symbols-outlined text-primary shrink-0" />
+
                     <div className="text-sm text-gray-300">
                       <p className="font-bold text-white mb-1">
                         Payment Information
@@ -276,7 +267,7 @@ export default function Page() {
                   >
                     Submit Enrollment
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-                      <ArrowRight/>
+                      <ArrowRight />
                     </span>
                   </button>
 
@@ -290,6 +281,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

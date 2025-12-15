@@ -1,11 +1,29 @@
 import React from "react";
+import {
+  CheckCircle2,
+  TvMinimalPlay,
+  X,
+  RadioTower,
+  MessageSquareDot,
+  ScreenShare,
+  Briefcase,
+  Trophy,
+  Group,
+  Users,
+  Code2,
+  Terminal,
+  Tag,
+  Video,
+Figma ,
+
+} from "lucide-react";
 
 export default function page() {
   return (
     <section className="bg-background-dark font-display text-white overflow-x-hidden antialiased">
       {/* <!-- Hero Section --> */}
       <div className="relative flex flex-col items-center justify-center px-4 md:px-40 py-5 w-full mt-15">
-        <div className="w-full max-w-[960px]">
+        <div className="w-full max-w-6xl">
           <div className="@container">
             <div className="@[480px]:p-4">
               <div
@@ -61,40 +79,35 @@ export default function page() {
             {/* <!-- Static Videos (Bad) --> */}
             <div className="flex flex-col p-8 rounded-lg border border-red-900/30 bg-red-950/10 opacity-70">
               <div className="flex items-center gap-3 mb-6 text-red-400">
-                <span className="material-symbols-outlined text-4xl">
-                  ondemand_video
-                </span>
+                <TvMinimalPlay className="material-symbols-outlined text-4xl" />
+
                 <h3 className="text-xl font-bold">Static Video Courses</h3>
               </div>
               <ul className="flex flex-col gap-4">
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-red-500 mt-0.5 shrink-0">
-                    close
-                  </span>
+                  <X className="material-symbols-outlined text-red-500 mt-0.5 shrink-0" />
+
                   <span className="text-gray-400">
                     Passive learning, low retention
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-red-500 mt-0.5 shrink-0">
-                    close
-                  </span>
+                  <X className="material-symbols-outlined text-red-500 mt-0.5 shrink-0" />
+
                   <span className="text-gray-400">
                     Doubts resolved in 24-48 hours
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-red-500 mt-0.5 shrink-0">
-                    close
-                  </span>
+                  <X className="material-symbols-outlined text-red-500 mt-0.5 shrink-0" />
+
                   <span className="text-gray-400">
                     No accountability to finish
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-red-500 mt-0.5 shrink-0">
-                    close
-                  </span>
+                  <X className="material-symbols-outlined text-red-500 mt-0.5 shrink-0" />
+
                   <span className="text-gray-400">
                     Outdated content &amp; libraries
                   </span>
@@ -104,45 +117,41 @@ export default function page() {
             {/* <!-- Alocodes Live (Good) --> */}
             <div className="flex flex-col p-8 rounded-lg border border-primary/40 bg-surface-dark shadow-[0_0_30px_rgba(43,238,121,0.05)] relative overflow-hidden">
               <div className="absolute top-0 right-0 p-3">
-                <span className="material-symbols-outlined text-primary/10 text-[100px] leading-none -mr-4 -mt-4">
-                  check_circle
-                </span>
+                <CheckCircle2
+                  className="material-symbols-outlined text-primary/10 leading-none "
+                  size={60}
+                />
               </div>
               <div className="flex items-center gap-3 mb-6 text-primary relative z-10">
-                <span className="material-symbols-outlined text-4xl">
-                  broadcast_on_personal
-                </span>
+                <RadioTower className="material-symbols-outlined text-4xl" />
+
                 <h3 className="text-xl font-bold">Alocodes Live</h3>
               </div>
               <ul className="flex flex-col gap-4 relative z-10">
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary mt-0.5 shrink-0">
-                    check_circle
-                  </span>
+                  <CheckCircle2 className="material-symbols-outlined text-primary mt-0.5 shrink-0" />
+
                   <span className="text-white font-medium">
                     Active coding with mentors
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary mt-0.5 shrink-0">
-                    check_circle
-                  </span>
+                  <CheckCircle2 className="material-symbols-outlined text-primary mt-0.5 shrink-0" />
+
                   <span className="text-white font-medium">
                     Instant doubt resolution
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary mt-0.5 shrink-0">
-                    check_circle
-                  </span>
+                  <CheckCircle2 className="material-symbols-outlined text-primary mt-0.5 shrink-0" />
+
                   <span className="text-white font-medium">
                     Real-time accountability
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary mt-0.5 shrink-0">
-                    check_circle
-                  </span>
+                  <CheckCircle2 className="material-symbols-outlined text-primary mt-0.5 shrink-0" />
+
                   <span className="text-white font-medium">
                     Latest industry stack
                   </span>
@@ -167,9 +176,7 @@ export default function page() {
             {/* <!-- Card 1 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">
-                  chat_bubble
-                </span>
+                <MessageSquareDot className="material-symbols-outlined text-2xl" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -184,9 +191,7 @@ export default function page() {
             {/* <!-- Card 2 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">
-                  screen_share
-                </span>
+                <ScreenShare className="material-symbols-outlined text-2xl" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -201,7 +206,7 @@ export default function page() {
             {/* <!-- Card 3 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">work</span>
+                <Briefcase className="material-symbols-outlined text-2xl" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -216,9 +221,8 @@ export default function page() {
             {/* <!-- Card 4 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">
-                  trophy
-                </span>
+                <Trophy className="material-symbols-outlined text-2xl" />
+               
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -233,9 +237,8 @@ export default function page() {
             {/* <!-- Card 5 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">
-                  rate_review
-                </span>
+                <Trophy className="material-symbols-outlined text-2xl" />
+                  
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">Code Reviews</h3>
@@ -248,9 +251,8 @@ export default function page() {
             {/* <!-- Card 6 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">
-                  group
-                </span>
+                <Users className="material-symbols-outlined text-2xl"/>
+                 
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -274,45 +276,40 @@ export default function page() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {/* <!-- Tool 1 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <span className="material-symbols-outlined text-4xl group-hover:text-[#007ACC] transition-colors">
-                code
-              </span>
+              <Code2 className="material-symbols-outlined text-4xl group-hover:text-[#007ACC] transition-colors"/>
+               
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 VS Code
               </span>
             </div>
             {/* <!-- Tool 2 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <span className="material-symbols-outlined text-4xl group-hover:text-white transition-colors">
-                terminal
-              </span>
+              <Terminal className="material-symbols-outlined text-4xl group-hover:text-white transition-colors"/>
+               
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 GitHub
               </span>
             </div>
             {/* <!-- Tool 3 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <span className="material-symbols-outlined text-4xl group-hover:text-[#4A154B] transition-colors">
-                tag
-              </span>
+              <Tag className="material-symbols-outlined text-4xl group-hover:text-[#4A154B] transition-colors"/>
+               
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Slack
               </span>
             </div>
             {/* <!-- Tool 4 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <span className="material-symbols-outlined text-4xl group-hover:text-[#2D8CFF] transition-colors">
-                video_camera_front
-              </span>
+              <Video className="material-symbols-outlined text-4xl group-hover:text-[#2D8CFF] transition-colors"/>
+                
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Zoom
               </span>
             </div>
             {/* <!-- Tool 5 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <span className="material-symbols-outlined text-4xl group-hover:text-[#F24E1E] transition-colors">
-                design_services
-              </span>
+              <Figma className="material-symbols-outlined text-4xl group-hover:text-[#F24E1E] transition-colors"/>
+                
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Figma
               </span>
