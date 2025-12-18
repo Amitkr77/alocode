@@ -382,6 +382,44 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="bg-background-dark py-12 border-b border-surface-border">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-2xl font-bold text-white text-center mb-8">
+              Get mentored by our experts from top companies
+            </h1>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 text-center">
+              {[
+                { label: "MORGAN STANLEY", path: "./companies/morgan.jpeg" },
+                { label: "DELOITTE", path: "./companies/deloitte.jpeg" },
+                { label: "NASDAQ", path: "./companies/nasdaq.jpeg" },
+                { label: "VOIS", path: "./companies/vois.jpeg" },
+                { label: "COGNIZANT", path: "./companies/cognizant.png" },
+                { label: "ORACLE", path: "./companies/oracle.png" },
+                { label: "DXC", path: "./companies/dxc.png" },
+                { label: "FOX", path: "./companies/fox.png" },
+              ].map((company) => (
+                <motion.div
+                  key={company.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col items-center justify-center p-4"
+                >
+                  <img
+                    src={company.path}
+                    alt={company.label}
+                    className="w-24 h-12 mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                  <span className="mt-4 text-sm text-gray-400 font-medium uppercase tracking-wide">
+                    {company.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section (simplified) */}
         <section className="py-20 bg-background-dark">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

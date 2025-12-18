@@ -3,15 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
-  .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
 
-@theme{
+@theme {
   --color-primary: #2bee79;
   --color-primary-foreground: #000000;
-  --color-surface: #f6f8f7; 
-  
+  --color-surface: #f6f8f7;
+
   --color-surface-light: #ffffff;
   --color-surface-dark: #193324;
   --color-background-dark: #102217;
@@ -64,15 +64,19 @@
 }
 
 :root {
-  --radius: 1rem; /* Updated to match theme.extend.borderRadius.DEFAULT */
-  --background: #f6f8f7; /* background-light */
+  --radius: 1rem;
+  /* Updated to match theme.extend.borderRadius.DEFAULT */
+  --background: #f6f8f7;
+  /* background-light */
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #2bee79; /* custom primary */
-  --primary-foreground: oklch(0.145 0 0); /* dark text for contrast on bright green */
+  --primary: #2bee79;
+  /* custom primary */
+  --primary-foreground: oklch(0.145 0 0);
+  /* dark text for contrast on bright green */
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -99,14 +103,18 @@
 }
 
 .dark {
-  --background: #102217; /* background-dark */
+  --background: #102217;
+  /* background-dark */
   --foreground: oklch(0.985 0 0);
-  --card: #193324; /* surface-dark */
+  --card: #193324;
+  /* surface-dark */
   --card-foreground: oklch(0.985 0 0);
   --popover: #193324;
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #2bee79; /* keeping the same vibrant green primary */
-  --primary-foreground: oklch(0.145 0 0); /* dark text on green */
+  --primary: #2bee79;
+  /* keeping the same vibrant green primary */
+  --primary-foreground: oklch(0.145 0 0);
+  /* dark text on green */
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -114,7 +122,8 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #234832; /* surface-border (full opacity) */
+  --border: #234832;
+  /* surface-border (full opacity) */
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -136,6 +145,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
