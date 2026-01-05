@@ -17,11 +17,13 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"; 
+} from "@/components/ui/accordion";
+import Link from "next/link";
 
 const courses = [
   {
     id: "course-1",
+    slug: "data-science-ai-master-python-tensorflow-sql",
     badge: {
       text: "Bestseller",
       color: "bg-green-100 text-green-700 dark:text-green-300",
@@ -44,6 +46,7 @@ const courses = [
   },
   {
     id: "course-2",
+    slug: "full-stack-development-mern-stack-real-world-projects",
     badge: {
       text: "Popular",
       color: "bg-purple-100 text-purple-700 dark:text-purple-300",
@@ -66,6 +69,7 @@ const courses = [
   },
   {
     id: "course-3",
+    slug: "cloud-devops-aws-docker-ci-cd-pipelines",
     badge: {
       text: "Advanced",
       color: "bg-blue-100 text-blue-700 dark:text-blue-300",
@@ -78,6 +82,7 @@ const courses = [
   },
   {
     id: "course-4",
+    slug: "python-dsa-bootcamp-ace-your-tech-interviews",
     badge: {
       text: "Fast Track",
       color: "bg-orange-100 text-orange-700 dark:text-orange-300",
@@ -150,9 +155,12 @@ export default function CoursesPage() {
                       >
                         {course.badge.text}
                       </span>
-                      <p className="text-lg md:text-xl font-bold text-left">
+                      <Link
+                        href={`/courses/${course.slug}`}
+                        className="text-lg md:text-xl font-bold text-left hover:underline"
+                      >
                         {course.title}
-                      </p>
+                      </Link>
                     </div>
                   </AccordionTrigger>
 
@@ -310,24 +318,7 @@ export default function CoursesPage() {
             </Accordion>
           </div>
 
-          {/* Footer CTA */}
-          {/* <div className="w-full max-w-[960px] mt-20">
-            <div className="relative overflow-hidden rounded-3xl bg-gray-900 dark:bg-[#112218] border border-gray-200 dark:border-[#234832] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 hover:border-[#2bee79]/50 transition-colors cursor-pointer">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#2bee79_1px,transparent_1px)] bg-size[16px_16px]" />
-              <div className="relative z-10 text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  Unsure where to start?
-                </h3>
-                <p className="text-[#92c9a8]">
-                  Take our 5-minute skill assessment quiz. We&apos;ll recommend
-                  the perfect personalized learning path for your career goals.
-                </p>
-              </div>
-              <button className="relative z-10 flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 hover:scale-105 transition-all shadow-[0_0_20px_rgba(43,238,121,0.3)]">
-                Take Skill Quiz
-              </button>
-            </div>
-          </div> */}
+         
         </main>
       </div>
     </>

@@ -8,15 +8,11 @@ import {
   ScreenShare,
   Briefcase,
   Trophy,
-  Group,
   Users,
-  Code2,
-  Terminal,
-  Tag,
-  Video,
-Figma ,
-
 } from "lucide-react";
+import { FaGithub, FaSlack, FaFigma } from "react-icons/fa";
+import { VscVscodeInsiders } from "react-icons/vsc";
+import { BiLogoZoom } from "react-icons/bi";
 
 export default function page() {
   return (
@@ -61,7 +57,7 @@ export default function page() {
                     <span className="truncate">Book Free Demo</span>
                   </button>
                   <button className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-surface-dark border border-border-dark text-white text-base font-bold tracking-[0.015em] hover:bg-border-dark transition-colors">
-                    <span className="truncate">View Syllabus</span>
+                    <span className="truncate">View Courses</span>
                   </button>
                 </div>
               </div>
@@ -222,7 +218,6 @@ export default function page() {
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
                 <Trophy className="material-symbols-outlined text-2xl" />
-               
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -238,7 +233,6 @@ export default function page() {
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
                 <Trophy className="material-symbols-outlined text-2xl" />
-                  
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">Code Reviews</h3>
@@ -251,8 +245,7 @@ export default function page() {
             {/* <!-- Card 6 --> */}
             <div className="group flex flex-col gap-4 rounded-lg border border-border-dark bg-surface-dark p-6 hover:border-primary/50 transition-colors">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                <Users className="material-symbols-outlined text-2xl"/>
-                 
+                <Users className="material-symbols-outlined text-2xl" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-white text-lg font-bold">
@@ -276,40 +269,40 @@ export default function page() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {/* <!-- Tool 1 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <Code2 className="material-symbols-outlined text-4xl group-hover:text-[#007ACC] transition-colors"/>
-               
+              <VscVscodeInsiders className="material-symbols-outlined text-4xl group-hover:text-[#007ACC] transition-colors" />
+
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 VS Code
               </span>
             </div>
             {/* <!-- Tool 2 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <Terminal className="material-symbols-outlined text-4xl group-hover:text-white transition-colors"/>
-               
+              <FaGithub className="material-symbols-outlined text-4xl group-hover:text-white transition-colors" />
+
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 GitHub
               </span>
             </div>
             {/* <!-- Tool 3 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <Tag className="material-symbols-outlined text-4xl group-hover:text-[#4A154B] transition-colors"/>
-               
+              <FaSlack className="material-symbols-outlined text-4xl group-hover:text-[#4A154B] transition-colors" />
+
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Slack
               </span>
             </div>
             {/* <!-- Tool 4 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <Video className="material-symbols-outlined text-4xl group-hover:text-[#2D8CFF] transition-colors"/>
-                
+              <BiLogoZoom className="material-symbols-outlined text-4xl group-hover:text-[#2D8CFF] transition-colors" />
+
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Zoom
               </span>
             </div>
             {/* <!-- Tool 5 --> */}
             <div className="flex items-center gap-2 group cursor-default">
-              <Figma className="material-symbols-outlined text-4xl group-hover:text-[#F24E1E] transition-colors"/>
-                
+              <FaFigma className="material-symbols-outlined text-4xl group-hover:text-[#F24E1E] transition-colors" />
+
               <span className="font-bold text-xl group-hover:text-white transition-colors">
                 Figma
               </span>

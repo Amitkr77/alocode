@@ -92,15 +92,13 @@ export default function Home() {
                 variants={itemVariants}
                 className="flex flex-wrap gap-4 justify-center w-full mt-4"
               >
-                <motion.Link
+                <Link
                   href="/enroll"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   className="min-w-40 h-14 px-8 rounded-full bg-primary text-background-dark text-base font-bold hover:shadow-[0_0_20px_rgba(43,238,121,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Enroll Now
                   <ArrowRight className="w-5 h-5" />
-                </motion.Link>
+                </Link>
 
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: "#234832" }}
@@ -387,7 +385,7 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-white text-center mb-8">
               Get mentored by our experts from top companies
             </h1>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8  text-center">
               {[
                 { label: "MORGAN STANLEY", path: "./companies/morgan.jpeg" },
                 { label: "DELOITTE", path: "./companies/deloitte.jpeg" },
@@ -409,7 +407,7 @@ export default function Home() {
                   <img
                     src={company.path}
                     alt={company.label}
-                    className="w-24 h-12 mx-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="w-24 h-12 mx-auto object-contain"
                   />
                   <span className="mt-4 text-sm text-gray-400 font-medium uppercase tracking-wide">
                     {company.label}
