@@ -2,10 +2,44 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Briefcase, ChevronRight, Info, Mail, Phone, School, Shield, User } from "lucide-react";
-
+import {
+  Briefcase,
+  ChevronRight,
+  Info,
+  Mail,
+  Phone,
+  School,
+  Shield,
+  User,
+} from "lucide-react";
 
 export default function page() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      phone: e.target.phone.value,
+      email: e.target.email.value,
+      course: e.target.course.value,
+      start_date: e.target.start_date.value,
+      goals: e.target.goals.value,
+    };
+
+    const res = await fetch("/api/enroll", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      alert("Enrollment submitted successfully!");
+      e.target.reset();
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <section className="relative pt-20 min-h-screen flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -104,7 +138,7 @@ export default function page() {
                 Student Enrollment Form
               </h2>
 
-              <form className="space-y-8 relative z-10">
+              <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">
                     1. Personal Details
