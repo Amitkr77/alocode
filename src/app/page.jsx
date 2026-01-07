@@ -12,6 +12,7 @@ import {
   // ExpandMore,
   TrendingUp,
   Star,
+  Calendar,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -291,6 +292,7 @@ export default function Home() {
               {[
                 {
                   title: "Full Stack Web Development",
+                  slug: "full-stack-development-mern-stack-real-world-projects",
                   duration: "6 Months",
                   level: "Beginner Friendly",
                   bestseller: true,
@@ -298,12 +300,14 @@ export default function Home() {
                 },
                 {
                   title: "Data Science & AI",
+                  slug: "data-science-ai-master-python-tensorflow-sql",
                   duration: "8 Months",
                   level: "Intermediate",
                   img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBziaKBfMw3TfGlU0h1EZ1gn1mu8pMFnOgwIUCEaFsNhVrpwnYytL9DxOciXzsN8ABhBWhhs6q-33URPCZ2qDAeEpnoC7QyOzQ7M2huDxdSWKfcSJuU-_wctbBWiHyGCnkB_8QI4fVMD_8M2n6NAJcy5X3dwkNN1ACfeagW_lYjS-A85w6A02AUh6LXK5-DrdaPQJPXxVPU-omNMKCzFMxTnik3Tjz57kpqaqYn81LsBv0YTEZci1geke3_r0m9JK-8iH0UB1RYKz0e",
                 },
                 {
-                  title: "Web 3.0 & Blockchain",
+                  title: "Cloud & DevOps Engineering",
+                  slug: "cloud-devops-aws-docker-ci-cd-pipelines",
                   duration: "4 Months",
                   level: "Advanced",
                   trending: true,
@@ -319,7 +323,7 @@ export default function Home() {
                   <div className="h-48 overflow-hidden relative">
                     <div className="absolute inset-0 bg-linear-to-t from-surface-dark to-transparent z-10" />
                     <div
-                      className="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full bg-cover bg-center"
                       style={{ backgroundImage: `url("${course.img}")` }}
                     />
                     {course.bestseller && (
@@ -342,6 +346,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
                       <span className="flex items-center gap-1">
                         {/* <Schedule className="w-4 h-4" /> */}
+                        <Calendar className="w-4 h-4 mr-1" />
                         {course.duration}
                       </span>
                       <span className="w-1 h-1 rounded-full bg-gray-600" />
@@ -359,19 +364,30 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
                       <div className="flex -space-x-2">
-                        {[1, 2, 3].map((i) => (
+                        {[
+                          "https://lh3.googleusercontent.com/aida-public/AB6AXuBVzC5yjFHxFu0Qzfs9UdLQ2VFDshVv7e8fsJ4pGwlDmFYv9ix6ua3CI3Am9x4OX23LdWC1gLvIO9ovPj5CcKxsXiy0ToZwT-REQ0rKKbF12F8JtKMBOMm9wB-cVsLPnmI9Q0CbcLhfAjgRIJ8L7DqjXFKvpyj4WJ3XccHXo4pEhPsc9i7tz5El_pugAaNNQ6npaBnrNyOktFJP0O7XxRuUpZY-UyAKNk5MHwaaWxl6bFmr6vXx-BIE7IkubOQW40KbNmbcGWG0ZkJt",
+                          "https://lh3.googleusercontent.com/aida-public/AB6AXuBE7nLOkfla162Pem4g7R0v-PgfLAooZWHU4wDEwc-OT5TqG1QTjfwARhtmmWqpLkq4Uzp61Imfe09K9avIySxdaYA86eBji-lehIm-M8A3mk_9qlPCcj5bwC2QubrRlFwMmqkl-249GAbjVwjMlIulTNQwvxxMIiilumYluLpnd5pGLrzVNTXUpKm0Y_wO_Y4HgfVKiZmlnIN2Jg2ebDYirkeXOB0JPqotIGb1xMRx_tsUeMhaUWOws7EvH4anKxnqOn4aRpFWVxZ0",
+                          "https://lh3.googleusercontent.com/aida-public/AB6AXuAKVXRU3UxVO6fyQ0Lo8FSUnAtIyLZlwMmxPhGNOamoER3Rwkycee0agPOz7ha02cdol1x6TOdbQlmnoYMZKCwhBCo9B5WB5Op4vN6_0BLdZuwEgT3jv8q36gCE7blgpOGMlNtx45Vzk8yNPGVJbUb9wnfrCDpoYcePzDNk9vdh7DWB61WXNZ6f_mdf0ioPqvhqA5tTHDVfdsU0CEU2bxPgwoMPTfB4tCvsP5IbiIT2bVt459X2lUFuD44apgaeTocyEgwkwBPyJBVH",
+                        ].map((src, index) => (
                           <div
-                            key={i}
-                            className="w-8 h-8 rounded-full border-2 border-surface-dark bg-gray-700"
-                          />
+                            key={index}
+                            className="w-8 h-8 rounded-full border-2 border-surface-dark bg-gray-700 overflow-hidden"
+                          >
+                            <img
+                              src={src}
+                              alt={`avatar-${index}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                         ))}
                       </div>
-                      <a
+
+                      <Link
                         className="text-white font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all"
-                        href="#"
+                        href={`/courses/${course.slug}`}
                       >
                         View Course <ArrowRight className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
