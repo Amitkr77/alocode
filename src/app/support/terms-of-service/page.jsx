@@ -127,7 +127,7 @@ export default function TermsOfService() {
 
   return (
     <section className="bg-background-dark text-white font-display antialiased selection:bg-primary selection:text-background-dark min-h-screen flex flex-col">
-      <main className="flex-1 flex flex-col items-center py-10 px-4 md:px-10">
+      <main className="flex-1 flex flex-col items-center py-10 px-4 md:px-10 mt-18">
         <div className="w-full max-w-7xl flex flex-col gap-10">
           {/* Header */}
           <div className="flex flex-col md:flex-row gap-6 justify-between items-end border-b border-surface-dark pb-8">
