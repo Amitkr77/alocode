@@ -19,31 +19,25 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
-    // Access body correctly (assumes JSON or urlencoded form)
-    const formData = req.body || {}; // Fallback to empty object
+    // Parse body as JSON (assumes client sends JSON)
+    const { email } = req.body;
 
-    // Basic validation (add more as needed)
-    if (!formData.name || !formData.email) {
-        return res.status(400).json({ message: 'Missing required fields: name, email' });
+    // Basic validation
+    if (!email || typeof email !== 'string' || !email.includes('@') || !email.includes('.')) {
+        return res.status(400).json({ message: 'Missing or invalid email' });
     }
 
     // Prepare the data to be written in the Google Sheet
-    const values = [
-        [
-            formData.name,
-            formData.phone || '', // Defaults for optional fields
-            formData.email,
-            formData.course || '',
-            formData.start_date || '',
-            formData.goals || '',
-        ],
-    ];
+    // Optional: Add timestamp as first column (uncomment below)
+    // const values = [[new Date().toISOString(), email]];
+    // Use range: 'subscribe!A:B' if adding timestamp
+    const values = [[email]];
 
     // Append the data to the sheet
     try {
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: SHEET_ID,
-            range: 'Enroll!A:F',
+            range: 'subscribe!A:A', // Updated to target the "subscribe" sheet
             valueInputOption: 'RAW',
             resource: {
                 values,
@@ -51,7 +45,7 @@ export default async function handler(req, res) {
         });
 
         console.log('✅ Data saved to Google Sheet:', response.data); // Log for debugging
-        return res.status(200).json({ 
+        return res.status(200).json({
             message: 'Data saved successfully',
             row: response.data.updates?.updatedRange // Optional: Return appended range
         });

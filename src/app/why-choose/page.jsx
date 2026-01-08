@@ -1,11 +1,11 @@
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, Building2, Code2, Infinity, Rocket, Terminal, TrendingUp, Users,Database, Cloud, Bot, ChartBarBig  } from "lucide-react";
 import React from "react";
 
 export default function page() {
   return (
     <section className="bg-background-dark text-white font-display overflow-x-hidden antialiased">
       {/* <!-- Bento Grid Benefits Section --> */}
-      <section class="relative px-4 py-16 sm:px-6 lg:px-8">
+      <section class="relative px-4 py-16 sm:px-6 lg:px-8 mt-10">
         <div class="mx-auto max-w-7xl">
           <div class="mb-12 flex flex-col gap-4 md:items-center md:text-center">
             <h2 class="text-3xl font-bold text-white md:text-4xl">
@@ -47,7 +47,8 @@ export default function page() {
             <div class="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border border-[#234832] bg-surface-dark p-6 transition-all hover:-translate-y-1 hover:border-primary/50">
               <div class="flex items-center justify-between">
                 <div class="rounded-full bg-[#1e3b2b] p-3 text-primary">
-                  <span class="material-symbols-outlined">trending_up</span>
+                  {/* <span class="material-symbols-outlined">trending_up</span> */}
+                  <TrendingUp size={32} />
                 </div>
               </div>
               <div class="mt-6">
@@ -67,12 +68,14 @@ export default function page() {
             {/* <!-- Card 3: Practical Learning --> */}
             <div class="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border border-[#234832] bg-surface-dark p-6 transition-all hover:-translate-y-1 hover:border-primary/50">
               <div class="absolute -bottom-4 -right-4 text-surface-dark-highlight opacity-20">
-                <span class="material-symbols-outlined text-[10rem]">
+                {/* <span class="material-symbols-outlined text-[10rem]">
                   code_blocks
-                </span>
+                </span> */}
+                <Code2 size={160} />
               </div>
               <div class="rounded-full bg-[#1e3b2b] w-fit p-3 text-primary">
-                <span class="material-symbols-outlined">terminal</span>
+                {/* <span class="material-symbols-outlined">terminal</span> */}
+                <Terminal size={32} />
               </div>
               <div class="mt-6 relative z-10">
                 <h3 class="text-xl font-bold text-white">
@@ -87,7 +90,8 @@ export default function page() {
             {/* <!-- Card 4: Community --> */}
             <div class="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border border-[#234832] bg-surface-dark p-6 transition-all hover:-translate-y-1 hover:border-primary/50">
               <div class="rounded-full bg-[#1e3b2b] w-fit p-3 text-primary">
-                <span class="material-symbols-outlined">diversity_3</span>
+                {/* <span class="material-symbols-outlined">diversity_3</span> */}
+                <Users size={32} />
               </div>
               <div class="mt-6">
                 <h3 class="text-xl font-bold text-white">Global Community</h3>
@@ -101,7 +105,8 @@ export default function page() {
             <div class="group relative col-span-1 flex items-center justify-between gap-6 overflow-hidden rounded-2xl border border-[#234832] bg-surface-dark p-6 transition-all hover:-translate-y-1 hover:border-primary/50 md:col-span-1">
               <div class="flex flex-col h-full justify-between">
                 <div class="rounded-full bg-[#1e3b2b] w-fit p-3 text-primary">
-                  <span class="material-symbols-outlined">all_inclusive</span>
+                  {/* <span class="material-symbols-outlined">all_inclusive</span> */}
+                  <Infinity size={32} />
                 </div>
                 <div class="mt-6">
                   <h3 class="text-xl font-bold text-white">Lifetime Access</h3>
@@ -128,9 +133,10 @@ export default function page() {
           <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {/* <!-- Tech/Company Item 1 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 rocket_launch
-              </span>
+              </span> */}
+              <Rocket size={32} class="mt-2 text-gray-500 group-hover:text-primary" />
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 Startups
               </span>
@@ -146,9 +152,10 @@ export default function page() {
             </div>
             {/* <!-- Tech/Company Item 2 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 business
-              </span>
+              </span> */}
+              <Building2 size={32} class="mt-2 text-gray-500 group-hover:text-primary" />
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 Enterprise
               </span>
@@ -164,9 +171,10 @@ export default function page() {
             </div>
             {/* <!-- Tech/Company Item 3 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 code
-              </span>
+              </span> */}
+              <Code2 size={32} class="mt-2 text-gray-500 group-hover:text-primary" />
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 Frontend
               </span>
@@ -182,9 +190,10 @@ export default function page() {
             </div>
             {/* <!-- Tech/Company Item 4 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 database
-              </span>
+              </span> */}
+              <Database size={32} class="mt-2 text-gray-500 group-hover:text-primary" />  
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 Backend
               </span>
@@ -200,9 +209,10 @@ export default function page() {
             </div>
             {/* <!-- Tech/Company Item 5 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 cloud
-              </span>
+              </span> */}
+              <Cloud size={32} class="mt-2 text-gray-500 group-hover:text-primary" />
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 Cloud
               </span>
@@ -218,9 +228,10 @@ export default function page() {
             </div>
             {/* <!-- Tech/Company Item 6 --> */}
             <div class="group relative flex aspect-square flex-col items-center justify-center rounded-xl bg-surface-dark p-6 transition-colors hover:bg-surface-dark-highlight cursor-pointer">
-              <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
+              {/* <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-white">
                 robot_2
-              </span>
+              </span> */}
+              <Bot size={32} class="mt-2 text-gray-500 group-hover:text-primary" />
               <span class="mt-2 text-xs font-bold uppercase text-gray-500 group-hover:text-primary">
                 AI/ML
               </span>
@@ -239,7 +250,7 @@ export default function page() {
       </section>
       {/* <!-- Comparison CTA Section --> */}
       <section class="px-4 py-24 sm:px-6 lg:px-8">
-        <div class="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1e3b2b] to-surface-dark p-10 text-center sm:p-16">
+        <div class="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] bg-linear-to-br from-[#1e3b2b] to-surface-dark p-10 text-center sm:p-16">
           {/* <!-- Decorative Elements --> */}
           <div class="absolute top-0 right-0 -mt-12 -mr-12 h-64 w-64 rounded-full bg-primary/10 blur-3xl"></div>
           <div class="absolute bottom-0 left-0 -mb-12 -ml-12 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
@@ -254,7 +265,9 @@ export default function page() {
             </p>
             <div class="mt-4">
               <button class="group flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-lg font-bold text-[#112218] shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 hover:shadow-primary/40">
-                <span class="material-symbols-outlined">table_chart</span>
+                {/* <span class="material-symbols-outlined">table_chart</span>
+                 */}
+                 <ChartBarBig size={24} class="text-[#112218] group-hover:text-[#0a1a0f]" />
                 See How We Stack Up – Free Guide
               </button>
               <p class="mt-4 text-xs font-medium text-gray-500">

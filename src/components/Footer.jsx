@@ -15,6 +15,33 @@ import Link from "next/link";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value.trim();
+    if (!email) return; // Basic client-side check
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        alert("Successfully subscribed! Check your email for confirmation."); // Or use a toast/modal
+        e.target.reset();
+      } else {
+        const errorData = await response.json();
+        alert(`Subscription failed: ${errorData.message || "Unknown error"}`);
+      }
+    } catch (error) {
+      console.error("Subscription error:", error);
+      alert("Subscription failed: Network error. Please try again.");
+    }
+  };
+
   return (
     <footer className="bg-surface-dark border-t border-surface-border pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,11 +211,10 @@ const Footer = () => {
             </p>
             <form
               className="flex flex-col sm:flex-row gap-2"
-              onSubmit={(e) => {
-                e.preventDefault(); /* Handle subscribe */
-              }}
+              onSubmit={handleSubmit} // Updated to use handleSubmit
             >
               <input
+                name="email" // Added name for easy extraction
                 className="bg-surface-dark border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary flex-1"
                 type="email"
                 placeholder="Enter your email"
