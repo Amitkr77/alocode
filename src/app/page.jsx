@@ -128,7 +128,7 @@ export default function Home() {
                         <Star className="w-5 h-5" />
                         {company}
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </motion.div>
@@ -288,13 +288,13 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   title: "Full Stack Web Development",
                   slug: "full-stack-development-mern-stack-real-world-projects",
                   duration: "6 Months",
-                  level: "Beginner Friendly",
+                  level: "Beginner ",
                   bestseller: true,
                   img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDrpJa1-otvaHGomIM-8hvc24j2DsUNvXSAoxkoH1n_hP7Bx3NOUjlikH0KPO9DOc8WQXh8KgfSGlpgjAF5vbB1AmX9kggcctPWTvQZglKPwlM7ZuPVvV5wGDbNazUCYLiImgHPpHexzt7VW4rp_YwgJ1GAOKzw-LYDmxbmbmiUrsdDLysWAbjVHTkArEiQga3jXyXpaPcHmdJ9LtKDd8GMj3bo8mDxJe6FEh55Wz-7cEXiRbQS3NQMRcVFO30UnbgwjeAyJG7Tf-7y",
                 },
@@ -312,6 +312,13 @@ export default function Home() {
                   level: "Advanced",
                   trending: true,
                   img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbyeeYviUTRIwMJeHR5Kar9vbvr2TVM8CIZjFNfCs5MTqpDFM2zfdLWNLXmo1vTlZrthdxS70wd54MGhBVj1Mj6ZTZrNYLSvtVMdDV2vzHd8j8L3m7I6tgzFRZhW-4RLh0nt_6vTDqfD1s6LwSX837hBEurtR2FWIgUtzjqapUT1Jnhz0vEpUOv05AlvoFeh3t4XzOpAoVk2hC2acX7MJ8eN5muM_sEZu0JJ943avfeTbnpJDEijOg7XC1Ml0G4KtOhQAKdzdxBly3",
+                },
+                {
+                  title: "Graphic Designing",
+                  slug: "graphic-designing-creative-design-photoshop-illustrator",
+                  duration: "3 Months",
+                  level: "Beginner ",
+                  img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 },
               ].map((course) => (
                 <motion.div
@@ -343,14 +350,12 @@ export default function Home() {
                   </div>
 
                   <div className="p-8 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 mb-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                    <div className="flex items-center justify-between gap-2 mb-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
                       <span className="flex items-center gap-1">
-                        {/* <Schedule className="w-4 h-4" /> */}
                         <Calendar className="w-4 h-4 mr-1" />
                         {course.duration}
                       </span>
-                      <span className="w-1 h-1 rounded-full bg-gray-600" />
-                      <span>{course.level}</span>
+                      <span>| {course.level}</span>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                       {course.title}
@@ -359,8 +364,8 @@ export default function Home() {
                       {course.title.includes("Full Stack")
                         ? "Master MERN stack. Build real-world projects like Netflix Clone, E-commerce app, and more."
                         : course.title.includes("Data Science")
-                        ? "Learn Python, Machine Learning, and Deep Learning. Build AI models and data pipelines."
-                        : "Understand Smart Contracts, Solidity, and dApps. Step into the future of the internet."}
+                          ? "Learn Python, Machine Learning, and Deep Learning. Build AI models and data pipelines."
+                          : "Understand Smart Contracts, Solidity, and dApps. Step into the future of the internet."}
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
                       <div className="flex -space-x-2">

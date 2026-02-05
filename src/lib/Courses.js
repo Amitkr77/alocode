@@ -70,13 +70,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Amit R.",
-        rating: 5,
-        time: "3 weeks ago",
-        comment:
-          "Very practical and well-structured course for Data Science beginners.",
-      },
+      // {
+      //   name: "Amit R.",
+      //   rating: 5,
+      //   time: "3 weeks ago",
+      //   comment:
+      //     "Very practical and well-structured course for Data Science beginners.",
+      // },
     ],
   },
 
@@ -161,18 +161,18 @@ const courses = [
       "label": "Preview this course"
     },
     "reviews": [
-      {
-        "name": "Michael T.",
-        "rating": 5,
-        "time": "2 weeks ago",
-        "comment": "This course changed my life. I went from knowing nothing about coding to landing my first junior developer job in 6 months."
-      },
-      {
-        "name": "Jessica K.",
-        "rating": 4.5,
-        "time": "1 month ago",
-        "comment": "Excellent content on React and Node. The backend section is particularly strong."
-      }
+      // {
+      //   "name": "Michael T.",
+      //   "rating": 5,
+      //   "time": "2 weeks ago",
+      //   "comment": "This course changed my life. I went from knowing nothing about coding to landing my first junior developer job in 6 months."
+      // },
+      // {
+      //   "name": "Jessica K.",
+      //   "rating": 4.5,
+      //   "time": "1 month ago",
+      //   "comment": "Excellent content on React and Node. The backend section is particularly strong."
+      // }
     ]
   },
 
@@ -245,13 +245,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Rahul S.",
-        rating: 4.5,
-        time: "1 month ago",
-        comment:
-          "Great hands-on approach for DevOps and cloud fundamentals.",
-      },
+      // {
+      //   name: "Rahul S.",
+      //   rating: 4.5,
+      //   time: "1 month ago",
+      //   comment:
+      //     "Great hands-on approach for DevOps and cloud fundamentals.",
+      // },
     ],
   },
   {
@@ -322,13 +322,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Neha P.",
-        rating: 5,
-        time: "2 weeks ago",
-        comment:
-          "Perfect bootcamp for cracking coding interviews!",
-      },
+      // {
+      //   name: "Neha P.",
+      //   rating: 5,
+      //   time: "2 weeks ago",
+      //   comment:
+      //     "Perfect bootcamp for cracking coding interviews!",
+      // },
     ],
   },
   {
@@ -400,13 +400,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Rahul S.",
-        rating: 5,
-        time: "2 weeks ago",
-        comment:
-          "Best Flutter course for understanding Provider and Firebase with a real chat app project.",
-      },
+      // {
+      //   name: "Rahul S.",
+      //   rating: 5,
+      //   time: "2 weeks ago",
+      //   comment:
+      //     "Best Flutter course for understanding Provider and Firebase with a real chat app project.",
+      // },
     ],
   },
   {
@@ -478,13 +478,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Neha K.",
-        rating: 5,
-        time: "1 month ago",
-        comment:
-          "Perfect course to understand C++ and data structures clearly.",
-      },
+      // {
+      //   name: "Neha K.",
+      //   rating: 5,
+      //   time: "1 month ago",
+      //   comment:
+      //     "Perfect course to understand C++ and data structures clearly.",
+      // },
     ],
   },
   {
@@ -634,13 +634,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Sneha P.",
-        rating: 5,
-        time: "3 weeks ago",
-        comment:
-          "Clear explanations and practical React projects. Highly recommended.",
-      },
+      // {
+      //   name: "Sneha P.",
+      //   rating: 5,
+      //   time: "3 weeks ago",
+      //   comment:
+      //     "Clear explanations and practical React projects. Highly recommended.",
+      // },
     ],
   },
   {
@@ -712,13 +712,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Karan D.",
-        rating: 5,
-        time: "1 week ago",
-        comment:
-          "Perfect Python course for beginners with lots of practical examples.",
-      },
+      // {
+      //   name: "Karan D.",
+      //   rating: 5,
+      //   time: "1 week ago",
+      //   comment:
+      //     "Perfect Python course for beginners with lots of practical examples.",
+      // },
     ],
   },
   {
@@ -790,13 +790,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Amit S.",
-        rating: 5,
-        time: "2 weeks ago",
-        comment:
-          "Excellent Java course with clear explanations and real-world examples.",
-      },
+      // {
+      //   name: "Amit S.",
+      //   rating: 5,
+      //   time: "2 weeks ago",
+      //   comment:
+      //     "Excellent Java course with clear explanations and real-world examples.",
+      // },
     ],
   },
   {
@@ -868,13 +868,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Sneha R.",
-        rating: 5,
-        time: "3 days ago",
-        comment:
-          "Loved the hands-on projects and React modules.",
-      },
+      // {
+      //   name: "Sneha R.",
+      //   rating: 5,
+      //   time: "3 days ago",
+      //   comment:
+      //     "Loved the hands-on projects and React modules.",
+      // },
     ],
   }
   ,
@@ -947,13 +947,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Rahul P.",
-        rating: 5,
-        time: "1 week ago",
-        comment:
-          "Clear explanations of backend concepts with real APIs.",
-      },
+      // {
+      //   name: "Rahul P.",
+      //   rating: 5,
+      //   time: "1 week ago",
+      //   comment:
+      //     "Clear explanations of backend concepts with real APIs.",
+      // },
     ],
   }
   ,
@@ -1026,13 +1026,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Neha K.",
-        rating: 5,
-        time: "5 days ago",
-        comment:
-          "Best MERN stack course with real-world projects.",
-      },
+      // {
+      //   name: "Neha K.",
+      //   rating: 5,
+      //   time: "5 days ago",
+      //   comment:
+      //     "Best MERN stack course with real-world projects.",
+      // },
     ],
   },
   {
@@ -1104,13 +1104,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Vikram J.",
-        rating: 5,
-        time: "2 weeks ago",
-        comment:
-          "Complete Java full stack roadmap with excellent mentoring.",
-      },
+      // {
+      //   name: "Vikram J.",
+      //   rating: 5,
+      //   time: "2 weeks ago",
+      //   comment:
+      //     "Complete Java full stack roadmap with excellent mentoring.",
+      // },
     ],
   },
   {
@@ -1182,13 +1182,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Ankit M.",
-        rating: 5,
-        time: "1 week ago",
-        comment:
-          "Excellent balance of theory and hands-on AI projects.",
-      },
+      // {
+      //   name: "Ankit M.",
+      //   rating: 5,
+      //   time: "1 week ago",
+      //   comment:
+      //     "Excellent balance of theory and hands-on AI projects.",
+      // },
     ],
   },
   {
@@ -1260,13 +1260,13 @@ const courses = [
     },
 
     reviews: [
-      {
-        name: "Pooja S.",
-        rating: 5,
-        time: "4 days ago",
-        comment:
-          "Very practical course with strong focus on analytics tools.",
-      },
+      // {
+      //   name: "Pooja S.",
+      //   rating: 5,
+      //   time: "4 days ago",
+      //   comment:
+      //     "Very practical course with strong focus on analytics tools.",
+      // },
     ],
   },
 

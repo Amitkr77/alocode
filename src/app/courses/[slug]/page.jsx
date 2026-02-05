@@ -18,6 +18,7 @@ import {
   Smartphone,
   Check,
 } from "lucide-react";
+import Link from "next/link";
 
 export default async function CourseDetail({ params }) {
   const { slug } = await params;
@@ -175,11 +176,16 @@ export default async function CourseDetail({ params }) {
                     Offer ends in {course.pricing.offerEndsIn}
                   </p>
 
-                  <button className="w-full h-12 rounded-full bg-primary text-background-dark font-bold mb-3">
-                    Enroll Now
-                  </button>
+                  <Link href="enroll">
+                    <button className="w-full h-12 rounded-full bg-primary text-background-dark font-bold mb-3 cursor-pointer">
+                      Enroll Now
+                    </button>
+                  </Link>
 
-                  <button className="w-full h-12 rounded-full border border-surface-border text-white mb-6">
+                  <button
+                    disabled
+                    className="w-full h-12 rounded-full border border-surface-border text-white mb-6 cursor-pointer"
+                  >
                     Start Free Trial
                   </button>
 
@@ -203,7 +209,7 @@ export default async function CourseDetail({ params }) {
               )}
             </div>
 
-            <div className="mt-6 p-4 border border-surface-border rounded-xl text-center">
+            <div className="mt-6 p-4 text-center">
               <ComingSoon name="Get Alocodes for Business" />
             </div>
           </div>
