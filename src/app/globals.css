@@ -4,23 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 @theme {
-  --color-primary: #2bee79;
-  --color-primary-foreground: #000000;
-  --color-surface: #f6f8f7;
+  --color-primary: #7c5cfc;
+  --color-primary-foreground: #1c1830;
+  --color-surface: #f0eeff;
 
-  --color-surface-light: #ffffff;
-  --color-surface-dark: #193324;
-  --color-background-dark: #102217;
-  --color-background-light: #f6f8f7;
-  --color-border-dark: #234832;
-  --color-surface-border: #234832;
-  --font-geist-sans: 'Geist Sans', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
-
+  --color-surface-light: #faf7f2;
+  --color-surface-dark: #221e38;
+  --color-background-dark: #1c1830;
+  --color-background-light: #f8f7ff;
+  --color-border-dark: #352f58;
+  --color-surface-border: #352f58;
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
 @theme inline {
@@ -65,18 +68,14 @@
 
 :root {
   --radius: 1rem;
-  /* Updated to match theme.extend.borderRadius.DEFAULT */
-  --background: #f6f8f7;
-  /* background-light */
+  --background: #f8f7ff;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #2bee79;
-  /* custom primary */
-  --primary-foreground: oklch(0.145 0 0);
-  /* dark text for contrast on bright green */
+  --primary: #7c5cfc;
+  --primary-foreground: #1c1830;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -94,8 +93,8 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #2bee79;
-  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #e8a838;
+  --sidebar-primary-foreground: #1a1814;
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
@@ -103,27 +102,22 @@
 }
 
 .dark {
-  --background: #102217;
-  /* background-dark */
-  --foreground: oklch(0.985 0 0);
-  --card: #193324;
-  /* surface-dark */
-  --card-foreground: oklch(0.985 0 0);
-  --popover: #193324;
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: #2bee79;
-  /* keeping the same vibrant green primary */
-  --primary-foreground: oklch(0.145 0 0);
-  /* dark text on green */
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #1c1830;
+  --foreground: #ede8ff;
+  --card: #221e38;
+  --card-foreground: #ede8ff;
+  --popover: #22201c;
+  --popover-foreground: #f0e8d8;
+  --primary: #7c5cfc;
+  --primary-foreground: #1c1830;
+  --secondary: #2d2850;
+  --secondary-foreground: #ede8ff;
+  --muted: #2d2850;
+  --muted-foreground: #8a82b8;
+  --accent: #2d2850;
+  --accent-foreground: #ede8ff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #234832;
-  /* surface-border (full opacity) */
+  --border: #352f58;
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -131,13 +125,13 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #193324;
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #2bee79;
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: #234832;
+  --sidebar: #221e38;
+  --sidebar-foreground: #ede8ff;
+  --sidebar-primary: #7c5cfc;
+  --sidebar-primary-foreground: #1c1830;
+  --sidebar-accent: #2d2850;
+  --sidebar-accent-foreground: #ede8ff;
+  --sidebar-border: #352f58;
   --sidebar-ring: oklch(0.556 0 0);
 }
 
@@ -150,7 +144,6 @@
     @apply bg-background text-foreground;
   }
 
-  /* Additional font family from the config */
   .font-display {
     font-family: "Spline Sans", sans-serif;
   }

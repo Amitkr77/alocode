@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ArrowRight } from "lucide-react";
+import { Menu, ArrowRight, ChevronDown } from "lucide-react";
 
 import {
   Sheet,
@@ -26,177 +26,168 @@ import {
   DropdownMenuPortal,
 } from "@/components/ui/dropdown-menu";
 
-// Other simple nav items
+import courses from "@/lib/Courses";
+
 const navItems = [
   { href: "/live", label: "Live Training" },
   { href: "/contact", label: "Contact" },
   { href: "/about", label: "About Us" },
 ];
 
+const groupedCourses = courses.reduce((acc, course) => {
+  const cat = course.category || "Other";
+  if (!acc[cat]) acc[cat] = [];
+  acc[cat].push(course);
+  return acc;
+}, {});
+
 const Navbar = () => {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background-dark/90 backdrop-blur-md border-b border-surface-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      style={{
+        background: scrolled
+          ? "rgba(252,252,251,0.97)"
+          : "rgba(252,252,251,0.85)",
+        backdropFilter: "blur(12px)",
+        borderBottom: `1px solid ${scrolled ? "#DBD7C7" : "rgba(219,215,199,0.5)"}`,
+        boxShadow: scrolled ? "0 1px 16px rgba(38,42,43,0.06)" : "none",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 sm:h-20">
+
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/">
               <img
-                className="h-10 sm:h-12 w-auto"
-                src="/Aloc_logo1.png"
+                className="h-14 sm:h-16 w-auto"
+                src="/alo_logoo.png"
                 alt="Alocode logo"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {/* Courses – Clickable + Dropdown */}
+          <nav className="hidden md:flex items-center gap-1">
+            {/* Courses dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Link
-                  href="/courses"
-                  className={`text-sm font-medium transition-colors  ${
-                    pathname === "/courses" || pathname.startsWith("/courses/")
-                      ? "text-primary font-semibold"
-                      : "text-gray-300 hover:text-primary"
-                  }`}
+                <button
+                  className="flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                  style={{
+                    color:
+                      pathname === "/courses" || pathname.startsWith("/courses/")
+                        ? "#FAA114"
+                        : "#786E67",
+                    background:
+                      pathname === "/courses" || pathname.startsWith("/courses/")
+                        ? "rgba(250,161,20,0.08)"
+                        : "transparent",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
                 >
                   Courses
-                </Link>
+                  <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                </button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent className="w-64 p-2 bg-background-dark/95 backdrop-blur-md border-surface-border">
-                <DropdownMenuLabel className="text-xs font-semibold text-gray-400">
+              <DropdownMenuContent
+                className="w-64 p-2 rounded-2xl mt-1"
+                style={{
+                  background: "#FCFCFB",
+                  border: "1px solid #DBD7C7",
+                  boxShadow: "0 8px 32px rgba(38,42,43,0.10)",
+                }}
+              >
+                <DropdownMenuLabel
+                  className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5"
+                  style={{ color: "#B3AA9E", fontFamily: "system-ui, sans-serif" }}
+                >
                   Explore Courses
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-surface-border" />
+                <DropdownMenuSeparator style={{ background: "#DBD7C7" }} />
 
-                {/* All Courses – Top link inside dropdown */}
                 <DropdownMenuItem asChild>
-                  <Link href="/courses" className="font-medium text-white">
-                    All Courses{" "}
-                    <ArrowRight className="inline-block ml-1 h-4 w-4" />
+                  <Link
+                    href="/courses"
+                    className="rounded-xl px-3 py-2 flex items-center justify-between font-semibold transition-colors"
+                    style={{ color: "#262A2B", fontFamily: "system-ui, sans-serif" }}
+                  >
+                    All Courses
+                    <ArrowRight className="w-3.5 h-3.5" style={{ color: "#FAA114" }} />
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-surface-border" />
+                <DropdownMenuSeparator style={{ background: "#DBD7C7" }} />
 
-                {/* Programming */}
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-sm text-white">
-                    Programming
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="bg-background-dark/95 backdrop-blur-md border-surface-border text-white">
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/cpp-programming-data-structures-algorithms">
-                          C++
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/java-programming-masterclass">Java</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/python-programming-data-applications">
-                          Python
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/javascript-modern-es6-web-development">
-                          Javascript
-                        </Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-
-                {/* Web Development */}
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-sm text-white">
-                    Web Development
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="bg-background-dark/95 backdrop-blur-md border-surface-border text-white">
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/reactjs-frontend-development">
-                          React JS
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/frontend-web-development">
-                          Frontend
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/backend-development-nodejs">
-                          Backend
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/mern-stack-development">
-                          MERN Full Stack Development
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/java-fullstack">
-                          Java Full Stack Development
-                        </Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-
-                {/* Data Science & Analytics */}
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-sm text-white">
-                    Data Science & Analytics
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="bg-background-dark/95 backdrop-blur-md border-surface-border text-white">
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/data-science-with-ai">
-                          Data Science with AI
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/data-analytics-with-ai">
-                          Data Analytics with AI
-                        </Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-
-                {/* App Development */}
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="text-sm text-white">
-                    App Development
-                  </DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="bg-background-dark/95 backdrop-blur-md border-surface-border text-white">
-                      <DropdownMenuItem asChild>
-                        <Link href="/courses/flutter-chat-app-provider-firebase-hive">
-                          Flutter
-                        </Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
+                {Object.entries(groupedCourses).map(([category, items]) => (
+                  <DropdownMenuSub key={category}>
+                    <DropdownMenuSubTrigger
+                      className="text-sm rounded-xl px-3 py-2 font-medium"
+                      style={{ color: "#262A2B", fontFamily: "system-ui, sans-serif" }}
+                    >
+                      {category}
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent
+                        className="rounded-2xl p-2 min-w-[200px]"
+                        style={{
+                          background: "#FCFCFB",
+                          border: "1px solid #DBD7C7",
+                          boxShadow: "0 8px 32px rgba(38,42,43,0.10)",
+                        }}
+                      >
+                        {items.map((course) => (
+                          <DropdownMenuItem key={course.slug} asChild>
+                            <Link
+                              href={`/courses/${course.slug}`}
+                              className="text-sm rounded-xl px-3 py-2"
+                              style={{ color: "#786E67", fontFamily: "system-ui, sans-serif" }}
+                            >
+                              {course.title}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                        <DropdownMenuSeparator style={{ background: "#DBD7C7" }} />
+                        <DropdownMenuItem asChild>
+                          <Link
+                            href={`/courses?category=${encodeURIComponent(category)}`}
+                            className="text-xs font-bold px-3 py-2 rounded-xl flex items-center gap-1"
+                            style={{ color: "#FAA114", fontFamily: "system-ui, sans-serif" }}
+                          >
+                            View all {category}
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Other Nav Items */}
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  pathname === item.href
-                    ? "text-primary font-semibold"
-                    : "text-gray-300 hover:text-primary"
-                }`}
+                className="px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                style={{
+                  color: pathname === item.href ? "#FAA114" : "#786E67",
+                  background:
+                    pathname === item.href
+                      ? "rgba(250,161,20,0.08)"
+                      : "transparent",
+                  fontFamily: "system-ui, sans-serif",
+                }}
               >
                 {item.label}
               </Link>
@@ -204,10 +195,15 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <Link
               href="/enroll"
-              className="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-all text-sm font-bold shadow-[0_0_15px_rgba(43,238,121,0.3)] hover:shadow-[0_0_25px_rgba(43,238,121,0.5)]"
+              className="flex items-center justify-center rounded-full h-10 px-6 text-white text-sm font-bold transition-all"
+              style={{
+                background: "#FAA114",
+                boxShadow: "0 4px 16px rgba(250,161,20,0.30)",
+                fontFamily: "system-ui, sans-serif",
+              }}
             >
               Enroll Now
             </Link>
@@ -217,50 +213,122 @@ const Navbar = () => {
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
               <button
-                className="text-gray-200 hover:text-primary focus:outline-none transition-colors"
+                className="focus:outline-none transition-colors p-1"
+                style={{ color: "#262A2B" }}
                 aria-label="Open mobile menu"
               >
-                <Menu className="h-7 w-7" />
+                <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
 
             <SheetContent
               side="right"
-              className="bg-black/15 backdrop-blur-2xl border-l border-white/10 shadow-2xl shadow-black/40 p-4 w-72 flex flex-col h-full text-gray-100"
+              className="p-0 w-72 flex flex-col h-full overflow-y-auto"
+              style={{
+                background: "#FCFCFB",
+                borderLeft: "1px solid #DBD7C7",
+                color: "#262A2B",
+              }}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-transparent pointer-events-none" />
-
-              <SheetHeader className="mb-10">
-                <SheetTitle className="text-white/90 text-left text-xl font-semibold">
+              <SheetHeader
+                className="px-6 pt-6 pb-4"
+                style={{ borderBottom: "1px solid #DBD7C7" }}
+              >
+                <SheetTitle
+                  className="text-left text-lg font-black"
+                  style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                >
                   Menu
                 </SheetTitle>
               </SheetHeader>
 
-              <nav className="flex flex-col gap-3 mt-6">
-                {/* Main Courses Link (highlighted if on any /courses page) */}
+              <nav className="flex flex-col gap-1 px-4 pt-4">
+                {/* All Courses */}
                 <SheetClose asChild>
                   <Link
                     href="/courses"
-                    className={`block px-5 py-4 rounded-xl text-lg font-medium transition-all duration-300 border border-white/10 ${
-                      pathname === "/courses" ||
-                      pathname.startsWith("/courses/")
-                        ? "bg-primary/25 text-primary border-primary/30 shadow-[0_0_15px_rgba(43,238,121,0.3)]"
-                        : "bg-white/5 hover:bg-white/10 hover:text-white hover:shadow-lg hover:scale-[1.02]"
-                    }`}
+                    className="block px-4 py-3 rounded-xl text-sm font-semibold transition-all border"
+                    style={{
+                      color:
+                        pathname === "/courses" || pathname.startsWith("/courses/")
+                          ? "#FAA114"
+                          : "#786E67",
+                      background:
+                        pathname === "/courses" || pathname.startsWith("/courses/")
+                          ? "rgba(250,161,20,0.08)"
+                          : "transparent",
+                      borderColor:
+                        pathname === "/courses" || pathname.startsWith("/courses/")
+                          ? "rgba(250,161,20,0.20)"
+                          : "transparent",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
                   >
-                    Courses
+                    All Courses
                   </Link>
                 </SheetClose>
 
+                {/* Course categories */}
+                {Object.entries(groupedCourses).map(([category, items]) => (
+                  <div key={category} className="flex flex-col gap-0.5 mt-1">
+                    <SheetClose asChild>
+                      <Link
+                        href={`/courses?category=${encodeURIComponent(category)}`}
+                        className="px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wide border"
+                        style={{
+                          color: "#FAA114",
+                          background: "rgba(250,161,20,0.06)",
+                          borderColor: "#DBD7C7",
+                          fontFamily: "system-ui, sans-serif",
+                        }}
+                      >
+                        {category}
+                      </Link>
+                    </SheetClose>
+                    {items.map((course) => (
+                      <SheetClose asChild key={course.slug}>
+                        <Link
+                          href={`/courses/${course.slug}`}
+                          className="block px-4 py-2.5 ml-3 rounded-xl text-sm transition-all border border-transparent"
+                          style={{
+                            color:
+                              pathname === `/courses/${course.slug}`
+                                ? "#FAA114"
+                                : "#786E67",
+                            background:
+                              pathname === `/courses/${course.slug}`
+                                ? "rgba(250,161,20,0.08)"
+                                : "transparent",
+                            fontFamily: "system-ui, sans-serif",
+                          }}
+                        >
+                          {course.title}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                ))}
+
+                <div className="h-px my-2" style={{ background: "#DBD7C7" }} />
+
+                {/* Nav items */}
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block px-5 py-4 rounded-xl text-lg font-medium transition-all duration-300 border border-white/10 ${
-                        pathname === item.href
-                          ? "bg-primary/25 text-primary border-primary/30 shadow-[0_0_15px_rgba(43,238,121,0.3)]"
-                          : "bg-white/5 hover:bg-white/10 hover:text-white hover:shadow-lg hover:scale-[1.02]"
-                      }`}
+                      className="block px-4 py-3 rounded-xl text-sm font-semibold transition-all border"
+                      style={{
+                        color: pathname === item.href ? "#FAA114" : "#786E67",
+                        background:
+                          pathname === item.href
+                            ? "rgba(250,161,20,0.08)"
+                            : "transparent",
+                        borderColor:
+                          pathname === item.href
+                            ? "rgba(250,161,20,0.20)"
+                            : "transparent",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
                     >
                       {item.label}
                     </Link>
@@ -268,19 +336,28 @@ const Navbar = () => {
                 ))}
               </nav>
 
-              <div className="mt-auto pt-12 pb-8">
+              {/* Mobile CTA */}
+              <div
+                className="mt-auto px-4 pb-8 pt-4"
+                style={{ borderTop: "1px solid #DBD7C7" }}
+              >
                 <SheetClose asChild>
                   <Link
                     href="/enroll"
-                    className="block w-full py-4 px-6 text-center rounded-xl bg-primary text-background-dark font-bold text-base shadow-[0_8px_30px_rgba(43,238,121,0.4)] hover:shadow-[0_12px_40px_rgba(43,238,121,0.55)] hover:scale-[1.03] transition-all duration-300 border border-primary/30 relative overflow-hidden"
+                    className="block w-full py-3.5 px-6 text-center rounded-full text-white font-bold text-sm transition-all"
+                    style={{
+                      background: "#FAA114",
+                      boxShadow: "0 4px 16px rgba(250,161,20,0.30)",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
                   >
-                    <span className="relative z-10">Enroll Now</span>
-                    <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                    Enroll Now
                   </Link>
                 </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
+
         </div>
       </div>
     </header>

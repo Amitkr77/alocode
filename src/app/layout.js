@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon_2.png" />
 
       </head>
       <body

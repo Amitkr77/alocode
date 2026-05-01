@@ -1,482 +1,914 @@
 "use client";
 
+import courses from "@/lib/Courses";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
   Download,
   Video,
   Users,
-  // RocketLaunch,
-  // Schedule,
-  CheckCircle,
-  // ExpandMore,
-  TrendingUp,
   Star,
   Calendar,
+  Play,
+  Award,
+  Briefcase,
+  BookOpen,
+  Monitor,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
+  const fadeUp = {
+    hidden: { y: 30, opacity: 0 },
+    visible: (i = 0) => ({
+      y: 0,
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+      transition: { duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] },
+    }),
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-  };
-
-  const cardHover = {
-    hover: {
-      y: -12,
-      transition: { duration: 0.3 },
-    },
-  };
+  // Color tokens (reference palette)
+  // #FCFCFB - Emptiness (background)
+  // #DBD7C7 - Fennec Fox (subtle surface)
+  // #B3AA9E - Paper Goat (muted borders/text)
+  // #FAA114 - Zinnia (primary accent - orange)
+  // #786E67 - Grey Owl (secondary text)
+  // #262A2B - Graphite Black (headings/dark)
 
   return (
-    <>
-      <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="relative pt-20 min-h-screen flex flex-col justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div
-              className="w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `linear-gradient(135deg, rgba(16, 34, 45, 0.95) 0%, rgba(16, 34, 23, 0.85) 60%, rgba(43, 238, 121, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBka3HKYMHiuvrC_Ws6mq8gC0GvMKfPf3AVVHpx8E7DdqpK0GnPKcpXKzjptwTOS6vuFB7OUSNMxb8DE1Epljmyh43O7EITQJzwezGGnLIe1aGZbO6dOsb6bNsBt6eD8BCRaF-MhAzTbb7y9kEsBsKQVThy1c7JyJ1VvThOMr3loVXMf92eGy5dppP99TyKTz-Lgt3Bo-AdfpiN4OEUlIlKOwjSPNY_BGADvKuK0q21WHc8xxT0i2YgIxFANHobnMRjbn1xWdXoQQBq")`,
-              }}
-            />
-          </div>
-
+    <div
+      className="text-[#262A2B] overflow-x-hidden"
+      style={{
+        background: "#FCFCFB",
+        fontFamily: "'Georgia', 'Times New Roman', serif",
+      }}
+    >
+      {/* ─────────────────────────────── HERO ─────────────────────────────── */}
+      <section className="min-h-screen pt-8 max-w-7xl mx-auto px-6 lg:px-10 pb-0 relative overflow-hidden">
+        <div className="flex gap-12 items-start min-h-[85vh]">
+          {/* LEFT */}
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
-            className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24"
+            className="flex flex-col gap-6 pt-8 lg:pt-16 relative z-10 flex-1 min-w-0"
           >
-            <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
-              <motion.div variants={itemVariants}>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-surface-border backdrop-blur-sm">
-                  <span className="flex h-2 w-2 rounded-full bg-primary" />
-                  <span className="text-primary text-xs font-bold uppercase tracking-wider">
-                    New Cohort Starting Soon
-                  </span>
-                </div>
-              </motion.div>
+            {/* Decorative arrow squiggle */}
+            <motion.svg
+              custom={0}
+              variants={fadeUp}
+              className="w-32 h-12 mb-0"
+              viewBox="0 0 80 32"
+              fill="none"
+            >
+              <path
+                d="M2 20 Q20 4 38 16 Q56 28 74 12"
+                stroke="#FAA114"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <path
+                d="M68 8 L74 12 L70 18"
+                stroke="#FAA114"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </motion.svg>
 
-              <motion.h1
-                variants={itemVariants}
-                className="text-white text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight"
+            {/* Giant headline */}
+            <motion.h1
+              custom={1}
+              variants={fadeUp}
+              className="text-[clamp(3rem,8vw,6rem)] font-black leading-[1.0] tracking-tight text-[#262A2B]"
+              style={{ fontFamily: "'Georgia', serif" }}
+            >
+              Best Digital
+              <br />
+              {/* "Online" with blob behind */}
+              <span className="relative inline-block mt-1">
+                <span
+                  className="absolute -left-4 top-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[1.15em] rounded-full -z-0"
+                  style={{ background: "#FAA114" }}
+                />
+                <span className="relative z-10 text-white">Online</span>
+              </span>
+              <br />
+              Courses.
+            </motion.h1>
+
+            <motion.p
+              custom={2}
+              variants={fadeUp}
+              className="text-base leading-relaxed max-w-sm"
+              style={{ color: "#786E67", fontFamily: "system-ui, sans-serif" }}
+            >
+              Digital online courses provide an accessible and flexible way for
+              individuals to acquire new knowledge and skills in various fields.
+            </motion.p>
+
+            <motion.div custom={3} variants={fadeUp}>
+              <Link
+                href="/enroll"
+                className="inline-flex items-center gap-2 h-13 px-8 rounded-full text-white text-sm font-bold transition-all"
+                style={{
+                  background: "#FAA114",
+                  boxShadow: "0 8px 24px rgba(250,161,20,0.35)",
+                  fontFamily: "system-ui, sans-serif",
+                }}
               >
-                Alocodes – Learn. Code. <br className="hidden sm:block" />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">
-                  Transform Your Future!
-                </span>
-              </motion.h1>
+                Get Started
+              </Link>
+            </motion.div>
 
-              <motion.h2
-                variants={itemVariants}
-                className="text-gray-300 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl"
+            {/* Bottom feature cards */}
+            <motion.div
+              custom={4}
+              variants={fadeUp}
+              className="mt-8 lg:mt-16 grid grid-cols-2 gap-4"
+            >
+              {/* Card 1 */}
+              <div
+                className="rounded-2xl p-5 relative overflow-hidden group"
+                style={{ background: "#DBD7C7" }}
               >
-                Master job-ready skills in Full Stack, Data Science, and AI.
-                Join the platform with a{" "}
-                <span className="text-white font-bold">90% placement rate</span>{" "}
-                and land your dream job.
-              </motion.h2>
-
-              <motion.div
-                variants={itemVariants}
-                className="flex flex-wrap gap-4 justify-center w-full mt-4"
-              >
-                <Link
-                  href="/enroll"
-                  className="min-w-40 h-14 px-8 rounded-full bg-primary text-background-dark text-base font-bold hover:shadow-[0_0_20px_rgba(43,238,121,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  Enroll Now
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-
-                <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#234832" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="min-w-40 h-14 px-8 rounded-full bg-surface-dark border border-surface-border text-white text-base font-bold transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <Download className="w-5 h-5" />
-                  Download Free Brochure
-                </motion.button>
-              </motion.div>
-
-              <motion.div
-                variants={itemVariants}
-                className="pt-12 flex flex-col items-center gap-4"
-              >
-                <p className="text-sm font-medium text-gray-400 uppercase tracking-widest">
-                  Trusted by leading tech companies
-                </p>
-                <div className="flex flex-wrap justify-center gap-8 sm:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                  {["Google", "Amazon", "Microsoft", "Spotify"].map(
-                    (company) => (
-                      <div
-                        key={company}
-                        className="text-xl font-bold text-white flex items-center gap-2"
-                      >
-                        <Star className="w-5 h-5" />
-                        {company}
-                      </div>
-                    ),
-                  )}
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="bg-background-dark py-12 border-b border-surface-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-surface-border/50 text-center">
-              {[
-                { value: "10k+", label: "Students Enrolled" },
-                { value: "90%", label: "Hiring Rate", highlight: true },
-                { value: "500+", label: "Hiring Partners" },
-                { value: "120%", label: "Avg Salary Hike", highlight: true },
-              ].map((stat) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col gap-2 p-4"
-                >
-                  <span
-                    className={`text-4xl md:text-5xl font-black tracking-tighter ${
-                      stat.highlight ? "text-primary" : "text-white"
-                    }`}
-                  >
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-gray-400 font-medium uppercase tracking-wide">
-                    {stat.label}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Alocodes */}
-        <section className="py-20 bg-background-dark">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
-                  Why Alocodes?
-                </h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-                  Launch Your Tech Career <br />
-                  <span className="text-gray-500">With Confidence.</span>
-                </h3>
-                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                  We provide the ecosystem you need to succeed, from live
-                  mentorship to guaranteed interview opportunities. Our
-                  curriculum is designed by industry experts to make you
-                  job-ready from day one.
-                </p>
-
-                <div className="flex flex-col gap-4">
-                  {[
-                    {
-                      icon: Video,
-                      title: "Live Interactive Classes",
-                      desc: "Learn directly from experts in real-time sessions.",
-                    },
-                    {
-                      icon: Users,
-                      title: "1:1 Industry Mentorship",
-                      desc: "Personal guidance from engineers at top tech companies.",
-                    },
-                    {
-                      icon: Users,
-                      title: "Guaranteed Career Support",
-                      desc: "Resume building, mock interviews, and direct job referrals.",
-                    },
-                  ].map((feature) => (
-                    <motion.div
-                      key={feature.title}
-                      whileHover={{ x: 10 }}
-                      className="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-dark transition-colors border border-transparent hover:border-surface-border group"
-                    >
-                      <div className="w-12 h-12 rounded-full bg-surface-dark group-hover:bg-primary/20 flex items-center justify-center shrink-0 border border-surface-border group-hover:border-primary text-primary transition-all">
-                        <feature.icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="text-white text-lg font-bold mb-1">
-                          {feature.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm">{feature.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <div className="relative">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="aspect-square rounded-[3rem] overflow-hidden border-4 border-surface-border relative z-10"
+                <div
+                  className="aspect-[4/3] rounded-xl overflow-hidden mb-3"
+                  style={{ background: "#B3AA9E" }}
                 >
                   <div
                     className="w-full h-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVgknHoTBolTOjk9umcaEkublnjbOxikSRckGbgp-b1eYVK6TfdBvchd4OorV9sRdfPc-wEB6kxf5c_m1W_mtMEU6ezAgDtiA_cKqiDX3QYe9l591ZgEsX88pkpbohu1R1o9JAuBA3PTYkHFuITaRvwycL9l9VfmeySXfT_0rwa2-P3pBltCCrhOkgnog9vTl_9HsvBp5jOSz5bD3B3ukwlKeOclBtbJAlapGjnDa9aDYE9o8R2wSxw9wI5dcCQVLx0_9mqF29VlWP")`,
+                      backgroundImage: `url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&q=80")`,
                     }}
                   />
-                </motion.div>
-
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl z-0" />
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl z-0" />
-
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 4,
-                    ease: "easeInOut",
+                </div>
+                <p
+                  className="font-black text-sm leading-snug"
+                  style={{
+                    color: "#262A2B",
+                    fontFamily: "system-ui, sans-serif",
                   }}
-                  className="absolute bottom-10 -left-6 z-20 bg-background-dark p-4 rounded-2xl border border-surface-border shadow-xl flex items-center gap-4 pr-8"
                 >
-                  <div className="bg-green-500/20 p-2 rounded-full text-green-500">
-                    <CheckCircle className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase font-bold">
-                      Just Hired
-                    </p>
-                    <p className="text-white font-bold">Full Stack Developer</p>
-                    <p className="text-xs text-gray-500">@ TechCorp Inc.</p>
-                  </div>
-                </motion.div>
+                  Study at your own place
+                </p>
+                <div
+                  className="absolute bottom-4 right-4 w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{ background: "#FAA114" }}
+                >
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Top Courses Section */}
-        <section className="py-24 bg-surface-dark">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-center max-w-2xl mx-auto mb-16"
+              {/* Card 2 */}
+              <div
+                className="rounded-2xl p-5 flex flex-col gap-3 border"
+                style={{
+                  background: "#FCFCFB",
+                  borderColor: "#DBD7C7",
+                }}
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ background: "#262A2B" }}
+                >
+                  <Monitor className="w-5 h-5 text-white" />
+                </div>
+                <span
+                  className="self-start text-xs font-bold px-3 py-1 rounded-full border"
+                  style={{
+                    color: "#786E67",
+                    background: "#DBD7C7",
+                    borderColor: "#B3AA9E",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
+                >
+                  Online
+                </span>
+                <p
+                  className="font-black text-sm leading-snug"
+                  style={{
+                    color: "#262A2B",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
+                >
+                  The learning process is simple
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT — photo with overlaid cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative hidden lg:block flex-shrink-0"
+            style={{
+              width: "460px",
+              paddingTop: "100px",
+              paddingBottom: "32px",
+            }}
+          >
+            {/* Decorative starburst */}
+            <div className="absolute z-10" style={{ top: "70px", left: "0px" }}>
+              <svg viewBox="0 0 70 70" width="90" height="90" fill="none">
+                {[0, 45, 90, 135].map((deg) => (
+                  <line
+                    key={deg}
+                    x1="30"
+                    y1="4"
+                    x2="30"
+                    y2="56"
+                    stroke="#262A2B"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    transform={`rotate(${deg} 30 30)`}
+                  />
+                ))}
+                {[22.5, 67.5, 112.5, 157.5].map((deg) => (
+                  <line
+                    key={deg}
+                    x1="30"
+                    y1="10"
+                    x2="30"
+                    y2="50"
+                    stroke="#262A2B"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    transform={`rotate(${deg} 30 30)`}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            {/* UI/UX badge top right */}
+            <div
+              className="absolute z-20 w-20 h-16 rounded-full flex flex-col items-center justify-center"
+              style={{ top: "65px", right: "0px", background: "#262A2B" }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Master In-Demand Skills
-              </h2>
-              <p className="text-gray-400">
-                Choose from our most popular courses designed to get you hired.
+              <div
+                className="w-4 h-4 rounded-sm mb-0.5"
+                style={{ background: "#FAA114" }}
+              />
+              <p
+                className="text-white text-[12px] font-bold uppercase tracking-tight"
+                style={{ fontFamily: "system-ui, sans-serif" }}
+              >
+                UI/UX
               </p>
+            </div>
+
+            {/* Main photo — rounded square */}
+            <div
+              className="overflow-hidden w-full"
+              style={{
+                height: "450px",
+                borderRadius: "28px",
+                background: "#DBD7C7",
+              }}
+            >
+              <div
+                className="w-full h-full bg-cover bg-center"
+                style={{
+                  backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVgknHoTBolTOjk9umcaEkublnjbOxikSRckGbgp-b1eYVK6TfdBvchd4OorV9sRdfPc-wEB6kxf5c_m1W_mtMEU6ezAgDtiA_cKqiDX3QYe9l591ZgEsX88pkpbohu1R1o9JAuBA3PTYkHFuITaRvwycL9l9VfmeySXfT_0rwa2-P3pBltCCrhOkgnog9vTl_9HsvBp5jOSz5bD3B3ukwlKeOclBtbJAlapGjnDa9aDYE9o8R2wSxw9wI5dcCQVLx0_9mqF29VlWP")`,
+                }}
+              />
+            </div>
+
+            {/* Course card — bottom-left overlapping image */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute z-20 rounded-2xl p-4 border"
+              style={{
+                bottom: "-20px",
+                left: "-20px",
+                background: "#FCFCFB",
+                borderColor: "#DBD7C7",
+                boxShadow: "0 8px 32px rgba(38,42,43,0.14)",
+                width: "185px",
+              }}
+            >
+              <p
+                className="font-black text-sm mb-3"
+                style={{
+                  color: "#262A2B",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                UI Design Patterns
+              </p>
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
+                  style={{ background: "#FAA114" }}
+                >
+                  <span
+                    className="text-white text-[10px] font-bold"
+                    style={{ fontFamily: "system-ui, sans-serif" }}
+                  >
+                    V
+                  </span>
+                </div>
+                <div>
+                  <p
+                    className="text-xs font-bold"
+                    style={{
+                      color: "#262A2B",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    Veronica
+                  </p>
+                  <p
+                    className="text-[10px]"
+                    style={{
+                      color: "#B3AA9E",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    123 courses
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Instructor card — bottom-right overlapping image */}
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.5,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
+              className="absolute z-20 rounded-2xl p-3 border flex items-center gap-3"
+              style={{
+                bottom: "-20px",
+                right: "-20px",
+                background: "#DBD7C7",
+                borderColor: "#B3AA9E",
+                boxShadow: "0 8px 24px rgba(38,42,43,0.10)",
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: "#FAA114" }}
+              >
+                <span
+                  className="text-white text-xs font-bold"
+                  style={{ fontFamily: "system-ui, sans-serif" }}
+                >
+                  K
+                </span>
+              </div>
+              <div>
+                <div className="flex items-center gap-6 justify-between">
+                  <p
+                    className="text-xs font-bold"
+                    style={{
+                      color: "#262A2B",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    Karen
+                  </p>
+                  <p
+                    className="text-[10px] font-semibold"
+                    style={{
+                      color: "#786E67",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    $45/h
+                  </p>
+                </div>
+                <p
+                  className="text-[10px]"
+                  style={{
+                    color: "#786E67",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
+                >
+                  UI/UX designer
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex flex-wrap items-center gap-10 py-10 mt-8"
+          style={{ borderTop: "1px solid #DBD7C7" }}
+        >
+          {[
+            { val: "231+", lbl: "Courses & subjects" },
+            { val: "319+", lbl: "Instructors" },
+            { val: "72k+", lbl: "Using the app" },
+          ].map((s) => (
+            <div key={s.lbl} className="flex flex-col">
+              <p
+                className="text-3xl font-black"
+                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+              >
+                {s.val}
+              </p>
+              <p
+                className="text-xs font-medium mt-0.5"
+                style={{
+                  color: "#B3AA9E",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                {s.lbl}
+              </p>
+            </div>
+          ))}
+          <div className="ml-auto flex items-center gap-2">
+            <div className="flex -space-x-2">
+              {["#FAA114", "#786E67", "#B3AA9E", "#262A2B"].map((c, i) => (
+                <div
+                  key={i}
+                  className="w-8 h-8 rounded-full border-2"
+                  style={{ background: c, borderColor: "#FCFCFB" }}
+                />
+              ))}
+            </div>
+            <p
+              className="text-sm font-bold"
+              style={{ color: "#262A2B", fontFamily: "system-ui, sans-serif" }}
+            >
+              +72k{" "}
+              <span className="font-medium" style={{ color: "#B3AA9E" }}>
+                Happy students
+              </span>
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ─────────────────────────── WHY ALOCODES ─────────────────────────── */}
+      <section className="py-24 max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative order-2 lg:order-1"
+          >
+            <div className="rounded-[2rem] overflow-hidden aspect-[4/3]">
+              <div
+                className="w-full h-full bg-cover bg-center"
+                style={{
+                  backgroundImage: `url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80")`,
+                }}
+              />
+            </div>
+            <div
+              className="absolute -bottom-6 -right-6 w-48 h-48 rounded-full -z-10 opacity-40"
+              style={{ background: "#FAA114" }}
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-6 order-1 lg:order-2"
+          >
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-widest mb-3"
+                style={{
+                  color: "#FAA114",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                Why Alocodes?
+              </p>
+              <h2
+                className="text-4xl md:text-5xl font-black leading-tight"
+                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+              >
+                Launch Your Tech Career{" "}
+                <span style={{ color: "#B3AA9E" }}>With Confidence.</span>
+              </h2>
+            </div>
+            <p
+              className="leading-relaxed"
+              style={{ color: "#786E67", fontFamily: "system-ui, sans-serif" }}
+            >
+              We provide the ecosystem you need to succeed — from live
+              mentorship to guaranteed interview opportunities. Our curriculum
+              is designed by industry experts to make you job-ready from day
+              one.
+            </p>
+            <div className="flex flex-col gap-3">
               {[
                 {
-                  title: "Full Stack Web Development",
-                  slug: "full-stack-development-mern-stack-real-world-projects",
-                  duration: "6 Months",
-                  level: "Beginner ",
-                  bestseller: true,
-                  img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDrpJa1-otvaHGomIM-8hvc24j2DsUNvXSAoxkoH1n_hP7Bx3NOUjlikH0KPO9DOc8WQXh8KgfSGlpgjAF5vbB1AmX9kggcctPWTvQZglKPwlM7ZuPVvV5wGDbNazUCYLiImgHPpHexzt7VW4rp_YwgJ1GAOKzw-LYDmxbmbmiUrsdDLysWAbjVHTkArEiQga3jXyXpaPcHmdJ9LtKDd8GMj3bo8mDxJe6FEh55Wz-7cEXiRbQS3NQMRcVFO30UnbgwjeAyJG7Tf-7y",
+                  icon: Video,
+                  title: "Live Interactive Classes",
+                  desc: "Learn directly from experts in real-time sessions.",
                 },
                 {
-                  title: "Data Science & AI",
-                  slug: "data-science-ai-master-python-tensorflow-sql",
-                  duration: "8 Months",
-                  level: "Intermediate",
-                  img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBziaKBfMw3TfGlU0h1EZ1gn1mu8pMFnOgwIUCEaFsNhVrpwnYytL9DxOciXzsN8ABhBWhhs6q-33URPCZ2qDAeEpnoC7QyOzQ7M2huDxdSWKfcSJuU-_wctbBWiHyGCnkB_8QI4fVMD_8M2n6NAJcy5X3dwkNN1ACfeagW_lYjS-A85w6A02AUh6LXK5-DrdaPQJPXxVPU-omNMKCzFMxTnik3Tjz57kpqaqYn81LsBv0YTEZci1geke3_r0m9JK-8iH0UB1RYKz0e",
+                  icon: Users,
+                  title: "1:1 Industry Mentorship",
+                  desc: "Personal guidance from engineers at top tech companies.",
                 },
                 {
-                  title: "Cloud & DevOps Engineering",
-                  slug: "cloud-devops-aws-docker-ci-cd-pipelines",
-                  duration: "4 Months",
-                  level: "Advanced",
-                  trending: true,
-                  img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbyeeYviUTRIwMJeHR5Kar9vbvr2TVM8CIZjFNfCs5MTqpDFM2zfdLWNLXmo1vTlZrthdxS70wd54MGhBVj1Mj6ZTZrNYLSvtVMdDV2vzHd8j8L3m7I6tgzFRZhW-4RLh0nt_6vTDqfD1s6LwSX837hBEurtR2FWIgUtzjqapUT1Jnhz0vEpUOv05AlvoFeh3t4XzOpAoVk2hC2acX7MJ8eN5muM_sEZu0JJ943avfeTbnpJDEijOg7XC1Ml0G4KtOhQAKdzdxBly3",
+                  icon: Briefcase,
+                  title: "Guaranteed Career Support",
+                  desc: "Resume building, mock interviews, and direct job referrals.",
                 },
-                {
-                  title: "Graphic Designing",
-                  slug: "graphic-designing-creative-design-photoshop-illustrator",
-                  duration: "3 Months",
-                  level: "Beginner ",
-                  img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                },
-              ].map((course) => (
+              ].map((f) => (
                 <motion.div
-                  key={course.title}
-                  variants={cardHover}
-                  whileHover="hover"
-                  className="group bg-surface-dark rounded-4xl overflow-hidden border border-surface-border hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
+                  key={f.title}
+                  whileHover={{ x: 6 }}
+                  className="flex items-start gap-4 p-4 rounded-2xl border transition-all group"
+                  style={{
+                    background: "#FCFCFB",
+                    borderColor: "#DBD7C7",
+                  }}
                 >
-                  <div className="h-48 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-linear-to-t from-surface-dark to-transparent z-10" />
-                    <div
-                      className="w-full h-full bg-cover bg-center"
-                      style={{ backgroundImage: `url("${course.img}")` }}
-                    />
-                    {course.bestseller && (
-                      <div className="absolute top-4 left-4 z-20 bg-background-dark/80 backdrop-blur-md px-3 py-1 rounded-full border border-surface-border">
-                        <span className="text-primary text-xs font-bold uppercase">
-                          Bestseller
-                        </span>
-                      </div>
-                    )}
-                    {course.trending && (
-                      <div className="absolute top-4 left-4 z-20 bg-blue-500/20 backdrop-blur-md px-3 py-1 rounded-full border border-blue-500/30">
-                        <span className="text-blue-400 text-xs font-bold uppercase flex items-center gap-1">
-                          <TrendingUp className="w-3 h-3" /> Trending
-                        </span>
-                      </div>
-                    )}
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-colors"
+                    style={{
+                      background: "rgba(250,161,20,0.12)",
+                      border: "1px solid rgba(250,161,20,0.25)",
+                      color: "#FAA114",
+                    }}
+                  >
+                    <f.icon className="w-5 h-5" />
                   </div>
-
-                  <div className="p-8 flex flex-col flex-1">
-                    <div className="flex items-center justify-between gap-2 mb-4 text-xs font-bold text-gray-400 uppercase tracking-wider">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {course.duration}
-                      </span>
-                      <span>| {course.level}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                      {course.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-6 flex-1">
-                      {course.title.includes("Full Stack")
-                        ? "Master MERN stack. Build real-world projects like Netflix Clone, E-commerce app, and more."
-                        : course.title.includes("Data Science")
-                          ? "Learn Python, Machine Learning, and Deep Learning. Build AI models and data pipelines."
-                          : "Understand Smart Contracts, Solidity, and dApps. Step into the future of the internet."}
+                  <div>
+                    <p
+                      className="font-bold mb-0.5"
+                      style={{
+                        color: "#262A2B",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      {f.title}
                     </p>
-                    <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
-                      <div className="flex -space-x-2">
-                        {[
-                          "https://lh3.googleusercontent.com/aida-public/AB6AXuBVzC5yjFHxFu0Qzfs9UdLQ2VFDshVv7e8fsJ4pGwlDmFYv9ix6ua3CI3Am9x4OX23LdWC1gLvIO9ovPj5CcKxsXiy0ToZwT-REQ0rKKbF12F8JtKMBOMm9wB-cVsLPnmI9Q0CbcLhfAjgRIJ8L7DqjXFKvpyj4WJ3XccHXo4pEhPsc9i7tz5El_pugAaNNQ6npaBnrNyOktFJP0O7XxRuUpZY-UyAKNk5MHwaaWxl6bFmr6vXx-BIE7IkubOQW40KbNmbcGWG0ZkJt",
-                          "https://lh3.googleusercontent.com/aida-public/AB6AXuBE7nLOkfla162Pem4g7R0v-PgfLAooZWHU4wDEwc-OT5TqG1QTjfwARhtmmWqpLkq4Uzp61Imfe09K9avIySxdaYA86eBji-lehIm-M8A3mk_9qlPCcj5bwC2QubrRlFwMmqkl-249GAbjVwjMlIulTNQwvxxMIiilumYluLpnd5pGLrzVNTXUpKm0Y_wO_Y4HgfVKiZmlnIN2Jg2ebDYirkeXOB0JPqotIGb1xMRx_tsUeMhaUWOws7EvH4anKxnqOn4aRpFWVxZ0",
-                          "https://lh3.googleusercontent.com/aida-public/AB6AXuAKVXRU3UxVO6fyQ0Lo8FSUnAtIyLZlwMmxPhGNOamoER3Rwkycee0agPOz7ha02cdol1x6TOdbQlmnoYMZKCwhBCo9B5WB5Op4vN6_0BLdZuwEgT3jv8q36gCE7blgpOGMlNtx45Vzk8yNPGVJbUb9wnfrCDpoYcePzDNk9vdh7DWB61WXNZ6f_mdf0ioPqvhqA5tTHDVfdsU0CEU2bxPgwoMPTfB4tCvsP5IbiIT2bVt459X2lUFuD44apgaeTocyEgwkwBPyJBVH",
-                        ].map((src, index) => (
-                          <div
-                            key={index}
-                            className="w-8 h-8 rounded-full border-2 border-surface-dark bg-gray-700 overflow-hidden"
-                          >
-                            <img
-                              src={src}
-                              alt={`avatar-${index}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ))}
-                      </div>
-
-                      <Link
-                        className="text-white font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all"
-                        href={`/courses/${course.slug}`}
-                      >
-                        View Course <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
+                    <p
+                      className="text-sm"
+                      style={{
+                        color: "#B3AA9E",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      {f.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
-        <section className="bg-background-dark py-12 border-b border-surface-border">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-2xl font-bold text-white text-center mb-8">
-              Get mentored by our experts from top companies
-            </h1>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8  text-center">
-              {[
-                { label: "MORGAN STANLEY", path: "./companies/morgan.jpeg" },
-                { label: "DELOITTE", path: "./companies/deloitte.jpeg" },
-                { label: "NASDAQ", path: "./companies/nasdaq.jpeg" },
-                { label: "VOIS", path: "./companies/vois.jpeg" },
-                { label: "COGNIZANT", path: "./companies/cognizant.png" },
-                { label: "ORACLE", path: "./companies/oracle.png" },
-                { label: "DXC", path: "./companies/dxc.png" },
-                { label: "FOX", path: "./companies/fox.png" },
-              ].map((company) => (
-                <motion.div
-                  key={company.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="flex flex-col items-center justify-center p-4"
-                >
-                  <img
-                    src={company.path}
-                    alt={company.label}
-                    className="w-24 h-12 mx-auto object-contain"
-                  />
-                  <span className="mt-4 text-sm text-gray-400 font-medium uppercase tracking-wide">
-                    {company.label}
-                  </span>
-                </motion.div>
-              ))}
+      {/* ─────────────────────────── COURSES ─────────────────────────── */}
+      <section
+        className="py-24 border-y"
+        style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4"
+          >
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-widest mb-2"
+                style={{
+                  color: "#FAA114",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                Top Courses
+              </p>
+              <h2
+                className="text-3xl md:text-4xl font-black"
+                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+              >
+                Master In-Demand Skills
+              </h2>
             </div>
-          </div>
-        </section>
+            <Link
+              href="/courses"
+              className="text-sm font-bold flex items-center gap-1 transition-all shrink-0"
+              style={{ color: "#FAA114", fontFamily: "system-ui, sans-serif" }}
+            >
+              View All Courses <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
 
-        {/* FAQ Section (simplified) */}
-        <section className="py-20 bg-background-dark">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-white text-center mb-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {courses.slice(0, 4).map((course, i) => (
+              <motion.div
+                key={course.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -8, transition: { duration: 0.25 } }}
+                className="group rounded-3xl overflow-hidden border transition-all flex flex-col"
+                style={{
+                  background: "#FCFCFB",
+                  borderColor: "#B3AA9E",
+                }}
+              >
+                <div
+                  className="h-44 overflow-hidden relative"
+                  style={{ background: "#DBD7C7" }}
+                >
+                  <div
+                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                    style={{
+                      backgroundImage: `url("${course.videoThumbnail}")`,
+                    }}
+                  />
+                  {course.badge && (
+                    <div
+                      className="absolute top-3 left-3 text-white text-xs font-bold uppercase px-3 py-1 rounded-full"
+                      style={{
+                        background: "#FAA114",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      {course.badge.text}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center"
+                      style={{ background: "rgba(252,252,251,0.92)" }}
+                    >
+                      <Play
+                        className="w-5 h-5 fill-current ml-0.5"
+                        style={{ color: "#262A2B" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <div
+                    className="flex items-center justify-between text-xs font-medium mb-3"
+                    style={{ color: "#B3AA9E" }}
+                  >
+                    <span
+                      className="flex items-center gap-1"
+                      style={{ fontFamily: "system-ui, sans-serif" }}
+                    >
+                      <Calendar className="w-3.5 h-3.5" />
+                      {course.duration}
+                    </span>
+                    <span
+                      className="px-2 py-0.5 rounded-full"
+                      style={{
+                        background: "#DBD7C7",
+                        color: "#786E67",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      {course.level}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-bold mb-2 leading-snug transition-colors"
+                    style={{
+                      color: "#262A2B",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    {course.title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed flex-1 mb-4 line-clamp-2"
+                    style={{
+                      color: "#B3AA9E",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    {course.description}
+                  </p>
+                  <div
+                    className="flex items-center justify-between pt-4"
+                    style={{ borderTop: "1px solid #DBD7C7" }}
+                  >
+                    <Link
+                      href={`/courses/${course.slug}`}
+                      className="text-sm font-bold flex items-center gap-1 transition-all"
+                      style={{
+                        color: "#262A2B",
+                        fontFamily: "system-ui, sans-serif",
+                      }}
+                    >
+                      View Course <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                    {course.badge?.rating && (
+                      <span
+                        className="flex items-center gap-1 text-xs"
+                        style={{
+                          color: "#B3AA9E",
+                          fontFamily: "system-ui, sans-serif",
+                        }}
+                      >
+                        <Star
+                          className="w-3 h-3"
+                          style={{ fill: "#FAA114", color: "#FAA114" }}
+                        />
+                        {course.badge.rating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────── COMPANIES ─────────────────────────── */}
+      <section className="py-16 max-w-7xl mx-auto px-6 lg:px-10">
+        <p
+          className="text-center text-xs font-bold uppercase tracking-widest mb-10"
+          style={{ color: "#B3AA9E", fontFamily: "system-ui, sans-serif" }}
+        >
+          Our experts come from top companies
+        </p>
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-3">
+          {[
+            { label: "MORGAN STANLEY", path: "./companies/morgan.jpeg" },
+            { label: "DELOITTE", path: "./companies/deloitte.jpeg" },
+            { label: "NASDAQ", path: "./companies/nasdaq.jpeg" },
+            { label: "VOIS", path: "./companies/vois.jpeg" },
+            { label: "COGNIZANT", path: "./companies/cognizant.png" },
+            { label: "ORACLE", path: "./companies/oracle.png" },
+            { label: "DXC", path: "./companies/dxc.png" },
+            { label: "FOX", path: "./companies/fox.png" },
+          ].map((c) => (
+            <motion.div
+              key={c.label}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center gap-2 p-3 rounded-2xl border border-transparent transition-all group cursor-default"
+            >
+              <img
+                src={c.path}
+                alt={c.label}
+                className="w-16 h-8 object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+              />
+              <span
+                className="text-[9px] font-bold uppercase tracking-wide text-center leading-tight"
+                style={{
+                  color: "#B3AA9E",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                {c.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─────────────────────────── FAQ ─────────────────────────── */}
+      <section
+        className="py-20 border-t"
+        style={{ background: "#FCFCFB", borderColor: "#DBD7C7" }}
+      >
+        <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-12">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: "#FAA114", fontFamily: "system-ui, sans-serif" }}
+            >
+              FAQ
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-black"
+              style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+            >
               Frequently Asked Questions
             </h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Do I need a technical degree to enroll?",
-                  a: "No! Our courses are designed to take you from zero to hero...",
-                },
-                {
-                  q: "How does the placement guarantee work?",
-                  a: "We offer placement assistance until you get hired...",
-                },
-                {
-                  q: "Are the classes live or recorded?",
-                  a: "We use a hybrid model with recorded lectures and live weekend sessions.",
-                },
-              ].map((faq) => (
-                <details
-                  key={faq.q}
-                  className="border border-surface-border rounded-xl bg-surface-dark/20 overflow-hidden group"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer p-6">
-                    <h3 className="font-medium text-white text-lg">{faq.q}</h3>
-                    {/* <ExpandMore className="text-gray-400 group-open:rotate-180 transition-transform w-6 h-6" /> */}
-                  </summary>
-                  <p className="mt-4 pb-6 px-6 text-gray-400 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </details>
-              ))}
-            </div>
           </div>
-        </section>
-      </div>
-    </>
+          <div className="space-y-3">
+            {[
+              {
+                q: "Do I need a technical degree to enroll?",
+                a: "No! Our courses are designed to take you from zero to hero. Many of our top graduates started with no prior coding experience.",
+              },
+              {
+                q: "How does the placement guarantee work?",
+                a: "We offer placement assistance through every application cycle until you get hired, with direct referrals to 500+ partner companies.",
+              },
+              {
+                q: "Are the classes live or recorded?",
+                a: "We use a hybrid model with recorded lectures for self-paced learning and live weekend sessions with mentors for Q&A and projects.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="rounded-2xl overflow-hidden border group"
+                style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+              >
+                <summary className="flex items-center justify-between cursor-pointer p-6 list-none">
+                  <span
+                    className="font-bold"
+                    style={{
+                      color: "#262A2B",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    {faq.q}
+                  </span>
+                  <span
+                    className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-lg shrink-0 ml-4 group-open:rotate-45 transition-transform duration-200"
+                    style={{
+                      background: "rgba(250,161,20,0.15)",
+                      border: "1px solid rgba(250,161,20,0.35)",
+                      color: "#FAA114",
+                    }}
+                  >
+                    +
+                  </span>
+                </summary>
+                <p
+                  className="pb-6 px-6 leading-relaxed text-sm pt-4"
+                  style={{
+                    color: "#786E67",
+                    borderTop: "1px solid #B3AA9E",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
+                >
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────── CTA BANNER ─────────────────────────── */}
+      <section className="py-20 max-w-7xl mx-auto px-6 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-[2.5rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+          style={{ background: "#262A2B" }}
+        >
+          <div>
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: "#FAA114", fontFamily: "system-ui, sans-serif" }}
+            >
+              Limited seats available
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-black text-white leading-tight"
+              style={{ fontFamily: "'Georgia', serif" }}
+            >
+              Ready to Transform
+              <br />
+              Your Career?
+            </h2>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <Link
+              href="/enroll"
+              className="h-14 px-8 rounded-full text-white font-bold flex items-center gap-2 transition-all"
+              style={{
+                background: "#FAA114",
+                fontFamily: "system-ui, sans-serif",
+              }}
+            >
+              Enroll Now <ArrowRight className="w-5 h-5" />
+            </Link>
+            <button
+              className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-colors border"
+              style={{
+                borderColor: "rgba(219,215,199,0.25)",
+                color: "#DBD7C7",
+                fontFamily: "system-ui, sans-serif",
+              }}
+            >
+              <Download className="w-5 h-5" />
+              Download Brochure
+            </button>
+          </div>
+        </motion.div>
+      </section>
+    </div>
   );
 }
