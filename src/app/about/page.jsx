@@ -26,33 +26,29 @@ export default function About() {
   const cardHover = {
     hover: {
       y: -8,
-      borderColor: "#FAA114",
-      boxShadow: "0 8px 30px rgba(250,161,20,0.14)",
+      borderColor: "var(--primary)",
+      boxShadow: "0 8px 30px rgba(66,214,116,0.14)",
       transition: { duration: 0.3 },
     },
   };
 
   return (
     <div
-      className="overflow-x-hidden"
-      style={{
-        background: "#FCFCFB",
-        color: "#262A2B",
-        fontFamily: "system-ui, sans-serif",
-      }}
+      className="overflow-x-hidden bg-background text-foreground"
+      style={{ fontFamily: "system-ui, sans-serif" }}
     >
       <main className="flex flex-col items-center w-full">
-        <div className="w-full max-w-7xl px-4 md:px-10 lg:px-20 py-5 flex flex-col gap-20">
+        <div className="w-full max-w-7xl px-4 md:px-10 lg:px-20 py-2 flex flex-col gap-10">
           {/* ── Hero ── */}
           <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="pt-24"
+            className="pt-20"
           >
             <div
-              className="relative flex min-h-[480px] flex-col gap-6 rounded-3xl items-center justify-center p-8 overflow-hidden border"
-              style={{ borderColor: "#DBD7C7" }}
+              className="relative flex min-h-[480px] flex-col gap-6 rounded-3xl items-center justify-center p-6 overflow-hidden border"
+              style={{ borderColor: "var(--border)" }}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center rounded-3xl"
@@ -62,11 +58,11 @@ export default function About() {
               />
               <div
                 className="absolute inset-0 rounded-3xl"
-                style={{ background: "rgba(38,42,43,0.72)" }}
+                style={{ background: "rgba(15,31,19,0.75)" }}
               />
               <div
                 className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl"
-                style={{ background: "rgba(250,161,20,0.18)" }}
+                style={{ background: "rgba(66,214,116,0.18)" }}
               />
 
               <motion.div
@@ -77,7 +73,7 @@ export default function About() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest"
-                  style={{ color: "#FAA114" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   About Alocodes
                 </p>
@@ -89,15 +85,20 @@ export default function About() {
                   <span className="relative inline-block">
                     <span
                       className="absolute -left-2 top-1/2 -translate-y-1/2 w-[calc(100%+1rem)] h-[1.1em] rounded-full -z-0"
-                      style={{ background: "#FAA114" }}
+                      style={{ background: "var(--primary)" }}
                     />
-                    <span className="relative z-10">Future</span>
+                    <span
+                      className="relative z-10"
+                      style={{ color: "var(--primary-foreground)" }}
+                    >
+                      Future
+                    </span>
                   </span>{" "}
                   of Code
                 </h1>
                 <p
                   className="text-base md:text-lg font-normal leading-relaxed max-w-2xl mx-auto"
-                  style={{ color: "rgba(252,252,251,0.70)" }}
+                  style={{ color: "rgba(232,245,233,0.70)" }}
                 >
                   Empowering the next generation of developers with immersive,
                   futuristic learning experiences that bridge the gap between
@@ -113,12 +114,12 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start px-4"
           >
-            <motion.div variants={itemVariants} className="flex flex-col gap-6">
+            <motion.div variants={itemVariants} className="flex flex-col gap-3">
               <div
-                className="flex items-center gap-2 mb-2"
-                style={{ color: "#FAA114" }}
+                className="flex items-center gap-2 mb-1"
+                style={{ color: "var(--primary)" }}
               >
                 <Terminal className="w-4 h-4" />
                 <span className="font-bold tracking-widest text-xs uppercase">
@@ -126,15 +127,12 @@ export default function About() {
                 </span>
               </div>
               <h2
-                className="text-3xl md:text-4xl font-black leading-tight"
-                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                className="text-3xl md:text-4xl font-black leading-tight text-foreground"
+                style={{ fontFamily: "'Georgia', serif" }}
               >
                 From a small coding club to a global platform.
               </h2>
-              <div
-                className="flex flex-col gap-4 text-base leading-relaxed"
-                style={{ color: "#786E67" }}
-              >
+              <div className="flex flex-col gap-2 text-base leading-relaxed text-muted-foreground">
                 <p>
                   Alocodes is an EdTech initiative by Alomonx Technology,
                   created to provide high-quality coding, AI, and cloud training
@@ -151,70 +149,72 @@ export default function About() {
               </div>
             </motion.div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              {/* Mission card */}
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
                 initial="rest"
-                className="flex flex-1 gap-4 rounded-3xl border p-8 flex-col group cursor-default transition-all"
-                style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+                className="flex flex-1 gap-2 rounded-3xl border p-4 flex-col group cursor-default transition-all"
+                style={{
+                  background: "var(--card)",
+                  borderColor: "var(--border)",
+                }}
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   className="p-3 w-fit rounded-2xl flex items-center justify-center border"
                   style={{
-                    background: "rgba(250,161,20,0.12)",
-                    borderColor: "rgba(250,161,20,0.25)",
-                    color: "#FAA114",
+                    background: "rgba(66,214,116,0.12)",
+                    borderColor: "rgba(66,214,116,0.25)",
+                    color: "var(--primary)",
                   }}
                 >
                   <Zap className="w-7 h-7" />
                 </motion.div>
                 <div className="flex flex-col gap-2">
                   <h3
-                    className="text-xl font-black leading-tight"
-                    style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                    className="text-xl font-black leading-tight text-foreground"
+                    style={{ fontFamily: "'Georgia', serif" }}
                   >
                     Our Mission
                   </h3>
-                  <p
-                    className="text-base leading-relaxed"
-                    style={{ color: "#786E67" }}
-                  >
+                  <p className="text-base leading-relaxed text-muted-foreground">
                     To democratize coding education by making it interactive,
                     affordable, and deeply engaging for everyone.
                   </p>
                 </div>
               </motion.div>
 
+              {/* Vision card */}
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
-                className="flex flex-1 gap-4 rounded-3xl border p-8 flex-col group cursor-default transition-all"
-                style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+                className="flex flex-1 gap-4 rounded-3xl border p-4 flex-col group cursor-default transition-all"
+                style={{
+                  background: "var(--card)",
+                  borderColor: "var(--border)",
+                }}
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   className="p-3 w-fit rounded-2xl flex items-center justify-center border"
                   style={{
-                    background: "rgba(250,161,20,0.12)",
-                    borderColor: "rgba(250,161,20,0.25)",
-                    color: "#FAA114",
+                    background: "rgba(66,214,116,0.12)",
+                    borderColor: "rgba(66,214,116,0.25)",
+                    color: "var(--primary)",
                   }}
                 >
                   <Eye className="w-7 h-7" />
                 </motion.div>
                 <div className="flex flex-col gap-2">
                   <h3
-                    className="text-xl font-black leading-tight"
-                    style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                    className="text-xl font-black leading-tight text-foreground"
+                    style={{ fontFamily: "'Georgia', serif" }}
                   >
                     Our Vision
                   </h3>
-                  <p
-                    className="text-base leading-relaxed"
-                    style={{ color: "#786E67" }}
-                  >
+                  <p className="text-base leading-relaxed text-muted-foreground">
                     A world where anyone, regardless of background, can build
                     their dreams through the power of software.
                   </p>
@@ -229,22 +229,22 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="flex flex-col gap-10 px-4"
+            className="flex flex-col gap-6 px-4"
           >
-            <motion.div variants={itemVariants} className="text-center mb-2">
+            <motion.div variants={itemVariants} className="text-center mb-1">
               <p
-                className="text-xs font-bold uppercase tracking-widest mb-3"
-                style={{ color: "#FAA114" }}
+                className="text-xs font-bold uppercase tracking-widest mb-2"
+                style={{ color: "var(--primary)" }}
               >
                 Milestones
               </p>
               <h2
-                className="text-3xl md:text-4xl font-black"
-                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                className="text-3xl md:text-4xl font-black text-foreground"
+                style={{ fontFamily: "'Georgia', serif" }}
               >
                 Our Journey
               </h2>
-              <p className="mt-2 text-sm" style={{ color: "#B3AA9E" }}>
+              <p className="mt-1 text-sm text-muted-foreground">
                 Key milestones that defined us
               </p>
             </motion.div>
@@ -258,9 +258,9 @@ export default function About() {
                 <div
                   className="rounded-full p-2 z-10 border"
                   style={{
-                    background: "rgba(250,161,20,0.12)",
-                    borderColor: "rgba(250,161,20,0.30)",
-                    color: "#FAA114",
+                    background: "rgba(66,214,116,0.12)",
+                    borderColor: "rgba(66,214,116,0.30)",
+                    color: "var(--primary)",
                   }}
                 >
                   <Lightbulb className="w-5 h-5" />
@@ -268,30 +268,28 @@ export default function About() {
                 <div
                   className="w-0.5 h-full grow min-h-20"
                   style={{
-                    background: "linear-gradient(to bottom, #DBD7C7, #FAA114)",
+                    background:
+                      "linear-gradient(to bottom, var(--border), var(--primary))",
                   }}
                 />
               </motion.div>
               <motion.div
                 variants={itemVariants}
-                className="flex flex-1 flex-col py-2 pb-10"
+                className="flex flex-1 flex-col py-2 pb-6"
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
-                  style={{ color: "#FAA114" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   2020
                 </span>
                 <h3
-                  className="text-xl font-black leading-normal"
-                  style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                  className="text-xl font-black leading-normal text-foreground"
+                  style={{ fontFamily: "'Georgia', serif" }}
                 >
                   The Idea
                 </h3>
-                <p
-                  className="text-sm leading-relaxed mt-1"
-                  style={{ color: "#786E67" }}
-                >
+                <p className="text-sm leading-relaxed mt-1 text-muted-foreground">
                   Alocodes starts as a weekend project to help local students
                   visualize algorithms.
                 </p>
@@ -304,14 +302,14 @@ export default function About() {
               >
                 <div
                   className="w-0.5 h-full grow opacity-60"
-                  style={{ background: "#DBD7C7" }}
+                  style={{ background: "var(--border)" }}
                 />
                 <div
                   className="rounded-full p-2 z-10 border"
                   style={{
-                    background: "#DBD7C7",
-                    borderColor: "#B3AA9E",
-                    color: "#786E67",
+                    background: "var(--card)",
+                    borderColor: "var(--border)",
+                    color: "var(--muted-foreground)",
                   }}
                 >
                   <Rocket className="w-5 h-5" />
@@ -319,30 +317,28 @@ export default function About() {
                 <div
                   className="w-0.5 h-full grow min-h-20"
                   style={{
-                    background: "linear-gradient(to bottom, #DBD7C7, #FAA114)",
+                    background:
+                      "linear-gradient(to bottom, var(--border), var(--primary))",
                   }}
                 />
               </motion.div>
               <motion.div
                 variants={itemVariants}
-                className="flex flex-1 flex-col py-2 pb-10"
+                className="flex flex-1 flex-col py-2 pb-6"
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
-                  style={{ color: "#FAA114" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   2021
                 </span>
                 <h3
-                  className="text-xl font-black leading-normal"
-                  style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                  className="text-xl font-black leading-normal text-foreground"
+                  style={{ fontFamily: "'Georgia', serif" }}
                 >
                   First Course Launched
                 </h3>
-                <p
-                  className="text-sm leading-relaxed mt-1"
-                  style={{ color: "#786E67" }}
-                >
+                <p className="text-sm leading-relaxed mt-1 text-muted-foreground">
                   We released "Python for Future" and saw 500 enrollments in the
                   first week.
                 </p>
@@ -355,14 +351,14 @@ export default function About() {
               >
                 <div
                   className="w-0.5 h-full grow opacity-60"
-                  style={{ background: "#DBD7C7" }}
+                  style={{ background: "var(--border)" }}
                 />
                 <div
                   className="rounded-full p-2 z-10 border"
                   style={{
-                    background: "#DBD7C7",
-                    borderColor: "#B3AA9E",
-                    color: "#786E67",
+                    background: "var(--card)",
+                    borderColor: "var(--border)",
+                    color: "var(--muted-foreground)",
                   }}
                 >
                   <Users className="w-5 h-5" />
@@ -374,20 +370,17 @@ export default function About() {
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
-                  style={{ color: "#FAA114" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   2023
                 </span>
                 <h3
-                  className="text-xl font-black leading-normal"
-                  style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                  className="text-xl font-black leading-normal text-foreground"
+                  style={{ fontFamily: "'Georgia', serif" }}
                 >
                   10,000 Students Reached
                 </h3>
-                <p
-                  className="text-sm leading-relaxed mt-1"
-                  style={{ color: "#786E67" }}
-                >
+                <p className="text-sm leading-relaxed mt-1 text-muted-foreground">
                   A massive milestone. Our community grows to cover 45
                   countries.
                 </p>
@@ -406,17 +399,17 @@ export default function About() {
             <motion.div variants={itemVariants} className="flex flex-col gap-2">
               <p
                 className="text-xs font-bold uppercase tracking-widest"
-                style={{ color: "#FAA114" }}
+                style={{ color: "var(--primary)" }}
               >
                 The Team
               </p>
               <h2
-                className="text-3xl md:text-4xl font-black leading-tight"
-                style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
+                className="text-3xl md:text-4xl font-black leading-tight text-foreground"
+                style={{ fontFamily: "'Georgia', serif" }}
               >
                 Meet Our Mentors
               </h2>
-              <p className="text-sm" style={{ color: "#B3AA9E" }}>
+              <p className="text-sm text-muted-foreground">
                 Industry experts guiding your path.
               </p>
             </motion.div>
@@ -452,12 +445,15 @@ export default function About() {
                   key={mentor.name}
                   variants={cardHover}
                   whileHover="hover"
-                  className="group relative flex flex-col items-center gap-4 rounded-3xl border p-6 transition-all cursor-default"
-                  style={{ background: "#FCFCFB", borderColor: "#DBD7C7" }}
+                  className="group relative flex flex-col items-center gap-2 rounded-3xl border p-2 transition-all cursor-default"
+                  style={{
+                    background: "var(--background)",
+                    borderColor: "var(--border)",
+                  }}
                 >
                   <div
                     className="relative size-24 overflow-hidden rounded-full border-2 transition-colors"
-                    style={{ borderColor: "#DBD7C7" }}
+                    style={{ borderColor: "var(--border)" }}
                   >
                     <img
                       src={mentor.img}
@@ -466,22 +462,16 @@ export default function About() {
                     />
                   </div>
                   <div className="flex flex-col items-center text-center">
-                    <h3
-                      className="text-base font-black"
-                      style={{ color: "#262A2B" }}
-                    >
+                    <h3 className="text-base font-black text-foreground">
                       {mentor.name}
                     </h3>
                     <p
                       className="text-xs font-bold mt-0.5"
-                      style={{ color: "#FAA114" }}
+                      style={{ color: "var(--primary)" }}
                     >
                       {mentor.role}
                     </p>
-                    <p
-                      className="text-xs mt-2 text-center line-clamp-2 leading-relaxed"
-                      style={{ color: "#B3AA9E" }}
-                    >
+                    <p className="text-xs mt-2 text-center line-clamp-2 leading-relaxed text-muted-foreground">
                       {mentor.desc}
                     </p>
                   </div>
@@ -506,34 +496,37 @@ export default function About() {
             className="w-full pb-16"
           >
             <div
-              className="rounded-[2.5rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
-              style={{ background: "#262A2B" }}
+              className="rounded-[2.5rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden"
+              style={{ background: "var(--foreground)" }}
             >
               <div
                 className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none"
-                style={{ background: "rgba(250,161,20,0.15)" }}
+                style={{ background: "rgba(66,214,116,0.15)" }}
               />
               <div
                 className="absolute bottom-0 left-0 w-60 h-60 rounded-full blur-3xl pointer-events-none"
-                style={{ background: "rgba(250,161,20,0.08)" }}
+                style={{ background: "rgba(66,214,116,0.08)" }}
               />
 
               <div className="relative z-10">
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "#FAA114" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   Free Consultation
                 </p>
                 <h2
-                  className="text-3xl md:text-4xl font-black text-white leading-tight max-w-sm"
-                  style={{ fontFamily: "'Georgia', serif" }}
+                  className="text-3xl md:text-4xl font-black leading-tight max-w-sm"
+                  style={{
+                    color: "var(--background)",
+                    fontFamily: "'Georgia', serif",
+                  }}
                 >
                   Stuck on a problem? Let's talk code.
                 </h2>
                 <p
                   className="text-sm mt-3 max-w-sm leading-relaxed"
-                  style={{ color: "rgba(252,252,251,0.60)" }}
+                  style={{ color: "rgba(232,245,233,0.60)" }}
                 >
                   Connect with our senior mentors for a free 15-minute
                   consultation to map out your learning path.
@@ -543,10 +536,11 @@ export default function About() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="relative z-10 shrink-0 flex items-center gap-2 h-14 px-8 rounded-full text-white text-base font-bold transition-colors cursor-pointer"
+                className="relative z-10 shrink-0 flex items-center gap-2 h-14 px-8 rounded-full text-base font-bold transition-colors cursor-pointer"
                 style={{
-                  background: "#FAA114",
-                  boxShadow: "0 4px 20px rgba(250,161,20,0.35)",
+                  background: "var(--primary)",
+                  color: "var(--primary-foreground)",
+                  boxShadow: "0 4px 20px rgba(66,214,116,0.35)",
                 }}
               >
                 <MessageCircle className="w-5 h-5" />

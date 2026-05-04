@@ -3,7 +3,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 
 import {
-  Play,
   FileVideoCamera,
   Group,
   CheckCircle,
@@ -14,6 +13,7 @@ import {
   Filter,
   Grid,
   List,
+  Play,
 } from "lucide-react";
 
 import {
@@ -23,7 +23,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -35,6 +34,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { useRouter, useSearchParams } from "next/navigation";
 import courses from "../../lib/Courses";
+import CourseCard from "@/components/CourseCard";
 
 const durationOptions = [
   { value: "all", label: "All Durations" },
@@ -72,7 +72,6 @@ export default function CoursesPage() {
   const [viewMode, setViewMode] = useState("grid");
   const [openItems, setOpenItems] = useState(new Set());
 
-  // Sync category from URL params
   useEffect(() => {
     const categoryFromUrl = searchParams.get("category") || "all";
     setSelectedCategory(categoryFromUrl);
@@ -148,181 +147,200 @@ export default function CoursesPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col overflow-x-hidden"
-      style={{
-        background: "#FCFCFB",
-        color: "#262A2B",
-        fontFamily: "system-ui, sans-serif",
-      }}
+      className="min-h-screen flex flex-col overflow-x-hidden bg-background text-foreground"
+      style={{ fontFamily: "system-ui, sans-serif" }}
     >
-      <main className="grow flex flex-col items-center w-full px-4 md:px-10 lg:px-40 py-10 mt-16">
+      <main className="grow flex flex-col items-center w-full px-3 sm:px-6 md:px-10 lg:px-16 py-6 sm:py-10 mt-14">
         {/* ── Hero ── */}
-        <div className="w-full max-w-[960px] text-center mb-14">
-          <p
-            className="text-xs font-bold uppercase tracking-widest mb-4"
-            style={{ color: "#FAA114" }}
-          >
-            All Courses
-          </p>
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight"
-            style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
-          >
-            Choose Your Path to
-            <br />
-            <span className="relative inline-block mt-1">
-              <span
-                className="absolute -left-3 top-1/2 -translate-y-1/2 w-[calc(100%+1.5rem)] h-[1.1em] rounded-full -z-0"
-                style={{ background: "#FAA114" }}
-              />
-              <span className="relative z-10 text-white">Tech Mastery</span>
-            </span>
-          </h1>
-          <p
-            className="mt-6 text-base max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "#786E67" }}
-          >
-            Curated curriculums designed for the modern job market. Level up
-            your skills with hands-on projects and expert mentorship.
-          </p>
+        <div className="w-full max-w-[1300px] text-center mb-6 sm:mb-10 relative rounded-2xl sm:rounded-3xl overflow-hidden py-8 sm:py-12 px-4 sm:px-8">
+          {/* Background image */}
+          <img
+            src="/all_course_background.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            style={{ opacity: 0.15, zIndex: 0 }}
+          />
 
-          {/* Quick Stats */}
-          <div
-            className="mt-10 inline-flex items-center gap-0 rounded-2xl overflow-hidden divide-x"
-            style={{
-              border: "1px solid #DBD7C7",
-              background: "#DBD7C7",
-              divideColor: "#B3AA9E",
-            }}
-          >
-            {[
-              { val: "16+", lbl: "Courses" },
-              { val: "5000+", lbl: "Students" },
-              { val: "4.8/5", lbl: "Avg Rating" },
-            ].map((s) => (
-              <div
-                key={s.lbl}
-                className="px-8 py-4 text-center"
-                style={{ borderRight: "1px solid #B3AA9E" }}
-              >
-                <div
-                  className="text-2xl font-black"
-                  style={{ color: "#FAA114", fontFamily: "'Georgia', serif" }}
+          {/* Hero content */}
+          <div className="relative" style={{ zIndex: 1 }}>
+            <p
+              className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: "var(--primary)" }}
+            >
+              All Courses
+            </p>
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-foreground"
+              style={{ fontFamily: "'Georgia', serif" }}
+            >
+              Choose Your Path to
+              <br />
+              <span className="relative inline-block mt-1">
+                <span
+                  className="absolute -left-2 sm:-left-3 top-1/2 -translate-y-1/2 w-[calc(100%+1rem)] sm:w-[calc(100%+1.5rem)] h-[1.1em] rounded-full -z-0"
+                  style={{ background: "var(--primary)" }}
+                />
+                <span
+                  className="relative z-10"
+                  style={{ color: "var(--primary-foreground)" }}
                 >
-                  {s.val}
-                </div>
+                  Tech Mastery
+                </span>
+              </span>
+            </h1>
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed text-muted-foreground px-2">
+              Curated curriculums designed for the modern job market. Level up
+              your skills with hands-on projects and expert mentorship.
+            </p>
+
+            {/* Quick Stats */}
+            <div
+              className="mt-6 sm:mt-10 inline-flex items-center gap-0 rounded-xl sm:rounded-2xl overflow-hidden divide-x"
+              style={{
+                border: "1px solid var(--border)",
+                background: "var(--card)",
+              }}
+            >
+              {[
+                { val: "7+", lbl: "Courses" },
+                { val: "500+", lbl: "Students" },
+                { val: "4.6/5", lbl: "Avg Rating" },
+              ].map((s) => (
                 <div
-                  className="text-xs font-medium mt-0.5"
-                  style={{ color: "#786E67" }}
+                  key={s.lbl}
+                  className="px-4 sm:px-8 py-3 sm:py-4 text-center"
+                  style={{ borderRight: "1px solid var(--border)" }}
                 >
-                  {s.lbl}
+                  <div
+                    className="text-lg sm:text-2xl font-black"
+                    style={{
+                      color: "var(--primary)",
+                      fontFamily: "'Georgia', serif",
+                    }}
+                  >
+                    {s.val}
+                  </div>
+                  <div className="text-[10px] sm:text-xs font-medium mt-0.5 text-muted-foreground">
+                    {s.lbl}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
         {/* ── Filters ── */}
-        <div className="sticky top-20 z-40 w-full max-w-[960px] mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-4">
-            {/* Search */}
-            <div className="relative">
-              <Search
-                className="absolute left-3 top-1/2 -translate-y-1/2 size-4"
-                style={{ color: "#B3AA9E" }}
-              />
-              <Input
-                placeholder="Search courses, skills..."
-                className="pl-10 rounded-xl"
-                style={{
-                  background: "#FCFCFB",
-                  border: "1px solid #DBD7C7",
-                  color: "#262A2B",
-                }}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
+        <div className="sticky top-16 sm:top-20 z-40 w-full max-w-[1300px] mb-6 sm:mb-10">
+          {/* Search — full width */}
+          <div className="relative mb-3">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+            <Input
+              placeholder="Search courses, skills..."
+              className="pl-10 rounded-xl w-full"
+              style={{
+                background: "var(--background)",
+                border: "1px solid var(--border)",
+                color: "var(--foreground)",
+              }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+
+          {/* 3 dropdowns side by side (works on mobile too) */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-3">
             <Select value={selectedLevel} onValueChange={setSelectedLevel}>
               <SelectTrigger
-                className="w-full rounded-xl"
+                className="w-full rounded-xl text-xs sm:text-sm"
                 style={{
-                  background: "#FCFCFB",
-                  border: "1px solid #DBD7C7",
-                  color: "#786E67",
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                  color: "var(--muted-foreground)",
                 }}
               >
-                <SelectValue placeholder="Skill Level" />
+                <SelectValue placeholder="Level" />
               </SelectTrigger>
               <SelectContent
                 className="rounded-xl shadow-lg"
-                style={{ background: "#FCFCFB", border: "1px solid #DBD7C7" }}
+                style={{
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                }}
               >
-                {levelOptions.map((option) => (
+                {levelOptions.map((o) => (
                   <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    style={{ color: "#262A2B" }}
+                    key={o.value}
+                    value={o.value}
+                    className="text-foreground"
                   >
-                    {option.label}
+                    {o.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
+
             <Select
               value={selectedDuration}
               onValueChange={setSelectedDuration}
             >
               <SelectTrigger
-                className="w-full rounded-xl"
+                className="w-full rounded-xl text-xs sm:text-sm"
                 style={{
-                  background: "#FCFCFB",
-                  border: "1px solid #DBD7C7",
-                  color: "#786E67",
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                  color: "var(--muted-foreground)",
                 }}
               >
                 <SelectValue placeholder="Duration" />
               </SelectTrigger>
               <SelectContent
                 className="rounded-xl shadow-lg"
-                style={{ background: "#FCFCFB", border: "1px solid #DBD7C7" }}
+                style={{
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                }}
               >
-                {durationOptions.map((option) => (
+                {durationOptions.map((o) => (
                   <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    style={{ color: "#262A2B" }}
+                    key={o.value}
+                    value={o.value}
+                    className="text-foreground"
                   >
-                    {option.label}
+                    {o.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
+
             <Select
               value={selectedCategory}
-              onValueChange={setSelectedCategory}
+              onValueChange={handleCategoryChange}
             >
               <SelectTrigger
-                className="w-full rounded-xl"
+                className="w-full rounded-xl text-xs sm:text-sm"
                 style={{
-                  background: "#FCFCFB",
-                  border: "1px solid #DBD7C7",
-                  color: "#786E67",
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                  color: "var(--muted-foreground)",
                 }}
               >
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent
                 className="rounded-xl shadow-lg"
-                style={{ background: "#FCFCFB", border: "1px solid #DBD7C7" }}
+                style={{
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                }}
               >
-                {categoryOptions.map((option) => (
+                {categoryOptions.map((o) => (
                   <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    style={{ color: "#262A2B" }}
+                    key={o.value}
+                    value={o.value}
+                    className="text-foreground"
                   >
-                    {option.label}
+                    {o.label}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -333,20 +351,20 @@ export default function CoursesPage() {
           <div
             className="flex justify-between items-center rounded-full px-3 py-1.5"
             style={{
-              background: "#DBD7C7",
-              border: "1px solid #B3AA9E",
+              background: "var(--card)",
+              border: "1px solid var(--border)",
             }}
           >
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger
-                className="h-8 border-none text-sm shadow-none focus:ring-0 w-auto bg-transparent"
-                style={{ color: "#786E67" }}
-              >
-                <SelectValue placeholder="Sort by Rating" />
+              <SelectTrigger className="h-8 border-none text-xs sm:text-sm shadow-none focus:ring-0 w-auto bg-transparent text-muted-foreground">
+                <SelectValue placeholder="Sort" />
               </SelectTrigger>
               <SelectContent
                 className="rounded-xl shadow-lg"
-                style={{ background: "#FCFCFB", border: "1px solid #DBD7C7" }}
+                style={{
+                  background: "var(--background)",
+                  border: "1px solid var(--border)",
+                }}
               >
                 {[
                   { value: "rating", label: "Highest Rated" },
@@ -357,7 +375,7 @@ export default function CoursesPage() {
                   <SelectItem
                     key={opt.value}
                     value={opt.value}
-                    style={{ color: "#262A2B" }}
+                    className="text-foreground"
                   >
                     {opt.label}
                   </SelectItem>
@@ -370,11 +388,15 @@ export default function CoursesPage() {
                 onClick={() => setViewMode("grid")}
                 className="h-8 w-8 rounded-full flex items-center justify-center transition-all"
                 style={{
-                  background: viewMode === "grid" ? "#FAA114" : "transparent",
-                  color: viewMode === "grid" ? "#fff" : "#B3AA9E",
+                  background:
+                    viewMode === "grid" ? "var(--primary)" : "transparent",
+                  color:
+                    viewMode === "grid"
+                      ? "var(--primary-foreground)"
+                      : "var(--muted-foreground)",
                   boxShadow:
                     viewMode === "grid"
-                      ? "0 2px 8px rgba(250,161,20,0.30)"
+                      ? "0 2px 8px rgba(66,214,116,0.30)"
                       : "none",
                 }}
               >
@@ -385,11 +407,14 @@ export default function CoursesPage() {
                 className="h-8 w-8 rounded-full flex items-center justify-center transition-all"
                 style={{
                   background:
-                    viewMode === "accordion" ? "#FAA114" : "transparent",
-                  color: viewMode === "accordion" ? "#fff" : "#B3AA9E",
+                    viewMode === "accordion" ? "var(--primary)" : "transparent",
+                  color:
+                    viewMode === "accordion"
+                      ? "var(--primary-foreground)"
+                      : "var(--muted-foreground)",
                   boxShadow:
                     viewMode === "accordion"
-                      ? "0 2px 8px rgba(250,161,20,0.30)"
+                      ? "0 2px 8px rgba(66,214,116,0.30)"
                       : "none",
                 }}
               >
@@ -398,26 +423,29 @@ export default function CoursesPage() {
             </div>
           </div>
 
-          <p
-            className="text-xs font-medium mt-2 text-center"
-            style={{ color: "#B3AA9E" }}
-          >
+          <p className="text-xs font-medium mt-2 text-center text-muted-foreground">
             Showing {filteredCourses.length} of {courses.length} courses
           </p>
         </div>
 
         {/* ── Course List ── */}
-        <div className="w-full max-w-[960px]">
+        <div className="w-full max-w-[1300px]">
           {viewMode === "grid" ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            /* 1 col → 2 col → 4 col */
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {filteredCourses.map((course) => (
-                <CourseCard key={course.id} course={course} />
+                <CourseCard
+                  key={course.id}
+                  course={course}
+                  showPricing={true}
+                  showMode={true}
+                />
               ))}
             </div>
           ) : (
             <Accordion
               type="multiple"
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-3 sm:gap-4"
               value={Array.from(openItems)}
               onValueChange={(values) => setOpenItems(new Set(values))}
             >
@@ -425,19 +453,19 @@ export default function CoursesPage() {
                 <AccordionItem
                   key={course.id}
                   value={course.id}
-                  className="rounded-3xl overflow-hidden"
+                  className="rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    border: "1px solid #DBD7C7",
-                    background: "#FCFCFB",
+                    border: "1px solid var(--border)",
+                    background: "var(--background)",
                   }}
                 >
                   <AccordionTrigger
-                    className="flex items-center justify-between px-6 py-5 transition-colors"
-                    style={{ background: "#DBD7C7" }}
+                    className="flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 transition-colors"
+                    style={{ background: "var(--card)" }}
                     onClick={() => handleToggle(course.id)}
                   >
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 w-full">
-                      <div className="flex items-center gap-3">
+                    <div className="flex flex-col gap-2 w-full text-left">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <Badge
                           variant="secondary"
                           className={`text-[10px] font-bold uppercase tracking-wider ${course.badge.color}`}
@@ -452,35 +480,31 @@ export default function CoursesPage() {
                               style={{
                                 fill:
                                   i < Math.floor(course.rating)
-                                    ? "#FAA114"
+                                    ? "var(--primary)"
                                     : "transparent",
                                 color:
                                   i < Math.floor(course.rating)
-                                    ? "#FAA114"
-                                    : "#B3AA9E",
+                                    ? "var(--primary)"
+                                    : "var(--border)",
                               }}
                             />
                           ))}
-                          <span
-                            className="text-xs ml-1"
-                            style={{ color: "#B3AA9E" }}
-                          >
+                          <span className="text-xs ml-1 text-muted-foreground">
                             ({course.reviewCount})
                           </span>
                         </div>
                       </div>
                       <Link
                         href={`/courses/${course.slug}`}
-                        className="text-base md:text-lg font-bold text-left flex-1 transition-colors"
-                        style={{ color: "#262A2B" }}
+                        className="text-sm sm:text-base md:text-lg font-bold transition-colors text-foreground leading-snug"
                       >
                         {course.title}
                       </Link>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent
-                    className="px-6 py-7 animate-in slide-in-from-top-2 duration-200"
-                    style={{ borderTop: "1px solid #DBD7C7" }}
+                    className="px-4 sm:px-6 py-5 sm:py-7 animate-in slide-in-from-top-2 duration-200"
+                    style={{ borderTop: "1px solid var(--border)" }}
                   >
                     <CourseContent course={course} />
                   </AccordionContent>
@@ -492,20 +516,20 @@ export default function CoursesPage() {
 
         {/* ── Empty state ── */}
         {filteredCourses.length === 0 && (
-          <div className="text-center py-16">
+          <div className="text-center py-12 sm:py-16">
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border"
-              style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 border"
+              style={{
+                background: "var(--card)",
+                borderColor: "var(--border)",
+              }}
             >
-              <Search className="w-7 h-7" style={{ color: "#B3AA9E" }} />
+              <Search className="w-6 h-6 sm:w-7 sm:h-7 text-muted-foreground" />
             </div>
-            <p
-              className="text-lg font-semibold mb-1"
-              style={{ color: "#786E67" }}
-            >
+            <p className="text-base sm:text-lg font-semibold mb-1 text-muted-foreground">
               No courses found
             </p>
-            <p className="text-sm mb-6" style={{ color: "#B3AA9E" }}>
+            <p className="text-sm mb-6 text-muted-foreground">
               Try adjusting your filters or search term.
             </p>
             <button
@@ -515,10 +539,11 @@ export default function CoursesPage() {
                 setSelectedLevel("all");
                 setSelectedCategory("all");
               }}
-              className="inline-flex items-center gap-2 h-10 px-6 rounded-full text-white text-sm font-bold transition-all"
+              className="inline-flex items-center gap-2 h-10 px-6 rounded-full text-sm font-bold transition-all"
               style={{
-                background: "#FAA114",
-                boxShadow: "0 4px 16px rgba(250,161,20,0.30)",
+                background: "var(--primary)",
+                color: "var(--primary-foreground)",
+                boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
               }}
             >
               <RefreshCcw className="size-4" /> Clear Filters
@@ -530,358 +555,238 @@ export default function CoursesPage() {
   );
 }
 
-// ── Accordion Detail Content ──
+// ── Accordion Detail Content ─────────────────────────────────────────────────
 function CourseContent({ course }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
-      <div className="flex-1 space-y-6">
-        {/* Top info grid */}
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-6 border-b border-dashed"
-          style={{ borderColor: "#DBD7C7" }}
-        >
-          {course.duration && (
-            <div className="flex items-center gap-3">
-              <div
-                className="w-2 h-2 rounded-full shrink-0"
-                style={{ background: "#FAA114" }}
-              />
-              <div>
-                <p className="text-xs" style={{ color: "#B3AA9E" }}>
-                  Duration
-                </p>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#262A2B" }}
-                >
-                  {course.duration}
-                </p>
-              </div>
-            </div>
-          )}
-          {course.mode && (
-            <div className="flex items-center gap-3">
-              <FileVideoCamera
-                className="size-5 shrink-0"
-                style={{ color: "#FAA114" }}
-              />
-              <div>
-                <p className="text-xs" style={{ color: "#B3AA9E" }}>
-                  Mode
-                </p>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#262A2B" }}
-                >
-                  {course.mode}
-                </p>
-              </div>
-            </div>
-          )}
-          {course.batchSize && (
-            <div className="flex items-center gap-3">
-              <Group className="size-5 shrink-0" style={{ color: "#FAA114" }} />
-              <div>
-                <p className="text-xs" style={{ color: "#B3AA9E" }}>
-                  Batch Size
-                </p>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#262A2B" }}
-                >
-                  {course.batchSize}
-                </p>
-              </div>
-            </div>
-          )}
-          {course.pricing && (
-            <div className="flex items-center gap-3">
-              <div
-                className="w-2 h-2 rounded-sm shrink-0"
-                style={{ background: "#FAA114" }}
-              />
-              <div>
-                <p className="text-xs" style={{ color: "#B3AA9E" }}>
-                  Pricing
-                </p>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#262A2B" }}
-                >
-                  {course.pricing}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {course.skills && (
-          <div>
-            <h4
-              className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2"
-              style={{ color: "#786E67" }}
-            >
-              <Filter className="size-3.5" style={{ color: "#FAA114" }} />
-              Skills You'll Master
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {course.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="text-xs px-3 py-1 rounded-full font-medium border"
-                  style={{
-                    background: "#DBD7C7",
-                    borderColor: "#B3AA9E",
-                    color: "#786E67",
-                  }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {course.outcomes && (
-          <div>
-            <h4
-              className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2"
-              style={{ color: "#786E67" }}
-            >
-              <CheckCircle className="size-3.5" style={{ color: "#FAA114" }} />
-              Career Outcomes
-            </h4>
-            <ul className="space-y-2">
-              {course.outcomes.map((outcome, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm"
-                  style={{ color: "#786E67" }}
-                >
-                  <CheckCircle
-                    className="size-4 mt-0.5 shrink-0"
-                    style={{ color: "#FAA114" }}
-                  />
-                  {outcome}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {course.description && (
-          <p className="text-sm leading-relaxed" style={{ color: "#786E67" }}>
-            {course.description}
-          </p>
-        )}
-      </div>
-
-      {/* Right panel */}
-      <div className="w-full lg:w-72 flex flex-col gap-4">
-        {course.videoThumbnail && (
-          <Link href={`/courses/${course.slug}`} className="block">
+    <div className="flex flex-col gap-6 sm:gap-8">
+      {/* Info strip */}
+      <div
+        className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-dashed"
+        style={{ borderColor: "var(--border)" }}
+      >
+        {course.duration && (
+          <div className="flex items-center gap-2 sm:gap-3">
             <div
-              className="relative aspect-video rounded-2xl overflow-hidden cursor-pointer group"
-              style={{ background: "#DBD7C7" }}
-            >
-              <img
-                src={course.videoThumbnail}
-                alt="Video thumbnail"
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div
-                  className="size-12 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform"
-                  style={{
-                    background: "rgba(252,252,251,0.92)",
-                    boxShadow: "0 4px 16px rgba(38,42,43,0.20)",
-                  }}
-                >
-                  <Play
-                    className="size-5"
-                    style={{ fill: "#FAA114", color: "#FAA114" }}
-                  />
-                </div>
-              </div>
-              {course.videoTitle && (
-                <div
-                  className="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-lg text-xs text-white font-medium backdrop-blur-sm"
-                  style={{ background: "rgba(38,42,43,0.70)" }}
-                >
-                  {course.videoTitle}
-                </div>
-              )}
-            </div>
-          </Link>
-        )}
-
-        {course.testimonial && (
-          <div
-            className="p-4 rounded-2xl border text-center"
-            style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
-          >
-            <p
-              className="text-xs mb-3 italic leading-relaxed"
-              style={{ color: "#786E67" }}
-            >
-              "{course.testimonial.quote}"
-            </p>
-            <p className="text-xs font-bold" style={{ color: "#262A2B" }}>
-              — {course.testimonial.author}
-            </p>
-            <div className="flex justify-center gap-0.5 mt-2">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="size-3"
-                  style={{ fill: "#FAA114", color: "#FAA114" }}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="flex flex-col gap-3 mt-auto">
-          <Link
-            href={`/courses/${course.slug}`}
-            className="w-full h-11 rounded-full text-white text-sm font-bold flex items-center justify-center transition-all"
-            style={{
-              background: "#FAA114",
-              boxShadow: "0 4px 16px rgba(250,161,20,0.30)",
-            }}
-          >
-            Enroll Now
-          </Link>
-          <Link
-            href={`/syllabus/${course.slug}`}
-            className="w-full h-11 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-all border"
-            style={{
-              background: "#FCFCFB",
-              borderColor: "#DBD7C7",
-              color: "#786E67",
-            }}
-          >
-            <Download className="size-4" /> Download Syllabus
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── Grid Card ──
-function CourseCard({ course }) {
-  return (
-    <div
-      className="group rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 flex flex-col"
-      style={{
-        background: "#FCFCFB",
-        border: "1px solid #DBD7C7",
-        boxShadow: "0 2px 8px rgba(38,42,43,0.04)",
-      }}
-    >
-      <Link href={`/courses/${course.slug}`}>
-        {course.videoThumbnail && (
-          <div
-            className="relative aspect-[4/3] overflow-hidden"
-            style={{ background: "#DBD7C7" }}
-          >
-            <img
-              src={course.videoThumbnail}
-              alt={course.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="w-2 h-2 rounded-full shrink-0"
+              style={{ background: "var(--primary)" }}
             />
+            <div>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">
+                Duration
+              </p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground">
+                {course.duration}
+              </p>
+            </div>
+          </div>
+        )}
+        {course.mode && (
+          <div className="flex items-center gap-2 sm:gap-3">
+            <FileVideoCamera
+              className="size-4 sm:size-5 shrink-0"
+              style={{ color: "var(--primary)" }}
+            />
+            <div>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">
+                Mode
+              </p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground">
+                {course.mode}
+              </p>
+            </div>
+          </div>
+        )}
+        {course.batchSize && (
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Group
+              className="size-4 sm:size-5 shrink-0"
+              style={{ color: "var(--primary)" }}
+            />
+            <div>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">
+                Batch Size
+              </p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground">
+                {course.batchSize}
+              </p>
+            </div>
+          </div>
+        )}
+        {course.pricing && (
+          <div className="flex items-center gap-2 sm:gap-3">
             <div
-              className="absolute inset-0"
+              className="w-2 h-2 rounded-sm shrink-0"
+              style={{ background: "var(--primary)" }}
+            />
+            <div>
+              <p className="text-[10px] sm:text-xs text-muted-foreground">
+                Pricing
+              </p>
+              <p className="text-xs sm:text-sm font-semibold text-foreground">
+                {course.pricing}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Body: skills/outcomes left, video/CTA right */}
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
+        <div className="flex-1 space-y-5 sm:space-y-6">
+          {course.skills && (
+            <div>
+              <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 sm:mb-3 flex items-center gap-2 text-muted-foreground">
+                <Filter
+                  className="size-3 sm:size-3.5"
+                  style={{ color: "var(--primary)" }}
+                />
+                Skills You'll Master
+              </h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                {course.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full font-medium border"
+                    style={{
+                      background: "var(--card)",
+                      borderColor: "var(--border)",
+                      color: "var(--muted-foreground)",
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {course.outcomes && (
+            <div>
+              <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 sm:mb-3 flex items-center gap-2 text-muted-foreground">
+                <CheckCircle
+                  className="size-3 sm:size-3.5"
+                  style={{ color: "var(--primary)" }}
+                />
+                Career Outcomes
+              </h4>
+              <ul className="space-y-1.5 sm:space-y-2">
+                {course.outcomes.map((outcome, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground"
+                  >
+                    <CheckCircle
+                      className="size-3.5 sm:size-4 mt-0.5 shrink-0"
+                      style={{ color: "var(--primary)" }}
+                    />
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {course.description && (
+            <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
+              {course.description}
+            </p>
+          )}
+        </div>
+
+        {/* Right panel */}
+        <div className="w-full lg:w-72 flex flex-col gap-3 sm:gap-4">
+          {course.videoThumbnail && (
+            <Link href={`/courses/${course.slug}`} className="block">
+              <div
+                className="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group"
+                style={{ background: "var(--card)" }}
+              >
+                <img
+                  src={course.videoThumbnail}
+                  alt="Video thumbnail"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className="size-10 sm:size-12 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform"
+                    style={{
+                      background: "rgba(240,250,240,0.92)",
+                      boxShadow: "0 4px 16px rgba(15,45,26,0.20)",
+                    }}
+                  >
+                    <Play
+                      className="size-4 sm:size-5"
+                      style={{
+                        fill: "var(--primary)",
+                        color: "var(--primary)",
+                      }}
+                    />
+                  </div>
+                </div>
+                {course.videoTitle && (
+                  <div
+                    className="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-lg text-xs text-white font-medium backdrop-blur-sm"
+                    style={{ background: "rgba(15,31,19,0.70)" }}
+                  >
+                    {course.videoTitle}
+                  </div>
+                )}
+              </div>
+            </Link>
+          )}
+
+          {course.testimonial && (
+            <div
+              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl border text-center"
               style={{
-                background:
-                  "linear-gradient(to top, rgba(38,42,43,0.45), transparent)",
+                background: "var(--card)",
+                borderColor: "var(--border)",
               }}
-            />
-            <div className="absolute top-3 left-3">
-              <Badge
-                className={`text-[10px] font-bold uppercase ${course.badge.color}`}
-              >
-                {course.badge.text}
-              </Badge>
-            </div>
-            {/* Play overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <div
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{
-                  background: "rgba(252,252,251,0.92)",
-                  boxShadow: "0 4px 16px rgba(38,42,43,0.20)",
-                }}
-              >
-                <Play
-                  className="size-4 ml-0.5"
-                  style={{ fill: "#FAA114", color: "#FAA114" }}
-                />
-              </div>
-            </div>
-            {course.videoTitle && (
-              <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-xs text-white font-medium line-clamp-1">
-                  {course.videoTitle}
-                </p>
-              </div>
-            )}
-          </div>
-        )}
-        <div className="p-5 flex flex-col flex-1">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="size-3"
-                  style={{
-                    fill:
-                      i < Math.floor(course.rating) ? "#FAA114" : "transparent",
-                    color:
-                      i < Math.floor(course.rating) ? "#FAA114" : "#DBD7C7",
-                  }}
-                />
-              ))}
-              <span className="text-xs ml-1" style={{ color: "#B3AA9E" }}>
-                ({course.reviewCount})
-              </span>
-            </div>
-            <span className="text-sm font-bold" style={{ color: "#FAA114" }}>
-              {typeof course.pricing === "object"
-                ? `From ₹${course.pricing.current}/mo`
-                : course.pricing}
-            </span>
-          </div>
-          <h3
-            className="font-bold text-base mb-2 line-clamp-2 leading-snug transition-colors"
-            style={{ color: "#262A2B" }}
-          >
-            {course.title}
-          </h3>
-          <p
-            className="text-sm mb-4 line-clamp-2 flex-1 leading-relaxed"
-            style={{ color: "#B3AA9E" }}
-          >
-            {course.description}
-          </p>
-          <div
-            className="flex items-center justify-between pt-3"
-            style={{ borderTop: "1px solid #DBD7C7" }}
-          >
-            <span className="text-xs" style={{ color: "#B3AA9E" }}>
-              {course.duration} · {course.mode}
-            </span>
-            <span
-              className="text-xs font-bold flex items-center gap-1 group-hover:gap-1.5 transition-all"
-              style={{ color: "#FAA114" }}
             >
-              View Course →
-            </span>
+              <p className="text-xs mb-2 sm:mb-3 italic leading-relaxed text-muted-foreground">
+                "{course.testimonial.quote}"
+              </p>
+              <p className="text-xs font-bold text-foreground">
+                — {course.testimonial.author}
+              </p>
+              <div className="flex justify-center gap-0.5 mt-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="size-3"
+                    style={{ fill: "var(--primary)", color: "var(--primary)" }}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col gap-2 sm:gap-3">
+            <Link
+              href={`/courses/${course.slug}`}
+              className="w-full h-10 sm:h-11 rounded-full text-sm font-bold flex items-center justify-center transition-all"
+              style={{
+                background: "var(--primary)",
+                color: "var(--primary-foreground)",
+                boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
+              }}
+            >
+              Enroll Now
+            </Link>
+            <Link
+              href={`/syllabus/${course.slug}`}
+              className="w-full h-10 sm:h-11 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-all border"
+              style={{
+                background: "var(--background)",
+                borderColor: "var(--border)",
+                color: "var(--muted-foreground)",
+              }}
+            >
+              <Download className="size-4" /> Download Syllabus
+            </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

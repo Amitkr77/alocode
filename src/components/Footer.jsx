@@ -12,6 +12,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+// Reusable constants for dark footer surface (deep green-dark)
+const FOOTER_BG = "#0a1c10";
+const DIVIDER = "rgba(66,214,116,0.10)";
+const ICON_BG = "rgba(66,214,116,0.06)";
+const ICON_BORDER = "rgba(66,214,116,0.12)";
+const ICON_COLOR = "rgba(186,219,162,0.50)"; // #BADBA2 at 50%
+const ICON_HOVER_BG = "rgba(66,214,116,0.15)";
+const ICON_HOVER_BORDER = "rgba(66,214,116,0.40)";
+const LINK_COLOR = "rgba(186,219,162,0.60)"; // muted green-white
+const DIM_COLOR = "rgba(186,219,162,0.35)";
+const DIMMER_COLOR = "rgba(186,219,162,0.45)";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -42,35 +54,36 @@ const Footer = () => {
 
   return (
     <footer
-      className="pt-8 pb-6"
+      className="pt-4 pb-4"
       style={{
-        background: "#262A2B",
-        borderTop: "1px solid rgba(219,215,199,0.10)",
+        background: FOOTER_BG,
+        borderTop: `1px solid ${DIVIDER}`,
         fontFamily: "system-ui, sans-serif",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-4">
           {/* ── Brand ── */}
           <div className="md:col-span-1">
-            <div className="mb-2">
+            <div className="mb-3">
               <Link href="/">
                 <img
-                  className="h-12 w-auto hover:opacity-80 transition-opacity"
-                  src="/alo_logoo_2.png"
+                  className="h-10 w-auto hover:opacity-80 transition-opacity"
+                  src="/Aloc_logo1.png"
                   alt="Alocode logo"
                 />
               </Link>
             </div>
             <p
-              className="text-sm leading-relaxed mb-4 max-w-xs"
-              style={{ color: "rgba(179,170,158,0.70)" }}
+              className="text-sm leading-relaxed mb-3 max-w-xs"
+              style={{ color: LINK_COLOR }}
             >
               Empowering the next generation of developers with hands-on skills,
               expert mentorship, and real-world projects that matter.
             </p>
+
             {/* Social links */}
-            <div className="flex gap-2.5">
+            <div className="flex gap-2">
               {[
                 {
                   href: "https://twitter.com/alocodes",
@@ -100,21 +113,20 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl flex items-center justify-center transition-all"
                   style={{
-                    background: "rgba(219,215,199,0.06)",
-                    border: "1px solid rgba(219,215,199,0.12)",
-                    color: "rgba(179,170,158,0.50)",
+                    background: ICON_BG,
+                    border: `1px solid ${ICON_BORDER}`,
+                    color: ICON_COLOR,
                   }}
                   aria-label={label}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(250,161,20,0.15)";
-                    e.currentTarget.style.borderColor = "rgba(250,161,20,0.40)";
-                    e.currentTarget.style.color = "#FAA114";
+                    e.currentTarget.style.background = ICON_HOVER_BG;
+                    e.currentTarget.style.borderColor = ICON_HOVER_BORDER;
+                    e.currentTarget.style.color = "var(--primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(219,215,199,0.06)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(219,215,199,0.12)";
-                    e.currentTarget.style.color = "rgba(179,170,158,0.50)";
+                    e.currentTarget.style.background = ICON_BG;
+                    e.currentTarget.style.borderColor = ICON_BORDER;
+                    e.currentTarget.style.color = ICON_COLOR;
                   }}
                 >
                   <Icon className="h-4 w-4" />
@@ -126,8 +138,8 @@ const Footer = () => {
           {/* ── Company ── */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-widest mb-3"
-              style={{ color: "#FCFCFB", fontFamily: "'Georgia', serif" }}
+              className="text-sm font-black uppercase tracking-widest mb-2"
+              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
             >
               Company
             </h3>
@@ -142,9 +154,16 @@ const Footer = () => {
                   <Link
                     href={href}
                     className="text-sm inline-flex items-center gap-1 group transition-colors"
-                    style={{ color: "rgba(179,170,158,0.60)" }}
+                    style={{ color: LINK_COLOR }}
                   >
-                    <span className="group-hover:translate-x-0.5 transition-transform group-hover:text-[#FAA114]">
+                    <span
+                      className="group-hover:translate-x-0.5 transition-transform"
+                      style={{ transition: "color 0.2s" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--primary)")
+                      }
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "")}
+                    >
                       {label}
                     </span>
                   </Link>
@@ -156,8 +175,8 @@ const Footer = () => {
           {/* ── Courses ── */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-widest mb-3"
-              style={{ color: "#FCFCFB", fontFamily: "'Georgia', serif" }}
+              className="text-sm font-black uppercase tracking-widest mb-2"
+              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
             >
               Courses
             </h3>
@@ -182,9 +201,16 @@ const Footer = () => {
                   <Link
                     href={href}
                     className="text-sm inline-flex items-center gap-1 group transition-colors"
-                    style={{ color: "rgba(179,170,158,0.60)" }}
+                    style={{ color: LINK_COLOR }}
                   >
-                    <span className="group-hover:translate-x-0.5 transition-transform group-hover:text-[#FAA114]">
+                    <span
+                      className="group-hover:translate-x-0.5 transition-transform"
+                      style={{ transition: "color 0.2s" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--primary)")
+                      }
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "")}
+                    >
                       {label}
                     </span>
                   </Link>
@@ -196,14 +222,14 @@ const Footer = () => {
           {/* ── Newsletter ── */}
           <div>
             <h3
-              className="text-sm font-black uppercase tracking-widest mb-3"
-              style={{ color: "#FCFCFB", fontFamily: "'Georgia', serif" }}
+              className="text-sm font-black uppercase tracking-widest mb-2"
+              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
             >
               Stay Updated
             </h3>
             <p
-              className="text-sm mb-3 leading-relaxed"
-              style={{ color: "rgba(179,170,158,0.60)" }}
+              className="text-sm mb-2 leading-relaxed"
+              style={{ color: LINK_COLOR }}
             >
               Get the latest updates on new courses, tips, and exclusive offers.
             </p>
@@ -212,38 +238,36 @@ const Footer = () => {
                 name="email"
                 className="rounded-xl px-4 py-2 text-sm transition-colors focus:outline-none"
                 style={{
-                  background: "rgba(219,215,199,0.06)",
-                  border: "1px solid rgba(219,215,199,0.12)",
-                  color: "#FCFCFB",
+                  background: ICON_BG,
+                  border: `1px solid ${ICON_BORDER}`,
+                  color: "#e8f5e9",
                 }}
                 type="email"
                 placeholder="Enter your email"
                 required
                 onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(250,161,20,0.50)";
-                  e.target.style.boxShadow = "0 0 0 2px rgba(250,161,20,0.12)";
+                  e.target.style.borderColor = "rgba(66,214,116,0.50)";
+                  e.target.style.boxShadow = "0 0 0 2px rgba(66,214,116,0.12)";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(219,215,199,0.12)";
+                  e.target.style.borderColor = ICON_BORDER;
                   e.target.style.boxShadow = "none";
                 }}
               />
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 h-10 rounded-full text-white text-sm font-bold transition-all group"
+                className="flex items-center justify-center gap-2 h-11 rounded-full text-sm font-bold transition-all group"
                 style={{
-                  background: "#FAA114",
-                  boxShadow: "0 4px 16px rgba(250,161,20,0.30)",
+                  background: "var(--primary)",
+                  color: "var(--primary-foreground)",
+                  boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
                 }}
               >
                 Subscribe
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </form>
-            <p
-              className="text-xs mt-2"
-              style={{ color: "rgba(179,170,158,0.35)" }}
-            >
+            <p className="text-xs mt-3" style={{ color: DIM_COLOR }}>
               We respect your privacy. Unsubscribe at any time.
             </p>
           </div>
@@ -252,11 +276,11 @@ const Footer = () => {
         {/* ── Bottom bar ── */}
         <div
           className="pt-4 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: "1px solid rgba(219,215,199,0.10)" }}
+          style={{ borderTop: `1px solid ${DIVIDER}` }}
         >
           <p
             className="text-xs order-2 md:order-1"
-            style={{ color: "rgba(179,170,158,0.35)" }}
+            style={{ color: DIM_COLOR }}
           >
             © {currentYear} Alocodes Inc. All rights reserved.
           </p>
@@ -271,8 +295,14 @@ const Footer = () => {
               <li key={label}>
                 <Link
                   href={href}
-                  className="transition-colors hover:text-[#FAA114]"
-                  style={{ color: "rgba(179,170,158,0.45)" }}
+                  className="transition-colors"
+                  style={{ color: DIMMER_COLOR }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--primary)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = DIMMER_COLOR)
+                  }
                 >
                   {label}
                 </Link>
@@ -300,20 +330,20 @@ const Footer = () => {
                 href={href}
                 className="w-8 h-8 rounded-xl flex items-center justify-center transition-all"
                 style={{
-                  background: "rgba(219,215,199,0.06)",
-                  border: "1px solid rgba(219,215,199,0.10)",
-                  color: "rgba(179,170,158,0.45)",
+                  background: ICON_BG,
+                  border: `1px solid ${ICON_BORDER}`,
+                  color: DIMMER_COLOR,
                 }}
                 aria-label={label}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(250,161,20,0.15)";
-                  e.currentTarget.style.borderColor = "rgba(250,161,20,0.40)";
-                  e.currentTarget.style.color = "#FAA114";
+                  e.currentTarget.style.background = ICON_HOVER_BG;
+                  e.currentTarget.style.borderColor = ICON_HOVER_BORDER;
+                  e.currentTarget.style.color = "var(--primary)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(219,215,199,0.06)";
-                  e.currentTarget.style.borderColor = "rgba(219,215,199,0.10)";
-                  e.currentTarget.style.color = "rgba(179,170,158,0.45)";
+                  e.currentTarget.style.background = ICON_BG;
+                  e.currentTarget.style.borderColor = ICON_BORDER;
+                  e.currentTarget.style.color = DIMMER_COLOR;
                 }}
               >
                 <Icon className="h-4 w-4" />
