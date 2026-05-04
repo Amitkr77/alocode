@@ -25,8 +25,10 @@ import {
   Award,
   BookOpen,
   Lightbulb,
+  CreditCard,
 } from "lucide-react";
 import Link from "next/link";
+import PricingBlock from "@/components/PricingBlock";
 
 export default async function CourseDetail({ params }) {
   const { slug } = await params;
@@ -117,14 +119,22 @@ export default async function CourseDetail({ params }) {
                 {course.instructors.map((ins) => (
                   <div
                     key={ins.name}
-                    className="w-10 h-10 rounded-full border-2 bg-cover bg-center"
-                    style={{
-                      borderColor: "var(--background)",
-                      background: ins.avatar
-                        ? `url(${ins.avatar})`
-                        : "var(--card)",
-                    }}
-                  />
+                    className="w-10 h-10 rounded-full border-2 overflow-hidden shrink-0"
+                    style={{ borderColor: "var(--background)" }}
+                  >
+                    {ins.avatar ? (
+                      <img
+                        src={ins.avatar}
+                        alt={ins.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div
+                        className="w-full h-full"
+                        style={{ background: "var(--card)" }}
+                      />
+                    )}
+                  </div>
                 ))}
               </div>
               <div>
@@ -215,94 +225,18 @@ export default async function CourseDetail({ params }) {
               )}
 
               {/* Pricing */}
-              {course.pricing && (
-                <div className="p-4">
-                  <div className="flex items-end gap-2 mb-1">
-                    <span
-                      className="text-3xl font-black text-foreground"
-                      style={{ fontFamily: "'Georgia', serif" }}
-                    >
-                      ₹{course.pricing.current}
-                    </span>
-                    <span className="line-through text-lg mb-0.5 text-muted-foreground">
-                      ₹{course.pricing.original}
-                    </span>
-                    <span
-                      className="text-sm font-bold ml-auto px-2 py-0.5 rounded-full"
-                      style={{
-                        color: "var(--primary)",
-                        background: "rgba(66,214,116,0.10)",
-                      }}
-                    >
-                      {course.pricing.discountPercent}% OFF
-                    </span>
-                  </div>
-
-                  <p className="text-xs mb-4 flex items-center gap-1.5 text-muted-foreground">
-                    <Clock size={13} style={{ color: "var(--primary)" }} />
-                    Offer ends in {course.pricing.offerEndsIn}
-                  </p>
-
-                  <Link href="/enroll">
-                    <button
-                      className="w-full h-10 rounded-full font-bold mb-2 transition-all cursor-pointer"
-                      style={{
-                        background: "var(--primary)",
-                        color: "var(--primary-foreground)",
-                        boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
-                      }}
-                    >
-                      Enroll Now
-                    </button>
-                  </Link>
-
-                  <button
-                    disabled
-                    className="w-full h-10 rounded-full font-medium text-sm mb-4 cursor-not-allowed opacity-50 border"
-                    style={{
-                      borderColor: "var(--border)",
-                      color: "var(--muted-foreground)",
-                    }}
-                  >
-                    Start Free Trial
-                  </button>
-
-                  {/* Course includes */}
-                  <div
-                    className="space-y-3 pt-3"
-                    style={{ borderTop: "1px solid var(--border)" }}
-                  >
-                    <h4 className="font-bold text-sm text-foreground">
-                      This course includes:
-                    </h4>
-                    <Item
-                      icon={Video}
-                      text={
-                        course.curriculumSummary?.totalDuration ||
-                        "On-demand video"
-                      }
-                    />
-                    {course.curriculumSummary?.totalModules && (
-                      <Item
-                        icon={BookOpen}
-                        text={`${course.curriculumSummary.totalModules} modules`}
-                      />
-                    )}
-                    <Item
-                      icon={Code2}
-                      text={`${course.sampleProjects?.length || 5} hands-on projects`}
-                    />
-                    <Item icon={Infinity} text="Full lifetime access" />
-                    <Item icon={Smartphone} text="Mobile & TV access" />
-                    <Item icon={Award} text="Certificate of completion" />
-                  </div>
-                </div>
-              )}
+              <PricingBlock
+                pricing={course.pricing}
+                curriculumSummary={course.curriculumSummary}
+                sampleProjects={course.sampleProjects}
+              />
             </div>
 
             {/* Download Syllabus */}
             <Link
-              href={`/syllabus/${course.slug}`}
+              href={course.brochure?.fileUrl || `/syllabus/${course.slug}`}
+              target={course.brochure?.fileUrl ? "_blank" : undefined}
+              rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
               className="mt-2 w-full h-10 rounded-full text-sm font-semibold flex items-center justify-center gap-2 border transition-all"
               style={{
                 background: "var(--background)",
@@ -727,7 +661,7 @@ export default async function CourseDetail({ params }) {
             <section>
               <SectionLabel>Testimonials</SectionLabel>
               <SectionTitle>Student feedback</SectionTitle>
-              <div className="grid md:grid-cols-2 gap-2 mt-2">
+              <div className="grid md:grid-cols-2 gap-2 mt-2 mb-1">
                 {course.reviews.map((r) => (
                   <div
                     key={r.name}
@@ -777,7 +711,7 @@ export default async function CourseDetail({ params }) {
       </div>
 
       {/* ================= CTA BANNER ================= */}
-      <section className="py-16 max-w-7xl mx-auto px-6 lg:px-10">
+      {/* <section className="py-8 max-w-7xl mx-auto px-6 lg:px-10">
         <div
           className="rounded-[2.5rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
           style={{ background: "var(--foreground)" }}
@@ -814,7 +748,9 @@ export default async function CourseDetail({ params }) {
               Enroll Now <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              href={`/syllabus/${course.slug}`}
+              href={course.brochure?.fileUrl || `/syllabus/${course.slug}`}
+              target={course.brochure?.fileUrl ? "_blank" : undefined}
+              rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
               className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-colors border"
               style={{
                 borderColor: "rgba(186,219,162,0.25)",
@@ -826,7 +762,7 @@ export default async function CourseDetail({ params }) {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

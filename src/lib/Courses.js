@@ -28,10 +28,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "399",
-      original: "2999",
-      discountPercent: 87,
-      offerEndsIn: "3 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings & Reviews summary ──
@@ -263,12 +265,12 @@ const courses = [
       {
         name: "Arjun Mehta",
         role: "Senior Data Scientist at Google",
-        avatar: "/avatars/arjun.jpg",
+        avatar: "/avatars/man_ava.jpg",
       },
       {
         name: "Sneha Kapoor",
         role: "ML Engineer & Kaggle Grandmaster",
-        avatar: "/avatars/sneha.jpg",
+        avatar: "/avatars/woman_ava.jpg",
       },
     ],
 
@@ -315,6 +317,15 @@ const courses = [
       quote: "Transformed my career in just 6 months!",
       author: "Priya S., Data Analyst",
     },
+
+    // ── Brochure ──
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -344,10 +355,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "499",
-      original: "3499",
-      discountPercent: 86,
-      offerEndsIn: "2 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -557,7 +570,7 @@ const courses = [
       {
         name: "Rahul Sharma",
         role: "Senior Full Stack Developer at Amazon",
-        avatar: "/avatars/rahul.jpg",
+        avatar: "/avatars/man_ava.jpg",
       },
     ],
 
@@ -601,6 +614,13 @@ const courses = [
       quote: "Complete dev transformation.",
       author: "Deepak S., MERN Dev",
     },
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -630,10 +650,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "449",
-      original: "2999",
-      discountPercent: 85,
-      offerEndsIn: "5 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -843,12 +865,12 @@ const courses = [
       {
         name: "Pooja Yadav",
         role: "Java Architect at Infosys",
-        avatar: "/avatars/pooja.jpg",
+        avatar: "/avatars/woman_ava.jpg",
       },
       {
         name: "Amit Verma",
         role: "Spring Boot Expert & Tech Lead",
-        avatar: "/avatars/amit.jpg",
+        avatar: "/avatars/man_ava.jpg",
       },
     ],
 
@@ -895,6 +917,13 @@ const courses = [
       quote: "Enterprise-ready skills.",
       author: "Pooja Y., Full-Stack Java",
     },
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -924,10 +953,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "549",
-      original: "3999",
-      discountPercent: 86,
-      offerEndsIn: "1 day",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -1144,7 +1175,7 @@ const courses = [
       {
         name: "Tarun Joshi",
         role: "AI Research Engineer at Microsoft",
-        avatar: "/avatars/tarun.jpg",
+        avatar: "/avatars/man_ava.jpg",
       },
     ],
 
@@ -1189,6 +1220,13 @@ const courses = [
       quote: "AI innovation at fingertips.",
       author: "Tarun J., AI Engineer",
     },
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -1203,7 +1241,7 @@ const courses = [
       totalRatings: "890",
       lastUpdated: "March 2025",
     },
-    title: "App Development with React Native & AI",
+    title: "Application Development",
     category: "Development",
     level: "Intermediate",
 
@@ -1218,10 +1256,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "429",
-      original: "2999",
-      discountPercent: 86,
-      offerEndsIn: "4 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -1238,148 +1278,167 @@ const courses = [
 
     // ── Description ──
     description:
-      "Build cross-platform mobile apps for Android and iOS using React Native, Firebase, and powerful AI integrations for modern app experiences.",
+      "Learn to build modern, scalable mobile applications using industry tools like Flutter, Swift, and Android. This program focuses on real-world development skills for students, beginners, and professionals.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Build Android and iOS apps with a single codebase",
-      "React Native is widely used in startups and production apps",
-      "Learn Firebase for real-time backend without heavy setup",
-      "Integrate AI features like chatbots and smart assistants",
+      "High Demand: Mobile apps are used in every industry",
+      "Lucrative Career: High-paying job opportunities",
+      "Global Opportunities: Work remotely or freelance",
+      "Creative + Technical Field",
     ],
 
     // ── Curriculum ──
     curriculum: [
       {
         module: 1,
-        title: "JavaScript & React Basics",
+        title: "Programming Fundamentals",
         topics: [
-          "JavaScript ES6 fundamentals",
-          "Closures, promises, async/await",
-          "React basics (components, props, state)",
-          "Project setup",
+          "Introduction to programming concepts",
+          "Dart / Swift / Java basics",
+          "Variables, data types, operators",
+          "Functions and lambda expressions",
+          "Control statements (if, loops)",
+          "OOP concepts",
         ],
       },
       {
         module: 2,
-        title: "React Native Fundamentals",
+        title: "Mobile App Development Basics",
         topics: [
-          "React Native architecture",
-          "Core components (View, Text, ScrollView)",
-          "Styling with StyleSheet",
-          "Responsive layouts",
+          "Introduction to mobile development",
+          "Android vs iOS ecosystem",
+          "Setting up development environment",
+          "Understanding app architecture",
         ],
       },
       {
         module: 3,
-        title: "Navigation & State Management",
+        title: "UI/UX Design",
         topics: [
-          "React Navigation",
-          "Stack & tab navigation",
-          "Context API & Redux",
-          "Handling global state",
+          "Design principles (color, typography, layout)",
+          "Wireframing using Figma",
+          "Responsive design",
+          "User-friendly interface creation",
         ],
       },
       {
         module: 4,
-        title: "Backend with Firebase",
+        title: "Flutter / Native Development",
         topics: [
-          "Firebase setup",
-          "Authentication (email, Google login)",
-          "Firestore database",
-          "Real-time data sync",
+          "Flutter basics (Widgets, Layouts)",
+          "SwiftUI basics",
+          "Navigation & routing",
+          "State management",
         ],
       },
       {
         module: 5,
-        title: "API Integration & AI Features",
+        title: "Backend Integration",
         topics: [
-          "REST API integration",
-          "Using OpenAI APIs",
-          "Google Vision API",
-          "Building AI-powered features",
+          "REST APIs integration",
+          "JSON parsing",
+          "Firebase basics (Authentication, Firestore)",
+          "API handling in apps",
         ],
       },
       {
         module: 6,
-        title: "Advanced App Features",
+        title: "Database Management",
         topics: [
-          "Push notifications",
-          "Offline storage",
-          "Performance optimization",
-          "App security basics",
+          "Local storage (SQLite, Hive)",
+          "Cloud database (Firebase)",
+          "Data handling and caching",
         ],
       },
       {
         module: 7,
-        title: "Deployment & Publishing",
+        title: "Testing & Debugging",
         topics: [
-          "Building APK & IPA files",
-          "Publishing on Google Play Store",
-          "App Store deployment",
-          "App monetization basics",
+          "Debugging techniques",
+          "Performance optimization",
+          "Testing apps on real devices",
         ],
       },
     ],
 
     // ── Skills ──
     skills: [
-      "React Native",
-      "JavaScript",
+      "Flutter",
+      "Swift",
+      "Android Studio",
       "Firebase",
       "API Integration",
-      "AI APIs",
-      "Redux",
       "Mobile UI/UX",
       "App Deployment",
+      "Figma"
     ],
 
     // ── Sample Projects ──
     sampleProjects: [
       {
         id: 1,
-        title: "AI Chat Mobile App",
-        skills: ["React Native", "OpenAI API"],
+        title: "To-Do List Application",
+        skills: ["Flutter", "State Management", "SQLite / Hive", "UI Design"],
         description:
-          "Build a chatbot mobile app integrating AI APIs for intelligent conversations.",
+          "Build a task management app where users can add, update, and delete tasks with local data storage.",
       },
       {
         id: 2,
-        title: "Social Media App",
-        skills: ["Firebase", "Realtime DB"],
+        title: "Chat Application (Real-Time Messaging)",
+        skills: [
+          "Firebase Authentication",
+          "Realtime Database",
+          "API Integration",
+        ],
         description:
-          "Create a real-time social app with posts, likes, and user authentication.",
+          "Develop a real-time chat app with authentication and instant messaging using Firebase.",
       },
       {
         id: 3,
-        title: "E-commerce Mobile App",
-        skills: ["API Integration", "UI Design"],
+        title: "E-Commerce Mobile App",
+        skills: [
+          "API Integration",
+          "JSON Parsing",
+          "State Management",
+          "UI/UX",
+        ],
         description:
-          "Develop a mobile shopping app with product listing and cart functionality.",
+          "Build a mobile shopping app with product listing, cart functionality, and payment basics.",
       },
       {
         id: 4,
-        title: "Fitness Tracker App",
-        skills: ["Mobile UI", "State Management"],
+        title: "Doctor-Patient Appointment App",
+        skills: ["Firebase", "Routing", "Notifications"],
         description:
-          "Build a fitness tracking app with progress analytics and reminders.",
+          "Create an app for booking doctor appointments with scheduling and notifications.",
+      },
+      {
+        id: 5,
+        title: "Social Media Application",
+        skills: ["Database", "Image Upload", "Firebase Storage"],
+        description:
+          "Build a social platform where users can post, like, and comment on content.",
       },
     ],
 
     // ── Career Opportunities ──
     careerRoles: [
       "Mobile App Developer",
-      "React Native Developer",
-      "Frontend Mobile Engineer",
+      "Flutter Developer",
+      "iOS Developer",
+      "Android Developer",
+      "UI/UX Designer",
       "Freelance App Developer",
-      "Startup App Developer",
     ],
 
     hiringCompanies: [
-      "Startups",
-      "Product-based Companies",
-      "Mobile-first Companies",
-      "Freelance Platforms",
+      "Amazon",
+      "Alomonx",
+      "Google",
+      "Microsoft",
+      "Deloitte",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
@@ -1428,7 +1487,7 @@ const courses = [
       {
         name: "Rahul Singh",
         role: "Mobile Developer & App Entrepreneur",
-        avatar: "/avatars/rahul-s.jpg",
+        avatar: "/avatars/man_ava.jpg",
       },
     ],
 
@@ -1473,6 +1532,14 @@ const courses = [
       quote: "From idea to app store — this course made it simple.",
       author: "Rahul S., App Developer",
     },
+
+    brochure: {
+      title: "App Development Brochure",
+      fileUrl: "/brochures/app-dev.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -1502,10 +1569,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "299",
-      original: "1999",
-      discountPercent: 85,
-      offerEndsIn: "6 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -1714,7 +1783,7 @@ const courses = [
       {
         name: "Priya Kulkarni",
         role: "Digital Marketing Lead at Zomato",
-        avatar: "/avatars/priya-k.jpg",
+        avatar: "/avatars/woman_ava.jpg",
       },
     ],
 
@@ -1759,6 +1828,14 @@ const courses = [
       quote: "Helped me scale my business online quickly.",
       author: "Priya K., Entrepreneur",
     },
+
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
   },
 
   {
@@ -1788,10 +1865,12 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      current: "349",
-      original: "2499",
-      discountPercent: 86,
-      offerEndsIn: "3 days",
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
     },
 
     // ── Ratings ──
@@ -2000,7 +2079,7 @@ const courses = [
       {
         name: "Sneha Rao",
         role: "Lead UI/UX Designer at Swiggy",
-        avatar: "/avatars/sneha-r.jpg",
+        avatar: "/avatars/woman_ava.jpg",
       },
     ],
 
@@ -2043,6 +2122,13 @@ const courses = [
     testimonial: {
       quote: "My design skills improved drastically with this course.",
       author: "Sneha R., UI Designer",
+    },
+    brochure: {
+      title: "Data Science & Machine Learning Brochure",
+      fileUrl: "/brochures/data-science.pdf", // PDF path
+      fileType: "pdf",
+      fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
     },
   },
 ];

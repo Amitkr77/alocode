@@ -12,17 +12,20 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-// Reusable constants for dark footer surface (deep green-dark)
-const FOOTER_BG = "#0a1c10";
-const DIVIDER = "rgba(66,214,116,0.10)";
+// ─── Color tokens — matched exactly to Navbar ───────────────────────────────
+// Navbar uses rgba(10,28,16,0.98) scrolled / rgba(10,28,16,0.88) default.
+// Footer is static (no scroll state), so we use the fully-opaque scrolled value.
+const FOOTER_BG = "rgba(10,28,16,0.98)"; // ← was "#0a1c10" (same hex, now matches nav token)
+const DIVIDER = "rgba(66,214,116,0.12)"; // ← was 0.10, bumped to match nav scrolled border
 const ICON_BG = "rgba(66,214,116,0.06)";
-const ICON_BORDER = "rgba(66,214,116,0.12)";
-const ICON_COLOR = "rgba(186,219,162,0.50)"; // #BADBA2 at 50%
-const ICON_HOVER_BG = "rgba(66,214,116,0.15)";
-const ICON_HOVER_BORDER = "rgba(66,214,116,0.40)";
-const LINK_COLOR = "rgba(186,219,162,0.60)"; // muted green-white
-const DIM_COLOR = "rgba(186,219,162,0.35)";
-const DIMMER_COLOR = "rgba(186,219,162,0.45)";
+const ICON_BORDER = "rgba(66,214,116,0.12)"; // ← was 0.12, already matching
+const ICON_COLOR = "rgba(186,219,162,0.50)";
+const ICON_HOVER_BG = "rgba(66,214,116,0.10)"; // ← was 0.15, matched to ACTIVE_BG in nav
+const ICON_HOVER_BORDER = "rgba(66,214,116,0.20)"; // ← was 0.40, matched to ACTIVE_BORDER in nav
+const LINK_COLOR = "rgba(255,255,255,0.70)"; // ← was rgba(186,219,162,0.60), matched to nav INACTIVE_COLOR
+const DIM_COLOR = "rgba(255,255,255,0.55)"; // ← matched to nav INACTIVE_COLOR_DIM
+const DIMMER_COLOR = "rgba(255,255,255,0.55)"; // ← matched to nav INACTIVE_COLOR_DIM
+const ACTIVE_COLOR = "var(--primary)"; // #42D674 — same as nav
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -54,7 +57,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="pt-4 pb-4"
+      className="pt-4 pb-2"
       style={{
         background: FOOTER_BG,
         borderTop: `1px solid ${DIVIDER}`,
@@ -62,10 +65,10 @@ const Footer = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-2">
           {/* ── Brand ── */}
-          <div className="md:col-span-1">
-            <div className="mb-3">
+          <div className="col-span-2 md:col-span-1">
+            <div className="mb-2">
               <Link href="/">
                 <img
                   className="h-10 w-auto hover:opacity-80 transition-opacity"
@@ -75,7 +78,7 @@ const Footer = () => {
               </Link>
             </div>
             <p
-              className="text-sm leading-relaxed mb-3 max-w-xs"
+              className="text-sm leading-relaxed mb-2 max-w-xs"
               style={{ color: LINK_COLOR }}
             >
               Empowering the next generation of developers with hands-on skills,
@@ -143,7 +146,7 @@ const Footer = () => {
             >
               Company
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {[
                 { href: "/about", label: "About Us" },
                 { href: "/why-choose", label: "Why Choose Us" },
@@ -180,7 +183,7 @@ const Footer = () => {
             >
               Courses
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {[
                 { href: "/courses?category=Programming", label: "Programming" },
                 {
@@ -220,7 +223,7 @@ const Footer = () => {
           </div>
 
           {/* ── Newsletter ── */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h3
               className="text-sm font-black uppercase tracking-widest mb-2"
               style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
