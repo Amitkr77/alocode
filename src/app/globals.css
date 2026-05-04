@@ -19,7 +19,7 @@
   --color-surface-light: #f4fce8;
   --color-surface-dark: #162318;
   --color-background-dark: #0f1f13;
-  --color-background-light: #f0faf0;
+  --color-background-light: #fffcfb;
   --color-border-dark: #2a4a30;
   --color-surface-border: #2a4a30;
   --font-geist-sans: "Geist Sans", sans-serif;
@@ -68,7 +68,7 @@
 
 :root {
   --radius: 1rem;
-  --background: #f0faf0;
+  --background: #fffcfb;
   --foreground: oklch(0.145 0 0);
   --card: #F0F0F0;
   --card-foreground: oklch(0.145 0 0);
@@ -91,7 +91,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #f0faf0;
+  --sidebar: #fffcfb;
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: #42d674;
   --sidebar-primary-foreground: #0f2d1a;
