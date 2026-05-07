@@ -38,7 +38,7 @@ export default function About() {
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       <main className="flex flex-col items-center w-full">
-        <div className="w-full max-w-7xl px-4 md:px-10 lg:px-20 py-2 flex flex-col gap-10">
+        <div className="w-full max-w-7xl px-4 md:px-10 lg:px-20 py-1 flex flex-col gap-8">
           {/* ── Hero ── */}
           <motion.section
             initial={{ opacity: 0 }}
@@ -47,7 +47,7 @@ export default function About() {
             className="pt-20"
           >
             <div
-              className="relative flex min-h-[480px] flex-col gap-6 rounded-3xl items-center justify-center p-6 overflow-hidden border"
+              className="relative flex min-h-[480px] flex-col gap-4 rounded-3xl items-center justify-center p-3 overflow-hidden border"
               style={{ borderColor: "var(--border)" }}
             >
               <div
@@ -69,7 +69,7 @@ export default function About() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="relative z-10 flex flex-col gap-4 text-center max-w-[800px]"
+                className="relative z-10 flex flex-col gap-3 text-center max-w-[800px]"
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest"
@@ -84,7 +84,7 @@ export default function About() {
                   Building the{" "}
                   <span className="relative inline-block">
                     <span
-                      className="absolute -left-2 top-1/2 -translate-y-1/2 w-[calc(100%+1rem)] h-[1.1em] rounded-full -z-0"
+                      className="absolute -left-2 top-1/2 -translate-y-1/2 w-[calc(100%+1rem)] h-[1.2em] rounded-full -z-0"
                       style={{ background: "var(--primary)" }}
                     />
                     <span
@@ -116,9 +116,9 @@ export default function About() {
             variants={containerVariants}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start px-4"
           >
-            <motion.div variants={itemVariants} className="flex flex-col gap-3">
+            <motion.div variants={itemVariants} className="flex flex-col gap-1">
               <div
-                className="flex items-center gap-2 mb-1"
+                className="flex items-center gap-1 mb-1"
                 style={{ color: "var(--primary)" }}
               >
                 <Terminal className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function About() {
               >
                 From a small coding club to a global platform.
               </h2>
-              <div className="flex flex-col gap-2 text-base leading-relaxed text-muted-foreground">
+              <div className="flex flex-col gap-1 text-base leading-relaxed text-muted-foreground">
                 <p>
                   Alocodes is an EdTech initiative by Alomonx Technology,
                   created to provide high-quality coding, AI, and cloud training
@@ -149,13 +149,13 @@ export default function About() {
               </div>
             </motion.div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {/* Mission card */}
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
                 initial="rest"
-                className="flex flex-1 gap-2 rounded-3xl border p-4 flex-col group cursor-default transition-all"
+                className="flex flex-1 gap-1 rounded-2xl border p-2 flex-col group cursor-default transition-all"
                 style={{
                   background: "var(--card)",
                   borderColor: "var(--border)",
@@ -163,16 +163,16 @@ export default function About() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="p-3 w-fit rounded-2xl flex items-center justify-center border"
+                  className="p-2 w-fit rounded-2xl flex items-center justify-center border"
                   style={{
                     background: "rgba(66,214,116,0.12)",
                     borderColor: "rgba(66,214,116,0.25)",
                     color: "var(--primary)",
                   }}
                 >
-                  <Zap className="w-7 h-7" />
+                  <Zap className="w-6 h-6" />
                 </motion.div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                   <h3
                     className="text-xl font-black leading-tight text-foreground"
                     style={{ fontFamily: "'Georgia', serif" }}
@@ -190,7 +190,7 @@ export default function About() {
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
-                className="flex flex-1 gap-4 rounded-3xl border p-4 flex-col group cursor-default transition-all"
+                className="flex flex-1 gap-2 rounded-2xl border p-2 flex-col group cursor-default transition-all"
                 style={{
                   background: "var(--card)",
                   borderColor: "var(--border)",
@@ -198,16 +198,16 @@ export default function About() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="p-3 w-fit rounded-2xl flex items-center justify-center border"
+                  className="p-2 w-fit rounded-2xl flex items-center justify-center border"
                   style={{
                     background: "rgba(66,214,116,0.12)",
                     borderColor: "rgba(66,214,116,0.25)",
                     color: "var(--primary)",
                   }}
                 >
-                  <Eye className="w-7 h-7" />
+                  <Eye className="w-6 h-6" />
                 </motion.div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                   <h3
                     className="text-xl font-black leading-tight text-foreground"
                     style={{ fontFamily: "'Georgia', serif" }}
@@ -229,11 +229,11 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="flex flex-col gap-6 px-4"
+            className="flex flex-col gap-3 px-4"
           >
-            <motion.div variants={itemVariants} className="text-center mb-1">
+            <motion.div variants={itemVariants} className="text-center mb-0">
               <p
-                className="text-xs font-bold uppercase tracking-widest mb-2"
+                className="text-xs font-bold uppercase tracking-widest mb-1"
                 style={{ color: "var(--primary)" }}
               >
                 Milestones
@@ -244,16 +244,16 @@ export default function About() {
               >
                 Our Journey
               </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-0 text-sm text-muted-foreground">
                 Key milestones that defined us
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-[40px_1fr] gap-x-6 max-w-[800px] mx-auto w-full">
+            <div className="grid grid-cols-[40px_1fr] gap-x-6 max-w-[700px] mx-auto w-full">
               {/* 2020 */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col items-center gap-1 pt-1"
+                className="flex flex-col items-center gap-1 pt-0"
               >
                 <div
                   className="rounded-full p-2 z-10 border"
@@ -263,7 +263,7 @@ export default function About() {
                     color: "var(--primary)",
                   }}
                 >
-                  <Lightbulb className="w-5 h-5" />
+                  <Lightbulb className="w-4 h-4" />
                 </div>
                 <div
                   className="w-0.5 h-full grow min-h-20"
@@ -275,7 +275,7 @@ export default function About() {
               </motion.div>
               <motion.div
                 variants={itemVariants}
-                className="flex flex-1 flex-col py-2 pb-6"
+                className="flex flex-1 flex-col py-1 pb-3"
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
@@ -298,7 +298,7 @@ export default function About() {
               {/* 2021 */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col items-center gap-1"
+                className="flex flex-col items-center gap-0"
               >
                 <div
                   className="w-0.5 h-full grow opacity-60"
@@ -312,7 +312,7 @@ export default function About() {
                     color: "var(--muted-foreground)",
                   }}
                 >
-                  <Rocket className="w-5 h-5" />
+                  <Rocket className="w-4 h-4" />
                 </div>
                 <div
                   className="w-0.5 h-full grow min-h-20"
@@ -324,7 +324,7 @@ export default function About() {
               </motion.div>
               <motion.div
                 variants={itemVariants}
-                className="flex flex-1 flex-col py-2 pb-6"
+                className="flex flex-1 flex-col py-1 pb-4"
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
@@ -361,12 +361,12 @@ export default function About() {
                     color: "var(--muted-foreground)",
                   }}
                 >
-                  <Users className="w-5 h-5" />
+                  <Users className="w-4 h-4" />
                 </div>
               </motion.div>
               <motion.div
                 variants={itemVariants}
-                className="flex flex-1 flex-col py-2"
+                className="flex flex-1 flex-col py-1"
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-1"
@@ -394,7 +394,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="flex flex-col gap-10 px-4 py-4"
+            className="flex flex-col gap-6 px-4 py-2"
           >
             <motion.div variants={itemVariants} className="flex flex-col gap-2">
               <p
@@ -414,7 +414,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   name: "Sarah Jenkins",
@@ -496,7 +496,7 @@ export default function About() {
             className="w-full pb-16"
           >
             <div
-              className="rounded-[2.5rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden"
+              className="rounded-[2.5rem] p-4 md:p-10 flex flex-col md:flex-row items-center justify-between gap-2 relative overflow-hidden"
               style={{ background: "var(--foreground)" }}
             >
               <div
@@ -510,7 +510,7 @@ export default function About() {
 
               <div className="relative z-10">
                 <p
-                  className="text-xs font-bold uppercase tracking-widest mb-3"
+                  className="text-xs font-bold uppercase tracking-widest mb-1"
                   style={{ color: "var(--primary)" }}
                 >
                   Free Consultation
@@ -525,7 +525,7 @@ export default function About() {
                   Stuck on a problem? Let's talk code.
                 </h2>
                 <p
-                  className="text-sm mt-3 max-w-sm leading-relaxed"
+                  className="text-sm mt-1 max-w-sm leading-relaxed"
                   style={{ color: "rgba(232,245,233,0.60)" }}
                 >
                   Connect with our senior mentors for a free 15-minute

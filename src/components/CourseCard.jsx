@@ -152,8 +152,8 @@ export default function CourseCard({
                 style={{ color: "var(--primary)" }}
               >
                 {typeof course.pricing === "object"
-                  ? `From ₹${course.pricing.current}/mo`
-                  : course.pricing}
+                  ? `From ₹${course.pricing.fullPrice}`
+                  : course.pricing.fullPrice}
               </span>
             ) : (
               course.badge?.rating && (

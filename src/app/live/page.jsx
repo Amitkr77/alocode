@@ -55,11 +55,19 @@ export default function page() {
               <h1 className="text-white text-5xl md:text-7xl font-black leading-[1.05] tracking-tight">
                 Stop Watching.
                 <br />
-                <span className="relative inline-block mt-2">
-                  <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-[calc(100%+1.5rem)] h-[1.1em] bg-[#42d674] rounded-full -z-0" />
-                  <span className="relative z-10 text-[#0f2d1a]">
-                    Start Coding Live.
-                  </span>
+                <span
+                  className="mt-2 text-[#0f2d1a] font-black"
+                  style={{
+                    background: "#42d674",
+                    borderRadius: "1.2em",
+                    padding: "0.1em 0.3em",
+                    WebkitBoxDecorationBreak: "clone",
+                    boxDecorationBreak: "clone",
+                    display: "inline",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  Start Coding Live.
                 </span>
               </h1>
 

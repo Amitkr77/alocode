@@ -1371,7 +1371,7 @@ const courses = [
       "API Integration",
       "Mobile UI/UX",
       "App Deployment",
-      "Figma"
+      "Figma",
     ],
 
     // ── Sample Projects ──
@@ -2128,6 +2128,354 @@ const courses = [
       fileUrl: "/brochures/data-science.pdf", // PDF path
       fileType: "pdf",
       fileSize: "2.5 MB", // optional
+      lastUpdated: "March 2025",
+    },
+  },
+  {
+    id: "course-4",
+    slug: "machine-learning",
+
+    // ── Identity ──
+    badge: {
+      text: "AI Track",
+      color: "bg-blue-100 text-blue-700 dark:text-blue-300",
+      rating: 4.8,
+      totalRatings: "620",
+      lastUpdated: "March 2025",
+    },
+
+    title: "Machine Learning",
+    category: "Artificial Intelligence",
+    level: "Advanced",
+
+    // ── Logistics ──
+    duration: "3 Months",
+    mode: "Live Online",
+    batchSize: "30 Students",
+
+    language: {
+      audio: "English",
+      captions: ["English", "Hindi"],
+    },
+
+    // ── Pricing ──
+    pricing: {
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4500, 3000],
+      },
+      currency: "INR",
+    },
+
+    // ── Ratings ──
+    rating: 4.8,
+    reviewCount: 620,
+
+    // ── Media ──
+    videoThumbnail: "/thumbnails/machine-learning.jpeg",
+    videoTitle: "Machine Learning",
+    previewVideo: {
+      thumbnail: "/thumbnails/machine-learning.jpeg",
+      url: "/videos/machine-learning-preview.mp4",
+    },
+
+    // ── Description ──
+    description:
+      "Master Machine Learning, Deep Learning, NLP, and AI system development using Python and industry-standard tools to build intelligent real-world applications.",
+
+    // ── Why Choose ──
+    whyChoose: [
+      "Focus on AI system development, not just data analysis",
+      "Learn how machines learn patterns and make decisions",
+      "Build production-ready machine learning models",
+      "Covers deployment and real-world AI integration",
+    ],
+
+    // ── Curriculum ──
+    curriculum: [
+      {
+        module: 1,
+        title: "Foundations of Machine Intelligence",
+        topics: [
+          "What is Machine Learning vs AI",
+          "Types of learning (Supervised, Unsupervised, Reinforcement)",
+          "Real-world ML use cases",
+          "NumPy & Pandas basics",
+        ],
+      },
+
+      {
+        module: 2,
+        title: "Learning Algorithms Deep Dive",
+        topics: [
+          "Linear & Logistic Regression",
+          "Decision Trees & Random Forest",
+          "Support Vector Machines",
+          "Bias vs Variance tradeoff",
+        ],
+      },
+
+      {
+        module: 3,
+        title: "Feature Engineering & Optimization",
+        topics: [
+          "Feature selection techniques",
+          "Dimensionality reduction (PCA)",
+          "Hyperparameter tuning",
+          "Model optimization",
+        ],
+      },
+
+      {
+        module: 4,
+        title: "Deep Learning & Neural Networks",
+        topics: [
+          "Artificial Neural Networks (ANN)",
+          "Convolutional Neural Networks (CNN)",
+          "Introduction to RNN",
+          "Real-world AI applications",
+        ],
+      },
+
+      {
+        module: 5,
+        title: "Natural Language Processing",
+        topics: [
+          "Text preprocessing",
+          "Word embeddings",
+          "Sentiment analysis",
+          "Chatbot basics",
+        ],
+      },
+
+      {
+        module: 6,
+        title: "Computer Vision",
+        topics: [
+          "Image processing basics",
+          "Object detection",
+          "Face recognition concepts",
+        ],
+      },
+
+      {
+        module: 7,
+        title: "Model Deployment & AI Systems",
+        topics: [
+          "Model deployment using APIs",
+          "Flask / FastAPI basics",
+          "Integrating ML with web/mobile apps",
+          "Real-world AI pipelines",
+        ],
+      },
+
+      {
+        module: 8,
+        title: "AI Product Development",
+        topics: [
+          "Designing ML-based applications",
+          "Scalability & performance",
+          "Industry use cases",
+        ],
+      },
+    ],
+
+    // ── Skills ──
+    skills: [
+      "Python",
+      "Machine Learning",
+      "Deep Learning",
+      "TensorFlow",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "NLP",
+      "Computer Vision",
+      "FastAPI",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "Python",
+      "TensorFlow",
+      "Jupyter Notebook",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Seaborn",
+      "Matplotlib",
+    ],
+
+    // ── Sample Projects ──
+    sampleProjects: [
+      {
+        id: 1,
+        title: "House Price Prediction",
+        skills: ["Linear Regression", "Feature Selection", "Model Evaluation"],
+        description:
+          "Build a machine learning model to predict house prices using regression algorithms and real-world datasets.",
+      },
+
+      {
+        id: 2,
+        title: "Customer Segmentation Using K-Means",
+        skills: ["Clustering", "Unsupervised Learning", "Feature Scaling"],
+        description:
+          "Segment customers into groups using K-Means clustering and customer behavior analysis.",
+      },
+
+      {
+        id: 3,
+        title: "Movie Recommendation System",
+        skills: ["Recommendation Systems", "Collaborative Filtering", "Pandas"],
+        description:
+          "Develop a recommendation engine similar to Netflix using collaborative filtering techniques.",
+      },
+
+      {
+        id: 4,
+        title: "Twitter Sentiment Analysis",
+        skills: ["NLP", "TF-IDF", "Classification"],
+        description:
+          "Build an NLP model to classify tweets into positive, negative, or neutral sentiments.",
+      },
+
+      {
+        id: 5,
+        title: "Credit Card Fraud Detection",
+        skills: ["Classification", "SMOTE", "Imbalanced Data Handling"],
+        description:
+          "Create a fraud detection system using machine learning classification algorithms and transaction datasets.",
+      },
+    ],
+
+    // ── Career Opportunities ──
+    careerRoles: [
+      "Machine Learning Engineer",
+      "AI Engineer",
+      "Data Scientist",
+      "NLP Engineer",
+      "AI Product Developer",
+    ],
+
+    hiringCompanies: [
+      "Amazon",
+      "Google",
+      "Microsoft",
+      "Deloitte",
+      "Alomonx",
+      "Startups & Fintech Companies",
+    ],
+
+    // ── Outcomes ──
+    outcomes: [
+      "Build intelligent AI systems",
+      "Develop production-ready ML models",
+      "Deploy machine learning applications",
+      "Work on real-world AI projects",
+    ],
+
+    // ── Learning Outcomes ──
+    learningOutcomes: [
+      "Understand machine learning fundamentals and AI concepts",
+      "Build supervised and unsupervised ML models",
+      "Optimize models using feature engineering and hyperparameter tuning",
+      "Develop deep learning applications using TensorFlow",
+      "Implement NLP and sentiment analysis systems",
+      "Create computer vision applications",
+      "Deploy ML models using APIs and FastAPI",
+      "Design scalable AI-powered applications",
+    ],
+
+    // ── Target Audience ──
+    targetAudience: [
+      "Students interested in AI and Machine Learning",
+      "Python developers moving into AI",
+      "Beginners wanting practical ML experience",
+      "Developers building intelligent applications",
+    ],
+
+    // ── Certificate ──
+    certificate: {
+      type: "Certificate of Internship Completion",
+      issuedBy: ["Alomonx Technology", "Alocodes"],
+      signatories: [
+        { role: "Authorized Signatory", title: "Director" },
+        { role: "HR Manager", title: "Human Resources" },
+      ],
+      description:
+        "Upon successful completion, learners receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes.",
+      imageUrl: "/Certificate.jpeg",
+    },
+
+    // ── Instructors ──
+    instructors: [
+      {
+        name: "Rahul Sharma",
+        role: "AI Engineer & ML Specialist",
+        avatar: "/avatars/man_ava.jpg",
+      },
+
+      {
+        name: "Priya Mehta",
+        role: "Data Scientist & NLP Expert",
+        avatar: "/avatars/woman_ava.jpg",
+      },
+    ],
+
+    // ── Curriculum Summary ──
+    curriculumSummary: {
+      totalModules: 8,
+      totalDuration: "60+ hours on-demand video",
+    },
+
+    // ── Reviews ──
+    reviews: [
+      {
+        name: "Ankit R.",
+        time: "2 weeks ago",
+        rating: 5,
+        comment:
+          "The deep learning and NLP modules are industry-focused and easy to understand.",
+      },
+
+      {
+        name: "Shreya P.",
+        time: "1 month ago",
+        rating: 4.5,
+        comment:
+          "Loved the practical projects and real-world datasets used throughout the course.",
+      },
+
+      {
+        name: "Vikas M.",
+        time: "1 month ago",
+        rating: 5,
+        comment:
+          "Best ML course for beginners and intermediate learners. Deployment section is excellent.",
+      },
+
+      {
+        name: "Rohan S.",
+        time: "2 months ago",
+        rating: 4.5,
+        comment:
+          "The sentiment analysis and recommendation system projects helped me build my portfolio.",
+      },
+    ],
+
+    // ── Testimonial ──
+    testimonial: {
+      quote: "Build intelligent AI systems with real-world applications.",
+      author: "Ankit R., ML Engineer",
+    },
+
+    brochure: {
+      title: "Machine Learning Brochure",
+      fileUrl: "/brochures/machine-learning.pdf",
+      fileType: "pdf",
+      fileSize: "2.5 MB",
       lastUpdated: "March 2025",
     },
   },
