@@ -340,7 +340,8 @@ const courses = [
       totalRatings: "1,350",
       lastUpdated: "April 2025",
     },
-    title: "Full Stack Development: Build Full-Stack Web Apps",
+
+    title: "Full Stack Development",
     category: "Full Stack",
     level: "Intermediate",
 
@@ -348,6 +349,7 @@ const courses = [
     duration: "5 Months",
     mode: "Live Online",
     batchSize: "30 Students",
+
     language: {
       audio: "English",
       captions: ["English", "Hindi"],
@@ -369,7 +371,8 @@ const courses = [
 
     // ── Media ──
     videoThumbnail: "/thumbnails/full-stack-dev.jpg",
-    videoTitle: "MERN Full Stack",
+    videoTitle: "Full Stack Development",
+
     previewVideo: {
       thumbnail: "/thumbnails/full-stack-dev.jpg",
       url: "/videos/full-stack-preview.mp4",
@@ -377,132 +380,216 @@ const courses = [
 
     // ── Description ──
     description:
-      "Become a full-stack developer by building scalable MERN stack applications from scratch with real-world projects and industry practices.",
+      "Master frontend and backend development to build complete web applications from scratch with hands-on real-world projects and deployment experience.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Full-stack developers are in high demand across startups and enterprises",
-      "Learn both frontend and backend in a single structured program",
-      "Build production-ready applications using modern tools",
-      "Hands-on projects with real-world use cases",
+      "High demand in every industry",
+      "One of the most in-demand tech skills globally",
+      "Ability to build complete applications independently",
+      "Strong freelancing and startup opportunities",
     ],
 
     // ── Curriculum ──
     curriculum: [
       {
         module: 1,
-        title: "Frontend Fundamentals",
+        title: "Web Development Fundamentals",
         topics: [
-          "HTML5, CSS3, Flexbox, Grid",
-          "JavaScript basics (ES6+)",
-          "DOM manipulation",
-          "Responsive design principles",
+          "Introduction to web technologies",
+          "How websites and web apps work",
+          "Client-server architecture",
+          "Internet & browser basics",
         ],
       },
+
       {
         module: 2,
-        title: "Advanced JavaScript",
+        title: "Frontend Development (HTML, CSS, JavaScript)",
         topics: [
-          "Closures, promises, async/await",
-          "Event loop & callbacks",
-          "Error handling",
-          "API calls using fetch/axios",
+          "HTML5 fundamentals",
+          "CSS3 styling & responsive design",
+          "Flexbox & Grid",
+          "JavaScript basics",
+          "DOM manipulation",
+          "ES6 concepts",
         ],
       },
+
       {
         module: 3,
-        title: "React.js Development",
+        title: "Frontend Frameworks",
         topics: [
-          "Components, props, state",
-          "Hooks (useState, useEffect)",
-          "Routing with React Router",
-          "State management basics",
+          "Introduction to React.js",
+          "Components & Props",
+          "State & Lifecycle",
+          "React Hooks",
+          "Routing in React",
+          "API integration",
         ],
       },
+
       {
         module: 4,
-        title: "Backend with Node.js & Express",
+        title: "Backend Development",
         topics: [
-          "Node.js fundamentals",
-          "Express.js framework",
-          "REST API design",
-          "Middleware and routing",
+          "Introduction to Node.js",
+          "Express.js fundamentals",
+          "Server creation",
+          "Middleware",
+          "RESTful APIs",
+          "Authentication & Authorization",
         ],
       },
+
       {
         module: 5,
-        title: "Database with MongoDB",
+        title: "Database Management",
         topics: [
+          "Introduction to databases",
           "MongoDB basics",
-          "Schema design",
           "CRUD operations",
-          "Mongoose ODM",
+          "Database relationships",
+          "Firebase integration basics",
         ],
       },
+
       {
         module: 6,
+        title: "API Development & Integration",
+        topics: [
+          "REST API architecture",
+          "JSON handling",
+          "API testing with Postman",
+          "Connecting frontend with backend",
+        ],
+      },
+
+      {
+        module: 7,
         title: "Authentication & Security",
         topics: [
+          "User authentication systems",
           "JWT authentication",
-          "Role-based authorization",
-          "Password hashing (bcrypt)",
+          "Password encryption",
           "Security best practices",
         ],
       },
+
       {
-        module: 7,
-        title: "Deployment & DevOps",
+        module: 8,
+        title: "Deployment & Hosting",
         topics: [
-          "Deploy frontend on Vercel",
-          "Deploy backend on Render",
-          "Environment variables",
-          "CI/CD basics",
+          "Git & GitHub",
+          "Deployment using Vercel/Netlify",
+          "Backend deployment",
+          "Domain & hosting basics",
         ],
       },
     ],
 
     // ── Skills ──
     skills: [
-      "MongoDB",
-      "Express.js",
-      "React",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
       "Node.js",
-      "JWT",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
       "REST APIs",
-      "Tailwind CSS",
-      "Authentication",
-      "Deployment",
+      "JWT Authentication",
+      "Git",
+      "GitHub",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "Git",
+      "GitHub",
     ],
 
     // ── Sample Projects ──
     sampleProjects: [
       {
         id: 1,
-        title: "Full Stack E-commerce App",
-        skills: ["React", "Node.js", "MongoDB"],
+        title: "E-Commerce Web Application",
+        skills: [
+          "MERN Stack",
+          "Authentication",
+          "Payment Integration",
+          "Database Management",
+        ],
         description:
-          "Build a complete e-commerce platform with authentication, cart, and payment integration.",
+          "Develop a complete online shopping platform where users can browse products, add items to the cart, and place orders with admin product management features.",
       },
+
       {
         id: 2,
-        title: "Authentication System",
-        skills: ["JWT", "Security", "Backend"],
+        title: "Social Media Platform",
+        skills: [
+          "Frontend & Backend Integration",
+          "Real-time Database",
+          "Authentication",
+          "API Development",
+        ],
         description:
-          "Implement login/signup with JWT authentication and role-based access control.",
+          "Build a social networking platform where users can create accounts, share posts, like content, and interact in real time.",
       },
+
       {
         id: 3,
-        title: "Blog Platform",
-        skills: ["CRUD", "API Design"],
+        title: "Task Management System",
+        skills: [
+          "CRUD Operations",
+          "React State Management",
+          "REST APIs",
+          "Database Integration",
+        ],
         description:
-          "Create a blog system with create, read, update, delete functionality.",
+          "Create a productivity application where users can manage daily tasks, update progress, and organize workflows efficiently.",
       },
+
       {
         id: 4,
-        title: "Real-time Chat App",
-        skills: ["Sockets", "Realtime"],
+        title: "Online Learning Platform",
+        skills: [
+          "Full Stack Development",
+          "Video Management",
+          "Authentication",
+          "Backend APIs",
+        ],
         description:
-          "Develop a real-time messaging application using WebSockets.",
+          "Develop an e-learning platform where students can enroll in courses, watch lessons, and track progress.",
+      },
+
+      {
+        id: 5,
+        title: "Real-Time Chat Application",
+        skills: [
+          "Socket.io",
+          "Real-time Communication",
+          "Backend Development",
+          "Authentication",
+        ],
+        description:
+          "Build a live messaging platform that allows users to send and receive instant messages in real time.",
+      },
+
+      {
+        id: 6,
+        title: "Portfolio & Blogging Website",
+        skills: ["Responsive Web Design", "CRUD Operations", "Deployment"],
+        description:
+          "Develop a personal portfolio and blogging platform where users can publish articles and showcase projects.",
       },
     ],
 
@@ -511,8 +598,9 @@ const courses = [
       "Full Stack Developer",
       "Frontend Developer",
       "Backend Developer",
+      "MERN Stack Developer",
       "Software Engineer",
-      "Web Developer",
+      "Web Application Developer",
     ],
 
     hiringCompanies: [
@@ -520,48 +608,52 @@ const courses = [
       "Alomonx",
       "Google",
       "Microsoft",
-      "Startups",
-      "Product-based Companies",
+      "Deloitte",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
     outcomes: [
-      "Build full-stack production-ready applications",
-      "Understand complete web architecture",
-      "Crack full-stack developer interviews",
-      "Deploy real-world applications",
+      "Build complete web applications independently",
+      "Understand frontend and backend architecture",
+      "Deploy real-world full stack applications",
+      "Prepare for software engineering roles",
     ],
 
     // ── Learning Outcomes ──
     learningOutcomes: [
-      "Build complete MERN stack applications from scratch",
-      "Design RESTful APIs with Node.js and Express",
-      "Create responsive UIs using React and Tailwind CSS",
-      "Implement JWT authentication and authorization",
-      "Optimize MongoDB database performance",
-      "Deploy apps to Vercel, Render, and AWS",
-      "Integrate third-party APIs and payment systems",
-      "Write clean and scalable production-level code",
+      "Build responsive frontend applications using React.js",
+      "Develop RESTful backend APIs using Node.js and Express",
+      "Manage databases using MongoDB",
+      "Implement authentication and authorization systems",
+      "Connect frontend and backend applications",
+      "Deploy applications using Vercel and Netlify",
+      "Work with Git and GitHub for version control",
+      "Build production-ready full stack projects",
     ],
 
     // ── Target Audience ──
     targetAudience: [
-      "Beginners who want to become full-stack developers",
-      "Frontend developers moving to backend",
-      "Students preparing for software jobs",
-      "Freelancers building full products",
+      "Beginners who want to become full stack developers",
+      "Students preparing for software development jobs",
+      "Frontend developers moving into backend development",
+      "Freelancers and startup founders",
     ],
 
     // ── Certificate ──
     certificate: {
       type: "Certificate of Internship Completion",
+
       issuedBy: ["Alomonx Technology", "Alocodes"],
+
       signatories: [
         { role: "Authorized Signatory", title: "Director" },
         { role: "HR Manager", title: "Human Resources" },
       ],
+
       description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
+        "Upon successful completion, learners receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes.",
+
       imageUrl: "/Certificate.jpeg",
     },
 
@@ -569,14 +661,14 @@ const courses = [
     instructors: [
       {
         name: "Rahul Sharma",
-        role: "Senior Full Stack Developer at Amazon",
+        role: "Senior Full Stack Developer",
         avatar: "/avatars/man_ava.jpg",
       },
     ],
 
     // ── Curriculum Summary ──
     curriculumSummary: {
-      totalModules: 7,
+      totalModules: 8,
       totalDuration: "80+ hours on-demand video",
     },
 
@@ -587,39 +679,44 @@ const courses = [
         time: "2 weeks ago",
         rating: 5,
         comment:
-          "Complete dev transformation. The MERN stack is explained extremely well.",
+          "The course helped me understand frontend and backend development clearly.",
       },
+
       {
         name: "Anita M.",
         time: "1 month ago",
         rating: 4.5,
-        comment: "Projects are amazing. Helped me land freelance work.",
+        comment: "Projects are practical and helped me improve my portfolio.",
       },
+
       {
         name: "Vikram P.",
         time: "1 month ago",
         rating: 5,
-        comment: "JWT and security section is top-notch.",
+        comment:
+          "Authentication and deployment sections are explained really well.",
       },
+
       {
         name: "Meera R.",
         time: "2 months ago",
         rating: 4.5,
-        comment: "Great mentors and live sessions.",
+        comment: "Great mentors and beginner-friendly explanations.",
       },
     ],
 
     // ── Testimonial ──
     testimonial: {
-      quote: "Complete dev transformation.",
-      author: "Deepak S., MERN Dev",
+      quote: "Build complete web applications independently.",
+      author: "Deepak S., Full Stack Developer",
     },
+
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "Full Stack Development Brochure",
+      fileUrl: "/brochures/full-stack-development.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
-      lastUpdated: "March 2025",
+      fileSize: "2.5 MB",
+      lastUpdated: "April 2025",
     },
   },
 
