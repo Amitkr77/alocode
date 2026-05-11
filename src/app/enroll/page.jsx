@@ -59,7 +59,7 @@ export default function Page() {
 
   return (
     <div
-      className="overflow-x-hidden min-h-screen bg-background text-foreground"
+      className="overflow-x-hidden min-h-screen text-foreground"
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       {/* Green background blobs */}

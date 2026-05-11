@@ -41,20 +41,14 @@ const groupedCourses = courses.reduce((acc, course) => {
   return acc;
 }, {});
 
-// Dark nav surface — deep green instead of dark grey
-const NAV_BG_SCROLLED = "rgba(10,28,16,0.98)";
-const NAV_BG_DEFAULT = "rgba(10,28,16,0.88)";
-const NAV_BORDER_SCROLLED = "rgba(66,214,116,0.12)";
-const NAV_BORDER_DEFAULT = "rgba(66,214,116,0.07)";
 const DROPDOWN_BG = "#0a1c10";
 const DIVIDER = "rgba(66,214,116,0.10)";
-
-// Active nav item tint
-const ACTIVE_COLOR = "var(--primary)"; // #42D674
-const ACTIVE_BG = "rgba(66,214,116,0.10)";
-const ACTIVE_BORDER = "rgba(66,214,116,0.20)";
-const INACTIVE_COLOR = "rgba(255,255,255,0.70)";
+const ACTIVE_COLOR = "#42d674";
+const ACTIVE_BG = "#42d674";
+const ACTIVE_TEXT = "#0f2d1a";
+const INACTIVE_COLOR = "rgba(255,255,255,0.75)";
 const INACTIVE_COLOR_DIM = "rgba(255,255,255,0.55)";
+const ACTIVE_BORDER = "rgba(66,214,116,0.20)";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -71,329 +65,357 @@ const Navbar = () => {
     pathname === "/courses" || pathname.startsWith("/courses/");
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled ? NAV_BG_SCROLLED : NAV_BG_DEFAULT,
-        backdropFilter: "blur(14px)",
-        borderBottom: `1px solid ${scrolled ? NAV_BORDER_SCROLLED : NAV_BORDER_DEFAULT}`,
-        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.25)" : "none",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-5 sm:px-4 lg:px-10">
-        <div className="flex items-center justify-between h-15 sm:h-18">
-          {/* Logo */}
-          <div className="shrink-0">
-            <Link href="/">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
+        <div className="flex items-center h-16 sm:h-22">
+          {/* ── Single unified navbar pill ── */}
+          <nav
+            className="flex items-center justify-between w-full px-3 py-1.5 rounded-full"
+            style={{
+              background: scrolled
+                ? "rgba(10,28,16,0.97)"
+                : "rgba(10,28,16,0.85)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(66,214,116,0.15)",
+              boxShadow: scrolled
+                ? "0 4px 24px rgba(0,0,0,0.35)"
+                : "0 2px 12px rgba(0,0,0,0.20)",
+              transition: "all 0.3s ease",
+            }}
+          >
+            {/* ── Logo ── */}
+            <Link href="/" className="shrink-0 pl-2">
               <img
-                className="h-10 sm:h-13 w-auto"
+                className="h-9 sm:h-11 w-auto"
                 src="/Aloc_logo1.png"
                 alt="Alocode logo"
               />
             </Link>
-          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            {/* Courses dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className="flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors"
-                  style={{
-                    color: isCoursesActive ? ACTIVE_COLOR : INACTIVE_COLOR,
-                    background: isCoursesActive ? ACTIVE_BG : "transparent",
-                    fontFamily: "system-ui, sans-serif",
-                  }}
-                >
-                  Courses
-                  <ChevronDown className="w-4 h-4 opacity-70" />
-                </button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent
-                className="w-60 p-2 rounded-2xl mt-0"
-                style={{
-                  background: DROPDOWN_BG,
-                  border: "1px solid rgba(66,214,116,0.12)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
-                }}
-              >
-                <DropdownMenuLabel
-                  className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5"
-                  style={{
-                    color: "rgba(255,255,255,0.35)",
-                    fontFamily: "system-ui, sans-serif",
-                  }}
-                >
-                  Explore Courses
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator style={{ background: DIVIDER }} />
-
-                <DropdownMenuItem asChild>
-                  <Link
-                    href="/courses"
-                    className="rounded-xl px-3 py-1 flex items-center justify-between font-semibold transition-colors"
+            {/* ── Center nav links (desktop only) ── */}
+            <div className="hidden md:flex items-center gap-1">
+              {/* Courses dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className="flex items-center gap-1 px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
                     style={{
-                      color: "rgba(255,255,255,0.90)",
+                      color: isCoursesActive ? ACTIVE_TEXT : INACTIVE_COLOR,
+                      background: isCoursesActive ? ACTIVE_BG : "transparent",
                       fontFamily: "system-ui, sans-serif",
                     }}
                   >
-                    All Courses
-                    <ArrowRight
-                      className="w-3.5 h-3.5"
-                      style={{ color: ACTIVE_COLOR }}
-                    />
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator style={{ background: DIVIDER }} />
+                    Courses
+                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
+                  </button>
+                </DropdownMenuTrigger>
 
-                {Object.entries(groupedCourses).map(([category, items]) => (
-                  <DropdownMenuSub key={category}>
-                    <DropdownMenuSubTrigger
-                      className="text-sm rounded-xl px-3 py-1 font-medium"
+                <DropdownMenuContent
+                  className="w-60 p-2 rounded-2xl mt-2"
+                  style={{
+                    background: DROPDOWN_BG,
+                    border: "1px solid rgba(66,214,116,0.12)",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.40)",
+                  }}
+                >
+                  <DropdownMenuLabel
+                    className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5"
+                    style={{
+                      color: "rgba(255,255,255,0.35)",
+                      fontFamily: "system-ui, sans-serif",
+                    }}
+                  >
+                    Explore Courses
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator style={{ background: DIVIDER }} />
+
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/courses"
+                      className="rounded-xl px-3 py-1 flex items-center justify-between font-semibold transition-colors"
                       style={{
-                        color: "rgba(255,255,255,0.75)",
+                        color: "rgba(255,255,255,0.90)",
                         fontFamily: "system-ui, sans-serif",
                       }}
                     >
-                      {category}
-                    </DropdownMenuSubTrigger>
-                    <DropdownMenuPortal>
-                      <DropdownMenuSubContent
-                        className="rounded-2xl p-2 min-w-[200px]"
+                      All Courses
+                      <ArrowRight
+                        className="w-3.5 h-3.5"
+                        style={{ color: ACTIVE_COLOR }}
+                      />
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator style={{ background: DIVIDER }} />
+
+                  {Object.entries(groupedCourses).map(([category, items]) => (
+                    <DropdownMenuSub key={category}>
+                      <DropdownMenuSubTrigger
+                        className="text-sm rounded-xl px-3 py-1 font-medium"
                         style={{
-                          background: DROPDOWN_BG,
-                          border: "1px solid rgba(66,214,116,0.12)",
-                          boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
-                        }}
-                      >
-                        {items.map((course) => (
-                          <DropdownMenuItem key={course.slug} asChild>
-                            <Link
-                              href={`/courses/${course.slug}`}
-                              className="text-sm rounded-xl px-3 py-1"
-                              style={{
-                                color: "rgba(255,255,255,0.60)",
-                                fontFamily: "system-ui, sans-serif",
-                              }}
-                            >
-                              {course.title}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                        <DropdownMenuSeparator
-                          style={{ background: DIVIDER }}
-                        />
-                        <DropdownMenuItem asChild>
-                          <Link
-                            href={`/courses?category=${encodeURIComponent(category)}`}
-                            className="text-xs font-bold px-3 py-1 rounded-xl flex items-center gap-1"
-                            style={{
-                              color: ACTIVE_COLOR,
-                              fontFamily: "system-ui, sans-serif",
-                            }}
-                          >
-                            View all {category}
-                            <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuSubContent>
-                    </DropdownMenuPortal>
-                  </DropdownMenuSub>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-4 py-1 rounded-full text-sm font-medium transition-colors"
-                style={{
-                  color: pathname === item.href ? ACTIVE_COLOR : INACTIVE_COLOR,
-                  background:
-                    pathname === item.href ? ACTIVE_BG : "transparent",
-                  fontFamily: "system-ui, sans-serif",
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/enroll"
-              className="flex items-center justify-center rounded-full h-9 px-6 text-sm font-bold transition-all"
-              style={{
-                background: "var(--primary)",
-                color: "var(--primary-foreground)",
-                boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
-                fontFamily: "system-ui, sans-serif",
-              }}
-            >
-              Enroll Now
-            </Link>
-          </div>
-
-          {/* Mobile Menu */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <button
-                className="focus:outline-none transition-colors p-1"
-                style={{ color: "rgba(255,255,255,0.80)" }}
-                aria-label="Open mobile menu"
-              >
-                <Menu className="h-6 w-7" />
-              </button>
-            </SheetTrigger>
-
-            <SheetContent
-              side="right"
-              className="p-0 w-60 flex flex-col h-full overflow-y-auto"
-              style={{
-                background: DROPDOWN_BG,
-                borderLeft: "1px solid rgba(66,214,116,0.10)",
-                color: "#fff",
-              }}
-            >
-              <SheetHeader
-                className="px-6 pt-4 pb-2"
-                style={{ borderBottom: "1px solid rgba(66,214,116,0.10)" }}
-              >
-                <SheetTitle
-                  className="text-left text-lg font-black"
-                  style={{ color: "#fff", fontFamily: "'Georgia', serif" }}
-                >
-                  Menu
-                </SheetTitle>
-              </SheetHeader>
-
-              <nav className="flex flex-col gap-1 px-4 pt-2">
-                {/* All Courses */}
-                <SheetClose asChild>
-                  <Link
-                    href="/courses"
-                    className="block px-4 py-1 rounded-xl text-sm font-semibold transition-all border"
-                    style={{
-                      color: isCoursesActive ? ACTIVE_COLOR : INACTIVE_COLOR,
-                      background: isCoursesActive ? ACTIVE_BG : "transparent",
-                      borderColor: isCoursesActive
-                        ? ACTIVE_BORDER
-                        : "transparent",
-                      fontFamily: "system-ui, sans-serif",
-                    }}
-                  >
-                    All Courses
-                  </Link>
-                </SheetClose>
-
-                {/* Course categories — collapsible */}
-                {Object.entries(groupedCourses).map(([category, items]) => {
-                  const isOpen = openCategory === category;
-                  return (
-                    <div key={category} className="flex flex-col gap-0.5 mt-1">
-                      <button
-                        onClick={() =>
-                          setOpenCategory(isOpen ? null : category)
-                        }
-                        className="flex items-center justify-between px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wide border w-full text-left"
-                        style={{
-                          color: ACTIVE_COLOR,
-                          background: "rgba(66,214,116,0.06)",
-                          borderColor: DIVIDER,
+                          color: "rgba(255,255,255,0.75)",
                           fontFamily: "system-ui, sans-serif",
                         }}
                       >
                         {category}
-                        <ChevronDown
-                          className="w-4 h-4 transition-transform duration-200"
+                      </DropdownMenuSubTrigger>
+                      <DropdownMenuPortal>
+                        <DropdownMenuSubContent
+                          className="rounded-2xl p-2 min-w-[200px]"
                           style={{
-                            transform: isOpen
-                              ? "rotate(180deg)"
-                              : "rotate(0deg)",
+                            background: DROPDOWN_BG,
+                            border: "1px solid rgba(66,214,116,0.12)",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.40)",
                           }}
-                        />
-                      </button>
-
-                      {/* Courses list — only shown when open */}
-                      {isOpen &&
-                        items.map((course) => (
-                          <SheetClose asChild key={course.slug}>
+                        >
+                          {items.map((course) => (
+                            <DropdownMenuItem key={course.slug} asChild>
+                              <Link
+                                href={`/courses/${course.slug}`}
+                                className="text-sm rounded-xl px-3 py-1"
+                                style={{
+                                  color: "rgba(255,255,255,0.60)",
+                                  fontFamily: "system-ui, sans-serif",
+                                }}
+                              >
+                                {course.title}
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                          <DropdownMenuSeparator
+                            style={{ background: DIVIDER }}
+                          />
+                          <DropdownMenuItem asChild>
                             <Link
-                              href={`/courses/${course.slug}`}
-                              className="block px-4 py-1 ml-2 rounded-xl text-sm transition-all border border-transparent"
+                              href={`/courses?category=${encodeURIComponent(category)}`}
+                              className="text-xs font-bold px-3 py-1 rounded-xl flex items-center gap-1"
                               style={{
-                                color:
-                                  pathname === `/courses/${course.slug}`
-                                    ? ACTIVE_COLOR
-                                    : INACTIVE_COLOR_DIM,
-                                background:
-                                  pathname === `/courses/${course.slug}`
-                                    ? ACTIVE_BG
-                                    : "transparent",
+                                color: ACTIVE_COLOR,
                                 fontFamily: "system-ui, sans-serif",
                               }}
                             >
-                              {course.title}
+                              View all {category}
+                              <ArrowRight className="w-3 h-3" />
                             </Link>
-                          </SheetClose>
-                        ))}
-                    </div>
-                  );
-                })}
+                          </DropdownMenuItem>
+                        </DropdownMenuSubContent>
+                      </DropdownMenuPortal>
+                    </DropdownMenuSub>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-                <div className="h-px my-2" style={{ background: DIVIDER }} />
+              {/* Regular nav items */}
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
+                  style={{
+                    color:
+                      pathname === item.href ? ACTIVE_TEXT : INACTIVE_COLOR,
+                    background:
+                      pathname === item.href ? ACTIVE_BG : "transparent",
+                    fontFamily: "system-ui, sans-serif",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
 
-                {navItems.map((item) => (
-                  <SheetClose asChild key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="block px-4 py-1 rounded-xl text-sm font-semibold transition-all border"
-                      style={{
-                        color:
-                          pathname === item.href
+            {/* ── Right side: Enroll Now (desktop) + Hamburger (mobile) ── */}
+            <div className="flex items-center gap-2 pr-1">
+              {/* Enroll Now — desktop only */}
+              <Link
+                href="/enroll"
+                className="hidden md:block px-5 py-2 rounded-full text-sm font-bold transition-all"
+                style={{
+                  background: "transparent",
+                  color: ACTIVE_COLOR,
+                  border: `1.5px solid ${ACTIVE_COLOR}`,
+                  boxShadow: "0 0 12px rgba(66,214,116,0.20)",
+                  fontFamily: "system-ui, sans-serif",
+                }}
+              >
+                Enroll Now
+              </Link>
+
+              {/* ── Mobile hamburger ── */}
+              <Sheet>
+                <SheetTrigger asChild>
+                  <button
+                    className="md:hidden focus:outline-none p-2 rounded-full transition-colors"
+                    style={{
+                      color: "rgba(255,255,255,0.80)",
+                      background: "rgba(66,214,116,0.08)",
+                      border: "1px solid rgba(66,214,116,0.15)",
+                    }}
+                    aria-label="Open mobile menu"
+                  >
+                    <Menu className="h-5 w-5" />
+                  </button>
+                </SheetTrigger>
+
+                <SheetContent
+                  side="right"
+                  className="p-0 w-64 flex flex-col h-full overflow-y-auto"
+                  style={{
+                    background: DROPDOWN_BG,
+                    borderLeft: "1px solid rgba(66,214,116,0.10)",
+                    color: "#fff",
+                  }}
+                >
+                  {/* Mobile sheet header with logo */}
+                  <SheetHeader
+                    className="px-6 pt-5 pb-4"
+                    style={{ borderBottom: "1px solid rgba(66,214,116,0.10)" }}
+                  >
+                    <SheetTitle className="text-left">
+                      <img
+                        className="h-8 w-auto"
+                        src="/Aloc_logo1.png"
+                        alt="Alocode logo"
+                      />
+                    </SheetTitle>
+                  </SheetHeader>
+
+                  <nav className="flex flex-col gap-1 px-4 pt-3">
+                    <SheetClose asChild>
+                      <Link
+                        href="/courses"
+                        className="block px-4 py-2 rounded-xl text-sm font-semibold transition-all border"
+                        style={{
+                          color: isCoursesActive
                             ? ACTIVE_COLOR
                             : INACTIVE_COLOR,
-                        background:
-                          pathname === item.href ? ACTIVE_BG : "transparent",
-                        borderColor:
-                          pathname === item.href
+                          background: isCoursesActive
+                            ? "rgba(66,214,116,0.10)"
+                            : "transparent",
+                          borderColor: isCoursesActive
                             ? ACTIVE_BORDER
                             : "transparent",
-                        fontFamily: "system-ui, sans-serif",
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  </SheetClose>
-                ))}
-              </nav>
+                          fontFamily: "system-ui, sans-serif",
+                        }}
+                      >
+                        All Courses
+                      </Link>
+                    </SheetClose>
 
-              {/* Mobile CTA */}
-              <div
-                className="mt-auto px-4 pb-6 pt-4"
-                style={{ borderTop: "1px solid rgba(66,214,116,0.10)" }}
-              >
-                <SheetClose asChild>
-                  <Link
-                    href="/enroll"
-                    className="block w-full py-3 px-4 text-center rounded-full font-bold text-sm transition-all"
-                    style={{
-                      background: "var(--primary)",
-                      color: "var(--primary-foreground)",
-                      boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
-                      fontFamily: "system-ui, sans-serif",
-                    }}
+                    {Object.entries(groupedCourses).map(([category, items]) => {
+                      const isOpen = openCategory === category;
+                      return (
+                        <div
+                          key={category}
+                          className="flex flex-col gap-0.5 mt-1"
+                        >
+                          <button
+                            onClick={() =>
+                              setOpenCategory(isOpen ? null : category)
+                            }
+                            className="flex items-center justify-between px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wide border w-full text-left"
+                            style={{
+                              color: ACTIVE_COLOR,
+                              background: "rgba(66,214,116,0.06)",
+                              borderColor: DIVIDER,
+                              fontFamily: "system-ui, sans-serif",
+                            }}
+                          >
+                            {category}
+                            <ChevronDown
+                              className="w-4 h-4 transition-transform duration-200"
+                              style={{
+                                transform: isOpen
+                                  ? "rotate(180deg)"
+                                  : "rotate(0deg)",
+                              }}
+                            />
+                          </button>
+
+                          {isOpen &&
+                            items.map((course) => (
+                              <SheetClose asChild key={course.slug}>
+                                <Link
+                                  href={`/courses/${course.slug}`}
+                                  className="block px-4 py-1.5 ml-2 rounded-xl text-sm transition-all border border-transparent"
+                                  style={{
+                                    color:
+                                      pathname === `/courses/${course.slug}`
+                                        ? ACTIVE_COLOR
+                                        : INACTIVE_COLOR_DIM,
+                                    background:
+                                      pathname === `/courses/${course.slug}`
+                                        ? "rgba(66,214,116,0.10)"
+                                        : "transparent",
+                                    fontFamily: "system-ui, sans-serif",
+                                    textDecoration: "none",
+                                  }}
+                                >
+                                  {course.title}
+                                </Link>
+                              </SheetClose>
+                            ))}
+                        </div>
+                      );
+                    })}
+
+                    <div
+                      className="h-px my-2"
+                      style={{ background: DIVIDER }}
+                    />
+
+                    {navItems.map((item) => (
+                      <SheetClose asChild key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="block px-4 py-2 rounded-xl text-sm font-semibold transition-all border"
+                          style={{
+                            color:
+                              pathname === item.href
+                                ? ACTIVE_COLOR
+                                : INACTIVE_COLOR,
+                            background:
+                              pathname === item.href
+                                ? "rgba(66,214,116,0.10)"
+                                : "transparent",
+                            borderColor:
+                              pathname === item.href
+                                ? ACTIVE_BORDER
+                                : "transparent",
+                            fontFamily: "system-ui, sans-serif",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {item.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </nav>
+
+                  {/* Mobile CTAs */}
+                  <div
+                    className="mt-auto px-4 pb-6 pt-4 flex flex-col gap-2"
+                    style={{ borderTop: "1px solid rgba(66,214,116,0.10)" }}
                   >
-                    Enroll Now
-                  </Link>
-                </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
+                    <SheetClose asChild>
+                      <Link
+                        href="/enroll"
+                        className="block w-full py-2.5 px-4 text-center rounded-full font-bold text-sm transition-all border"
+                        style={{
+                          color: ACTIVE_COLOR,
+                          borderColor: ACTIVE_COLOR,
+                          boxShadow: "0 0 12px rgba(66,214,116,0.20)",
+                          fontFamily: "system-ui, sans-serif",
+                          textDecoration: "none",
+                        }}
+                      >
+                        Enroll Now
+                      </Link>
+                    </SheetClose>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </nav>
         </div>
       </div>
     </header>

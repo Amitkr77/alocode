@@ -9,7 +9,7 @@ const Courses = () => {
   return (
     <section
       className="py-12 border-y"
-      style={{ background: "var(--card)", borderColor: "var(--border)" }}
+      style={{ borderColor: "var(--border)" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
@@ -39,7 +39,7 @@ const Courses = () => {
             href="/courses"
             className="text-xl font-bold flex items-center gap-1 transition-all shrink-0"
             style={{
-              color: "var(--primary)",
+              color: "var(--default-foreground)",
               fontFamily: "system-ui, sans-serif",
             }}
           >

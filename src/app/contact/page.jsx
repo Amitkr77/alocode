@@ -62,7 +62,7 @@ export default function page() {
 
   return (
     <div
-      className="overflow-x-hidden bg-background text-foreground"
+      className="overflow-x-hidden text-foreground"
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       <main className="flex flex-col grow pt-8">

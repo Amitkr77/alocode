@@ -2,8 +2,6 @@
 import React from "react";
 import {
   ArrowRight,
-  Globe,
-  Share2,
   Mail,
   Twitter,
   Linkedin,
@@ -12,347 +10,602 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-// ─── Color tokens — matched exactly to Navbar ───────────────────────────────
-// Navbar uses rgba(10,28,16,0.98) scrolled / rgba(10,28,16,0.88) default.
-// Footer is static (no scroll state), so we use the fully-opaque scrolled value.
-const FOOTER_BG = "rgba(10,28,16,0.98)"; // ← was "#0a1c10" (same hex, now matches nav token)
-const DIVIDER = "rgba(66,214,116,0.12)"; // ← was 0.10, bumped to match nav scrolled border
-const ICON_BG = "rgba(66,214,116,0.06)";
-const ICON_BORDER = "rgba(66,214,116,0.12)"; // ← was 0.12, already matching
-const ICON_COLOR = "rgba(186,219,162,0.50)";
-const ICON_HOVER_BG = "rgba(66,214,116,0.10)"; // ← was 0.15, matched to ACTIVE_BG in nav
-const ICON_HOVER_BORDER = "rgba(66,214,116,0.20)"; // ← was 0.40, matched to ACTIVE_BORDER in nav
-const LINK_COLOR = "rgba(255,255,255,0.70)"; // ← was rgba(186,219,162,0.60), matched to nav INACTIVE_COLOR
-const DIM_COLOR = "rgba(255,255,255,0.55)"; // ← matched to nav INACTIVE_COLOR_DIM
-const DIMMER_COLOR = "rgba(255,255,255,0.55)"; // ← matched to nav INACTIVE_COLOR_DIM
-const ACTIVE_COLOR = "var(--primary)"; // #42D674 — same as nav
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const card = {
+    background: "var(--footer-card-bg)",
+    border: "1px solid var(--footer-card-border)",
+    borderRadius: "24px",
+    backdropFilter: "blur(16px)",
+    padding: "20px 28px",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value.trim();
     if (!email) return;
-
     try {
-      const response = await fetch("/api/subscribe", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-
-      if (response.ok) {
-        alert("Successfully subscribed! Check your email for confirmation.");
+      if (res.ok) {
+        alert("Successfully subscribed!");
         e.target.reset();
       } else {
-        const errorData = await response.json();
-        alert(`Subscription failed: ${errorData.message || "Unknown error"}`);
+        const d = await res.json();
+        alert(`Failed: ${d.message || "Unknown error"}`);
       }
-    } catch (error) {
-      console.error("Subscription error:", error);
-      alert("Subscription failed: Network error. Please try again.");
+    } catch {
+      alert("Network error. Please try again.");
     }
   };
 
   return (
     <footer
-      className="pt-4 pb-2"
       style={{
-        background: FOOTER_BG,
-        borderTop: `1px solid ${DIVIDER}`,
         fontFamily: "system-ui, sans-serif",
+        paddingTop: "40px",
+        paddingBottom: "0px",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-2">
-          {/* ── Brand ── */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="mb-2">
-              <Link href="/">
-                <img
-                  className="h-10 w-auto hover:opacity-80 transition-opacity"
-                  src="/Aloc_logo1.png"
-                  alt="Alocode logo"
-                />
-              </Link>
-            </div>
-            <p
-              className="text-sm leading-relaxed mb-2 max-w-xs"
-              style={{ color: LINK_COLOR }}
-            >
-              Empowering the next generation of developers with hands-on skills,
-              expert mentorship, and real-world projects that matter.
-            </p>
+      <div
+        style={{
+          maxWidth: "1250px",
+          margin: "0 auto",
+          padding: "0 24px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px",
+        }}
+      >
+        {/* ── Row 1: Brand tagline card ── */}
+        <div
+          style={{
+            ...card,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "16px",
+          }}
+        >
+          <Link href="/">
+            <img
+              src="/Aloc_logo1.png"
+              alt="Alocode logo"
+              className="footer-logo"
+              style={{ height: "40px", width: "auto" }}
+            />
+          </Link>
+          <p
+            className="footer-tagline"
+            style={{
+              fontSize: "clamp(20px, 4vw, 32px)",
+              fontWeight: 800,
+              color: "var(--footer-text)",
+              margin: 0,
+              letterSpacing: "-0.5px",
+              fontFamily: "'Georgia', serif",
+            }}
+          >
+            Learn. <span style={{ color: "var(--primary)" }}>Code.</span> Get
+            Placed.
+          </p>
+        </div>
 
-            {/* Social links */}
-            <div className="flex gap-2">
-              {[
-                {
-                  href: "https://twitter.com/alocodes",
-                  Icon: Twitter,
-                  label: "Twitter",
-                },
-                {
-                  href: "https://linkedin.com/company/alocodes",
-                  Icon: Linkedin,
-                  label: "LinkedIn",
-                },
-                {
-                  href: "https://instagram.com/alocodes",
-                  Icon: Instagram,
-                  label: "Instagram",
-                },
-                {
-                  href: "https://youtube.com/@alocodes",
-                  Icon: Youtube,
-                  label: "YouTube",
-                },
-              ].map(({ href, Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all"
-                  style={{
-                    background: ICON_BG,
-                    border: `1px solid ${ICON_BORDER}`,
-                    color: ICON_COLOR,
-                  }}
-                  aria-label={label}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = ICON_HOVER_BG;
-                    e.currentTarget.style.borderColor = ICON_HOVER_BORDER;
-                    e.currentTarget.style.color = "var(--primary)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ICON_BG;
-                    e.currentTarget.style.borderColor = ICON_BORDER;
-                    e.currentTarget.style.color = ICON_COLOR;
-                  }}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Company ── */}
-          <div>
-            <h3
-              className="text-sm font-black uppercase tracking-widest mb-2"
-              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
-            >
-              Company
-            </h3>
-            <ul className="space-y-1">
-              {[
-                { href: "/about", label: "About Us" },
-                { href: "/why-choose", label: "Why Choose Us" },
-                { href: "/live", label: "Live Training" },
-                { href: "/faq", label: "FAQ" },
-              ].map(({ href, label }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm inline-flex items-center gap-1 group transition-colors"
-                    style={{ color: LINK_COLOR }}
-                  >
-                    <span
-                      className="group-hover:translate-x-0.5 transition-transform"
-                      style={{ transition: "color 0.2s" }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "var(--primary)")
-                      }
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "")}
-                    >
-                      {label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Courses ── */}
-          <div>
-            <h3
-              className="text-sm font-black uppercase tracking-widest mb-2"
-              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
-            >
-              Courses
-            </h3>
-            <ul className="space-y-1">
-              {[
-                { href: "/courses?category=Programming", label: "Programming" },
-                {
-                  href: "/courses?category=Web Development",
-                  label: "Web Development",
-                },
-                {
-                  href: "/courses?category=Data Science",
-                  label: "Data Science",
-                },
-                {
-                  href: "/courses?category=App Development",
-                  label: "App Development",
-                },
-                { href: "/courses", label: "Browse All" },
-              ].map(({ href, label }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm inline-flex items-center gap-1 group transition-colors"
-                    style={{ color: LINK_COLOR }}
-                  >
-                    <span
-                      className="group-hover:translate-x-0.5 transition-transform"
-                      style={{ transition: "color 0.2s" }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "var(--primary)")
-                      }
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "")}
-                    >
-                      {label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Newsletter ── */}
-          <div className="col-span-2 md:col-span-1">
-            <h3
-              className="text-sm font-black uppercase tracking-widest mb-2"
-              style={{ color: "#e8f5e9", fontFamily: "'Georgia', serif" }}
-            >
-              Stay Updated
-            </h3>
-            <p
-              className="text-sm mb-2 leading-relaxed"
-              style={{ color: LINK_COLOR }}
-            >
-              Get the latest updates on new courses, tips, and exclusive offers.
-            </p>
-            <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
-              <input
-                name="email"
-                className="rounded-xl px-4 py-2 text-sm transition-colors focus:outline-none"
+        {/* ── Row 2: Sitemap card ── */}
+        <div style={card}>
+          <div
+            className="footer-sitemap-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: "32px",
+            }}
+          >
+            {/* Site Map + address */}
+            <div>
+              <p
+                className="footer-section-label"
                 style={{
-                  background: ICON_BG,
-                  border: `1px solid ${ICON_BORDER}`,
-                  color: "#e8f5e9",
-                }}
-                type="email"
-                placeholder="Enter your email"
-                required
-                onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(66,214,116,0.50)";
-                  e.target.style.boxShadow = "0 0 0 2px rgba(66,214,116,0.12)";
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = ICON_BORDER;
-                  e.target.style.boxShadow = "none";
-                }}
-              />
-              <button
-                type="submit"
-                className="flex items-center justify-center gap-2 h-11 rounded-full text-sm font-bold transition-all group"
-                style={{
-                  background: "var(--primary)",
-                  color: "var(--primary-foreground)",
-                  boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "8px",
                 }}
               >
-                Subscribe
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            </form>
-            <p className="text-xs mt-3" style={{ color: DIM_COLOR }}>
-              We respect your privacy. Unsubscribe at any time.
-            </p>
+                Site Map
+              </p>
+              <p
+                className="footer-sitemap-heading"
+                style={{
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  color: "var(--footer-text)",
+                  lineHeight: 1.2,
+                  marginBottom: "14px",
+                  fontFamily: "'Georgia', serif",
+                }}
+              >
+                Find all our links here
+              </p>
+              <p
+                className="footer-section-label"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "6px",
+                }}
+              >
+                Our Office
+              </p>
+              <p
+                className="footer-address"
+                style={{
+                  fontSize: "12px",
+                  color: "var(--footer-text)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                Alocode Technologies Pvt. Ltd.
+                <br />
+                Kurji, Digha
+                <br />
+                Patna, Bihar 800016
+                <br />
+                India
+              </p>
+            </div>
+
+            {/* Explore */}
+            <div>
+              <p
+                className="footer-section-label"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "10px",
+                }}
+              >
+                Explore
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "6px",
+                }}
+              >
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/about", label: "About Us" },
+                  { href: "/contact", label: "Contact Us" },
+                  { href: "/live", label: "Live Training" },
+                  { href: "/faq", label: "FAQ" },
+                ].map(({ href, label }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="footer-link"
+                      style={{
+                        fontSize: "14px",
+                        color: "var(--footer-text)",
+                        textDecoration: "none",
+                        transition: "color 0.2s",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--primary)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--footer-text)")
+                      }
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Programs */}
+            <div>
+              <p
+                className="footer-section-label"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "10px",
+                }}
+              >
+                Programs
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "6px",
+                }}
+              >
+                {[
+                  {
+                    href: "/courses?category=Programming",
+                    label: "Programming",
+                  },
+                  {
+                    href: "/courses?category=Web Development",
+                    label: "Web Development",
+                  },
+                  {
+                    href: "/courses?category=Data Science",
+                    label: "Data Science",
+                  },
+                  {
+                    href: "/courses?category=App Development",
+                    label: "App Development",
+                  },
+                  { href: "/courses", label: "Browse All" },
+                ].map(({ href, label }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="footer-link"
+                      style={{
+                        fontSize: "14px",
+                        color: "var(--footer-text)",
+                        textDecoration: "none",
+                        transition: "color 0.2s",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--primary)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--footer-text)")
+                      }
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <p
+                className="footer-section-label"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "10px",
+                }}
+              >
+                Company
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                }}
+              >
+                {[
+                  { href: "/about", label: "About Us" },
+                  { href: "/why-choose", label: "Why Choose Us" },
+                  { href: "/careers", label: "Careers", badge: "We're Hiring" },
+                  { href: "/blog", label: "Blog" },
+                ].map(({ href, label, badge }) => (
+                  <li
+                    key={label}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <Link
+                      href={href}
+                      className="footer-link"
+                      style={{
+                        fontSize: "14px",
+                        color: "var(--footer-text)",
+                        textDecoration: "none",
+                        transition: "color 0.2s",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--primary)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--footer-text)")
+                      }
+                    >
+                      {label}
+                    </Link>
+                    {badge && (
+                      <span
+                        style={{
+                          fontSize: "9px",
+                          fontWeight: 700,
+                          letterSpacing: "0.5px",
+                          textTransform: "uppercase",
+                          background: "var(--primary)",
+                          color: "var(--primary-foreground)",
+                          padding: "2px 7px",
+                          borderRadius: "20px",
+                        }}
+                      >
+                        {badge}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <p
+                className="footer-section-label"
+                style={{
+                  fontSize: "10px",
+                  fontWeight: 700,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "var(--footer-text)",
+                  marginBottom: "16px",
+                }}
+              >
+                Stay Updated
+              </p>
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "var(--footer-text)",
+                  marginBottom: "12px",
+                  lineHeight: 1.5,
+                }}
+              >
+                Get updates on new courses and exclusive offers.
+              </p>
+              <form
+                onSubmit={handleSubmit}
+                style={{ display: "flex", flexDirection: "column", gap: "8px" }}
+              >
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Your email"
+                  required
+                  style={{
+                    background: "rgba(66, 214, 116, 0.06)",
+                    border: "1px solid rgba(66, 214, 116, 0.15)",
+                    borderRadius: "10px",
+                    padding: "9px 14px",
+                    fontSize: "13px",
+                    color: "var(--footer-text)",
+                    outline: "none",
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = "var(--primary)";
+                    e.target.style.boxShadow =
+                      "0 0 0 2px rgba(66,214,116,0.10)";
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = "rgba(66, 214, 116, 0.15)";
+                    e.target.style.boxShadow = "none";
+                  }}
+                />
+                <button
+                  type="submit"
+                  style={{
+                    background: "var(--primary)",
+                    color: "var(--primary-foreground)",
+                    border: "none",
+                    borderRadius: "30px",
+                    padding: "9px 16px",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                  }}
+                >
+                  Subscribe{" "}
+                  <ArrowRight style={{ width: "14px", height: "14px" }} />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 
-        {/* ── Bottom bar ── */}
+        {/* ── Row 3: Social media card ── */}
         <div
-          className="pt-4 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: `1px solid ${DIVIDER}` }}
+          style={{
+            ...card,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "20px",
+          }}
         >
           <p
-            className="text-xs order-2 md:order-1"
-            style={{ color: DIM_COLOR }}
+            className="footer-social-label"
+            style={{
+              fontSize: "20px",
+              fontWeight: 800,
+              color: "var(--footer-text)",
+              margin: 0,
+              fontFamily: "'Georgia', serif",
+            }}
+          >
+            Find us on{" "}
+            <span style={{ color: "var(--primary)" }}>social media</span>
+          </p>
+
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            {[
+              {
+                href: "https://linkedin.com/company/alocodes",
+                Icon: Linkedin,
+                label: "LinkedIn",
+              },
+              { href: "mailto:hello@alocodes.com", Icon: Mail, label: "Mail" },
+              {
+                href: "https://twitter.com/alocodes",
+                Icon: Twitter,
+                label: "X / Twitter",
+              },
+              {
+                href: "https://instagram.com/alocodes",
+                Icon: Instagram,
+                label: "Instagram",
+              },
+              {
+                href: "https://youtube.com/@alocodes",
+                Icon: Youtube,
+                label: "YouTube",
+              },
+            ].map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="footer-social-pill"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "8px 16px",
+                  borderRadius: "30px",
+                  border: "1px solid var(--footer-card-border)",
+                  background: "rgba(66, 214, 116, 0.08)",
+                  color: "var(--footer-text)",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--primary)";
+                  e.currentTarget.style.color = "var(--primary)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor =
+                    "var(--footer-card-border)";
+                  e.currentTarget.style.color = "var(--footer-text)";
+                }}
+              >
+                <Icon
+                  className="footer-social-icon"
+                  style={{ width: "15px", height: "15px" }}
+                />
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Row 4: Bottom bar card ── */}
+        <div
+          style={{
+            ...card,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "16px",
+            padding: "16px 32px",
+          }}
+        >
+          <p
+            className="footer-bottom-text"
+            style={{ fontSize: "12px", color: "var(--footer-text)", margin: 0 }}
           >
             © {currentYear} Alocodes Inc. All rights reserved.
           </p>
 
-          {/* Legal links */}
-          <ul className="flex flex-wrap justify-center gap-6 text-xs order-1 md:order-2">
+          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
             {[
               { href: "/privacy-policy", label: "Privacy Policy" },
               { href: "/support/terms-of-service", label: "Terms of Service" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  className="transition-colors"
-                  style={{ color: DIMMER_COLOR }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "var(--primary)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = DIMMER_COLOR)
-                  }
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Utility icons */}
-          <div className="flex gap-2 order-3">
-            {[
-              {
-                href: "https://alocodes.com",
-                Icon: Globe,
-                label: "Visit Website",
-              },
-              {
-                href: "mailto:hello@alocodes.com",
-                Icon: Mail,
-                label: "Email Us",
-              },
-              { href: "/sitemap", Icon: Share2, label: "Sitemap" },
-            ].map(({ href, Icon, label }) => (
-              <a
+              <Link
                 key={label}
                 href={href}
-                className="w-8 h-8 rounded-xl flex items-center justify-center transition-all"
+                className="footer-bottom-text"
                 style={{
-                  background: ICON_BG,
-                  border: `1px solid ${ICON_BORDER}`,
-                  color: DIMMER_COLOR,
+                  fontSize: "12px",
+                  color: "var(--footer-text)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
                 }}
-                aria-label={label}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = ICON_HOVER_BG;
-                  e.currentTarget.style.borderColor = ICON_HOVER_BORDER;
-                  e.currentTarget.style.color = "var(--primary)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = ICON_BG;
-                  e.currentTarget.style.borderColor = ICON_BORDER;
-                  e.currentTarget.style.color = DIMMER_COLOR;
-                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--footer-text)")
+                }
               >
-                <Icon className="h-4 w-4" />
-              </a>
+                {label}
+              </Link>
             ))}
           </div>
+        </div>
+
+        {/* ── Row 5: Brand watermark ── */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "40px",
+            paddingRight: "15px",
+          }}
+        >
+          <img
+            src="/footer_logo.png"
+            alt=""
+            aria-hidden="true"
+            className="footer-watermark"
+            style={{
+              height: "250px",
+              width: "1050px",
+              opacity: 0.5,
+              userSelect: "none",
+              pointerEvents: "none",
+            }}
+          />
         </div>
       </div>
     </footer>

@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div
-      className="text-foreground overflow-x-hidden bg-background"
+      className="text-foreground overflow-x-hidden"
       style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
     >
       {/* ─────────────────────────────── HERO ─────────────────────────────── */}
@@ -564,64 +564,7 @@ export default function Home() {
       <FAQ />
 
       {/* ─────────────────────────── CTA BANNER ─────────────────────────── */}
-      <section className="py-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-[2.5rem] p-8 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4"
-          style={{ background: "var(--foreground)" }}
-        >
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-1"
-              style={{
-                color: "var(--primary)",
-                fontFamily: "system-ui, sans-serif",
-              }}
-            >
-              Limited seats available
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-black leading-tight"
-              style={{
-                color: "var(--background)",
-                fontFamily: "'Georgia', serif",
-              }}
-            >
-              Ready to Transform
-              <br />
-              Your Career?
-            </h2>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-            <Link
-              href="/enroll"
-              className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-all"
-              style={{
-                background: "var(--primary)",
-                color: "var(--primary-foreground)",
-                fontFamily: "system-ui, sans-serif",
-              }}
-            >
-              Enroll Now <ArrowRight className="w-5 h-5" />
-            </Link>
-            <a
-              href="/brochure.pdf"
-              download="Alocode-Brochure.pdf"
-              className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-colors border"
-              style={{
-                borderColor: "rgba(186,219,162,0.25)",
-                color: "var(--secondary)",
-                fontFamily: "system-ui, sans-serif",
-              }}
-            >
-              <Download className="w-5 h-5" />
-              Download Brochure
-            </a>
-          </div>
-        </motion.div>
-      </section>
+
     </div>
   );
 }

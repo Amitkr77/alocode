@@ -2,8 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Play, Star, Calendar } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Clock, Star } from "lucide-react";
 
 export default function CourseCard({
   course,
@@ -11,164 +10,201 @@ export default function CourseCard({
   showMode = true,
 }) {
   return (
-    <div
-      className="group rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+    <Link
+      href={`/courses/${course.slug}`}
+      className="group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col h-full"
       style={{
         background: "var(--background)",
         border: "1px solid var(--border)",
-        boxShadow: "0 2px 8px rgba(15,45,26,0.04)",
+        boxShadow: "0 2px 12px rgba(15,45,26,0.06)",
+        textDecoration: "none",
       }}
     >
-      <Link href={`/courses/${course.slug}`} className="flex flex-col flex-1">
-        {/* ── Thumbnail ── */}
-        {course.videoThumbnail && (
+      {/* ── Thumbnail ── */}
+      <div
+        className="relative overflow-hidden"
+        style={{ aspectRatio: "16/9", background: "var(--card)" }}
+      >
+        {course.videoThumbnail ? (
+          <img
+            src={course.videoThumbnail}
+            alt={course.title}
+            className="p-3 rounded-md w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
           <div
-            className="relative aspect-[4/3] overflow-hidden"
+            className="w-full h-full flex items-center justify-center"
             style={{ background: "var(--card)" }}
           >
-            <img
-              src={course.videoThumbnail}
-              alt={course.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(15,31,19,0.45), transparent)",
-              }}
-            />
-            {/* Badge */}
-            {course.badge && (
-              <div className="absolute top-2 left-2">
-                <Badge
-                  className={`text-[9px] font-bold uppercase ${course.badge.color ?? ""}`}
-                  style={
-                    !course.badge.color
-                      ? {
-                          background: "var(--primary)",
-                          color: "var(--primary-foreground)",
-                        }
-                      : undefined
-                  }
-                >
-                  {course.badge.text}
-                </Badge>
-              </div>
-            )}
-            {/* Play overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <div
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{
-                  background: "rgba(240,250,240,0.92)",
-                  boxShadow: "0 4px 16px rgba(15,45,26,0.20)",
-                }}
-              >
-                <Play
-                  className="size-4 ml-0.5"
-                  style={{ fill: "var(--primary)", color: "var(--primary)" }}
-                />
-              </div>
-            </div>
-            {/* Video title */}
-            {course.videoTitle && (
-              <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-xs text-white font-medium line-clamp-1">
-                  {course.videoTitle}
-                </p>
-              </div>
-            )}
+            <span
+              style={{ color: "var(--muted-foreground)", fontSize: "13px" }}
+            >
+              No preview
+            </span>
           </div>
         )}
 
-        {/* ── Body ── */}
-        <div className="p-3 flex flex-col flex-1">
-          {/* Meta row */}
-          <div className="flex items-center justify-between text-xs font-medium mb-2 text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" />
-              {course.duration}
-            </span>
+        {/* Badge */}
+        {course.badge && (
+          <div className="absolute top-3 left-4">
             <span
-              className="px-2 py-0.5 rounded-full"
               style={{
-                background: "var(--card)",
-                color: "var(--muted-foreground)",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.5px",
+                textTransform: "uppercase",
+                background: "var(--primary)",
+                color: "var(--primary-foreground)",
+                padding: "3px 8px",
+                borderRadius: "15px",
               }}
             >
-              {showMode ? course.mode : course.level}
+              {course.badge.text}
             </span>
           </div>
+        )}
 
-          {/* Stars */}
-          <div className="flex items-center gap-0.5 mb-2">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="size-3"
-                style={{
-                  fill:
-                    i < Math.floor(course.rating)
-                      ? "var(--primary)"
-                      : "transparent",
-                  color:
-                    i < Math.floor(course.rating)
-                      ? "var(--primary)"
-                      : "var(--border)",
-                }}
-              />
-            ))}
-            <span className="text-xs ml-1 text-muted-foreground">
-              ({course.reviewCount})
-            </span>
-          </div>
-
-          {/* Title */}
-          <h3 className="font-bold text-base mb-2 line-clamp-2 leading-snug text-foreground">
-            {course.title}
-          </h3>
-
-          {/* Description */}
-          <p className="text-sm mb-4 line-clamp-2 flex-1 leading-relaxed text-muted-foreground">
-            {course.description}
-          </p>
-
-          {/* Footer */}
-          <div
-            className="flex items-center justify-between pt-2"
-            style={{ borderTop: "1px solid var(--border)" }}
+        {/* Level pill top-right */}
+        {/* <div className="absolute top-3 right-3">
+          <span
+            style={{
+              fontSize: "10px",
+              fontWeight: 600,
+              background: "rgba(15,31,19,0.70)",
+              color: "rgba(255,255,255,0.90)",
+              padding: "3px 10px",
+              borderRadius: "15px",
+              backdropFilter: "blur(8px)",
+            }}
           >
-            <span
-              className="text-sm font-bold flex items-center gap-1 group-hover:gap-1.5 transition-all"
-              style={{ color: "var(--primary)" }}
-            >
-              View Course →
-            </span>
+            {showMode ? course.mode : course.level}
+          </span>
+        </div> */}
+      </div>
 
-            {showPricing ? (
-              <span
-                className="text-sm font-bold"
-                style={{ color: "var(--primary)" }}
-              >
-                {typeof course.pricing === "object"
-                  ? `From ₹${course.pricing.fullPrice}`
-                  : course.pricing.fullPrice}
-              </span>
-            ) : (
-              course.badge?.rating && (
-                <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <Star
-                    className="w-4 h-4"
-                    style={{ fill: "var(--primary)", color: "var(--primary)" }}
-                  />
-                  {course.badge.rating}
-                </span>
-              )
-            )}
+      {/* ── Body ── */}
+      <div
+        className="flex flex-col flex-1"
+        style={{ padding: "16px 18px 18px" }}
+      >
+        {/* Title */}
+        <h3
+          className="font-bold leading-snug line-clamp-2 mb-2"
+          style={{
+            fontSize: "16px",
+            color: "var(--foreground)",
+            fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+          }}
+        >
+          {course.title}
+        </h3>
+
+        {/* Price + Duration row */}
+        <div
+          className="flex items-center gap-3 mb-3"
+          style={{ fontSize: "14px" }}
+        >
+          {showPricing && (
+            <span
+              style={{
+                fontWeight: 700,
+                color: "var(--foreground)",
+                fontSize: "15px",
+              }}
+            >
+              {typeof course.pricing === "object"
+                ? `₹${course.pricing.fullPrice}`
+                : (course.pricing?.fullPrice ?? "Free")}
+            </span>
+          )}
+          <span
+            className="flex items-center gap-1"
+            style={{ color: "var(--muted-foreground)", fontWeight: 500 }}
+          >
+            <Clock style={{ width: "13px", height: "13px", flexShrink: 0 }} />
+            {course.duration}
+          </span>
+        </div>
+
+        {/* Description */}
+        <p
+          className="line-clamp-2 flex-1"
+          style={{
+            fontSize: "13px",
+            color: "var(--muted-foreground)",
+            lineHeight: 1.6,
+            marginBottom: "16px",
+          }}
+        >
+          {course.description}
+        </p>
+
+        {/* ── Footer: avatars + rating ── */}
+        <div
+          className="flex items-center justify-between pt-3"
+          style={{ borderTop: "1px solid var(--border)" }}
+        >
+          {/* Avatar stack */}
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-2">
+              {[...Array(3)].map((_, i) => (
+                <div
+                  key={i}
+                  className="rounded-full border-2 flex items-center justify-center"
+                  style={{
+                    width: "28px",
+                    height: "28px",
+                    borderColor: "var(--background)",
+                    background: `hsl(${130 + i * 40}, 45%, ${55 + i * 5}%)`,
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    color: "#fff",
+                  }}
+                >
+                  {["J", "A", "R"][i]}
+                </div>
+              ))}
+            </div>
+            <span
+              style={{ fontSize: "12px", color: "var(--muted-foreground)" }}
+            >
+              {course.reviewCount ?? "0"}+
+            </span>
+          </div>
+
+          {/* Stars + rating */}
+          <div className="flex items-center gap-1">
+            <div className="flex items-center gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  style={{
+                    width: "13px",
+                    height: "13px",
+                    fill:
+                      i < Math.floor(course.rating ?? 0)
+                        ? "#f59e0b"
+                        : "transparent",
+                    color:
+                      i < Math.floor(course.rating ?? 0)
+                        ? "#f59e0b"
+                        : "var(--border)",
+                  }}
+                />
+              ))}
+            </div>
+            <span
+              style={{
+                fontSize: "12px",
+                fontWeight: 600,
+                color: "var(--foreground)",
+              }}
+            >
+              {course.rating ?? "N/A"}/5
+            </span>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

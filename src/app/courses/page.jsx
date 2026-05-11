@@ -147,20 +147,20 @@ export default function CoursesPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col overflow-x-hidden bg-background text-foreground"
+      className="min-h-screen flex flex-col overflow-x-hidden text-foreground"
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       <main className="grow flex flex-col items-center w-full px-3 sm:px-6 md:px-10 lg:px-16 py-6 sm:py-10 mt-14">
         {/* ── Hero ── */}
         <div className="w-full max-w-[1300px] text-center mb-6 sm:mb-10 relative rounded-2xl sm:rounded-3xl overflow-hidden py-8 sm:py-12 px-4 sm:px-8">
           {/* Background image */}
-          <img
+          {/* <img
             src="/all_course_background.jpg"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ opacity: 0.15, zIndex: 0 }}
-          />
+            style={{ opacity: 0.42, zIndex: 0 }}
+          /> */}
 
           {/* Hero content */}
           <div className="relative" style={{ zIndex: 1 }}>

@@ -4,7 +4,7 @@ const FAQ = () => {
   return (
     <section
       className="py-10 border-t"
-      style={{ background: "#FCFCFB", borderColor: "#DBD7C7" }}
+      style={{ borderColor: "#DBD7C7" }}
     >
       <div className="max-w-3xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-4">

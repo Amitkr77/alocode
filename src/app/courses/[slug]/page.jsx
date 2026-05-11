@@ -37,7 +37,7 @@ export default async function CourseDetail({ params }) {
 
   return (
     <div
-      className="overflow-x-hidden bg-background text-foreground"
+      className="overflow-x-hidden text-foreground"
       style={{ fontFamily: "system-ui, sans-serif" }}
     >
       {/* ================= HERO ================= */}
@@ -45,14 +45,14 @@ export default async function CourseDetail({ params }) {
         className="relative pt-22 pb-10 overflow-hidden"
         style={{ borderBottom: "1px solid var(--border)" }}
       >
-        <div className="absolute inset-0 opacity-[0.05]">
+        {/* <div className="absolute inset-0 opacity-[0.8]">
           <div
             className="w-full h-full bg-cover bg-center"
             style={{
               backgroundImage: `url(${course.previewVideo?.thumbnail || course.videoThumbnail || ""})`,
             }}
           />
-        </div>
+        </div> */}
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"
           style={{ background: "rgba(66,214,116,0.06)" }}

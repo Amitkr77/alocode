@@ -14,7 +14,7 @@
 @theme {
   --color-primary: #42d674;
   --color-primary-foreground: #0f2d1a;
-  --color-surface: #F0F0F0;
+  --color-surface: #f0f0f0;
 
   --color-surface-light: #f4fce8;
   --color-surface-dark: #162318;
@@ -70,16 +70,16 @@
   --radius: 1rem;
   --background: #fffcfb;
   --foreground: oklch(0.145 0 0);
-  --card: #F0F0F0;
+  --card: #f0f0f0;
   --card-foreground: oklch(0.145 0 0);
-  --popover: #F0F0F0;
+  --popover: #f0f0f0;
   --popover-foreground: oklch(0.145 0 0);
   --primary: #42d674;
   --primary-foreground: #0f2d1a;
   --secondary: #badba2;
   --secondary-foreground: #0f2d1a;
   --muted: #badba2;
-  --muted-foreground: #4a6741;
+  --muted-foreground: #2d4a25;
   --accent: #80ef80;
   --accent-foreground: #0f2d1a;
   --destructive: oklch(0.577 0.245 27.325);
@@ -99,6 +99,10 @@
   --sidebar-accent-foreground: #0f2d1a;
   --sidebar-border: #badba2;
   --sidebar-ring: #42d674;
+  --footer-card-bg: rgba(10, 28, 16, 0.97);
+  --footer-card-border: rgba(66, 214, 116, 0.15);
+  --footer-text: rgba(255, 255, 255, 0.75);
+  --footer-text-dim: rgba(255, 255, 255, 0.45);
 }
 
 .dark {
@@ -133,6 +137,67 @@
   --sidebar-accent-foreground: #e8f5e9;
   --sidebar-border: #2a4a30;
   --sidebar-ring: #42d674;
+  --footer-card-bg: rgba(10, 28, 16, 0.97);
+  --footer-card-border: rgba(66, 214, 116, 0.15);
+  --footer-text: rgba(255, 255, 255, 0.75);
+  --footer-text-dim: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Footer mobile responsive ── */
+@media (max-width: 768px) {
+  .footer-tagline {
+    font-size: 18px !important;
+  }
+
+  .footer-logo {
+    height: 32px !important;
+  }
+
+  .footer-sitemap-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0px !important;
+  }
+
+  .footer-sitemap-heading {
+    font-size: 13px !important;
+  }
+
+  .footer-address {
+    font-size: 13px !important;
+  }
+
+  .footer-link {
+    font-size: 13px !important;
+  }
+
+  .footer-section-label {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .footer-social-label {
+    font-size: 16px !important;
+  }
+
+  .footer-social-pill {
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+
+  .footer-social-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .footer-watermark {
+    height: 80px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .footer-bottom-text {
+    font-size: 11px !important;
+  }
 }
 
 @layer base {
@@ -141,10 +206,22 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground; /* ← remove bg-background, add bg-transparent */
+    background-color: transparent;
   }
 
   .font-display {
     font-family: "Spline Sans", sans-serif;
   }
+}
+
+/* ── Sheet (mobile menu) dark override ── */
+[data-slot="sheet-content"] {
+  background: #0a1c10 !important;
+  border-color: rgba(66, 214, 116, 0.1) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-slot="sheet-overlay"] {
+  background: rgba(0, 0, 0, 0.6) !important;
 }
