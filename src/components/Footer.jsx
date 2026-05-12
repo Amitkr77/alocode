@@ -318,7 +318,7 @@ const Footer = () => {
                 {[
                   { href: "/about", label: "About Us" },
                   { href: "/why-choose", label: "Why Choose Us" },
-                  { href: "/careers", label: "Careers", badge: "We're Hiring" },
+                  { href: "/careers", label: "Careers"},
                   { href: "/blog", label: "Blog" },
                 ].map(({ href, label, badge }) => (
                   <li

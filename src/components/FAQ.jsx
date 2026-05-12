@@ -1,4 +1,5 @@
 import React from "react";
+import faq from "@/lib/faq"; // update path if needed
 
 const FAQ = () => {
   return (
@@ -14,6 +15,7 @@ const FAQ = () => {
           >
             FAQ
           </p>
+
           <h2
             className="text-2xl md:text-3xl font-black"
             style={{ color: "#262A2B", fontFamily: "'Georgia', serif" }}
@@ -21,25 +23,13 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
         </div>
-        <div className="space-y-2">
-          {[
-            {
-              q: "Do I need a technical degree to enroll?",
-              a: "No! Our courses are designed to take you from zero to hero. Many of our top graduates started with no prior coding experience.",
-            },
-            {
-              q: "How does the placement guarantee work?",
-              a: "We offer placement assistance through every application cycle until you get hired, with direct referrals to 500+ partner companies.",
-            },
-            {
-              q: "Are the classes live or recorded?",
-              a: "We use a hybrid model with recorded lectures for self-paced learning and live weekend sessions with mentors for Q&A and projects.",
-            },
-          ].map((faq) => (
+
+        <div className="space-y-1">
+          {faq.slice(0, 3).map((item, index) => (
             <details
-              key={faq.q}
+              key={index}
               className="rounded-2xl overflow-hidden border group"
-              style={{ background: "#DBD7C7", borderColor: "#B3AA9E" }}
+              style={{ background: "#EEEEEE", borderColor: "#B3AA9E" }}
             >
               <summary className="flex items-center justify-between cursor-pointer p-3 list-none">
                 <span
@@ -49,8 +39,9 @@ const FAQ = () => {
                     fontFamily: "system-ui, sans-serif",
                   }}
                 >
-                  {faq.q}
+                  {item.question}
                 </span>
+
                 <span
                   className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-lg shrink-0 ml-4 group-open:rotate-45 transition-transform duration-200"
                   style={{
@@ -62,7 +53,8 @@ const FAQ = () => {
                   +
                 </span>
               </summary>
-              <p
+
+              <div
                 className="pb-6 px-6 leading-relaxed text-sm pt-2"
                 style={{
                   color: "#786E67",
@@ -70,8 +62,16 @@ const FAQ = () => {
                   fontFamily: "system-ui, sans-serif",
                 }}
               >
-                {faq.a}
-              </p>
+                {Array.isArray(item.answer) ? (
+                  <ul className="space-y-2">
+                    {item.answer.map((point, i) => (
+                      <li key={i}>• {point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{item.answer}</p>
+                )}
+              </div>
             </details>
           ))}
         </div>
