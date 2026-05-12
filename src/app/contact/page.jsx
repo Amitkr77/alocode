@@ -162,7 +162,7 @@ export default function page() {
                     </div>
                     <div className="flex flex-col gap-1">
                       <p className="text-sm leading-relaxed text-muted-foreground">
-                        Kurji, Digha, Patna, Bihar 800016
+                        Kurji, Digha, Patna, Bihar 800010
                       </p>
                       <p className="text-xs mt-1 leading-relaxed text-muted-foreground opacity-70">
                         Monday – Saturday

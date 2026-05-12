@@ -156,11 +156,11 @@ const Footer = () => {
                   margin: 0,
                 }}
               >
-                Alocode Technologies Pvt. Ltd.
+                Alomonx Technology Pvt. Ltd.
                 <br />
                 Kurji, Digha
                 <br />
-                Patna, Bihar 800016
+                Patna, Bihar 800010
                 <br />
                 India
               </p>
@@ -594,14 +594,14 @@ const Footer = () => {
           }}
         >
           <img
-            src="/footer_logo.png"
+            src="/footer_logo_2.png"
             alt=""
             aria-hidden="true"
             className="footer-watermark"
             style={{
-              height: "250px",
-              width: "1050px",
-              opacity: 0.5,
+              height: "270px",
+              width: "1150px",
+              opacity: 0.8,
               userSelect: "none",
               pointerEvents: "none",
             }}

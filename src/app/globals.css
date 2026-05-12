@@ -192,7 +192,7 @@
   .footer-watermark {
     height: 85px !important;
     width: 100% !important;
-    margin-top: 2px !important;
+    margin-top: -7px !important;
     margin-left: 16px !important;
   }
 
