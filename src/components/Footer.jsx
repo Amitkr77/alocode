@@ -594,7 +594,7 @@ const Footer = () => {
           }}
         >
           <img
-            src="/footer_logo_2.png"
+            src="/footer_logo_3.png"
             alt=""
             aria-hidden="true"
             className="footer-watermark"

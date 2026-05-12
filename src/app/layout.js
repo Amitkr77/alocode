@@ -31,12 +31,12 @@ export default function RootLayout({ children }) {
         {/* Gradient background — fixed, behind everything */}
         <div className="fixed inset-0 -z-10">
           <AnimatedBackground
-            effect="Halo Gradient"
-            color1="#F5F5F5"
-            color2="#DFF1F1"
-            color3="#F6F3EB"
+            effect="Noise Gradient"
+            color1="#F8FFDB"
+            color2="#BEFFF7"
+            color3="#F1E9E9"
             showParticles={true}
-            particleColor="#c47a7a"
+            particleColor="#6FCF97"
           />
         </div>
 
