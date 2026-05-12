@@ -145,17 +145,6 @@ export default function PricingBlock({
         </button>
       </Link>
 
-      <button
-        disabled
-        className="w-full h-10 rounded-full font-medium text-sm mb-4 cursor-not-allowed opacity-50 border"
-        style={{
-          borderColor: "var(--border)",
-          color: "var(--muted-foreground)",
-        }}
-      >
-        Start Free Trial
-      </button>
-
       {/* Course includes */}
       <div
         className="space-y-3 pt-3"
@@ -178,8 +167,6 @@ export default function PricingBlock({
           icon={Code2}
           text={`${sampleProjects?.length || 5} hands-on projects`}
         />
-        <Item icon={Infinity} text="Full lifetime access" />
-        <Item icon={Smartphone} text="Mobile & TV access" />
         <Item icon={Award} text="Certificate of completion" />
       </div>
     </div>

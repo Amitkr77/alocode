@@ -83,16 +83,16 @@ const Footer = () => {
           <p
             className="footer-tagline"
             style={{
-              fontSize: "clamp(20px, 4vw, 32px)",
-              fontWeight: 800,
+              fontSize: "clamp(14px, 2.5vw, 24px)",
+              fontWeight: 600,
               color: "var(--footer-text)",
-              margin: 0,
+              margin: -5,
               letterSpacing: "-0.5px",
               fontFamily: "'Georgia', serif",
             }}
           >
-            Learn. <span style={{ color: "var(--primary)" }}>Code.</span> Get
-            Placed.
+            Powered by{" "}
+            <span style={{ color: "var(--primary)" }}>Alomonx Technology</span>
           </p>
         </div>
 
@@ -318,7 +318,7 @@ const Footer = () => {
                 {[
                   { href: "/about", label: "About Us" },
                   { href: "/why-choose", label: "Why Choose Us" },
-                  { href: "/careers", label: "Careers"},
+                  { href: "/careers", label: "Careers" },
                   { href: "/blog", label: "Blog" },
                 ].map(({ href, label, badge }) => (
                   <li

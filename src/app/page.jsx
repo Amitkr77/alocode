@@ -31,12 +31,12 @@ export default function Home() {
     >
       {/* ─────────────────────────────── HERO ─────────────────────────────── */}
       <section className="min-h-screen pt-12 max-w-7xl mx-auto px-6 lg:px-10 pb-0 relative overflow-hidden">
-        <div className="flex flex-col lg:flex-row gap-12 items-start min-h-[85vh]">
+        <div className="flex flex-col md:flex-row gap-10 lg:gap-12 items-center md:items-start min-h-[85vh]">
           {/* LEFT */}
           <motion.div
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-4 pt-8 lg:pt-16 relative z-10 flex-1 min-w-0"
+            className="flex flex-col gap-4 pt-8 lg:pt-16 relative z-10 flex-1 min-w-0 w-full"
           >
             {/* Decorative arrow squiggle */}
             <motion.svg
@@ -70,7 +70,7 @@ export default function Home() {
               className="text-[clamp(3rem,8vw,6rem)] font-black leading-[1.0] tracking-tight text-foreground"
               style={{ fontFamily: "'Georgia', serif" }}
             >
-              Best Digital
+              Where Skills
               <br />
               {/* "Online" with blob behind */}
               <span className="relative inline-block mt-1">
@@ -79,21 +79,21 @@ export default function Home() {
                   style={{ background: "var(--primary)" }}
                 />
                 <span className="relative z-10 text-[var(--primary-foreground)]">
-                  Online
+                  BECOME
                 </span>
               </span>
               <br />
-              Courses.
+              Careers.
             </motion.h1>
 
             <motion.p
               custom={2}
               variants={fadeUp}
-              className="text-base leading-relaxed max-w-sm text-muted-foreground"
+              className="text-base font-bold leading-relaxed max-w-sm text-muted-foreground ml-3"
               style={{ fontFamily: "system-ui, sans-serif" }}
             >
-              Digital online courses provide an accessible and flexible way for
-              individuals to acquire new knowledge and skills in various fields.
+              Hands-on tech training, real-world projects, mentorship, and
+              career-focused learning designed for future innovators.
             </motion.p>
 
             <motion.div custom={3} variants={fadeUp}>
@@ -192,14 +192,16 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full lg:flex-shrink-0"
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative w-full md:w-[420px] lg:w-[460px] md:flex-shrink-0"
             style={{
-              width: "100%",
-              maxWidth: "460px",
-              margin: "0 auto",
-              paddingTop: "60px",
-              paddingBottom: "48px",
+              // better responsive spacing
+              paddingTop: "clamp(40px, 8vw, 60px)",
+              paddingBottom: "clamp(32px, 6vw, 48px)",
             }}
           >
             {/* Decorative starburst */}
@@ -564,7 +566,6 @@ export default function Home() {
       <FAQ />
 
       {/* ─────────────────────────── CTA BANNER ─────────────────────────── */}
-
     </div>
   );
 }

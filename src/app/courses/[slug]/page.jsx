@@ -10,22 +10,16 @@ import {
   Star,
   StarHalf,
   Clock,
-  Video,
-  Code2,
-  Infinity,
-  Smartphone,
   Check,
   ArrowRight,
   Download,
   ChevronRight,
   Briefcase,
   Building2,
-  FlaskConical,
   Database,
   Award,
   BookOpen,
   Lightbulb,
-  CreditCard,
 } from "lucide-react";
 import Link from "next/link";
 import PricingBlock from "@/components/PricingBlock";
@@ -45,19 +39,6 @@ export default async function CourseDetail({ params }) {
         className="relative pt-22 pb-10 overflow-hidden"
         style={{ borderBottom: "1px solid var(--border)" }}
       >
-        {/* <div className="absolute inset-0 opacity-[0.8]">
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${course.previewVideo?.thumbnail || course.videoThumbnail || ""})`,
-            }}
-          />
-        </div> */}
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"
-          style={{ background: "rgba(66,214,116,0.06)" }}
-        />
-
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
           {/* Badge + Rating */}
           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -155,7 +136,7 @@ export default async function CourseDetail({ params }) {
           )}
 
           {/* Meta pills */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 font-bold">
             {course.language?.audio && (
               <MetaPill icon={Globe}>{course.language.audio}</MetaPill>
             )}
@@ -232,9 +213,9 @@ export default async function CourseDetail({ params }) {
               />
             </div>
 
-            {/* Download Syllabus */}
+            {/* Download Brochure */}
             <Link
-              href={course.brochure?.fileUrl || `/syllabus/${course.slug}`}
+              href={course.brochure?.fileUrl || `/brochure/${course.slug}`}
               target={course.brochure?.fileUrl ? "_blank" : undefined}
               rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
               className="mt-2 w-full h-10 rounded-full text-sm font-semibold flex items-center justify-center gap-2 border transition-all"
@@ -244,12 +225,8 @@ export default async function CourseDetail({ params }) {
                 color: "var(--muted-foreground)",
               }}
             >
-              <Download className="size-4" /> Download Syllabus
+              <Download className="size-4" /> Download Brochure
             </Link>
-
-            <div className="mt-2 p-2 text-center">
-              <ComingSoon name="Get Alocodes for Business" />
-            </div>
           </div>
         </aside>
 
@@ -282,7 +259,7 @@ export default async function CourseDetail({ params }) {
                         style={{ color: "var(--primary)" }}
                       />
                     </div>
-                    <span className="text-sm leading-relaxed text-muted-foreground">
+                    <span className="text-sm font-bold leading-relaxed text-muted-foreground">
                       {reason}
                     </span>
                   </div>
@@ -317,7 +294,7 @@ export default async function CourseDetail({ params }) {
                         style={{ color: "var(--primary)" }}
                       />
                     </div>
-                    <span className="text-sm leading-relaxed text-muted-foreground">
+                    <span className="text-sm font-bold leading-relaxed text-muted-foreground">
                       {item}
                     </span>
                   </div>
@@ -418,7 +395,7 @@ export default async function CourseDetail({ params }) {
                         {proj.id}
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-foreground">
+                        <h4 className="font-bold text-md text-foreground">
                           {proj.title}
                         </h4>
                         <div className="flex flex-wrap gap-1.5 mt-1.5">
@@ -438,16 +415,18 @@ export default async function CourseDetail({ params }) {
                         </div>
                       </div>
                     </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground mb-1">
+                    <p className="text-sm ml-10 font-bold leading-relaxed text-muted-foreground mb-1">
                       {proj.description}
                     </p>
-                    <p
-                      className="text-xs flex items-center gap-1.5"
-                      style={{ color: "var(--primary)" }}
-                    >
-                      <Database className="w-3.5 h-3.5" />
-                      {proj.dataset}
-                    </p>
+                    {proj.dataset && (
+                      <p
+                        className="text-xs font-bold flex items-center gap-1.5"
+                        style={{ color: "var(--primary)" }}
+                      >
+                        <Database className="w-3.5 h-3.5" />
+                        {proj.dataset}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -639,14 +618,14 @@ export default async function CourseDetail({ params }) {
                 {course.targetAudience.map((t) => (
                   <li
                     key={t}
-                    className="flex items-start gap-1 text-sm rounded-xl px-3 py-1 border text-muted-foreground"
+                    className="flex font-bold items-start gap-1 text-sm rounded-xl px-3 py-1 border text-muted-foreground"
                     style={{
                       background: "var(--card)",
                       borderColor: "var(--border)",
                     }}
                   >
                     <ArrowRight
-                      className="w-3 h-3 shrink-0 mt-1.5"
+                      className="w-4 h-4 shrink-0 mt-1"
                       style={{ color: "var(--primary)" }}
                     />
                     {t}

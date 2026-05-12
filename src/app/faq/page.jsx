@@ -10,7 +10,7 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-background text-foreground font-display overflow-x-hidden">
+    <div className="text-foreground font-display overflow-x-hidden">
       {/* HERO SECTION */}
       <section className="pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center">
