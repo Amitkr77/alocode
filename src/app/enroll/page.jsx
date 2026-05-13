@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import {
   ArrowRight,
   ArrowLeft,
@@ -457,7 +457,7 @@ function CourseDetailPanel({ course }) {
 }
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
-export default function EnrollPage() {
+function EnrollPageContent() {
   const searchParams = useSearchParams();
   const preselectedSlug = searchParams.get("course") || "";
 
@@ -1285,5 +1285,12 @@ export default function EnrollPage() {
         </div>
       </div>
     </div>
+  );
+}
+export default function EnrollPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EnrollPageContent />
+    </Suspense>
   );
 }
