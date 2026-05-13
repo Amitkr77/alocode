@@ -480,11 +480,6 @@ const Footer = () => {
               },
               { href: "mailto:hello@alocodes.com", Icon: Mail, label: "Mail" },
               {
-                href: "https://twitter.com/alocodes",
-                Icon: Twitter,
-                label: "X / Twitter",
-              },
-              {
                 href: "https://instagram.com/alocodes",
                 Icon: Instagram,
                 label: "Instagram",
@@ -552,7 +547,8 @@ const Footer = () => {
             className="footer-bottom-text"
             style={{ fontSize: "12px", color: "var(--footer-text)", margin: 0 }}
           >
-            © {currentYear} Alocodes Inc. All rights reserved.
+            © {currentYear} Alocodes Inc. | Alomonx Technology Pvt Ltd. All
+            rights reserved.
           </p>
 
           <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>

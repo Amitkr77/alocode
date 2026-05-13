@@ -1,12 +1,10 @@
 import React from "react";
 import faq from "@/lib/faq"; // update path if needed
+import Link from "next/link";
 
 const FAQ = () => {
   return (
-    <section
-      className="py-10 border-t"
-      style={{ borderColor: "#DBD7C7" }}
-    >
+    <section className="py-10 border-t" style={{ borderColor: "#DBD7C7" }}>
       <div className="max-w-3xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-4">
           <p
@@ -74,6 +72,21 @@ const FAQ = () => {
               </div>
             </details>
           ))}
+        </div>
+
+        {/* More FAQ Button */}
+        <div className="flex justify-center mt-4">
+          <Link
+            href="/faq"
+            className="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            style={{
+              background: "#42D674",
+              color: "#ffffff",
+              fontFamily: "system-ui, sans-serif",
+            }}
+          >
+            More Queries? Click Here
+          </Link>
         </div>
       </div>
     </section>

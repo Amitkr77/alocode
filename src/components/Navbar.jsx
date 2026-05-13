@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, ArrowRight, ChevronDown, PhoneCall } from "lucide-react";
 
 import {
   Sheet,
@@ -225,20 +225,28 @@ const Navbar = () => {
 
             {/* ── Right side: Enroll Now (desktop) + Hamburger (mobile) ── */}
             <div className="flex items-center gap-2 pr-1">
-              {/* Enroll Now — desktop only */}
-              <Link
-                href="/enroll"
-                className="hidden md:block px-5 py-2 rounded-full text-sm font-bold transition-all"
+              {/* Call Us — desktop only */}
+              <a
+                href="tel:+919508261850"
+                className="hidden md:flex items-center gap-2 px-5 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105"
                 style={{
-                  background: "transparent",
-                  color: ACTIVE_COLOR,
-                  border: `1.5px solid ${ACTIVE_COLOR}`,
-                  boxShadow: "0 0 12px rgba(66,214,116,0.20)",
+                  background: "#42D674",
+                  color: "#ffffff",
+                  border: "1px solid rgba(255,255,255,0.12)",
                   fontFamily: "system-ui, sans-serif",
                 }}
               >
-                Enroll Now
-              </Link>
+                <span
+                  className="flex items-center justify-center w-7 h-7 rounded-full"
+                  style={{
+                    background: "rgba(255,255,255,0.18)",
+                  }}
+                >
+                  <PhoneCall className="w-4 h-4" />
+                </span>
+
+                <span>Call Us</span>
+              </a>
 
               {/* ── Mobile hamburger ── */}
               <Sheet>
@@ -397,19 +405,22 @@ const Navbar = () => {
                     style={{ borderTop: "1px solid rgba(66,214,116,0.10)" }}
                   >
                     <SheetClose asChild>
-                      <Link
-                        href="/enroll"
-                        className="block w-full py-2.5 px-4 text-center rounded-full font-bold text-sm transition-all border"
+                      <a
+                        href="tel:+919508261850"
+                        className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full font-bold text-sm transition-all duration-300"
                         style={{
-                          color: ACTIVE_COLOR,
-                          borderColor: ACTIVE_COLOR,
-                          boxShadow: "0 0 12px rgba(66,214,116,0.20)",
+                          background:
+                            "linear-gradient(135deg, #42D674 0%, #2FB45A 100%)",
+                          color: "#ffffff",
+                          boxShadow:
+                            "0 6px 20px rgba(66,214,116,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
                           fontFamily: "system-ui, sans-serif",
                           textDecoration: "none",
                         }}
                       >
-                        Enroll Now
-                      </Link>
+                        <PhoneCall className="w-4 h-4" />
+                        Call Us
+                      </a>
                     </SheetClose>
                   </div>
                 </SheetContent>

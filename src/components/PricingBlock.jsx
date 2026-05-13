@@ -25,6 +25,7 @@ export default function PricingBlock({
   pricing,
   curriculumSummary,
   sampleProjects,
+  onEnroll,
 }) {
   const [showEmi, setShowEmi] = useState(false);
 
@@ -132,19 +133,17 @@ export default function PricingBlock({
         </div>
       )}
 
-      <Link href="/enroll">
-        <button
-          className="w-full h-10 rounded-full font-bold mb-2 transition-all cursor-pointer"
-          style={{
-            background: "var(--primary)",
-            color: "var(--primary-foreground)",
-            boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
-          }}
-        >
-          Enroll Now
-        </button>
-      </Link>
-
+      <button
+        onClick={onEnroll}
+        className="w-full h-10 rounded-full font-bold mb-2 transition-all cursor-pointer"
+        style={{
+          background: "var(--primary)",
+          color: "var(--primary-foreground)",
+          boxShadow: "0 4px 16px rgba(66,214,116,0.30)",
+        }}
+      >
+        Enroll Now
+      </button>
       {/* Course includes */}
       <div
         className="space-y-3 pt-3"

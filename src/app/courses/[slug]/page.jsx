@@ -1,7 +1,5 @@
-// app/course/[slug]/page.jsx
 import { notFound } from "next/navigation";
 import courses from "@/lib/Courses";
-import ComingSoon from "@/components/ComingSoon";
 import {
   BadgeCheck,
   Captions,
@@ -22,7 +20,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import Link from "next/link";
-import PricingBlock from "@/components/PricingBlock";
+import EnrollWrapper from "@/components/EnrollWrapper";
 
 export default async function CourseDetail({ params }) {
   const { slug } = await params;
@@ -204,12 +202,13 @@ export default async function CourseDetail({ params }) {
                   </div>
                 </div>
               )}
-
               {/* Pricing */}
-              <PricingBlock
+              <EnrollWrapper
                 pricing={course.pricing}
                 curriculumSummary={course.curriculumSummary}
                 sampleProjects={course.sampleProjects}
+                courseTitle={course.title}
+                courseSlug={course.slug} // ← add this
               />
             </div>
 
@@ -688,60 +687,6 @@ export default async function CourseDetail({ params }) {
           )}
         </main>
       </div>
-
-      {/* ================= CTA BANNER ================= */}
-      {/* <section className="py-8 max-w-7xl mx-auto px-6 lg:px-10">
-        <div
-          className="rounded-[2.5rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
-          style={{ background: "var(--foreground)" }}
-        >
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: "var(--primary)" }}
-            >
-              Limited seats available
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-black leading-tight"
-              style={{
-                color: "var(--background)",
-                fontFamily: "'Georgia', serif",
-              }}
-            >
-              Ready to Start
-              <br />
-              Learning Today?
-            </h2>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link
-              href="/enroll"
-              className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-all"
-              style={{
-                background: "var(--primary)",
-                color: "var(--primary-foreground)",
-                boxShadow: "0 4px 20px rgba(66,214,116,0.35)",
-              }}
-            >
-              Enroll Now <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href={course.brochure?.fileUrl || `/syllabus/${course.slug}`}
-              target={course.brochure?.fileUrl ? "_blank" : undefined}
-              rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
-              className="h-14 px-8 rounded-full font-bold flex items-center gap-2 transition-colors border"
-              style={{
-                borderColor: "rgba(186,219,162,0.25)",
-                color: "var(--secondary)",
-              }}
-            >
-              <Download className="w-5 h-5" />
-              Download Brochure
-            </Link>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 
-const CONTACT_EMAIL = "admissions@alocodes.com";
+const CONTACT_EMAIL = "alocodes2@gmail.com";
 
 export default function page() {
   const [submitted, setSubmitted] = useState(false);
@@ -166,7 +166,7 @@ export default function page() {
                         Visit Us
                       </h2>
                     </div>
-                    <p className="text-sm font-bold leading-relaxed text-muted-foreground">
+                    <p className="text-sm ml-3 font-bold leading-relaxed text-muted-foreground">
                       Kurji, Digha, Patna, Bihar 800010
                     </p>
                     <p className="text-xs mt-1 ml-3 leading-relaxed text-muted-foreground opacity-80">
@@ -200,12 +200,12 @@ export default function page() {
                       </h2>
                     </div>
                     <p className="text-sm font-bold ml-3 text-muted-foreground">
-                      +91 92346 25064
+                      +91 95082 61850
                     </p>
                     <a
                       className="text-md ml-3 font-bold mt-1 inline-flex items-center gap-1 hover:gap-2 transition-all"
                       style={{ color: "var(--primary)" }}
-                      href="https://wa.me/919234625064?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20coding%20courses."
+                      href="https://wa.me/919508261850?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20coding%20courses."
                     >
                       Chat now <CircleArrowOutUpRightIcon size={15} />
                     </a>

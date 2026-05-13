@@ -75,10 +75,10 @@ export default function Home() {
               {/* "Online" with blob behind */}
               <span className="relative inline-block mt-1">
                 <span
-                  className="absolute -left-4 top-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[1.15em] rounded-full -z-0"
+                  className="absolute -left-4 top-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[1.10em] rounded-full -z-0"
                   style={{ background: "var(--primary)" }}
                 />
-                <span className="relative z-10 text-[var(--primary-foreground)]">
+                <span className="relative text-7.5xl z-10 text-[var(--primary-foreground)]">
                   BECOME
                 </span>
               </span>
