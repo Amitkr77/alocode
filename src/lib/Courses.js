@@ -31,7 +31,7 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
@@ -344,7 +344,7 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
@@ -712,11 +712,12 @@ const courses = [
     badge: {
       text: "Career Track",
       color: "bg-yellow-100 text-yellow-700 dark:text-yellow-300",
-      rating: 4.7,
-      totalRatings: "560",
-      lastUpdated: "February 2025",
+      rating: 4.8,
+      totalRatings: "620",
+      lastUpdated: "May 2026",
     },
-    title: "Java Full Stack Development",
+
+    title: "Full Stack Java Development",
     category: "Full Stack",
     level: "Advanced",
 
@@ -724,6 +725,7 @@ const courses = [
     duration: "3 Months",
     mode: "Live Online",
     batchSize: "30 Students",
+
     language: {
       audio: "English",
       captions: ["English", "Hindi"],
@@ -734,18 +736,18 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
 
     // ── Ratings ──
-    rating: 4.7,
-    reviewCount: 560,
+    rating: 4.8,
+    reviewCount: 620,
 
     // ── Media ──
     videoThumbnail: "/thumbnails/java-full.jpg",
-    videoTitle: "Java Full Stack",
+    videoTitle: "Full Stack Java",
     previewVideo: {
       thumbnail: "/thumbnails/java-full.jpg",
       url: "/videos/java-full-stack-preview.mp4",
@@ -753,257 +755,271 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master full-stack Java development using Spring Boot and React to build scalable, enterprise-grade applications with real-world architecture.",
+      "Master Full Stack Java Development with frontend, backend, database management, Spring Boot, React JS, REST APIs, and deployment through real-world projects.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Java remains the backbone of enterprise applications worldwide",
-      "Spring Boot is widely used in product-based and service companies",
-      "Strong demand for Java full-stack developers in India and globally",
-      "Hands-on enterprise-level projects and microservices architecture",
+      "Industry-level Full Stack Java training",
+      "Real-world project-based learning approach",
+      "Learn frontend, backend, database & deployment",
+      "Build scalable web applications with Java technologies",
+      "Hands-on practical implementation with expert guidance",
     ],
 
     // ── Curriculum ──
     curriculum: [
       {
         module: 1,
-        title: "Core Java & OOP",
-        topics: [
-          "Java basics, JVM, JDK, JRE",
-          "OOP concepts (Inheritance, Polymorphism, Abstraction, Encapsulation)",
-          "Collections Framework",
-          "Exception handling & multithreading",
-        ],
+        title: "Frontend Development",
+        topics: ["HTML", "CSS", "JavaScript", "Responsive Website Design"],
       },
+
       {
         module: 2,
-        title: "Frontend with React",
+        title: "Core Java Programming",
         topics: [
-          "React fundamentals (components, props, state)",
-          "Hooks (useState, useEffect)",
-          "Routing with React Router",
-          "State management basics",
+          "Variables & Data Types",
+          "Loops & Conditions",
+          "Arrays & Strings",
+          "Classes & Objects",
+          "OOP Concepts",
         ],
       },
+
       {
         module: 3,
-        title: "Backend with Spring Boot",
+        title: "Database Management",
         topics: [
-          "Spring Boot architecture",
-          "REST API development",
-          "Dependency Injection & Annotations",
-          "Controller, Service, Repository layers",
+          "MySQL Basics",
+          "SQL Queries",
+          "CRUD Operations",
+          "Database Connectivity",
         ],
       },
+
       {
         module: 4,
-        title: "Database with MySQL",
-        topics: [
-          "Relational database concepts",
-          "Normalization",
-          "Joins, indexes, queries",
-          "Integration with Spring Data JPA",
-        ],
+        title: "Java Backend Development",
+        topics: ["Servlets", "JSP", "MVC Architecture", "Session Management"],
       },
+
       {
         module: 5,
-        title: "Microservices Architecture",
+        title: "Spring Boot Development",
         topics: [
-          "Introduction to microservices",
-          "Spring Cloud basics",
-          "API Gateway & Service Discovery",
-          "Inter-service communication",
+          "Spring Boot Basics",
+          "REST API",
+          "CRUD Application",
+          "Spring Data JPA",
         ],
       },
+
       {
         module: 6,
-        title: "Security & Authentication",
-        topics: [
-          "Spring Security",
-          "JWT authentication",
-          "Role-based authorization",
-          "Secure API development",
-        ],
+        title: "React JS Frontend",
+        topics: ["Components", "Props & State", "Routing", "API Integration"],
       },
+
       {
         module: 7,
-        title: "Testing & Deployment",
+        title: "Full Stack Project & Deployment",
         topics: [
-          "JUnit & Mockito",
-          "Integration testing",
-          "Docker basics",
-          "Deploying on AWS EC2",
+          "Full Stack Project",
+          "Git & GitHub",
+          "Project Deployment",
+          "Interview Preparation",
         ],
       },
     ],
 
     // ── Skills ──
     skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
       "Java",
+      "React JS",
       "Spring Boot",
-      "React",
+      "REST API",
       "MySQL",
-      "REST APIs",
-      "Spring Security",
-      "Microservices",
-      "JWT",
-      "Docker",
+      "Servlets",
+      "JSP",
+      "Git",
+      "GitHub",
     ],
 
     // ── Sample Projects ──
     sampleProjects: [
       {
         id: 1,
-        title: "E-commerce Microservices System",
-        skills: ["Spring Boot", "Microservices", "MySQL"],
+        title: "E-Commerce Website with User Authentication",
+        skills: ["React JS", "Spring Boot", "MySQL", "REST API"],
         description:
-          "Build a scalable e-commerce backend using microservices architecture with API Gateway and service communication.",
+          "Develop a complete online shopping website where users can register, login, browse products, add items to cart, and place orders securely.",
       },
+
       {
         id: 2,
-        title: "Full Stack CRUD Application",
-        skills: ["React", "Spring Boot"],
+        title: "Online Learning Management System",
+        skills: ["Frontend Development", "Java Backend", "API Integration"],
         description:
-          "Create a full-stack CRUD app with React frontend and Spring Boot backend.",
+          "Create an online platform where students can enroll in courses, watch video lectures, submit assignments, and track their progress.",
       },
+
       {
         id: 3,
-        title: "Authentication & Authorization System",
-        skills: ["JWT", "Spring Security"],
+        title: "Real-Time Chat Application",
+        skills: ["Spring Boot", "WebSocket", "React JS"],
         description:
-          "Implement secure login/signup with JWT and role-based access control.",
+          "Build a chat application that allows users to send and receive messages instantly in real time.",
       },
+
       {
         id: 4,
-        title: "Employee Management System",
-        skills: ["JPA", "MySQL"],
+        title: "Hotel Booking and Reservation System",
+        skills: [
+          "Full Stack Development",
+          "Payment Integration",
+          "CRUD Operations",
+        ],
         description:
-          "Develop an enterprise-level employee management system with database integration.",
+          "Develop a hotel reservation system where users can search rooms, book hotels, manage reservations, and make online payments.",
+      },
+
+      {
+        id: 5,
+        title: "Task Management and Collaboration Tool",
+        skills: ["React JS", "Java Backend", "Authentication System"],
+        description:
+          "Create a task management application where teams can create tasks, assign work, track progress, and collaborate efficiently.",
       },
     ],
 
     // ── Career Opportunities ──
     careerRoles: [
+      "Java Full Stack Developer",
       "Java Developer",
-      "Full Stack Java Developer",
+      "Frontend Developer",
       "Backend Developer",
+      "Web Application Developer",
       "Software Engineer",
-      "Microservices Engineer",
+      "API Developer",
     ],
 
     hiringCompanies: [
-      "Infosys",
-      "TCS",
+      "Amazon",
+      "Google",
+      "Microsoft",
+      "Deloitte",
       "Alomonx",
-      "Wipro",
-      "Accenture",
-      "Product-based Companies",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
     outcomes: [
-      "Build enterprise-grade Java applications",
-      "Understand microservices architecture",
-      "Crack Java developer interviews",
-      "Deploy scalable backend systems",
+      "Build complete full stack web applications",
+      "Develop REST APIs using Spring Boot",
+      "Create responsive frontend interfaces",
+      "Deploy real-world Java applications",
+      "Prepare for full stack developer interviews",
     ],
 
     // ── Learning Outcomes ──
     learningOutcomes: [
-      "Build production-ready Spring Boot REST APIs",
-      "Design microservices architecture with Spring Cloud",
-      "Create dynamic frontend UIs with React and Redux",
-      "Integrate React frontend with Spring Boot backend",
-      "Design optimized MySQL databases",
-      "Implement JWT authentication with Spring Security",
-      "Write unit and integration tests",
-      "Deploy applications using Docker and AWS",
+      "Develop responsive frontend applications using HTML, CSS & JavaScript",
+      "Master Core Java and OOP concepts",
+      "Build backend applications using Servlets and JSP",
+      "Develop REST APIs with Spring Boot",
+      "Integrate React frontend with Java backend",
+      "Manage databases using MySQL",
+      "Build and deploy full stack projects",
+      "Use Git & GitHub for version control",
     ],
 
     // ── Target Audience ──
     targetAudience: [
-      "Java developers who want full-stack expertise",
-      "Students targeting service-based companies",
-      "Developers aiming for enterprise roles",
-      "Candidates preparing for Java interviews",
+      "Students interested in Full Stack Development",
+      "Beginners learning Java programming",
+      "Developers wanting frontend + backend skills",
+      "Candidates preparing for software jobs",
     ],
 
     // ── Certificate ──
     certificate: {
       type: "Certificate of Internship Completion",
+
       issuedBy: ["Alomonx Technology", "Alocodes"],
+
       signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
+        {
+          role: "Authorized Signatory",
+          title: "Director",
+        },
+        {
+          role: "HR Manager",
+          title: "Human Resources",
+        },
       ],
+
       description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
+        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
+
       imageUrl: "/Certificate.jpeg",
     },
 
     // ── Instructors ──
     instructors: [
       {
-        name: "Pooja Yadav",
-        role: "Java Architect at Infosys",
-        avatar: "/avatars/woman_ava.jpg",
-      },
-      {
         name: "Amit Verma",
-        role: "Spring Boot Expert & Tech Lead",
+        role: "Senior Java Full Stack Developer",
         avatar: "/avatars/man_ava.jpg",
+      },
+
+      {
+        name: "Pooja Yadav",
+        role: "Spring Boot & React Expert",
+        avatar: "/avatars/woman_ava.jpg",
       },
     ],
 
     // ── Curriculum Summary ──
     curriculumSummary: {
       totalModules: 7,
-      totalDuration: "55+ hours on-demand video",
+      totalDuration: "60+ Hours",
     },
 
     // ── Reviews ──
     reviews: [
       {
-        name: "Pooja Y.",
-        time: "3 weeks ago",
+        name: "Rahul S.",
+        time: "2 weeks ago",
         rating: 5,
         comment:
-          "Enterprise-ready skills delivered in just 3 months. The Spring Boot microservices module is exceptional.",
+          "Best Full Stack Java course with practical projects and deployment guidance.",
       },
+
       {
-        name: "Suresh K.",
+        name: "Nisha K.",
         time: "1 month ago",
         rating: 4.5,
         comment:
-          "Got placed at TCS Digital with a 12 LPA package. This course prepared me end to end.",
-      },
-      {
-        name: "Nisha B.",
-        time: "2 months ago",
-        rating: 4.5,
-        comment:
-          "Best Java full stack course. The React + Spring Boot integration project is exactly what companies ask for.",
-      },
-      {
-        name: "Arpit J.",
-        time: "2 months ago",
-        rating: 5,
-        comment:
-          "Instructors are top notch. Live sessions are interactive and doubt resolution is fast.",
+          "The React and Spring Boot integration modules were extremely helpful.",
       },
     ],
 
     // ── Testimonial ──
     testimonial: {
-      quote: "Enterprise-ready skills.",
-      author: "Pooja Y., Full-Stack Java",
+      quote: "Learn. Code. Get Placed.",
+      author: "Alocodes Full Stack Java Program",
     },
+
+    // ── Brochure ──
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "Full Stack Java Brochure",
+      fileUrl: "/brochures/full-stack-java.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
-      lastUpdated: "March 2025",
+      fileSize: "3 MB",
+      lastUpdated: "May 2026",
     },
   },
 
@@ -1039,7 +1055,7 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
@@ -1342,16 +1358,17 @@ const courses = [
 
   {
     id: "course-4",
-    slug: "ai",
+    slug: "artificial-intelligence",
 
     // ── Identity ──
     badge: {
       text: "Advanced",
       color: "bg-indigo-100 text-indigo-700 dark:text-indigo-300",
       rating: 4.9,
-      totalRatings: "890",
-      lastUpdated: "April 2025",
+      totalRatings: "950",
+      lastUpdated: "May 2026",
     },
+
     title: "Artificial Intelligence",
     category: "Artificial Intelligence",
     level: "Advanced",
@@ -1360,6 +1377,7 @@ const courses = [
     duration: "2 Months",
     mode: "Live Online",
     batchSize: "25 Students",
+
     language: {
       audio: "English",
       captions: ["English", "Hindi"],
@@ -1370,18 +1388,19 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
 
     // ── Ratings ──
     rating: 4.9,
-    reviewCount: 890,
+    reviewCount: 950,
 
     // ── Media ──
     videoThumbnail: "/thumbnails/ai.jpg",
-    videoTitle: "AI Model Building",
+    videoTitle: "Artificial Intelligence",
+
     previewVideo: {
       thumbnail: "/thumbnails/ai.jpg",
       url: "/videos/ai-preview.mp4",
@@ -1389,86 +1408,98 @@ const courses = [
 
     // ── Description ──
     description:
-      "Build intelligent AI systems and cutting-edge machine learning models using real-world datasets, deep learning techniques, and modern AI frameworks.",
+      "Step into the future with our Artificial Intelligence program designed to teach Machine Learning, Deep Learning, NLP, and intelligent systems through hands-on real-world projects.",
 
     // ── Why Choose ──
     whyChoose: [
-      "AI is transforming every industry from healthcare to finance",
-      "Learn cutting-edge technologies like LLMs, NLP, and Computer Vision",
-      "Hands-on projects with real-world datasets and use cases",
-      "Strong focus on deployment and real-world AI applications",
+      "Learn AI, ML, Deep Learning & NLP from industry experts",
+      "Build real-world projects with practical implementation",
+      "Career support with resume preparation & interview guidance",
+      "Industry-aligned and job-ready curriculum",
+      "Hands-on training with modern AI tools and libraries",
     ],
 
     // ── Curriculum ──
     curriculum: [
       {
         module: 1,
-        title: "Python & AI Foundations",
+        title: "Introduction to Python for AI",
         topics: [
-          "Python for AI (NumPy, Pandas)",
-          "Linear algebra basics",
-          "Probability & statistics for AI",
-          "Data preprocessing techniques",
+          "Python Basics: Variables, Data Types, Lists, Tuples, Dictionaries",
+          "Functions, Conditional Statements, and Loops",
+          "Hands-on Python programs for AI tasks",
         ],
       },
+
       {
         module: 2,
-        title: "Machine Learning Fundamentals",
+        title: "Data Handling & Visualization Libraries",
         topics: [
-          "Supervised vs Unsupervised learning",
-          "Regression & classification algorithms",
-          "Model evaluation metrics",
-          "Feature engineering",
+          "Introduction to NumPy & Pandas",
+          "Data Cleaning and Manipulation",
+          "Visualization with Matplotlib & Seaborn",
+          "Building charts and plots with real datasets",
         ],
       },
+
       {
         module: 3,
-        title: "Deep Learning",
+        title: "Math & Statistics for Machine Learning",
         topics: [
-          "Neural networks basics",
-          "Forward & backward propagation",
-          "Activation functions",
-          "Training deep learning models",
+          "Basic Linear Algebra: Vectors & Matrices",
+          "Statistics: Mean, Median, Mode, Dispersion",
+          "Probability Concepts & Gaussian Distribution",
+          "Hands-on data analysis using Python",
         ],
       },
+
       {
         module: 4,
-        title: "Computer Vision",
+        title: "Supervised Machine Learning",
         topics: [
-          "Image processing with OpenCV",
-          "CNN architectures",
-          "Object detection",
-          "Image classification",
+          "Linear & Logistic Regression",
+          "Decision Trees and SVM",
+          "Case Study Implementation using Scikit-learn",
         ],
       },
+
       {
         module: 5,
-        title: "Natural Language Processing (NLP)",
+        title: "Unsupervised Learning & Clustering",
         topics: [
-          "Text preprocessing",
-          "Tokenization & embeddings",
-          "Transformers & attention mechanism",
-          "Sentiment analysis & chatbots",
+          "K-Means Clustering and Elbow Method",
+          "Distance Metrics: Euclidean & Manhattan",
+          "Practical Project: Customer Segmentation",
         ],
       },
+
       {
         module: 6,
-        title: "Large Language Models (LLMs)",
+        title: "Introduction to Deep Learning",
         topics: [
-          "Introduction to LLMs",
-          "Hugging Face transformers",
-          "Fine-tuning pre-trained models",
-          "Prompt engineering",
+          "Neural Networks Basics and Architecture",
+          "Keras & TensorFlow for Model Building",
+          "Real-life Application: Text Classification",
         ],
       },
+
       {
         module: 7,
-        title: "Deployment & AI Ethics",
+        title: "NLP & Text Processing",
         topics: [
-          "Deploy AI models with FastAPI",
-          "Docker for ML deployment",
-          "Scalable APIs",
-          "Bias, fairness, and ethical AI",
+          "Sentiment Analysis, Tokenization, Stemming",
+          "Text Classification with Naïve Bayes",
+          "Chatbot & Recommendation System Concepts",
+        ],
+      },
+
+      {
+        module: 8,
+        title: "CNNs & Image Analysis (Advanced)",
+        topics: [
+          "Grayscale vs Binary Images",
+          "Filters, Kernels & CNN Architecture",
+          "Mini Project: Image Classification Basics",
         ],
       },
     ],
@@ -1476,111 +1507,138 @@ const courses = [
     // ── Skills ──
     skills: [
       "Python",
-      "TensorFlow",
-      "PyTorch",
-      "NLP",
-      "Computer Vision",
-      "AI",
+      "Machine Learning",
       "Deep Learning",
-      "LLMs",
-      "Transformers",
+      "Artificial Intelligence",
+      "NLP",
+      "TensorFlow",
+      "Keras",
+      "Scikit-learn",
+      "NumPy",
+      "Pandas",
+      "Computer Vision",
+      "Data Analysis",
     ],
 
     // ── Sample Projects ──
     sampleProjects: [
       {
         id: 1,
-        title: "Sentiment Analysis System",
-        skills: ["NLP", "Text Classification"],
+        title: "Predicting House Prices (Regression Model)",
+        skills: ["Data Preprocessing", "Linear Regression", "Model Training"],
         description:
-          "Build a sentiment analysis model to classify reviews using NLP techniques and transformers.",
+          "Use housing datasets to predict house prices using regression algorithms and machine learning models.",
       },
+
       {
         id: 2,
-        title: "Image Classification Model",
-        skills: ["CNN", "Computer Vision"],
+        title: "Handwritten Digit Recognition (MNIST Dataset)",
+        skills: ["Neural Networks", "Computer Vision", "Classification"],
         description:
-          "Train a deep learning model to classify images using convolutional neural networks.",
+          "Build a neural network or CNN model to classify handwritten digits using the MNIST dataset.",
       },
+
       {
         id: 3,
-        title: "Chatbot with LLM",
-        skills: ["LLMs", "Transformers"],
+        title: "Spam Email Detection",
+        skills: ["NLP", "TF-IDF", "Classification"],
         description:
-          "Develop an intelligent chatbot using Hugging Face transformers and fine-tuned models.",
+          "Develop a spam classifier using machine learning algorithms like Naive Bayes or SVM.",
       },
+
       {
         id: 4,
-        title: "Object Detection System",
-        skills: ["Computer Vision", "Deep Learning"],
+        title: "Movie Recommendation System",
+        skills: [
+          "Collaborative Filtering",
+          "Recommendation Algorithms",
+          "Matrix Factorization",
+        ],
         description:
-          "Create a real-time object detection system using OpenCV and deep learning.",
+          "Create a movie recommendation system that suggests movies based on user preferences.",
       },
+
       {
         id: 5,
-        title: "AI Model Deployment",
-        skills: ["FastAPI", "Docker"],
+        title: "Chatbot with Basic NLP",
+        skills: [
+          "Natural Language Processing",
+          "Chatbot Development",
+          "AI Response Generation",
+        ],
         description:
-          "Deploy trained AI models as scalable APIs using FastAPI and Docker.",
+          "Build a chatbot that responds to user queries using rule-based or NLP-based approaches.",
       },
     ],
 
     // ── Career Opportunities ──
     careerRoles: [
-      "AI Engineer",
-      "Machine Learning Engineer",
-      "Deep Learning Engineer",
-      "NLP Engineer",
-      "Computer Vision Engineer",
+      "AI/ML Developer",
+      "Machine Learning Developer",
+      "Data Scientist",
+      "Python Developer",
+      "Data Analyst",
+      "Chatbot Enhancer",
     ],
 
     hiringCompanies: [
+      "Amazon",
       "Google",
       "Microsoft",
-      "Amazon",
+      "Deloitte",
       "Alomonx",
-      "AI Startups",
-      "Research Labs",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
     outcomes: [
-      "Build deep learning and AI systems",
-      "Work with NLP and computer vision models",
-      "Deploy production-ready AI applications",
-      "Crack AI/ML engineer roles",
+      "Build intelligent AI and ML systems",
+      "Work on real-world AI projects",
+      "Develop NLP and recommendation systems",
+      "Understand deep learning and neural networks",
+      "Prepare for AI and ML job roles",
     ],
 
     // ── Learning Outcomes ──
     learningOutcomes: [
-      "Design and train deep neural networks",
-      "Build NLP models for text processing",
-      "Implement computer vision systems",
-      "Fine-tune large language models",
-      "Apply reinforcement learning basics",
-      "Deploy AI models using FastAPI and Docker",
-      "Understand AI ethics and bias mitigation",
-      "Work with Hugging Face transformers",
+      "Write Python programs for AI applications",
+      "Handle and visualize datasets using Pandas & Matplotlib",
+      "Apply machine learning algorithms using Scikit-learn",
+      "Build neural networks using TensorFlow & Keras",
+      "Implement NLP and text classification models",
+      "Understand clustering and recommendation systems",
+      "Build CNN-based image classification projects",
+      "Create AI-powered chatbot systems",
     ],
 
     // ── Target Audience ──
     targetAudience: [
-      "Data scientists specializing in AI",
-      "Software engineers moving into AI",
-      "Researchers applying AI in real-world domains",
-      "ML enthusiasts advancing beyond basics",
+      "Students interested in Artificial Intelligence",
+      "Beginners learning Machine Learning",
+      "Developers transitioning into AI",
+      "Tech enthusiasts exploring Deep Learning and NLP",
     ],
 
     // ── Certificate ──
     certificate: {
       type: "Certificate of Internship Completion",
+
       issuedBy: ["Alomonx Technology", "Alocodes"],
+
       signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
+        {
+          role: "Authorized Signatory",
+          title: "Director",
+        },
+        {
+          role: "HR Manager",
+          title: "Human Resources",
+        },
       ],
+
       description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
+        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
+
       imageUrl: "/Certificate.jpeg",
     },
 
@@ -1588,15 +1646,21 @@ const courses = [
     instructors: [
       {
         name: "Tarun Joshi",
-        role: "AI Research Engineer at Microsoft",
+        role: "AI Research Engineer",
         avatar: "/avatars/man_ava.jpg",
+      },
+
+      {
+        name: "Priya Sharma",
+        role: "Machine Learning Expert",
+        avatar: "/avatars/woman_ava.jpg",
       },
     ],
 
     // ── Curriculum Summary ──
     curriculumSummary: {
-      totalModules: 7,
-      totalDuration: "50+ hours on-demand video",
+      totalModules: 8,
+      totalDuration: "55+ Hours",
     },
 
     // ── Reviews ──
@@ -1606,28 +1670,31 @@ const courses = [
         time: "1 week ago",
         rating: 5,
         comment:
-          "AI innovation at fingertips. The LLM fine-tuning module is outstanding.",
+          "Excellent AI course with practical machine learning and deep learning projects.",
       },
+
       {
         name: "Divya P.",
         time: "2 weeks ago",
         rating: 4.5,
         comment:
-          "Transformers and attention finally make sense. Great explanation.",
+          "The NLP and recommendation system modules were extremely helpful.",
       },
     ],
 
     // ── Testimonial ──
     testimonial: {
-      quote: "AI innovation at fingertips.",
-      author: "Tarun J., AI Engineer",
+      quote: "Build smart solutions with AI.",
+      author: "Alocodes AI Program",
     },
+
+    // ── Brochure ──
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "Artificial Intelligence Brochure",
+      fileUrl: "/brochures/artificial-intelligence.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
-      lastUpdated: "March 2025",
+      fileSize: "3 MB",
+      lastUpdated: "May 2026",
     },
   },
 
@@ -1661,7 +1728,7 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },
@@ -1952,10 +2019,11 @@ const courses = [
     badge: {
       text: "Hot",
       color: "bg-orange-100 text-orange-700 dark:text-orange-300",
-      rating: 4.6,
-      totalRatings: "760",
-      lastUpdated: "April 2025",
+      rating: 4.7,
+      totalRatings: "820",
+      lastUpdated: "May 2026",
     },
+
     title: "Digital Marketing",
     category: "Marketing",
     level: "Beginner",
@@ -1964,6 +2032,7 @@ const courses = [
     duration: "2 Months",
     mode: "Live Online",
     batchSize: "40 Students",
+
     language: {
       audio: "English",
       captions: ["English", "Hindi"],
@@ -1972,20 +2041,23 @@ const courses = [
     // ── Pricing ──
     pricing: {
       fullPrice: 7499,
+
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
+
       currency: "INR",
     },
 
     // ── Ratings ──
-    rating: 4.6,
-    reviewCount: 760,
+    rating: 4.7,
+    reviewCount: 820,
 
     // ── Media ──
     videoThumbnail: "/thumbnails/digital-mark.jpg",
-    videoTitle: "Marketing That Converts",
+    videoTitle: "Digital Marketing Mastery",
+
     previewVideo: {
       thumbnail: "/thumbnails/digital-mark.jpg",
       url: "/videos/digital-marketing-preview.mp4",
@@ -1993,86 +2065,113 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master digital marketing strategies and leverage AI tools to grow brands, drive traffic, generate leads, and scale businesses online.",
+      "Master Digital Marketing with SEO, Social Media Marketing, Google Ads, Content Marketing, Email Automation, and Analytics through real-world projects and live campaigns.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Digital marketing is essential for every business today",
-      "Learn high-income skills like SEO, ads, and content marketing",
-      "Use AI tools to automate and scale marketing efforts",
-      "Hands-on campaigns and real-world marketing projects",
+      "Comprehensive syllabus covering SEO, PPC, Social Media & Analytics",
+      "Hands-on experience with live digital marketing campaigns",
+      "Learn industry-leading tools like Google Analytics, SEMrush & HubSpot",
+      "Practical and job-ready curriculum with real-world projects",
+      "Build skills in branding, lead generation & online growth strategies",
     ],
 
     // ── Curriculum ──
     curriculum: [
       {
         module: 1,
-        title: "Digital Marketing Fundamentals",
+        title: "Introduction to Digital Marketing",
         topics: [
-          "Introduction to digital marketing",
-          "Customer journey & funnels",
-          "Marketing channels overview",
-          "Brand positioning",
+          "Basics of Digital Marketing",
+          "Traditional vs Digital Marketing",
+          "Types of Digital Marketing",
+          "Understanding Online Audience",
+          "Digital Marketing Strategies",
         ],
       },
+
       {
         module: 2,
-        title: "Search Engine Optimization (SEO)",
+        title: "Social Media Marketing (SMM)",
         topics: [
-          "On-page SEO",
-          "Off-page SEO & backlinks",
-          "Technical SEO",
-          "Keyword research & tools",
+          "Facebook Marketing",
+          "Instagram Marketing",
+          "LinkedIn Marketing",
+          "YouTube Marketing",
+          "Content Planning & Scheduling",
         ],
       },
+
       {
         module: 3,
-        title: "Paid Advertising (PPC)",
+        title: "Search Engine Optimization (SEO)",
         topics: [
-          "Google Ads fundamentals",
-          "Meta Ads (Facebook & Instagram)",
-          "Campaign setup & targeting",
-          "Budget optimization",
+          "Introduction to SEO",
+          "On-Page SEO",
+          "Off-Page SEO",
+          "Keyword Research",
+          "Technical SEO Basics",
+          "Google Search Ranking",
         ],
       },
+
       {
         module: 4,
-        title: "Social Media Marketing",
+        title: "Google Ads & Pay-Per-Click (PPC)",
         topics: [
-          "Instagram growth strategies",
-          "LinkedIn & Twitter marketing",
-          "Content calendars",
-          "Engagement techniques",
+          "Google Ads Basics",
+          "Search Ads & Display Ads",
+          "Keyword Bidding",
+          "Campaign Setup",
+          "Ad Performance Analysis",
         ],
       },
+
       {
         module: 5,
-        title: "Content Marketing & AI Tools",
+        title: "Content Marketing",
         topics: [
-          "Content strategy planning",
-          "Copywriting fundamentals",
-          "Using AI tools (ChatGPT, Jasper)",
-          "Canva AI for creatives",
+          "Content Writing Basics",
+          "Blog Writing",
+          "Copywriting Techniques",
+          "Content Strategy",
+          "Video & Visual Content Marketing",
         ],
       },
+
       {
         module: 6,
         title: "Email Marketing & Automation",
         topics: [
-          "Email funnels",
-          "Mailchimp & HubSpot",
-          "Lead nurturing",
-          "Automation workflows",
+          "Email Campaign Creation",
+          "Email Design Basics",
+          "Audience Segmentation",
+          "Lead Generation",
+          "Marketing Automation Tools",
         ],
       },
+
       {
         module: 7,
-        title: "Analytics & Growth Strategies",
+        title: "Analytics & Performance Tracking",
         topics: [
-          "Google Analytics 4",
-          "Search Console",
-          "Performance tracking",
-          "Scaling marketing campaigns",
+          "Google Analytics",
+          "Website Traffic Analysis",
+          "User Behaviour Tracking",
+          "Campaign Performance Measurement",
+          "ROI Calculation",
+        ],
+      },
+
+      {
+        module: 8,
+        title: "Freelancing, Personal Branding & Live Projects",
+        topics: [
+          "Building Personal Brand",
+          "Freelancing Platforms",
+          "Client Communication",
+          "Portfolio Creation",
+          "Real-world Marketing Projects",
         ],
       },
     ],
@@ -2083,100 +2182,146 @@ const courses = [
       "Social Media Marketing",
       "Google Ads",
       "Content Marketing",
-      "AI Tools",
       "Email Marketing",
-      "Analytics",
-      "Marketing Funnels",
+      "Google Analytics",
+      "SEMrush",
+      "Canva",
+      "Meta Ads",
+      "PPC",
+      "Lead Generation",
+      "Marketing Automation",
     ],
 
     // ── Sample Projects ──
     sampleProjects: [
       {
         id: 1,
-        title: "SEO Website Ranking Project",
-        skills: ["SEO", "Keyword Research"],
+        title: "SEO Optimization for E-Commerce Websites",
+
+        skills: [
+          "SEO",
+          "Keyword Research",
+          "Technical SEO",
+          "Google Analytics",
+        ],
+
         description:
-          "Optimize a website and rank it on Google using on-page and off-page SEO strategies.",
+          "Optimize an e-commerce website to improve Google rankings and website traffic using advanced SEO strategies.",
       },
+
       {
         id: 2,
-        title: "Google Ads Campaign",
-        skills: ["PPC", "Ad Campaigns"],
+        title: "Social Media Marketing Strategy for a Fashion Brand",
+
+        skills: [
+          "Social Media Marketing",
+          "Content Creation",
+          "Campaign Planning",
+        ],
+
         description:
-          "Create and manage a live Google Ads campaign with budget optimization.",
+          "Create and execute social media campaigns for a fashion brand using Instagram and Facebook marketing.",
       },
+
       {
         id: 3,
-        title: "Social Media Growth Strategy",
-        skills: ["Social Media", "Content"],
+        title: "Email Marketing Campaign for Lead Generation",
+
+        skills: ["Email Marketing", "Lead Generation", "Copywriting"],
+
         description:
-          "Build and execute a content strategy to grow a social media page organically.",
+          "Develop email campaigns with promotional content and automation workflows to engage customers.",
       },
+
       {
         id: 4,
-        title: "AI Content Automation System",
-        skills: ["AI Tools", "Automation"],
+        title: "Google Ads Campaign for a Local Business",
+
+        skills: ["Google Ads", "PPC Marketing", "Campaign Optimization"],
+
         description:
-          "Use AI tools to create scalable content pipelines for blogs and social media.",
+          "Create and manage a Google Ads campaign focusing on keyword targeting and performance tracking.",
+      },
+
+      {
+        id: 5,
+        title: "Content Marketing Plan for a Tech Blog",
+
+        skills: ["Content Marketing", "SEO Writing", "Digital Branding"],
+
+        description:
+          "Develop a content marketing strategy for a technology blog with SEO-friendly content promotion.",
       },
     ],
 
     // ── Career Opportunities ──
     careerRoles: [
-      "Digital Marketing Specialist",
-      "SEO Expert",
-      "Performance Marketer",
+      "Digital Marketing Executive",
+      "SEO Specialist",
       "Social Media Manager",
-      "Freelance Marketer",
+      "Content Marketing Executive",
+      "Google Ads Specialist",
     ],
 
     hiringCompanies: [
+      "Amazon",
+      "Google",
+      "Microsoft",
+      "Deloitte",
       "Alomonx",
-      "Zomato",
-      "Flipkart",
-      "Startups",
-      "Marketing Agencies",
-      "E-commerce Companies",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
     outcomes: [
-      "Run high-converting ad campaigns",
-      "Grow brands on social media",
-      "Automate marketing using AI",
-      "Generate leads and revenue online",
+      "Run successful digital marketing campaigns",
+      "Improve website rankings and online visibility",
+      "Generate leads through social media and email marketing",
+      "Track and optimize campaign performance",
+      "Build personal branding and freelancing skills",
     ],
 
     // ── Learning Outcomes ──
     learningOutcomes: [
-      "Rank websites using advanced SEO techniques",
-      "Run Google Ads and Meta Ads campaigns",
-      "Grow social media presence across platforms",
-      "Create content strategies using AI tools",
-      "Build automated email marketing funnels",
-      "Analyze campaigns using Google Analytics",
-      "Use AI tools for scalable content creation",
-      "Understand influencer and affiliate marketing",
+      "Understand the fundamentals of digital marketing",
+      "Create and optimize SEO strategies",
+      "Run Google Ads and PPC campaigns",
+      "Develop social media marketing campaigns",
+      "Create engaging content and copywriting strategies",
+      "Build automated email marketing workflows",
+      "Analyze traffic and campaign performance using Google Analytics",
+      "Work on real-world digital marketing projects",
     ],
 
     // ── Target Audience ──
     targetAudience: [
+      "Beginners interested in digital marketing",
       "Business owners growing online presence",
-      "Marketing professionals upgrading skills",
-      "Beginners exploring digital marketing",
       "Freelancers offering marketing services",
+      "Students and professionals upgrading marketing skills",
     ],
 
     // ── Certificate ──
     certificate: {
       type: "Certificate of Internship Completion",
+
       issuedBy: ["Alomonx Technology", "Alocodes"],
+
       signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
+        {
+          role: "Authorized Signatory",
+          title: "Director",
+        },
+
+        {
+          role: "HR Manager",
+          title: "Human Resources",
+        },
       ],
+
       description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
+        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
+
       imageUrl: "/Certificate.jpeg",
     },
 
@@ -2184,15 +2329,21 @@ const courses = [
     instructors: [
       {
         name: "Priya Kulkarni",
-        role: "Digital Marketing Lead at Zomato",
+        role: "Digital Marketing Strategist",
         avatar: "/avatars/woman_ava.jpg",
+      },
+
+      {
+        name: "Rahul Mehta",
+        role: "SEO & Performance Marketing Expert",
+        avatar: "/avatars/man_ava.jpg",
       },
     ],
 
     // ── Curriculum Summary ──
     curriculumSummary: {
-      totalModules: 7,
-      totalDuration: "40+ hours on-demand video",
+      totalModules: 8,
+      totalDuration: "45+ Hours",
     },
 
     // ── Reviews ──
@@ -2202,41 +2353,31 @@ const courses = [
         time: "2 weeks ago",
         rating: 5,
         comment:
-          "Helped me scale my business online quickly. Revenue doubled in 2 months.",
+          "The SEO and Google Ads modules were highly practical and easy to implement.",
       },
+
       {
         name: "Mohit A.",
         time: "1 month ago",
         rating: 4.5,
-        comment: "Google Ads module is very practical and detailed.",
-      },
-      {
-        name: "Kavya L.",
-        time: "1 month ago",
-        rating: 4.5,
         comment:
-          "AI tools workflow completely changed my content creation process.",
-      },
-      {
-        name: "Nikhil S.",
-        time: "2 months ago",
-        rating: 5,
-        comment: "Got my first job after completing this course.",
+          "Loved the live projects and social media marketing strategies.",
       },
     ],
 
     // ── Testimonial ──
     testimonial: {
-      quote: "Helped me scale my business online quickly.",
-      author: "Priya K., Entrepreneur",
+      quote: "Master marketing that drives real growth.",
+      author: "Alocodes Digital Marketing Program",
     },
 
+    // ── Brochure ──
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "Digital Marketing Brochure",
+      fileUrl: "/brochures/digital-marketing.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
-      lastUpdated: "March 2025",
+      fileSize: "3 MB",
+      lastUpdated: "May 2026",
     },
   },
 
@@ -2270,7 +2411,7 @@ const courses = [
       fullPrice: 7499,
       emi: {
         available: true,
-        installments: [4500, 3000],
+        installments: [4499, 3000],
       },
       currency: "INR",
     },

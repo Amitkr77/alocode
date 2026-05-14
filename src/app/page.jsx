@@ -78,7 +78,10 @@ export default function Home() {
                   className="absolute -left-4 top-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[1.10em] rounded-full -z-0"
                   style={{ background: "var(--primary)" }}
                 />
-                <span className="relative text-7.5xl z-10 text-[var(--primary-foreground)]">
+                <span
+                  className="relative z-10 text-[var(--primary-foreground)]"
+                  style={{ fontSize: "5.2rem" }}
+                >
                   BECOME
                 </span>
               </span>

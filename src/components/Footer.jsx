@@ -55,7 +55,7 @@ const Footer = () => {
         style={{
           maxWidth: "1250px",
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 16px",
           display: "flex",
           flexDirection: "column",
           gap: "12px",
@@ -65,11 +65,12 @@ const Footer = () => {
         <div
           style={{
             ...card,
+            padding: "16px 20px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "16px",
+            gap: "12px",
           }}
         >
           <Link href="/">
@@ -86,7 +87,7 @@ const Footer = () => {
               fontSize: "clamp(14px, 2.5vw, 24px)",
               fontWeight: 600,
               color: "var(--footer-text)",
-              margin: -5,
+              margin: 0,
               letterSpacing: "-0.5px",
               fontFamily: "'Georgia', serif",
             }}
@@ -97,7 +98,7 @@ const Footer = () => {
         </div>
 
         {/* ── Row 2: Sitemap card ── */}
-        <div style={card}>
+        <div style={{ ...card, padding: "20px" }}>
           <div
             className="footer-sitemap-grid"
             style={{
@@ -188,14 +189,14 @@ const Footer = () => {
                   margin: 0,
                   display: "flex",
                   flexDirection: "column",
-                  gap: "6px",
+                  gap: "8px",
                 }}
               >
                 {[
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About Us" },
                   { href: "/contact", label: "Contact Us" },
-                  { href: "/live", label: "Live Training" },
+                  { href: "/placement", label: "Placement" },
                   { href: "/faq", label: "FAQ" },
                 ].map(({ href, label }) => (
                   <li key={label}>
@@ -244,26 +245,14 @@ const Footer = () => {
                   margin: 0,
                   display: "flex",
                   flexDirection: "column",
-                  gap: "6px",
+                  gap: "8px",
                 }}
               >
                 {[
-                  {
-                    href: "/courses?category=Programming",
-                    label: "Programming",
-                  },
-                  {
-                    href: "/courses?category=Web Development",
-                    label: "Web Development",
-                  },
-                  {
-                    href: "/courses?category=Data Science",
-                    label: "Data Science",
-                  },
-                  {
-                    href: "/courses?category=App Development",
-                    label: "App Development",
-                  },
+                  { href: "/courses?category=Design", label: "Design" },
+                  { href: "/courses?category=Full Stack", label: "Web Development" },
+                  { href: "/courses?category=Data Science", label: "Data Science" },
+                  { href: "/courses?category=Application Development", label: "App Development" },
                   { href: "/courses", label: "Browse All" },
                 ].map(({ href, label }) => (
                   <li key={label}>
@@ -285,84 +274,6 @@ const Footer = () => {
                     >
                       {label}
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <p
-                className="footer-section-label"
-                style={{
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  color: "var(--footer-text)",
-                  marginBottom: "10px",
-                }}
-              >
-                Company
-              </p>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                {[
-                  { href: "/about", label: "About Us" },
-                  { href: "/why-choose", label: "Why Choose Us" },
-                  { href: "/careers", label: "Careers" },
-                  { href: "/blog", label: "Blog" },
-                ].map(({ href, label, badge }) => (
-                  <li
-                    key={label}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
-                    <Link
-                      href={href}
-                      className="footer-link"
-                      style={{
-                        fontSize: "14px",
-                        color: "var(--footer-text)",
-                        textDecoration: "none",
-                        transition: "color 0.2s",
-                      }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "var(--primary)")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "var(--footer-text)")
-                      }
-                    >
-                      {label}
-                    </Link>
-                    {badge && (
-                      <span
-                        style={{
-                          fontSize: "9px",
-                          fontWeight: 700,
-                          letterSpacing: "0.5px",
-                          textTransform: "uppercase",
-                          background: "var(--primary)",
-                          color: "var(--primary-foreground)",
-                          padding: "2px 7px",
-                          borderRadius: "20px",
-                        }}
-                      >
-                        {badge}
-                      </span>
-                    )}
                   </li>
                 ))}
               </ul>
@@ -410,11 +321,12 @@ const Footer = () => {
                     fontSize: "13px",
                     color: "var(--footer-text)",
                     outline: "none",
+                    width: "100%",
+                    boxSizing: "border-box",
                   }}
                   onFocus={(e) => {
                     e.target.style.borderColor = "var(--primary)";
-                    e.target.style.boxShadow =
-                      "0 0 0 2px rgba(66,214,116,0.10)";
+                    e.target.style.boxShadow = "0 0 0 2px rgba(66,214,116,0.10)";
                   }}
                   onBlur={(e) => {
                     e.target.style.borderColor = "rgba(66, 214, 116, 0.15)";
@@ -436,6 +348,7 @@ const Footer = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "6px",
+                    width: "100%",
                   }}
                 >
                   Subscribe{" "}
@@ -450,11 +363,12 @@ const Footer = () => {
         <div
           style={{
             ...card,
+            padding: "16px 20px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "20px",
+            gap: "14px",
           }}
         >
           <p
@@ -471,24 +385,12 @@ const Footer = () => {
             <span style={{ color: "var(--primary)" }}>social media</span>
           </p>
 
-          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
             {[
-              {
-                href: "https://linkedin.com/company/alocodes",
-                Icon: Linkedin,
-                label: "LinkedIn",
-              },
+              { href: "https://linkedin.com/company/alocodes", Icon: Linkedin, label: "LinkedIn" },
               { href: "mailto:hello@alocodes.com", Icon: Mail, label: "Mail" },
-              {
-                href: "https://instagram.com/alocodes",
-                Icon: Instagram,
-                label: "Instagram",
-              },
-              {
-                href: "https://youtube.com/@alocodes",
-                Icon: Youtube,
-                label: "YouTube",
-              },
+              { href: "https://instagram.com/alocodes", Icon: Instagram, label: "Instagram" },
+              { href: "https://youtube.com/@alocodes", Icon: Youtube, label: "YouTube" },
             ].map(({ href, Icon, label }) => (
               <a
                 key={label}
@@ -516,8 +418,7 @@ const Footer = () => {
                   e.currentTarget.style.color = "var(--primary)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "var(--footer-card-border)";
+                  e.currentTarget.style.borderColor = "var(--footer-card-border)";
                   e.currentTarget.style.color = "var(--footer-text)";
                 }}
               >
@@ -539,8 +440,8 @@ const Footer = () => {
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "16px",
-            padding: "16px 32px",
+            gap: "10px",
+            padding: "14px 20px",
           }}
         >
           <p
@@ -551,7 +452,7 @@ const Footer = () => {
             rights reserved.
           </p>
 
-          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             {[
               { href: "/privacy-policy", label: "Privacy Policy" },
               { href: "/support/terms-of-service", label: "Terms of Service" },
@@ -586,7 +487,8 @@ const Footer = () => {
             display: "flex",
             justifyContent: "center",
             marginTop: "40px",
-            paddingRight: "15px",
+            paddingRight: "0px",
+            overflow: "hidden",
           }}
         >
           <img

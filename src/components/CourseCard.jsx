@@ -23,13 +23,13 @@ export default function CourseCard({
       {/* ── Thumbnail ── */}
       <div
         className="relative overflow-hidden"
-        style={{ aspectRatio: "16/9", background: "var(--card)" }}
+        style={{ aspectRatio: "16/10", background: "var(--card)" }}
       >
         {course.videoThumbnail ? (
           <img
             src={course.videoThumbnail}
             alt={course.title}
-            className="p-3 rounded-md w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="border-x-fuchsia-50 border-y-fuchsia-50 border-1 rounded-md w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
           <div

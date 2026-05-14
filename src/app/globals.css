@@ -144,44 +144,56 @@
 }
 
 /* ── Footer mobile responsive ── */
+/* ── Footer mobile responsive ── */
 @media (max-width: 768px) {
   .footer-tagline {
-    font-size: 18px !important;
+    font-size: 15px !important;
   }
 
   .footer-logo {
-    height: 32px !important;
+    height: 28px !important;
   }
 
+  /* 2×2 grid — keeps footer compact vertically */
   .footer-sitemap-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 16px !important;
   }
 
+  /* "Find all our links here" was oversized and wrapping badly */
   .footer-sitemap-heading {
     font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
   }
 
   .footer-address {
-    font-size: 13px !important;
+    font-size: 11px !important;
+    line-height: 1.65 !important;
   }
 
   .footer-link {
-    font-size: 13px !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
   }
 
   .footer-section-label {
-    font-size: 10px !important;
-    letter-spacing: 1px !important;
+    font-size: 9px !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 5px !important;
   }
 
   .footer-social-label {
-    font-size: 16px !important;
+    font-size: 14px !important;
+    width: 100% !important;
   }
 
+  /* Smaller pills so all 4 fit in one row */
   .footer-social-pill {
-    padding: 4px 8px !important;
+    padding: 5px 10px !important;
     font-size: 11px !important;
+    gap: 4px !important;
   }
 
   .footer-social-icon {
@@ -190,29 +202,31 @@
   }
 
   .footer-watermark {
-    height: 85px !important;
+    height: 60px !important;
     width: 100% !important;
-    margin-top: -7px !important;
-    margin-left: 16px !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   .footer-bottom-text {
-    font-size: 11px !important;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+    font-size: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
-  body {
-    @apply text-foreground; /* ← remove bg-background, add bg-transparent */
-    background-color: transparent;
+  /* Stack copyright + links vertically and center both */
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
   }
 
-  .font-display {
-    font-family: "Spline Sans", sans-serif;
+  .footer-bottom-links {
+    justify-content: center !important;
+    gap: 12px !important;
   }
 }
 

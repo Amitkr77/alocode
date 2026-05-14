@@ -29,7 +29,7 @@ import {
 import courses from "@/lib/Courses";
 
 const navItems = [
-  { href: "/live", label: "Live Training" },
+  { href: "/placement", label: "Placement" },
   { href: "/contact", label: "Contact" },
   { href: "/about", label: "About Us" },
 ];
@@ -105,7 +105,7 @@ const Navbar = () => {
                       fontFamily: "system-ui, sans-serif",
                     }}
                   >
-                    Courses
+                    Programs
                     <ChevronDown className="w-3.5 h-3.5 opacity-70" />
                   </button>
                 </DropdownMenuTrigger>
