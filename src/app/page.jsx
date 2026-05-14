@@ -80,7 +80,7 @@ export default function Home() {
                 />
                 <span
                   className="relative z-10 text-[var(--primary-foreground)]"
-                  style={{ fontSize: "5.2rem" }}
+                  style={{ fontSize: "clamp(2.8rem, 8vw, 5.2rem)" }}
                 >
                   BECOME
                 </span>
