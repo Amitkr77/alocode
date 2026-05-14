@@ -492,14 +492,14 @@ const Footer = () => {
           }}
         >
           <img
-            src="/footer_logo_3.png"
+            src="/alocodes_footer.png"
             alt=""
             aria-hidden="true"
             className="footer-watermark"
             style={{
               height: "270px",
               width: "1150px",
-              opacity: 0.8,
+              opacity: 0.7,
               userSelect: "none",
               pointerEvents: "none",
             }}
