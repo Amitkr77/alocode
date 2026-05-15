@@ -66,7 +66,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 sm:h-22">
           {/* ── Single unified navbar pill ── */}
           <nav

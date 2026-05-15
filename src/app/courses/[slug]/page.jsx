@@ -213,7 +213,7 @@ export default async function CourseDetail({ params }) {
             </div>
 
             {/* Download Brochure */}
-            <Link
+            {/* <Link
               href={course.brochure?.fileUrl || `/brochure/${course.slug}`}
               target={course.brochure?.fileUrl ? "_blank" : undefined}
               rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
@@ -225,7 +225,7 @@ export default async function CourseDetail({ params }) {
               }}
             >
               <Download className="size-4" /> Download Brochure
-            </Link>
+            </Link> */}
           </div>
         </aside>
 
