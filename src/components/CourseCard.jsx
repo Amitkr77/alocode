@@ -12,18 +12,32 @@ export default function CourseCard({
   return (
     <Link
       href={`/courses/${course.slug}`}
-      className="group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col h-full"
+      className="group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full"
       style={{
         background: "var(--background)",
         border: "1px solid var(--border)",
-        boxShadow: "0 2px 12px rgba(15,45,26,0.06)",
+        boxShadow:
+          "0 2px 8px rgba(15,45,26,0.06), 0 4px 24px rgba(15,45,26,0.08)",
         textDecoration: "none",
+        transition: "box-shadow 0.3s ease, transform 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow =
+          "0 8px 24px rgba(15,45,26,0.12), 0 16px 48px rgba(15,45,26,0.14)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow =
+          "0 2px 8px rgba(15,45,26,0.06), 0 4px 24px rgba(15,45,26,0.08)";
       }}
     >
       {/* ── Thumbnail ── */}
       <div
         className="relative overflow-hidden"
-        style={{ aspectRatio: "16/10", background: "var(--card)" }}
+        style={{
+          aspectRatio: "16/10",
+          background: "var(--card)",
+          boxShadow: "inset 0 -4px 12px rgba(15,45,26,0.08)",
+        }}
       >
         {course.videoThumbnail ? (
           <img
@@ -57,29 +71,13 @@ export default function CourseCard({
                 color: "var(--primary-foreground)",
                 padding: "3px 8px",
                 borderRadius: "15px",
+                boxShadow: "0 2px 8px rgba(15,45,26,0.20)",
               }}
             >
               {course.badge.text}
             </span>
           </div>
         )}
-
-        {/* Level pill top-right */}
-        {/* <div className="absolute top-3 right-3">
-          <span
-            style={{
-              fontSize: "10px",
-              fontWeight: 600,
-              background: "rgba(15,31,19,0.70)",
-              color: "rgba(255,255,255,0.90)",
-              padding: "3px 10px",
-              borderRadius: "15px",
-              backdropFilter: "blur(8px)",
-            }}
-          >
-            {showMode ? course.mode : course.level}
-          </span>
-        </div> */}
       </div>
 
       {/* ── Body ── */}
@@ -159,6 +157,7 @@ export default function CourseCard({
                     fontSize: "10px",
                     fontWeight: 700,
                     color: "#fff",
+                    boxShadow: "0 1px 4px rgba(15,45,26,0.18)",
                   }}
                 >
                   {["J", "A", "R"][i]}

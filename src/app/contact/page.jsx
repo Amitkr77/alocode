@@ -200,12 +200,12 @@ export default function page() {
                       </h2>
                     </div>
                     <p className="text-sm font-bold ml-3 text-muted-foreground">
-                      +91 95082 61850
+                      +91 62067 57371
                     </p>
                     <a
                       className="text-md ml-3 font-bold mt-1 inline-flex items-center gap-1 hover:gap-2 transition-all"
                       style={{ color: "var(--primary)" }}
-                      href="https://wa.me/919508261850?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20coding%20courses."
+                      href="https://wa.me/916206757371?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20coding%20courses."
                     >
                       Chat now <CircleArrowOutUpRightIcon size={15} />
                     </a>

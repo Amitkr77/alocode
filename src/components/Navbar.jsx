@@ -227,7 +227,7 @@ const Navbar = () => {
             <div className="flex items-center gap-2 pr-1">
               {/* Call Us — desktop only */}
               <a
-                href="tel:+919508261850"
+                href="tel:+916206757371"
                 className="hidden md:flex items-center gap-2 px-5 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105"
                 style={{
                   background: "#42D674",
@@ -406,7 +406,7 @@ const Navbar = () => {
                   >
                     <SheetClose asChild>
                       <a
-                        href="tel:+919508261850"
+                        href="tel:+916206757371"
                         className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full font-bold text-sm transition-all duration-300"
                         style={{
                           background:

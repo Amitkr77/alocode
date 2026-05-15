@@ -1710,8 +1710,8 @@ const courses = [
       totalRatings: "890",
       lastUpdated: "May 2026",
     },
-    title: "Application Development",
-    category: "Application Development",
+    title: "App Development",
+    category: "App Development",
     level: "Intermediate",
 
     // ── Logistics ──

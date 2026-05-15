@@ -250,9 +250,18 @@ const Footer = () => {
               >
                 {[
                   { href: "/courses?category=Design", label: "Design" },
-                  { href: "/courses?category=Full Stack", label: "Web Development" },
-                  { href: "/courses?category=Data Science", label: "Data Science" },
-                  { href: "/courses?category=Application Development", label: "App Development" },
+                  {
+                    href: "/courses?category=Full Stack",
+                    label: "Web Development",
+                  },
+                  {
+                    href: "/courses?category=Data Science",
+                    label: "Data Science",
+                  },
+                  {
+                    href: "/courses?category=Application Development",
+                    label: "App Development",
+                  },
                   { href: "/courses", label: "Browse All" },
                 ].map(({ href, label }) => (
                   <li key={label}>
@@ -326,7 +335,8 @@ const Footer = () => {
                   }}
                   onFocus={(e) => {
                     e.target.style.borderColor = "var(--primary)";
-                    e.target.style.boxShadow = "0 0 0 2px rgba(66,214,116,0.10)";
+                    e.target.style.boxShadow =
+                      "0 0 0 2px rgba(66,214,116,0.10)";
                   }}
                   onBlur={(e) => {
                     e.target.style.borderColor = "rgba(66, 214, 116, 0.15)";
@@ -387,10 +397,22 @@ const Footer = () => {
 
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
             {[
-              { href: "https://linkedin.com/company/alocodes", Icon: Linkedin, label: "LinkedIn" },
+              {
+                href: "https://linkedin.com/company/alocodes",
+                Icon: Linkedin,
+                label: "LinkedIn",
+              },
               { href: "mailto:hello@alocodes.com", Icon: Mail, label: "Mail" },
-              { href: "https://instagram.com/alocodes", Icon: Instagram, label: "Instagram" },
-              { href: "https://youtube.com/@alocodes", Icon: Youtube, label: "YouTube" },
+              {
+                href: "https://instagram.com/alocodes",
+                Icon: Instagram,
+                label: "Instagram",
+              },
+              {
+                href: "https://youtube.com/@alocodes",
+                Icon: Youtube,
+                label: "YouTube",
+              },
             ].map(({ href, Icon, label }) => (
               <a
                 key={label}
@@ -418,7 +440,8 @@ const Footer = () => {
                   e.currentTarget.style.color = "var(--primary)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--footer-card-border)";
+                  e.currentTarget.style.borderColor =
+                    "var(--footer-card-border)";
                   e.currentTarget.style.color = "var(--footer-text)";
                 }}
               >
@@ -445,7 +468,7 @@ const Footer = () => {
           }}
         >
           <p
-            className="footer-bottom-text"
+            className="footer-bottom-links"
             style={{ fontSize: "12px", color: "var(--footer-text)", margin: 0 }}
           >
             © {currentYear} Alocodes Inc. | Alomonx Technology Pvt Ltd. All
@@ -454,14 +477,14 @@ const Footer = () => {
 
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             {[
-              { href: "/privacy-policy", label: "Privacy Policy" },
+              { href: "/support/privacy-policy", label: "Privacy Policy" },
               { href: "/support/terms-of-service", label: "Terms of Service" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
               <Link
                 key={label}
                 href={href}
-                className="footer-bottom-text"
+                className="footer-bottom-links"
                 style={{
                   fontSize: "12px",
                   color: "var(--footer-text)",
@@ -499,7 +522,7 @@ const Footer = () => {
             style={{
               height: "270px",
               width: "1150px",
-              opacity: 0.7,
+              opacity: 0.5,
               userSelect: "none",
               pointerEvents: "none",
             }}

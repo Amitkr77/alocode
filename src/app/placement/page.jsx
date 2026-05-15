@@ -150,9 +150,9 @@ export default function App() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                 {[
                   { label: "Placement Rate", value: "90%", highlight: true },
-                  { label: "Hiring Partners", value: "500+" },
-                  { label: "Avg Salary Hike", value: "120%" },
-                  { label: "Community", value: "15k+" },
+                  { label: "Hiring Partners", value: "50+" },
+                  { label: "Avg Salary Hike", value: "70-80%" },
+                  { label: "Community", value: "1k+" },
                 ].map((stat, i) => (
                   <motion.div
                     key={stat.label}

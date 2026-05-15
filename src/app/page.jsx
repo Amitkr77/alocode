@@ -13,6 +13,7 @@ import {
   Monitor,
 } from "lucide-react";
 import Link from "next/link";
+import RotatingCarousel from "@/components/RotatingCarousel";
 
 export default function Home() {
   const fadeUp = {
@@ -402,9 +403,8 @@ export default function Home() {
           style={{ borderTop: "1px solid var(--border)" }}
         >
           {[
-            { val: "231+", lbl: "Courses & subjects" },
-            { val: "319+", lbl: "Instructors" },
-            { val: "7k+", lbl: "Using the app" },
+            { val: "10+", lbl: "Courses & subjects" },
+            { val: "15+", lbl: "Instructors" },
           ].map((s) => (
             <div key={s.lbl} className="flex flex-col">
               <p
@@ -436,7 +436,7 @@ export default function Home() {
               className="text-sm font-bold text-foreground"
               style={{ fontFamily: "system-ui, sans-serif" }}
             >
-              +72k{" "}
+              +200{" "}
               <span className="font-medium text-muted-foreground">
                 Happy students
               </span>
@@ -561,6 +561,37 @@ export default function Home() {
 
       {/* ─────────────────────────── COURSES ─────────────────────────── */}
       <Courses />
+
+      {/* ── Rotating Carousel ── */}
+      <section className="py-4 md:py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col gap-3 text-center mb-3"
+        >
+          <h2 className="text-foreground text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight">
+            Skills That Get You{" "}
+            <span className="text-primary border-b-4 border-primary/30">
+              Hired
+            </span>
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
+            Explore the in-demand tracks our students master — and land roles
+            in.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <RotatingCarousel />
+        </motion.div>
+      </section>
 
       {/* ─────────────────────────── COMPANIES ─────────────────────────── */}
       <Companies />

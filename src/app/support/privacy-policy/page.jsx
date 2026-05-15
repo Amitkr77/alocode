@@ -2,152 +2,213 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  Shield,
-  CreditCard,
-  FileText,
+  Eye,
+  Database,
+  Share2,
+  Lock,
+  UserCheck,
+  RefreshCw,
   Phone,
-  AlertCircle,
-  BookOpen,
 } from "lucide-react";
 
 const sections = [
   {
-    id: "introduction",
+    id: "information-we-collect",
     number: "01",
-    title: "Introduction",
-    icon: BookOpen,
+    title: "Information We Collect",
+    icon: Database,
     content: (
       <>
         <p>
-          Welcome to <strong>Alocodes</strong>. These Terms of Service govern
-          your access to and use of the Alocodes website, mobile application,
-          and all related services (collectively, the "Platform").
-        </p>
-        <p>
-          By accessing or using the Platform, you agree to be bound by these
-          Terms. If you do not agree, you may not access or use the Platform. We
-          may modify these Terms at any time; modifications take effect
-          immediately upon posting.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "responsibilities",
-    number: "02",
-    title: "User Responsibilities",
-    icon: Shield,
-    content: (
-      <>
-        <p>
-          You are responsible for maintaining the confidentiality of your login
-          credentials. Notify us immediately of any unauthorized use. Alocodes
-          is not liable for losses due to your failure to secure your account.
-        </p>
-        <p>
-          You agree not to use the Platform for unlawful purposes, interfere
-          with its operation, or attempt to access other users' accounts without
-          authorization.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "intellectual-property",
-    number: "03",
-    title: "Intellectual Property",
-    icon: FileText,
-    content: (
-      <>
-        <p>
-          All content on the Platform is the exclusive property of Alocodes and
-          protected by copyright, trademark, and other applicable laws.
+          We collect information you provide directly to us when you create an
+          account, enroll in a course, or contact us for support. This includes:
         </p>
         <ul className="mt-2 space-y-2">
           <li>
-            You may not reproduce, distribute, modify, or create derivative
-            works from Platform materials.
+            <strong>Account data:</strong> name, email address, password, and
+            profile picture.
           </li>
           <li>
-            Course materials are licensed for personal, non-commercial use only.
+            <strong>Payment data:</strong> billing address and payment method
+            details (processed securely via our payment provider).
           </li>
           <li>
-            Sharing login credentials is strictly prohibited and may result in
-            immediate account termination without refund.
+            <strong>Usage data:</strong> pages visited, courses accessed,
+            progress, and time spent on the Platform.
+          </li>
+          <li>
+            <strong>Device data:</strong> IP address, browser type, operating
+            system, and referring URLs.
           </li>
         </ul>
       </>
     ),
   },
   {
-    id: "payments",
-    number: "04",
-    title: "Payments & Refunds",
-    icon: CreditCard,
+    id: "how-we-use",
+    number: "02",
+    title: "How We Use Your Information",
+    icon: Eye,
     content: (
       <>
         <p>
-          Subscriptions auto-renew unless cancelled at least 24 hours before the
-          end of the current billing period. You warrant that you are authorized
-          to use any payment method provided.
+          Alocodes uses the information we collect to operate, improve, and
+          personalise the Platform. Specifically, we use your data to:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>Create and manage your account and course enrollments.</li>
+          <li>Process payments and send receipts or invoices.</li>
+          <li>
+            Send transactional emails such as password resets and course
+            updates.
+          </li>
+          <li>
+            Analyse usage patterns to improve content and platform performance.
+          </li>
+          <li>
+            Detect and prevent fraud, abuse, or violations of our Terms of
+            Service.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "sharing",
+    number: "03",
+    title: "Sharing of Information",
+    icon: Share2,
+    content: (
+      <>
+        <p>
+          We do not sell your personal information. We may share your data only
+          in the following limited circumstances:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>
+            <strong>Service providers:</strong> trusted third parties that help
+            us operate the Platform (e.g. payment processors, email services,
+            analytics tools).
+          </li>
+          <li>
+            <strong>Legal requirements:</strong> when required by law,
+            regulation, or valid legal process.
+          </li>
+          <li>
+            <strong>Business transfers:</strong> in connection with a merger,
+            acquisition, or sale of assets, your data may be transferred to the
+            successor entity.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "data-security",
+    number: "04",
+    title: "Data Security",
+    icon: Lock,
+    content: (
+      <>
+        <p>
+          We take reasonable technical and organisational measures to protect
+          your personal information against unauthorised access, alteration,
+          disclosure, or destruction. All data in transit is encrypted via TLS,
+          and passwords are stored using industry-standard hashing algorithms.
         </p>
         <p>
-          A <strong>30-day money-back guarantee</strong> is available for most
-          course purchases. Refund requests must be submitted via your dashboard
-          or by contacting support within the eligible window.
+          However, no method of transmission over the internet is 100% secure.
+          We encourage you to use a strong, unique password and to notify us
+          immediately if you suspect any unauthorised access to your account.
         </p>
       </>
     ),
   },
   {
-    id: "liability",
+    id: "your-rights",
     number: "05",
-    title: "Liability & Disclaimers",
-    icon: AlertCircle,
+    title: "Your Rights",
+    icon: UserCheck,
     content: (
       <>
         <p>
-          Alocodes and its affiliates shall not be liable for any indirect,
-          incidental, or consequential damages arising from your use of the
-          Platform. The service is provided on an <em>"AS IS"</em> and{" "}
-          <em>"AS AVAILABLE"</em> basis without warranties of any kind.
+          Depending on your location, you may have the following rights
+          regarding your personal data:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>
+            <strong>Access:</strong> request a copy of the personal data we hold
+            about you.
+          </li>
+          <li>
+            <strong>Correction:</strong> ask us to correct inaccurate or
+            incomplete information.
+          </li>
+          <li>
+            <strong>Deletion:</strong> request that we delete your account and
+            associated data.
+          </li>
+          <li>
+            <strong>Portability:</strong> receive your data in a
+            machine-readable format.
+          </li>
+          <li>
+            <strong>Opt-out:</strong> unsubscribe from marketing emails at any
+            time via the link in any email we send.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: "updates",
+    number: "06",
+    title: "Policy Updates",
+    icon: RefreshCw,
+    content: (
+      <>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes
+          in our practices or applicable law. When we make material changes, we
+          will notify you by email or by posting a prominent notice on the
+          Platform before the changes take effect.
         </p>
         <p>
-          We do not guarantee that the Platform will be uninterrupted,
-          error-free, or free of harmful components.
+          Your continued use of the Platform after the effective date of the
+          revised policy constitutes your acceptance of the changes.
         </p>
       </>
     ),
   },
   {
     id: "contact",
-    number: "06",
-    title: "Contact Support",
+    number: "07",
+    title: "Contact Us",
     icon: Phone,
     content: (
       <>
         <p>
-          For support or legal inquiries, email us at{" "}
+          If you have any questions, concerns, or requests regarding this
+          Privacy Policy, please contact us at{" "}
           <a
             href="mailto:alocodes2@gmail.com"
             className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
           >
             alocodes2@gmail.com
           </a>
-          . Live chat is available Monday–Friday, 9AM–6PM EST via your
-          dashboard.
+          . We will respond within 48 hours.
         </p>
         <p>
-          We typically respond to emails within 24–48 hours. For urgent billing
-          issues, please use the live chat option.
+          For data deletion or portability requests, please include your full
+          name and registered email address so we can verify your identity.
         </p>
       </>
     ),
   },
 ];
 
-export default function TermsOfService() {
-  const [activeSection, setActiveSection] = useState("introduction");
+export default function PrivacyPolicy() {
+  const [activeSection, setActiveSection] = useState("information-we-collect");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -177,7 +238,7 @@ export default function TermsOfService() {
           Legal
         </span>
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-2">
-          Terms of Service
+          Privacy Policy
         </h1>
         <p className="text-md font-medium text-muted-foreground">
           Last updated May 07, 2026 · Effective immediately
@@ -185,7 +246,7 @@ export default function TermsOfService() {
       </div>
 
       {/* Layout */}
-      <div className="max-w-5xl mx-auto px-6 py-8 flex gap-14 items-start">
+      <div className="max-w-5xl mx-auto px-6 pt-4 pb-8 flex gap-14 items-start">
         {/* Sidebar */}
         <aside className="hidden lg:block w-52 shrink-0 sticky top-24">
           <p className="text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-3 pl-1">
@@ -248,7 +309,7 @@ export default function TermsOfService() {
 
           {/* Footer note */}
           <div className="border-t border-border pt-10 text-sm font-bold text-muted-foreground text-center">
-            By using Alocodes you agree to these terms. Questions?{" "}
+            Your privacy matters to us. Questions?{" "}
             <a
               href="mailto:alocodes2@gmail.com"
               className="text-primary border-b border-primary/30 hover:border-primary transition-colors"

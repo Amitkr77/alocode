@@ -225,8 +225,10 @@
   }
 
   .footer-bottom-links {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
-    gap: 12px !important;
+    gap: 14px !important;
   }
 }
 
