@@ -115,13 +115,13 @@ export default function App() {
             </section>
 
             {/* ── Rotating Carousel ── */}
-            <section className="py-4 md:py-8">
+            <section className="pt-4 pb-2 md:pt-8 md:pb-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="flex flex-col gap-3 text-center mb-3"
+                className="flex flex-col gap-3 text-center mb-1"
               >
                 <h2 className="text-foreground text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight">
                   Skills That Get You{" "}
