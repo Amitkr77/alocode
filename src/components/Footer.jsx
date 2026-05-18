@@ -402,7 +402,7 @@ const Footer = () => {
                 Icon: Linkedin,
                 label: "LinkedIn",
               },
-              { href: "mailto:hello@alocodes.com", Icon: Mail, label: "Mail" },
+              { href: "mailto:alocodes.edu@gmail.com", Icon: Mail, label: "Mail" },
               {
                 href: "https://instagram.com/alocodes",
                 Icon: Instagram,

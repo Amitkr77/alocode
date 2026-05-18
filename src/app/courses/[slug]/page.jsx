@@ -213,19 +213,19 @@ export default async function CourseDetail({ params }) {
             </div>
 
             {/* Download Brochure */}
-            {/* <Link
+            <Link
               href={course.brochure?.fileUrl || `/brochure/${course.slug}`}
               target={course.brochure?.fileUrl ? "_blank" : undefined}
               rel={course.brochure?.fileUrl ? "noopener noreferrer" : undefined}
-              className="mt-2 w-full h-10 rounded-full text-sm font-semibold flex items-center justify-center gap-2 border transition-all"
+              className="mt-2 w-full h-10 rounded-full text-md font-bold flex items-center justify-center gap-2 border transition-all"
               style={{
                 background: "var(--background)",
                 borderColor: "var(--border)",
                 color: "var(--muted-foreground)",
               }}
             >
-              <Download className="size-4" /> Download Brochure
-            </Link> */}
+              <Download className="size-5 font-bold" /> Download Brochure
+            </Link>
           </div>
         </aside>
 
@@ -521,89 +521,127 @@ export default async function CourseDetail({ params }) {
             </section>
           )}
 
-          {/* ── Certificate ── */}
-          {course.certificate && (
+          {/* ── Certificates ── */}
+          {course.certificates && course.certificates.length > 0 && (
             <section>
               <SectionLabel>Certification</SectionLabel>
-              <SectionTitle>Earn your certificate</SectionTitle>
-              <div
-                className="mt-1 rounded-3xl border overflow-hidden"
-                style={{ borderColor: "var(--border)" }}
-              >
-                <div className="flex flex-col md:flex-row">
-                  {/* LEFT: Certificate Image */}
-                  <div className="md:w-1/2 w-full bg-white">
-                    <div className="w-full h-full aspect-[16/10] md:aspect-auto">
-                      <img
-                        src={course.certificate.imageUrl}
-                        alt="Certificate preview"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
+              <SectionTitle>Earn your certificates</SectionTitle>
 
-                  {/* RIGHT: Content */}
+              <div className="mt-1 flex flex-col gap-4">
+                {course.certificates.map((cert, index) => (
                   <div
-                    className="md:w-1/2 w-full p-2 sm:p-4"
-                    style={{ background: "var(--card)" }}
+                    key={index}
+                    className="rounded-3xl border overflow-hidden"
+                    style={{ borderColor: "var(--border)" }}
                   >
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(66,214,116,0.12)" }}
-                      >
-                        <Award
-                          className="w-5 h-5"
-                          style={{ color: "var(--primary)" }}
-                        />
+                    <div className="flex flex-col md:flex-row">
+                      {/* LEFT: Certificate Image */}
+                      <div className="md:w-1/2 w-full bg-white">
+                        <div className="w-full h-full aspect-[16/10] md:aspect-auto">
+                          <img
+                            src={cert.imageUrl}
+                            alt={`${cert.type} preview`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                       </div>
 
-                      <div className="flex-1">
-                        <h4 className="font-bold text-sm text-foreground mb-0">
-                          {course.certificate.type}
-                        </h4>
+                      {/* RIGHT: Content */}
+                      <div
+                        className="md:w-1/2 w-full p-2 sm:p-4"
+                        style={{ background: "var(--card)" }}
+                      >
+                        {/* Certificate number badge */}
+                        <span
+                          className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2"
+                          style={{
+                            background: "rgba(66,214,116,0.10)",
+                            color: "var(--primary)",
+                          }}
+                        >
+                          {index === 0
+                            ? "Certificate 1 of 2"
+                            : "Certificate 2 of 2"}
+                        </span>
 
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-1">
-                          {course.certificate.description}
-                        </p>
-
-                        {/* Issued by */}
-                        {course.certificate.issuedBy && (
-                          <div className="flex flex-wrap gap-1 mb-1">
-                            {course.certificate.issuedBy.map((org) => (
-                              <span
-                                key={org}
-                                className="text-xs px-3 py-1 rounded-full border font-medium"
-                                style={{
-                                  background: "rgba(66,214,116,0.08)",
-                                  borderColor: "rgba(66,214,116,0.25)",
-                                  color: "var(--primary)",
-                                }}
-                              >
-                                {org}
-                              </span>
-                            ))}
+                        <div className="flex items-start gap-3">
+                          <div
+                            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(66,214,116,0.12)" }}
+                          >
+                            <Award
+                              className="w-5 h-5"
+                              style={{ color: "var(--primary)" }}
+                            />
                           </div>
-                        )}
 
-                        {/* Signatories */}
-                        {course.certificate.signatories && (
-                          <div className="flex flex-wrap gap-1 text-xs text-muted-foreground">
-                            {course.certificate.signatories.map((sig) => (
-                              <div key={sig.role}>
-                                <span className="font-semibold text-foreground">
-                                  {sig.role}
-                                </span>
-                                <span className="mx-1">·</span>
-                                {sig.title}
+                          <div className="flex-1">
+                            <h4 className="font-bold text-sm text-foreground mb-0">
+                              {cert.type}
+                            </h4>
+
+                            <p className="text-sm text-muted-foreground leading-relaxed mb-1">
+                              {cert.description}
+                            </p>
+
+                            {/* Issued by */}
+                            {cert.issuedBy && (
+                              <div className="flex flex-wrap gap-1 mb-1">
+                                {cert.issuedBy.map((org) => (
+                                  <span
+                                    key={org}
+                                    className="text-xs px-3 py-1 rounded-full border font-medium"
+                                    style={{
+                                      background: "rgba(66,214,116,0.08)",
+                                      borderColor: "rgba(66,214,116,0.25)",
+                                      color: "var(--primary)",
+                                    }}
+                                  >
+                                    {org}
+                                  </span>
+                                ))}
                               </div>
-                            ))}
+                            )}
+
+                            {/* Certifications */}
+                            {cert.certifications && (
+                              <div className="flex flex-wrap gap-1 mb-1">
+                                {cert.certifications.map((c) => (
+                                  <span
+                                    key={c}
+                                    className="text-xs px-2 py-0.5 rounded-full border font-medium"
+                                    style={{
+                                      background: "rgba(0,0,0,0.04)",
+                                      borderColor: "var(--border)",
+                                      color: "var(--muted-foreground)",
+                                    }}
+                                  >
+                                    {c}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Signatories */}
+                            {cert.signatories && (
+                              <div className="flex flex-wrap gap-1 text-xs text-muted-foreground">
+                                {cert.signatories.map((sig) => (
+                                  <div key={sig.role}>
+                                    <span className="font-semibold text-foreground">
+                                      {sig.role}
+                                    </span>
+                                    <span className="mx-1">·</span>
+                                    {sig.title}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </section>
           )}

@@ -50,11 +50,12 @@ const courses = [
 
     // ── Program Overview (brochure p.2) ──
     description:
-      "Master the essentials of data analysis, machine learning, and visualization through hands-on projects and expert guidance — ideal for anyone aiming to thrive in today's data-driven world.",
+      "Master the essentials of data analysis, machine learning, and visualization through hands-on projects and expert guidance ideal for anyone aiming to thrive in today's data-driven world.",
 
     // ── Why Choose This Program (brochure p.2) ──
     whyChoose: [
-      "Data Science is at the heart of decision-making across industries — from business analysis to cutting-edge AI models.",
+      "Data Science is at the heart of decision-making across industries.",
+      "From business analysis to cutting-edge Al models, Data Science professionals are in high demand.",
       "High Demand: Every industry relies on data to drive innovation.",
       "Lucrative Career: Data Science roles offer some of the best salaries in tech.",
       "Versatile Skillset: Applicable in tech, healthcare, finance, and more.",
@@ -66,10 +67,10 @@ const courses = [
         module: 1,
         title: "Python for Data Science",
         topics: [
-          "Introduction to Python & Jupyter Notebooks",
+          "Introduction to Python, Jupyter Notebooks",
           "Data types, variables, operators",
           "Control structures (if, for, while)",
-          "Functions & lambda expressions",
+          "Functions, lambda expressions",
           "Data structures: Lists, tuples, sets, dictionaries",
           "Libraries: NumPy & Pandas (basic data manipulation)",
         ],
@@ -88,8 +89,8 @@ const courses = [
         module: 3,
         title: "Data Visualization",
         topics: [
-          "Matplotlib: Line plots, bar charts, histograms",
-          "Seaborn: Heatmaps, pair plots, violin plots",
+          "Using Matplotlib: Line plots, bar charts, histograms",
+          "Using Seaborn: Heatmaps, pair plots, violin plots",
           "Plot styling and customization",
           "Telling stories with data visuals",
         ],
@@ -101,7 +102,7 @@ const courses = [
           "Data cleaning: Handling nulls, duplicates, outliers",
           "Feature engineering basics",
           "Correlation analysis",
-          "Case study: EDA on Titanic, Iris, or custom dataset",
+          "Case study: EDA on a real dataset (Titanic, Iris, or custom)",
         ],
       },
       {
@@ -129,11 +130,11 @@ const courses = [
         module: 7,
         title: "Deep Learning Fundamentals",
         topics: [
-          "Introduction to Neural Networks",
-          "Activation functions, forward & backward propagation",
-          "Building models with TensorFlow/Keras",
-          "CNNs for image data",
-          "Model training, validation, and tuning",
+          "ML pipeline overview: Supervised vs Unsupervised",
+          "Linear & Logistic Regression",
+          "Decision Trees & Random Forest",
+          "K-Means Clustering",
+          "Model evaluation: Confusion matrix, accuracy, recall, precision, F1-score",
         ],
       },
     ],
@@ -143,10 +144,10 @@ const courses = [
       "Python",
       "NumPy",
       "Pandas",
-      "Jupyter Notebooks",
-      "Matplotlib",
-      "Seaborn",
-      "Scikit-learn",
+      "Jupyter",
+      "matplotlib",
+      "seaborn",
+      "scikit learn",
       "SQL",
       "Machine Learning",
       "Deep Learning",
@@ -158,34 +159,38 @@ const courses = [
     sampleProjects: [
       {
         id: 1,
-        title: "Exploratory Data Analysis on Titanic Dataset",
-        skills: ["Data cleaning", "Visualization", "Statistical analysis"],
+        title: "Exploratory Data Analysis (EDA) on Titanic Dataset",
+        skills: ["Data cleaning", "visualization", "statistical analysis"],
         description:
-          "Analyze the Titanic dataset to explore patterns in survival rates based on factors like gender, age, passenger class, and fare. Create visualizations like bar charts, heatmaps, and box plots to summarize findings.",
-        dataset: "Titanic Dataset (Kaggle)",
+          "Students can analyze the Titanic dataset to explore patterns in survival rates based on factors like gender, age, passenger class, and fare. They'll create visualizations like bar charts, heatmaps, and box plots to summarize findings.",
+        dataset: "Titanic Dataset (available on Kaggle)",
       },
       {
         id: 2,
         title: "Customer Segmentation Using K-Means Clustering",
-        skills: ["Unsupervised learning", "Feature scaling", "Clustering"],
+        skills: ["Unsupervised learning", "feature scaling", "clustering"],
         description:
-          "Use customer data (annual income, spending score, age) to segment customers into groups by preprocessing the data and applying K-Means clustering.",
+          "Use customer data (such as annual income, spending score, age) to segment customers into different groups. The project will involve preprocessing the data and applying K-means clustering to identify customer segments.",
         dataset: "Mall Customer Dataset (Kaggle)",
       },
       {
         id: 3,
         title: "Predicting House Prices",
-        skills: ["Regression", "Feature selection", "Data preprocessing"],
+        skills: ["Regression", "feature selection", "data preprocessing"],
         description:
-          "Predict house prices using features like number of bedrooms, square footage, and location. Train a linear regression or decision tree model and evaluate its accuracy.",
+          "Students will predict house prices using data on house features like the number of bedrooms, square footage, location, etc. They'll train a linear regression or a decision tree model and evaluate its accuracy.",
         dataset: "Ames Housing Dataset or Boston Housing Dataset (Kaggle)",
       },
       {
         id: 4,
         title: "Sentiment Analysis on Twitter Data",
-        skills: ["NLP", "Text preprocessing", "Classification"],
+        skills: [
+          "Natural Language Processing (NLP)",
+          "text preprocessing",
+          "classification",
+        ],
         description:
-          "Build a sentiment analysis model to classify tweets as positive, negative, or neutral using tokenization, stopword removal, TF-IDF vectorization, and models like Naive Bayes or SVM.",
+          "Using a dataset of tweets, students can build a sentiment analysis model to classify tweets as positive, negative, or neutral. They'll apply techniques like tokenization, stopword removal, and vectorization (e.g., TF-IDF) and use models like Naive Bayes or SVM.",
         dataset: "Twitter Sentiment Analysis Dataset (Kaggle or Twitter API)",
       },
       {
@@ -193,11 +198,11 @@ const courses = [
         title: "Fraud Detection with Credit Card Data",
         skills: [
           "Classification",
-          "Imbalanced data handling",
-          "Evaluation metrics",
+          "imbalanced data handling",
+          "evaluation metrics",
         ],
         description:
-          "Build a model to detect fraudulent transactions using techniques like SMOTE (Synthetic Minority Over-sampling Technique) for handling imbalanced data.",
+          "Using a credit card transactions dataset, students can build a model to detect fraudulent transactions. Techniques for handling imbalanced data, such as SMOTE (Synthetic Minority Over-sampling Technique), can be applied.",
         dataset: "Credit Card Fraud Detection Dataset (Kaggle)",
       },
     ],
@@ -211,18 +216,20 @@ const courses = [
       "Data Engineer",
     ],
     hiringCompanies: [
-      "Amazon",
-      "Alomonx",
-      "Deloitte",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
-    // ── Outcomes (used in UI cards / accordion) ──
+    // ── Outcomes ──
     outcomes: [
       "Land roles as Data Scientist, ML Engineer, or Data Analyst",
       "Build and deploy end-to-end ML pipelines",
       "Perform EDA and statistical analysis on real-world datasets",
-      "Get placed at companies like Amazon, Google, Microsoft & Deloitte",
+      "Get placed at top companies like Flipkart, Wipro, TCS & Cognizant",
     ],
 
     // ── Full Learning Outcomes ──
@@ -234,29 +241,45 @@ const courses = [
       "Write complex SQL queries for large-scale data extraction",
       "Work with real-world datasets from Kaggle and industry projects",
       "Understand statistical concepts: regression, classification, clustering",
-      "Earn a dual certificate from Alomonx Technology & Alocodes",
+      "Earn dual certifications from Alocodes and Alomonx Technology",
     ],
 
     // ── Target Audience ──
     targetAudience: [
-      "Aspiring Data Scientists and ML Engineers",
-      "Software developers looking to transition into Data Science",
-      "Analysts who want to upskill with machine learning",
-      "Students preparing for data science job interviews",
+      "Students",
+      "Job-seekers",
+      "Professionals looking to transition into Data Science",
     ],
 
-    // ── Certificate (brochure p.9) ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-      signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
-      ],
-      description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
-      imageUrl: "/Certificate.jpeg",
-    },
+    // ── Certificates (brochure p.9) ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+    ],
 
     // ── Instructors ──
     instructors: [
@@ -304,10 +327,10 @@ const courses = [
 
     // ── Brochure ──
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "DATA SCIENCE BROCHURE",
+      fileUrl: "/brochures/data-science.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
+      fileSize: "2.5 MB",
       lastUpdated: "March 2025",
     },
   },
@@ -364,14 +387,14 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master frontend and backend development to build complete web applications from scratch with hands-on real-world projects and deployment experience.",
+      "The Full Stack Development Program is designed to help students and professionals master both frontend and backend development to build complete web applications from scratch.",
 
     // ── Why Choose ──
     whyChoose: [
-      "High demand in every industry",
-      "One of the most in-demand tech skills globally",
-      "Ability to build complete applications independently",
-      "Strong freelancing and startup opportunities",
+      "High demand in every industry.",
+      "One of the most in-demand tech skills globally.",
+      "Ability to build complete applications independently.",
+      "Strong freelancing and startup opportunities.",
     ],
 
     // ── Curriculum ──
@@ -421,7 +444,7 @@ const courses = [
           "Express.js fundamentals",
           "Server creation",
           "Middleware",
-          "RESTful APIs",
+          "RESTful APIS",
           "Authentication & Authorization",
         ],
       },
@@ -474,31 +497,28 @@ const courses = [
 
     // ── Skills ──
     skills: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "React.js",
+      "HTML",
+      "CSS",
+      "React JS",
       "Node.js",
-      "Express.js",
-      "MongoDB",
       "Firebase",
-      "REST APIs",
-      "JWT Authentication",
+      "MongoDB",
       "Git",
       "GitHub",
+      "Vercel",
     ],
 
     // ── Tools & Platforms ──
     tools: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "React.js",
+      "HTML",
+      "CSS",
+      "React JS",
       "Node.js",
-      "MongoDB",
       "Firebase",
+      "MongoDB",
       "Git",
       "GitHub",
+      "Vercel",
     ],
 
     // ── Sample Projects ──
@@ -507,36 +527,36 @@ const courses = [
         id: 1,
         title: "E-Commerce Web Application",
         skills: [
-          "MERN Stack",
-          "Authentication",
-          "Payment Integration",
-          "Database Management",
+          "MERN Stack development",
+          "Authentication system",
+          "Payment integration",
+          "Database management",
         ],
         description:
-          "Develop a complete online shopping platform where users can browse products, add items to the cart, and place orders with admin product management features.",
+          "Develop a complete online shopping platform where users can browse products, add items to the cart, and place orders. Admin features include product management and order tracking.",
       },
 
       {
         id: 2,
         title: "Social Media Platform",
         skills: [
-          "Frontend & Backend Integration",
-          "Real-time Database",
-          "Authentication",
-          "API Development",
+          "Frontend & backend integration",
+          "Real-time database handling",
+          "Authentication system",
+          "API development",
         ],
         description:
-          "Build a social networking platform where users can create accounts, share posts, like content, and interact in real time.",
+          "Build a social networking platform where users can create accounts, share posts, like content, and interact with others in real time.",
       },
 
       {
         id: 3,
         title: "Task Management System",
         skills: [
-          "CRUD Operations",
-          "React State Management",
-          "REST APIs",
-          "Database Integration",
+          "CRUD operations",
+          "React state management",
+          "REST API development",
+          "Database integration",
         ],
         description:
           "Create a productivity application where users can manage daily tasks, update progress, and organize workflows efficiently.",
@@ -546,9 +566,9 @@ const courses = [
         id: 4,
         title: "Online Learning Platform",
         skills: [
-          "Full Stack Development",
-          "Video Management",
-          "Authentication",
+          "Full stack web development",
+          "Video/content management",
+          "Authentication & dashboards",
           "Backend APIs",
         ],
         description:
@@ -559,10 +579,10 @@ const courses = [
         id: 5,
         title: "Real-Time Chat Application",
         skills: [
-          "Socket.io",
-          "Real-time Communication",
-          "Backend Development",
-          "Authentication",
+          "Socket.io integration",
+          "Real-time communication",
+          "Backend server development",
+          "User authentication",
         ],
         description:
           "Build a live messaging platform that allows users to send and receive instant messages in real time.",
@@ -571,7 +591,12 @@ const courses = [
       {
         id: 6,
         title: "Portfolio & Blogging Website",
-        skills: ["Responsive Web Design", "CRUD Operations", "Deployment"],
+        skills: [
+          "Responsive web design",
+          "CMS-like functionality",
+          "CRUD operations",
+          "Deployment",
+        ],
         description:
           "Develop a personal portfolio and blogging platform where users can publish articles and showcase projects.",
       },
@@ -588,11 +613,11 @@ const courses = [
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Alomonx",
-      "Google",
-      "Microsoft",
-      "Deloitte",
+      "Flipkart",
+      "VIOS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
@@ -617,29 +642,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Beginners who want to become full stack developers",
-      "Students preparing for software development jobs",
-      "Frontend developers moving into backend development",
-      "Freelancers and startup founders",
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
+
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Academic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
     ],
-
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-
-      signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
-      ],
-
-      description:
-        "Upon successful completion, learners receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes.",
-
-      imageUrl: "/Certificate.jpeg",
-    },
 
     // ── Instructors ──
     instructors: [
@@ -671,21 +704,6 @@ const courses = [
         time: "1 month ago",
         rating: 4.5,
         comment: "Projects are practical and helped me improve my portfolio.",
-      },
-
-      {
-        name: "Vikram P.",
-        time: "1 month ago",
-        rating: 5,
-        comment:
-          "Authentication and deployment sections are explained really well.",
-      },
-
-      {
-        name: "Meera R.",
-        time: "2 months ago",
-        rating: 4.5,
-        comment: "Great mentors and beginner-friendly explanations.",
       },
     ],
 
@@ -755,15 +773,12 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master Full Stack Java Development with frontend, backend, database management, Spring Boot, React JS, REST APIs, and deployment through real-world projects.",
+      "Our Full Stack Java Development Program offers an in-depth learning experience covering both front-end and back-end technologies using Java. this program equips students with practical skills through handson projects, enabling them to build real-world web applications with confidence.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Industry-level Full Stack Java training",
-      "Real-world project-based learning approach",
-      "Learn frontend, backend, database & deployment",
-      "Build scalable web applications with Java technologies",
-      "Hands-on practical implementation with expert guidance",
+      "Full Stack Java refers to the development of both the front-end (client-side) and back-end (server-side) components of web applications using Java technologies.",
+      "A Full Stack Java Developer is proficient in the entire development process, from designing user interfaces to managing databases and server-side logic.",
     ],
 
     // ── Curriculum ──
@@ -805,7 +820,7 @@ const courses = [
 
       {
         module: 5,
-        title: "Spring Boot Development",
+        title: "Session Management",
         topics: [
           "Spring Boot Basics",
           "REST API",
@@ -838,14 +853,28 @@ const courses = [
       "CSS",
       "JavaScript",
       "Java",
+      "MySQL",
       "React JS",
       "Spring Boot",
-      "REST API",
+      "Servlets & Jsp",
+      "REsT API Development",
+      "Database Connectivity",
+      "Full Stack Project Development",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Java",
       "MySQL",
-      "Servlets",
-      "JSP",
-      "Git",
-      "GitHub",
+      "React JS",
+      "Spring Boot",
+      "Servlets & Jsp",
+      "REsT API Development",
+      "Database Connectivity",
+      "Full Stack Project Development",
     ],
 
     // ── Sample Projects ──
@@ -853,15 +882,32 @@ const courses = [
       {
         id: 1,
         title: "E-Commerce Website with User Authentication",
-        skills: ["React JS", "Spring Boot", "MySQL", "REST API"],
+        skills: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React JS",
+          "Java & Spring Boot",
+          "REST API Development",
+          "MySQL Database",
+          "Login & Registration System",
+          "Authentication & Authorization",
+        ],
         description:
-          "Develop a complete online shopping website where users can register, login, browse products, add items to cart, and place orders securely.",
+          "Develop a complete online shopping website where users can register, login, browse products, add items to cart, and place orders securely..",
       },
 
       {
         id: 2,
         title: "Online Learning Management System",
-        skills: ["Frontend Development", "Java Backend", "API Integration"],
+        skills: [
+          "Frontend Development",
+          "Backend Development with Java",
+          "Database Management",
+          "API Integration",
+          "User Authentication",
+          "File Upload System",
+        ],
         description:
           "Create an online platform where students can enroll in courses, watch video lectures, submit assignments, and track their progress.",
       },
@@ -869,7 +915,14 @@ const courses = [
       {
         id: 3,
         title: "Real-Time Chat Application",
-        skills: ["Spring Boot", "WebSocket", "React JS"],
+        skills: [
+          "Java Programming",
+          "Spring Boot",
+          "WebSocket Technology",
+          "React JS",
+          "Real-Time Communication",
+          "Database Connectivity",
+        ],
         description:
           "Build a chat application that allows users to send and receive messages instantly in real time.",
       },
@@ -879,7 +932,10 @@ const courses = [
         title: "Hotel Booking and Reservation System",
         skills: [
           "Full Stack Development",
+          "Database Design",
+          "Booking Management",
           "Payment Integration",
+          "Form Validation",
           "CRUD Operations",
         ],
         description:
@@ -889,7 +945,14 @@ const courses = [
       {
         id: 5,
         title: "Task Management and Collaboration Tool",
-        skills: ["React JS", "Java Backend", "Authentication System"],
+        skills: [
+          "React JS Frontend",
+          "Java Backend Development",
+          "API Development",
+          "Team Collaboration Features",
+          "Authentication System",
+          "Database Management",
+        ],
         description:
           "Create a task management application where teams can create tasks, assign work, track progress, and collaborate efficiently.",
       },
@@ -907,11 +970,11 @@ const courses = [
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Google",
-      "Microsoft",
-      "Deloitte",
-      "Alomonx",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
@@ -937,35 +1000,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Students interested in Full Stack Development",
-      "Beginners learning Java programming",
-      "Developers wanting frontend + backend skills",
-      "Candidates preparing for software jobs",
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
+
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
     ],
-
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-
-      signatories: [
-        {
-          role: "Authorized Signatory",
-          title: "Director",
-        },
-        {
-          role: "HR Manager",
-          title: "Human Resources",
-        },
-      ],
-
-      description:
-        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
-
-      imageUrl: "/Certificate.jpeg",
-    },
 
     // ── Instructors ──
     instructors: [
@@ -974,7 +1039,6 @@ const courses = [
         role: "Senior Java Full Stack Developer",
         avatar: "/avatars/man_ava.jpg",
       },
-
       {
         name: "Pooja Yadav",
         role: "Spring Boot & React Expert",
@@ -997,7 +1061,6 @@ const courses = [
         comment:
           "Best Full Stack Java course with practical projects and deployment guidance.",
       },
-
       {
         name: "Nisha K.",
         time: "1 month ago",
@@ -1013,9 +1076,8 @@ const courses = [
       author: "Alocodes Full Stack Java Program",
     },
 
-    // ── Brochure ──
     brochure: {
-      title: "Full Stack Java Brochure",
+      title: "FULL STACK JAVA BROCHURE",
       fileUrl: "/brochures/full-stack-java.pdf",
       fileType: "pdf",
       fileSize: "3 MB",
@@ -1074,14 +1136,14 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master Machine Learning, Deep Learning, NLP, and AI system development using Python and industry-standard tools to build intelligent real-world applications.",
+      "This program of machine learning is designed to build intelligent systems that can learn from data and make decisions without explicit programming. Unlike traditional data-focused programs, this course emphasizes: Model building, Real-world Al applications, Automation & intelligent decision systems.",
 
     // ── Why Choose ──
     whyChoose: [
-      "Focus on AI system development, not just data analysis",
-      "Learn how machines learn patterns and make decisions",
-      "Build production-ready machine learning models",
-      "Covers deployment and real-world AI integration",
+      "Focus on Al system development, not just analysis",
+      "Learn how machines learn patterns & make decisions",
+      "Build production-ready ML models",
+      "Covers deployment + real-world integration",
     ],
 
     // ── Curriculum ──
@@ -1093,7 +1155,7 @@ const courses = [
           "What is Machine Learning vs AI",
           "Types of learning (Supervised, Unsupervised, Reinforcement)",
           "Real-world ML use cases",
-          "NumPy & Pandas basics",
+          "Libraries: NumPy & Pandas (basic data manipulation)",
         ],
       },
 
@@ -1101,7 +1163,7 @@ const courses = [
         module: 2,
         title: "Learning Algorithms Deep Dive",
         topics: [
-          "Linear & Logistic Regression",
+          "Linear & Logistic Regression (intuition + math)",
           "Decision Trees & Random Forest",
           "Support Vector Machines",
           "Bias vs Variance tradeoff",
@@ -1126,7 +1188,7 @@ const courses = [
           "Artificial Neural Networks (ANN)",
           "Convolutional Neural Networks (CNN)",
           "Introduction to RNN",
-          "Real-world AI applications",
+          "Real-world applications",
         ],
       },
 
@@ -1156,9 +1218,9 @@ const courses = [
         title: "Model Deployment & AI Systems",
         topics: [
           "Model deployment using APIs",
-          "Flask / FastAPI basics",
-          "Integrating ML with web/mobile apps",
-          "Real-world AI pipelines",
+          "Flask/FastAPI basics",
+          "Integrating ML with mobile/web apps",
+          "Real-world Al pipelines",
         ],
       },
 
@@ -1175,28 +1237,28 @@ const courses = [
 
     // ── Skills ──
     skills: [
-      "Python",
-      "Machine Learning",
-      "Deep Learning",
+      "python",
       "TensorFlow",
-      "Scikit-learn",
-      "Pandas",
+      "Jupyter",
+      "pandas",
+      "scikit learn",
       "NumPy",
-      "NLP",
-      "Computer Vision",
-      "FastAPI",
+      "seaborn",
+      "matplotlib",
+      "flask",
     ],
 
     // ── Tools & Platforms ──
     tools: [
-      "Python",
+      "python",
       "TensorFlow",
-      "Jupyter Notebook",
-      "Pandas",
+      "Jupyter",
+      "pandas",
+      "scikit-learn",
       "NumPy",
-      "Scikit-learn",
-      "Seaborn",
-      "Matplotlib",
+      "seaborn",
+      "matplotlib",
+      "flask",
     ],
 
     // ── Sample Projects ──
@@ -1204,60 +1266,82 @@ const courses = [
       {
         id: 1,
         title: "House Price Prediction",
-        skills: ["Linear Regression", "Feature Selection", "Model Evaluation"],
+        skills: [
+          "Regression algorithms (Linear Regression)",
+          "Data preprocessing",
+          "Feature selection",
+          "Model evaluation",
+        ],
         description:
-          "Build a machine learning model to predict house prices using regression algorithms and real-world datasets.",
+          "This project involves predicting house prices based on features like location, size, number of bedrooms, and amenities. Students will clean the dataset, train a regression model, and evaluate its performance using metrics like accuracy and error rate.",
+        dataset: "Ames Housing Dataset or Boston Housing Dataset (Kaggle).",
       },
 
       {
         id: 2,
-        title: "Customer Segmentation Using K-Means",
-        skills: ["Clustering", "Unsupervised Learning", "Feature Scaling"],
+        title: "Customer Segmentation Using K-Means Clustering",
+        skills: ["Unsupervised learning", "feature scaling", "clustering"],
         description:
-          "Segment customers into groups using K-Means clustering and customer behavior analysis.",
+          "Use customer data (such as annual income, spending score, age) to segment customers into different groups. The project will involve preprocessing the data and applying K-means clustering to identify customer segments.",
+        dataset: "Mall Customer Dataset (Kaggle).",
       },
 
       {
         id: 3,
         title: "Movie Recommendation System",
-        skills: ["Recommendation Systems", "Collaborative Filtering", "Pandas"],
+        skills: [
+          "Recommendation algorithms",
+          "Collaborative filtering",
+          "Data analysis",
+          "Python libraries (Pandas, NumPy)",
+        ],
         description:
-          "Develop a recommendation engine similar to Netflix using collaborative filtering techniques.",
+          "This project focuses on building a recommendation system that suggests movies based on user preferences and behaviour. It demonstrates how platforms like Netflix suggest content.",
       },
 
       {
         id: 4,
-        title: "Twitter Sentiment Analysis",
-        skills: ["NLP", "TF-IDF", "Classification"],
+        title: "Sentiment Analysis on Twitter Data",
+        skills: [
+          "Natural Language Processing (NLP)",
+          "text preprocessing",
+          "classification",
+        ],
         description:
-          "Build an NLP model to classify tweets into positive, negative, or neutral sentiments.",
+          "Using a dataset of tweets, students can build a sentiment analysis model to classify tweets as positive, negative, or neutral. They'll apply techniques like tokenization, stopword removal, and vectorization (e.g., TF-IDF) and use models like Naive Bayes or SVM.",
+        dataset: "Twitter Sentiment Analysis Dataset (Kaggle or Twitter API).",
       },
 
       {
         id: 5,
-        title: "Credit Card Fraud Detection",
-        skills: ["Classification", "SMOTE", "Imbalanced Data Handling"],
+        title: "Fraud Detection with Credit Card Data",
+        skills: [
+          "Classification",
+          "imbalanced data handling",
+          "evaluation metrics",
+        ],
         description:
-          "Create a fraud detection system using machine learning classification algorithms and transaction datasets.",
+          "Using a credit card transactions dataset, students can build a model to detect fraudulent transactions. Techniques for handling imbalanced data, such as SMOTE (Synthetic Minority Over-sampling Technique), can be applied.",
+        dataset: "Credit Card Fraud Detection Dataset (Kaggle).",
       },
     ],
 
     // ── Career Opportunities ──
     careerRoles: [
+      "Data Scientist",
       "Machine Learning Engineer",
       "AI Engineer",
-      "Data Scientist",
       "NLP Engineer",
-      "AI Product Developer",
+      "AI product Developer",
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Google",
-      "Microsoft",
-      "Deloitte",
-      "Alomonx",
-      "Startups & Fintech Companies",
+      "Flipkart",
+      "VIOS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
@@ -1281,25 +1365,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Students interested in AI and Machine Learning",
-      "Python developers moving into AI",
-      "Beginners wanting practical ML experience",
-      "Developers building intelligent applications",
-    ],
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
 
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-      signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
-      ],
-      description:
-        "Upon successful completion, learners receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes.",
-      imageUrl: "/Certificate.jpeg",
-    },
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712368424563",
+      },
+    ],
 
     // ── Instructors ──
     instructors: [
@@ -1308,7 +1404,6 @@ const courses = [
         role: "AI Engineer & ML Specialist",
         avatar: "/avatars/man_ava.jpg",
       },
-
       {
         name: "Priya Mehta",
         role: "Data Scientist & NLP Expert",
@@ -1331,7 +1426,6 @@ const courses = [
         comment:
           "The deep learning and NLP modules are industry-focused and easy to understand.",
       },
-
       {
         name: "Shreya P.",
         time: "1 month ago",
@@ -1357,7 +1451,7 @@ const courses = [
   },
 
   {
-    id: "course-4",
+    id: "course-5",
     slug: "artificial-intelligence",
 
     // ── Identity ──
@@ -1408,15 +1502,14 @@ const courses = [
 
     // ── Description ──
     description:
-      "Step into the future with our Artificial Intelligence program designed to teach Machine Learning, Deep Learning, NLP, and intelligent systems through hands-on real-world projects.",
+      "Step into the future with our Artificial Intelligence program, designed to equip you with cutting edge skills in Machine Learning, Deep Learning, Natural Language Processing, and more. Gain hands-on experience through real-world projects and learn from industry experts to build smart solutions and intelligent systems. Whether you're a beginner or looking to advance your Al journey, this program offers the perfect blend of theory and practical learning to help you thrive in the tech driven world.",
 
     // ── Why Choose ──
     whyChoose: [
       "Learn AI, ML, Deep Learning & NLP from industry experts",
-      "Build real-world projects with practical implementation",
-      "Career support with resume preparation & interview guidance",
-      "Industry-aligned and job-ready curriculum",
-      "Hands-on training with modern AI tools and libraries",
+      "Build real-world projects & gain hands-on skills",
+      "Career support with resume prep & interview guidance",
+      "Industry-aligned, practical, and job-ready curriculum",
     ],
 
     // ── Curriculum ──
@@ -1427,7 +1520,7 @@ const courses = [
         topics: [
           "Python Basics: Variables, Data Types, Lists, Tuples, Dictionaries",
           "Functions, Conditional Statements, and Loops",
-          "Hands-on Python programs for AI tasks",
+          "Hands-on: Basic Python programs for Al tasks",
         ],
       },
 
@@ -1435,21 +1528,21 @@ const courses = [
         module: 2,
         title: "Data Handling & Visualization Libraries",
         topics: [
-          "Introduction to NumPy & Pandas",
+          "Introduction to Numpy & Pandas",
           "Data Cleaning and Manipulation",
           "Visualization with Matplotlib & Seaborn",
-          "Building charts and plots with real datasets",
+          "Hands-on: Building charts and plots with real datasets",
         ],
       },
 
       {
         module: 3,
-        title: "Math & Statistics for Machine Learning",
+        title: "Math & Stats for Machine Learning",
         topics: [
-          "Basic Linear Algebra: Vectors & Matrices",
+          "Basic Linear Algebra: Vectors, Matrices",
           "Statistics: Mean, Median, Mode, Dispersion",
-          "Probability Concepts & Gaussian Distribution",
-          "Hands-on data analysis using Python",
+          "Probability Concepts: Central Tendency, Gaussian Distribution",
+          "Hands-on: Data analysis using Python",
         ],
       },
 
@@ -1458,8 +1551,8 @@ const courses = [
         title: "Supervised Machine Learning",
         topics: [
           "Linear & Logistic Regression",
-          "Decision Trees and SVM",
-          "Case Study Implementation using Scikit-learn",
+          "Decision Trees and Support Vector Machines (SVM)",
+          "Real-world Case Study Implementation using Scikit-learn",
         ],
       },
 
@@ -1477,7 +1570,7 @@ const courses = [
         module: 6,
         title: "Introduction to Deep Learning",
         topics: [
-          "Neural Networks Basics and Architecture",
+          "Neural Networks: Basics and Architecture",
           "Keras & TensorFlow for Model Building",
           "Real-life Application: Text Classification",
         ],
@@ -1495,29 +1588,41 @@ const courses = [
 
       {
         module: 8,
-        title: "CNNs & Image Analysis (Advanced)",
+        title: "CNNs & Image Analysis (Optional/Advanced)",
         topics: [
           "Grayscale vs Binary Images",
-          "Filters, Kernels & CNN Architecture",
-          "Mini Project: Image Classification Basics",
+          "Filters, Kernels, and CNN Architecture",
+          "Mini project: Image classification basics",
         ],
       },
     ],
 
     // ── Skills ──
     skills: [
+      "Google colab",
+      "Jupyter",
+      "DEEP LEARNING",
       "Python",
-      "Machine Learning",
-      "Deep Learning",
-      "Artificial Intelligence",
-      "NLP",
-      "TensorFlow",
-      "Keras",
-      "Scikit-learn",
-      "NumPy",
+      "Numpy",
       "Pandas",
-      "Computer Vision",
-      "Data Analysis",
+      "NLP",
+      "Statistics & Probability",
+      "Scikit-learn",
+      "TensorFlow & Keras",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "Google colab",
+      "Jupyter",
+      "DEEP LEARNING",
+      "Python",
+      "Numpy",
+      "Pandas",
+      "NLP",
+      "Statistics & Probability",
+      "Scikit-learn",
+      "TensorFlow & Keras",
     ],
 
     // ── Sample Projects ──
@@ -1525,49 +1630,56 @@ const courses = [
       {
         id: 1,
         title: "Predicting House Prices (Regression Model)",
-        skills: ["Data Preprocessing", "Linear Regression", "Model Training"],
+        skills: [
+          "Data preprocessing",
+          "linear regression",
+          "training/testing models",
+        ],
         description:
-          "Use housing datasets to predict house prices using regression algorithms and machine learning models.",
+          "Students can use a dataset with housing features (like number of bedrooms, square footage, etc.) to predict house prices.",
       },
 
       {
         id: 2,
         title: "Handwritten Digit Recognition (MNIST Dataset)",
-        skills: ["Neural Networks", "Computer Vision", "Classification"],
+        skills: ["Neural networks", "computer vision", "classification"],
         description:
-          "Build a neural network or CNN model to classify handwritten digits using the MNIST dataset.",
+          "A simple neural network or convolutional neural network (CNN) can be used to classify handwritten digits (0-9) from the famous MNIST dataset",
       },
 
       {
         id: 3,
-        title: "Spam Email Detection",
-        skills: ["NLP", "TF-IDF", "Classification"],
+        title: "Spam Email Detection (Binary Classification)",
+        skills: [
+          "Natural language processing (NLP)",
+          "feature extraction (TF-IDF)",
+          "classification",
+        ],
         description:
-          "Develop a spam classifier using machine learning algorithms like Naive Bayes or SVM.",
+          "Students can build a classifier to distinguish between spam and non-spam emails using machine learning algorithms like Naive Bayes or SVM.",
       },
 
       {
         id: 4,
         title: "Movie Recommendation System",
         skills: [
-          "Collaborative Filtering",
-          "Recommendation Algorithms",
-          "Matrix Factorization",
+          "Collaborative filtering",
+          "matrix factorization",
+          "recommendation algorithms",
         ],
         description:
-          "Create a movie recommendation system that suggests movies based on user preferences.",
+          "Using a dataset like MovieLens, students can develop a recommendation system that suggests movies based on user preferences.",
       },
 
       {
         id: 5,
         title: "Chatbot with Basic NLP",
         skills: [
-          "Natural Language Processing",
-          "Chatbot Development",
-          "AI Response Generation",
+          "Natural language understanding",
+          "rule based or AI-based response generation",
         ],
         description:
-          "Build a chatbot that responds to user queries using rule-based or NLP-based approaches.",
+          "Students can create a basic chatbot that responds to user queries using simple rule-based techniques or a basic NLP model like Bag-of-Words.",
       },
     ],
 
@@ -1582,11 +1694,11 @@ const courses = [
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Google",
-      "Microsoft",
-      "Deloitte",
-      "Alomonx",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
@@ -1612,35 +1724,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Students interested in Artificial Intelligence",
-      "Beginners learning Machine Learning",
-      "Developers transitioning into AI",
-      "Tech enthusiasts exploring Deep Learning and NLP",
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
+
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Academic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
     ],
-
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-
-      signatories: [
-        {
-          role: "Authorized Signatory",
-          title: "Director",
-        },
-        {
-          role: "HR Manager",
-          title: "Human Resources",
-        },
-      ],
-
-      description:
-        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
-
-      imageUrl: "/Certificate.jpeg",
-    },
 
     // ── Instructors ──
     instructors: [
@@ -1649,7 +1763,6 @@ const courses = [
         role: "AI Research Engineer",
         avatar: "/avatars/man_ava.jpg",
       },
-
       {
         name: "Priya Sharma",
         role: "Machine Learning Expert",
@@ -1672,7 +1785,6 @@ const courses = [
         comment:
           "Excellent AI course with practical machine learning and deep learning projects.",
       },
-
       {
         name: "Divya P.",
         time: "2 weeks ago",
@@ -1688,7 +1800,6 @@ const courses = [
       author: "Alocodes AI Program",
     },
 
-    // ── Brochure ──
     brochure: {
       title: "Artificial Intelligence Brochure",
       fileUrl: "/brochures/artificial-intelligence.pdf",
@@ -1699,7 +1810,7 @@ const courses = [
   },
 
   {
-    id: "course-5",
+    id: "course-6",
     slug: "app-development",
 
     // ── Identity ──
@@ -1747,11 +1858,11 @@ const courses = [
 
     // ── Description ──
     description:
-      "Learn to build modern, scalable mobile applications using industry tools like Flutter, Swift, and Android. This program focuses on real-world development skills for students, beginners, and professionals.",
+      "Our App Development Program is designed to help students, beginners, and professionals build modern, scalable mobile applications. This program focuses on real-world skills using industry tools and frameworks like Flutter, Swift, and Android.",
 
     // ── Why Choose ──
     whyChoose: [
-      "High Demand: Mobile apps are used in every industry",
+      "High Demand: Mobile apps are used in every industry.",
       "Lucrative Career: High-paying job opportunities",
       "Global Opportunities: Work remotely or freelance",
       "Creative + Technical Field",
@@ -1764,11 +1875,11 @@ const courses = [
         title: "Programming Fundamentals",
         topics: [
           "Introduction to programming concepts",
-          "Dart / Swift / Java basics",
+          "Dart/Swift / Java basics",
           "Variables, data types, operators",
-          "Functions and lambda expressions",
+          "Functions, lambda expressions",
           "Control statements (if, loops)",
-          "OOP concepts",
+          "Functions and OOP concepts",
         ],
       },
       {
@@ -1796,7 +1907,7 @@ const courses = [
         title: "Flutter / Native Development",
         topics: [
           "Flutter basics (Widgets, Layouts)",
-          "SwiftUI basics",
+          "SwiftUI (for iOS) basics",
           "Navigation & routing",
           "State management",
         ],
@@ -1835,11 +1946,23 @@ const courses = [
     skills: [
       "Flutter",
       "Swift",
-      "Android Studio",
       "Firebase",
+      "Android Studio",
+      "UI/UX Design",
       "API Integration",
-      "Mobile UI/UX",
-      "App Deployment",
+      "Database Handling",
+      "Figma",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "Flutter",
+      "Swift",
+      "Firebase",
+      "Android Studio",
+      "UI/UX Design",
+      "API Integration",
+      "Database Handling",
       "Figma",
     ],
 
@@ -1848,46 +1971,63 @@ const courses = [
       {
         id: 1,
         title: "To-Do List Application",
-        skills: ["Flutter", "State Management", "SQLite / Hive", "UI Design"],
+        skills: [
+          "Flutter / SwiftUI basics",
+          "State management",
+          "Local database (SQLite / Hive)",
+          "UI design",
+        ],
         description:
-          "Build a task management app where users can add, update, and delete tasks with local data storage.",
+          "This project involves building a simple task management application where users can add, update, and delete tasks. The app will store data locally on the device and provide an intuitive interface to manage daily activities efficiently.",
       },
       {
         id: 2,
         title: "Chat Application (Real-Time Messaging)",
         skills: [
           "Firebase Authentication",
-          "Realtime Database",
-          "API Integration",
+          "Cloud Firestore / Realtime Database",
+          "API integration",
+          "UI/UX design",
         ],
         description:
-          "Develop a real-time chat app with authentication and instant messaging using Firebase.",
+          "Students will develop a real-time chat application that allows users to send and receive messages instantly. The app will include user authentication, chat screens, and real-time data synchronization using Firebase.",
       },
       {
         id: 3,
         title: "E-Commerce Mobile App",
         skills: [
-          "API Integration",
-          "JSON Parsing",
-          "State Management",
-          "UI/UX",
+          "API integration",
+          "JSON parsing",
+          "State management",
+          "Payment gateway basics",
+          "UI/UX design",
         ],
         description:
-          "Build a mobile shopping app with product listing, cart functionality, and payment basics.",
+          "Students will predict house prices using data on house features like the number of bedrooms, square footage, location, etc. They'll train a linear regression or a decision tree model and evaluate its accuracy.",
       },
       {
         id: 4,
         title: "Doctor-Patient Appointment App",
-        skills: ["Firebase", "Routing", "Notifications"],
+        skills: [
+          "Backend integration (Firebase / APIs)",
+          "Form handling",
+          "Navigation and routing",
+          "Notification system",
+        ],
         description:
-          "Create an app for booking doctor appointments with scheduling and notifications.",
+          "In this project, students will create an app that allows patients to book appointments with doctors. Features include user registration, appointment scheduling, and notifications for upcoming bookings.",
       },
       {
         id: 5,
         title: "Social Media Application",
-        skills: ["Database", "Image Upload", "Firebase Storage"],
+        skills: [
+          "Database management",
+          "image upload & storage (Firebase Storage)",
+          "API handling",
+          "UI/UX design",
+        ],
         description:
-          "Build a social platform where users can post, like, and comment on content.",
+          "This project involves creating a social platform where users can post images, like posts, and comment. It helps students understand how large-scale apps manage user-generated content.",
       },
     ],
 
@@ -1902,11 +2042,11 @@ const courses = [
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Alomonx",
-      "Google",
-      "Microsoft",
-      "Deloitte",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
@@ -1931,25 +2071,39 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Web developers entering mobile development",
-      "Beginners with JavaScript knowledge",
-      "Entrepreneurs building app ideas",
-      "Freelancers expanding into mobile apps",
-    ],
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
 
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-      signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
-      ],
-      description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
-      imageUrl: "/Certificate.jpeg",
-    },
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [
+          { role: "Authorized Signatory", title: "Acodermic Head" },
+        ],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+    ],
 
     // ── Instructors ──
     instructors: [
@@ -2003,16 +2157,16 @@ const courses = [
     },
 
     brochure: {
-      title: "App Development Brochure",
-      fileUrl: "/brochures/app-dev.pdf", // PDF path
+      title: "APP DEVELOPMENT BROCHURE",
+      fileUrl: "/brochures/app-dev.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
+      fileSize: "2.5 MB",
       lastUpdated: "March 2025",
     },
   },
 
   {
-    id: "course-6",
+    id: "course-7",
     slug: "digital-marketing",
 
     // ── Identity ──
@@ -2041,12 +2195,10 @@ const courses = [
     // ── Pricing ──
     pricing: {
       fullPrice: 7499,
-
       emi: {
         available: true,
         installments: [4499, 3000],
       },
-
       currency: "INR",
     },
 
@@ -2057,7 +2209,6 @@ const courses = [
     // ── Media ──
     videoThumbnail: "/thumbnails/digital-mark.jpg",
     videoTitle: "Digital Marketing Mastery",
-
     previewVideo: {
       thumbnail: "/thumbnails/digital-mark.jpg",
       url: "/videos/digital-marketing-preview.mp4",
@@ -2065,15 +2216,13 @@ const courses = [
 
     // ── Description ──
     description:
-      "Master Digital Marketing with SEO, Social Media Marketing, Google Ads, Content Marketing, Email Automation, and Analytics through real-world projects and live campaigns.",
+      "Dive deep into the world of Digital Marketing with our expertly designed course. This program is crafted to equip you with the knowledge and hands-on experience required to design, implement, and optimize integrated circuits at a nano-scale level. Whether you're an aspiring semiconductor engineer or looking to upgrade your skills, this course covers all the essential areas",
 
     // ── Why Choose ──
     whyChoose: [
-      "Comprehensive syllabus covering SEO, PPC, Social Media & Analytics",
-      "Hands-on experience with live digital marketing campaigns",
-      "Learn industry-leading tools like Google Analytics, SEMrush & HubSpot",
-      "Practical and job-ready curriculum with real-world projects",
-      "Build skills in branding, lead generation & online growth strategies",
+      "Comprehensive Syllabus: Covering SEO, PPC, Social Media, Email Marketing, Web Analytics, and more.",
+      "Real-Life Projects: Work on live digital marketing campaigns",
+      "Latest Tools & Techniques: Learn to use industry-leading tools like Google Analytics, SEMrush, and HubSpot.",
     ],
 
     // ── Curriculum ──
@@ -2178,18 +2327,22 @@ const courses = [
 
     // ── Skills ──
     skills: [
-      "SEO",
-      "Social Media Marketing",
-      "Google Ads",
-      "Content Marketing",
-      "Email Marketing",
-      "Google Analytics",
-      "SEMrush",
       "Canva",
-      "Meta Ads",
-      "PPC",
-      "Lead Generation",
-      "Marketing Automation",
+      "Google Analytics",
+      "mailchimp",
+      "CapCut",
+      "Meta",
+      "SEMRUSH",
+    ],
+
+    // ── Tools & Platforms ──
+    tools: [
+      "Canva",
+      "Google Analytics",
+      "mailchimp",
+      "CapCut",
+      "Meta",
+      "SEMRUSH",
     ],
 
     // ── Sample Projects ──
@@ -2197,60 +2350,73 @@ const courses = [
       {
         id: 1,
         title: "SEO Optimization for E-Commerce Websites",
-
         skills: [
-          "SEO",
+          "Search Engine Optimization (SEO)",
           "Keyword Research",
+          "On-Page SEO",
           "Technical SEO",
-          "Google Analytics",
+          "Content Optimization",
+          "Google Analytics & Search Console",
         ],
-
         description:
-          "Optimize an e-commerce website to improve Google rankings and website traffic using advanced SEO strategies.",
+          "Optimize an e-commerce website to improve Google search rankings and website traffic. Students will work on keywords, product pages, and SEO strategies for better online visibility.",
       },
 
       {
         id: 2,
         title: "Social Media Marketing Strategy for a Fashion Brand",
-
         skills: [
           "Social Media Marketing",
           "Content Creation",
+          "Brand Promotion",
+          "Audience Engagement",
+          "Canva & Social Media Tools",
           "Campaign Planning",
         ],
-
         description:
-          "Create and execute social media campaigns for a fashion brand using Instagram and Facebook marketing.",
+          "Create a social media marketing strategy for a fashion brand using Instagram and Facebook. Students will design posts, plan campaigns, and increase audience engagement.",
       },
 
       {
         id: 3,
         title: "Email Marketing Campaign for Lead Generation",
-
-        skills: ["Email Marketing", "Lead Generation", "Copywriting"],
-
+        skills: [
+          "Email Marketing",
+          "Lead Generation",
+          "Copywriting",
+          "Email Automation",
+          "Campaign Analytics",
+        ],
         description:
-          "Develop email campaigns with promotional content and automation workflows to engage customers.",
+          "Develop an email marketing campaign to attract and engage customers. Students will create email templates, promotional content, and analyse campaign performance.",
       },
 
       {
         id: 4,
         title: "Google Ads Campaign for a Local Business",
-
-        skills: ["Google Ads", "PPC Marketing", "Campaign Optimization"],
-
+        skills: [
+          "Google Ads",
+          "PPC Marketing",
+          "Keyword Planning",
+          "Ad Copywriting",
+          "Campaign Optimization",
+        ],
         description:
-          "Create and manage a Google Ads campaign focusing on keyword targeting and performance tracking.",
+          "Create and manage a Google Ads campaign for a local business. Students will learn ad creation, keyword targeting, and performance tracking.",
       },
 
       {
         id: 5,
         title: "Content Marketing Plan for a Tech Blog",
-
-        skills: ["Content Marketing", "SEO Writing", "Digital Branding"],
-
+        skills: [
+          "Content Marketing",
+          "Blog Writing",
+          "SEO Writing",
+          "Content Strategy",
+          "Digital Branding",
+        ],
         description:
-          "Develop a content marketing strategy for a technology blog with SEO-friendly content promotion.",
+          "Create a content marketing plan for a technology blog. Students will write SEO-friendly blogs and promote content through digital platforms.",
       },
     ],
 
@@ -2264,11 +2430,11 @@ const courses = [
     ],
 
     hiringCompanies: [
-      "Amazon",
-      "Google",
-      "Microsoft",
-      "Deloitte",
-      "Alomonx",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
       "Startups and Fintech Companies",
     ],
 
@@ -2294,36 +2460,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Beginners interested in digital marketing",
-      "Business owners growing online presence",
-      "Freelancers offering marketing services",
-      "Students and professionals upgrading marketing skills",
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
+
+    // ── Certificates ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Academic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
     ],
-
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-
-      signatories: [
-        {
-          role: "Authorized Signatory",
-          title: "Director",
-        },
-
-        {
-          role: "HR Manager",
-          title: "Human Resources",
-        },
-      ],
-
-      description:
-        "Upon successful completion, students receive an industry-recognized Certificate of Internship Completion from Alomonx Technology and Alocodes.",
-
-      imageUrl: "/Certificate.jpeg",
-    },
 
     // ── Instructors ──
     instructors: [
@@ -2332,7 +2499,6 @@ const courses = [
         role: "Digital Marketing Strategist",
         avatar: "/avatars/woman_ava.jpg",
       },
-
       {
         name: "Rahul Mehta",
         role: "SEO & Performance Marketing Expert",
@@ -2355,7 +2521,6 @@ const courses = [
         comment:
           "The SEO and Google Ads modules were highly practical and easy to implement.",
       },
-
       {
         name: "Mohit A.",
         time: "1 month ago",
@@ -2371,7 +2536,6 @@ const courses = [
       author: "Alocodes Digital Marketing Program",
     },
 
-    // ── Brochure ──
     brochure: {
       title: "Digital Marketing Brochure",
       fileUrl: "/brochures/digital-marketing.pdf",
@@ -2382,7 +2546,7 @@ const courses = [
   },
 
   {
-    id: "course-7",
+    id: "course-8",
     slug: "ui-ux-design",
 
     // ── Identity ──
@@ -2393,7 +2557,7 @@ const courses = [
       totalRatings: "1,120",
       lastUpdated: "March 2025",
     },
-    title: "UI/UX Design with Figma & AI Tools",
+    title: "UI/UX Design",
     category: "Design",
     level: "Beginner",
 
@@ -2430,150 +2594,205 @@ const courses = [
 
     // ── Description ──
     description:
-      "Design intuitive, visually stunning user experiences using Figma, AI tools, and industry-standard UX methodologies with real-world case studies.",
+      "Step into the creative world of UI/UX Design with our industry-oriented training program. This course is designed to help students master the principles of user interface and user experience design, from wireframing to prototyping and design systems. Learn how to create visually appealing, user-friendly, and interactive digital products used in modern mobile apps and websites.",
 
-    // ── Why Choose ──
+    // ── Why Choose (brochure p.2) ──
     whyChoose: [
-      "UI/UX is one of the fastest-growing and high-paying creative fields",
-      "Learn both UI design and UX research in one structured program",
-      "Build a strong portfolio with real-world case studies",
-      "Use AI tools to speed up and enhance design workflows",
+      "Comprehensive Syllabus: Learn UI Design, UX Research, Wireframing, Prototyping, Design Systems, and Mobile App Design.",
+      "Practical Learning: Work on live projects and real-world case studies.",
+      "Portfolio Development: Build a professional design portfolio to showcase your skills",
+      "Career Guidance: Get interview preparation, freelancing guidance, and placement support.",
     ],
 
-    // ── Curriculum ──
+    // ── Curriculum — 7 modules (brochure pp.3-5) ──
     curriculum: [
       {
         module: 1,
-        title: "Design Fundamentals",
+        title: "Introduction to UI/UX Design",
         topics: [
-          "Principles of design (color, typography, layout)",
-          "UI vs UX fundamentals",
-          "Design thinking process",
-          "Understanding users and problems",
+          "Basics of UI & UX",
+          "Principles of Good Design",
+          "User-Centered Design",
+          "Design Thinking Process",
+          "Importance of User Experience",
         ],
       },
       {
         module: 2,
-        title: "User Research & UX",
+        title: "Design Fundamentals",
         topics: [
-          "User personas",
-          "User journey mapping",
-          "Interviews & surveys",
-          "Usability testing",
+          "Color Theory",
+          "Typography",
+          "Layout & Grid Systems",
+          "Visual Hierarchy",
+          "Spacing & Alignment",
         ],
       },
       {
         module: 3,
-        title: "Wireframing & Information Architecture",
+        title: "User Research & UX Process",
         topics: [
-          "Low-fidelity wireframes",
-          "User flows",
-          "Information architecture",
-          "Sketching and planning interfaces",
+          "User Personas",
+          "User Journey Mapping",
+          "Competitor Analysis",
+          "User Flow Creation",
+          "Information Architecture",
+          "UX Research Methods",
         ],
       },
       {
         module: 4,
-        title: "Figma Mastery",
+        title: "Wireframing & Prototyping",
         topics: [
-          "Figma interface and tools",
-          "Components & variants",
-          "Auto-layout",
-          "Design systems",
+          "Low-Fidelity Wireframes",
+          "High-Fidelity Wireframes",
+          "Interactive Prototypes",
+          "Clickable Designs",
+          "Mobile App Wireframes",
         ],
       },
       {
         module: 5,
-        title: "Prototyping & Interaction Design",
+        title: "UI Design with Figma",
         topics: [
-          "Clickable prototypes",
-          "Micro-interactions",
-          "Animations",
-          "User testing with prototypes",
+          "Introduction to Figma",
+          "Components & Variants",
+          "Auto Layout",
+          "Design Systems",
+          "Team Collaboration",
         ],
       },
       {
         module: 6,
-        title: "AI Tools in Design",
+        title: "Mobile App & Web Design",
         topics: [
-          "Galileo AI",
-          "Uizard",
-          "Framer AI",
-          "AI-assisted UI generation",
+          "Android App Design",
+          "iOS App Design",
+          "Responsive Website Design",
+          "Dashboard Design",
+          "Landing Page Design",
         ],
       },
       {
         module: 7,
-        title: "Portfolio & Career Preparation",
+        title: "Usability Testing & Accessibility",
         topics: [
-          "Case study creation",
-          "Portfolio building",
-          "Design interviews",
-          "Freelancing and job search",
+          "User Testing",
+          "Accessibility Principles",
+          "Feedback Collection",
+          "UX Improvements",
+          "Error Handling Design",
+        ],
+      },
+      {
+        module: 8,
+        title: "Portfolio, Freelancing & Live Projects",
+        topics: [
+          "Portfolio Creation",
+          "Behance & Dribbble Setup",
+          "Freelancing Platforms",
+          "Client Communication",
+          "Resume Building",
         ],
       },
     ],
 
     // ── Skills ──
-    skills: [
-      "Figma",
-      "User Research",
-      "Wireframing",
-      "Prototyping",
-      "AI Design Tools",
-      "Design Systems",
-      "UX Principles",
-      "Interaction Design",
-    ],
+    skills: ["Canva", "Figma", "PS", "Notion"],
 
-    // ── Sample Projects ──
+    // ── Tools & Platforms ──
+    tools: ["Canva", "Figma", "PS", "Notion"],
+
+    // ── Sample Projects (brochure pp.6-7) ──
     sampleProjects: [
       {
         id: 1,
-        title: "Mobile App UI Design",
-        skills: ["Figma", "UI Design"],
+        title: "E-Commerce Mobile App Design",
+        skills: [
+          "UI Design",
+          "UX Research",
+          "Wireframing",
+          "Mobile App Design",
+          "Prototyping",
+          "Figma",
+          "User Flow Design",
+        ],
         description:
-          "Design a complete mobile app UI with high-fidelity screens and components.",
+          "Design a modern e-commerce mobile application with user-friendly navigation, product browsing, and checkout experience. Students will create wireframes, UI screens, and interactive prototypes..",
       },
       {
         id: 2,
-        title: "UX Case Study Project",
-        skills: ["User Research", "UX"],
+        title: "Food Delivery App UI/UX Design",
+        skills: [
+          "Mobile UI Design",
+          "User Experience Design",
+          "Prototyping",
+          "Typography",
+          "Color Theory",
+          "Figma Components",
+        ],
         description:
-          "Conduct user research and create a full UX case study from problem to solution.",
+          "Create a visually attractive and easy-to-use food delivery app interface. Students will design ordering flow, restaurant pages, and delivery tracking screens.",
       },
       {
         id: 3,
-        title: "Website Redesign",
-        skills: ["Wireframing", "Prototyping"],
+        title: "Portfolio Website Design",
+        skills: [
+          "Responsive Web Design",
+          "Layout Design",
+          "UI Components",
+          "Web Prototyping",
+          "User Interface Design",
+        ],
         description:
-          "Redesign an existing website with improved user experience and interface.",
+          "Build a professional portfolio website design for a designer or developer. Students will focus on modern layouts, responsiveness, and personal branding.",
       },
       {
         id: 4,
-        title: "AI-assisted UI Design",
-        skills: ["AI Tools", "Figma"],
+        title: "Banking Dashboard Design",
+        skills: [
+          "Dashboard UI Design",
+          "Data Visualization",
+          "UX Flow",
+          "Responsive Design",
+          "Design Systems",
+        ],
         description:
-          "Use AI tools to generate and refine UI designs efficiently.",
+          "Design a clean and professional banking dashboard interface with analytics, account management, and transaction tracking features.",
+      },
+      {
+        id: 5,
+        title: "Travel Booking Website Design",
+        skills: [
+          "Web Design",
+          "UX Research",
+          "Wireframing",
+          "Interactive Prototyping",
+          "User Journey Mapping",
+        ],
+        description:
+          "Create a travel booking platform with hotel search, ticket booking, and payment flow screens. Students will learn complete UX process and interface design.",
       },
     ],
 
-    // ── Career Opportunities ──
+    // ── Career Opportunities (brochure p.8) ──
     careerRoles: [
       "UI Designer",
       "UX Designer",
       "Product Designer",
+      "Visual Designer",
       "Interaction Designer",
-      "Freelance Designer",
+      "Web Designer",
+      "Mobile App Designer",
     ],
 
     hiringCompanies: [
-      "Swiggy",
-      "Zomato",
-      "Startups",
-      "Alomonx",
-      "Product Companies",
-      "Design Agencies",
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
+      "Startups and Fintech Companies",
     ],
 
     // ── Outcomes ──
@@ -2597,25 +2816,37 @@ const courses = [
     ],
 
     // ── Target Audience ──
-    targetAudience: [
-      "Beginners entering UI/UX design",
-      "Graphic designers transitioning to UX",
-      "Developers improving design skills",
-      "Product managers collaborating with designers",
-    ],
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
 
-    // ── Certificate ──
-    certificate: {
-      type: "Certificate of Internship Completion",
-      issuedBy: ["Alomonx Technology", "Alocodes"],
-      signatories: [
-        { role: "Authorized Signatory", title: "Director" },
-        { role: "HR Manager", title: "Human Resources" },
-      ],
-      description:
-        "Upon successful completion, graduates receive a joint Certificate of Internship Completion from Alomonx Technology and Alocodes, recognising their dedication, professionalism, and strong technical skills.",
-      imageUrl: "/Certificate.jpeg",
-    },
+    // ── Certificates (brochure p.9) ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Academic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+    ],
 
     // ── Instructors ──
     instructors: [
@@ -2628,7 +2859,7 @@ const courses = [
 
     // ── Curriculum Summary ──
     curriculumSummary: {
-      totalModules: 7,
+      totalModules: 8,
       totalDuration: "45+ hours on-demand video",
     },
 
@@ -2666,11 +2897,377 @@ const courses = [
       quote: "My design skills improved drastically with this course.",
       author: "Sneha R., UI Designer",
     },
+
     brochure: {
-      title: "Data Science & Machine Learning Brochure",
-      fileUrl: "/brochures/data-science.pdf", // PDF path
+      title: "UI/UX Design BROCHURE",
+      fileUrl: "/brochures/ui-ux.pdf",
       fileType: "pdf",
-      fileSize: "2.5 MB", // optional
+      fileSize: "2.5 MB",
+      lastUpdated: "May 2026",
+    },
+  },
+
+  {
+    id: "course-9",
+    slug: "data-analytics",
+
+    // ── Identity ──
+    badge: {
+      text: "Bestseller",
+      color: "bg-green-100 text-green-700 dark:text-green-300",
+      rating: 4.8,
+      totalRatings: "920",
+      lastUpdated: "May 2026",
+    },
+    title: "Data Analytics",
+    category: "Data Analytics",
+    level: "Intermediate",
+
+    // ── Logistics ──
+    duration: "2 Months",
+    mode: "Live Online",
+    batchSize: "30 Students",
+    language: {
+      audio: "English",
+      captions: ["English", "Hindi"],
+    },
+
+    // ── Pricing ──
+    pricing: {
+      fullPrice: 7499,
+      emi: {
+        available: true,
+        installments: [4499, 3000],
+      },
+      currency: "INR",
+    },
+
+    // ── Ratings ──
+    rating: 4.8,
+    reviewCount: 920,
+
+    // ── Media ──
+    videoThumbnail: "/thumbnails/data-analytics.jpg",
+    videoTitle: "Introduction to Data Analytics",
+    previewVideo: {
+      thumbnail: "/thumbnails/data-analytics.jpg",
+      url: "/videos/data-analytics-preview.mp4",
+    },
+
+    // ── Description (brochure p.2) ──
+    description:
+      "Unlock the power of data with our comprehensive Data Analytics Program. This course is designed to help students learn how to collect, process, analyze, and visualize data to make better business decisions. From Excel and SQL to Python and Power BI, students will gain practical knowledge of industry tools and analytical techniques used by companies worldwide.",
+
+    // ── Why Choose This Program (brochure p.2) ──
+    whyChoose: [
+      "Industry-Focused Curriculum: Learn Excel, SQL, Python, Power BI, Tableau, and Data Visualization.",
+      "Hands-On Projects: Work on real datasets and business case studies.",
+      "Modern Tools & Technologies: Gain practical experience with industry-standard analytics tools.",
+      "Career-Oriented Learning: Build analytical thinking and problem-solving skills.",
+      "Portfolio Development: Create professional projects to showcase your expertise.",
+    ],
+
+    // ── Curriculum — 8 modules (brochure pp.3-5) ──
+    curriculum: [
+      {
+        module: 1,
+        title: "Introduction to Data Analytics",
+        topics: [
+          "Basics of Data Analytics",
+          "Types of Data",
+          "Data Analytics Lifecycle",
+          "Importance of Data in Business",
+          "Data-Driven Decision Making",
+          "Introduction to Business Intelligence",
+        ],
+      },
+      {
+        module: 2,
+        title: "Microsoft Excel for Analytics",
+        topics: [
+          "Excel Basics & Advanced Functions",
+          "Data Cleaning in Excel",
+          "Pivot Tables & Charts",
+          "Conditional Formatting",
+          "Data Validation",
+          "Dashboard Creation in Excel",
+        ],
+      },
+      {
+        module: 3,
+        title: "SQL for Data Analysis",
+        topics: [
+          "Introduction to Databases",
+          "SQL Queries",
+          "Filtering & Sorting Data",
+          "Joins & Relationships",
+          "Aggregate Functions",
+          "Database Management Basics",
+        ],
+      },
+      {
+        module: 4,
+        title: "Python for Data Analytics",
+        topics: [
+          "Python Basics",
+          "NumPy & Pandas",
+          "Data Cleaning & Processing",
+          "Data Visualization with Matplotlib",
+          "Exploratory Data Analysis",
+          "Real Dataset Analysis",
+        ],
+      },
+      {
+        module: 5,
+        title: "Data Visualization & Dashboards",
+        topics: [
+          "Introduction to Power BI",
+          "Tableau Basics",
+          "Interactive Dashboard Design",
+          "Charts & Visual Reports",
+          "KPI Tracking",
+        ],
+      },
+      {
+        module: 6,
+        title: "Statistics & Business Analytics",
+        topics: [
+          "Descriptive Statistics",
+          "Probability Basics",
+          "Hypothesis Testing",
+          "Correlation & Regression",
+          "Business Metrics Analysis",
+          "Predictive Analytics Basics",
+        ],
+      },
+      {
+        module: 7,
+        title: "Data Cleaning & Preparation",
+        topics: [
+          "Handling Missing Data",
+          "Removing Duplicates",
+          "Data Transformation",
+          "Data Formatting",
+          "ETL Basics",
+          "Data Quality Management",
+        ],
+      },
+      {
+        module: 8,
+        title: "Portfolio, Freelancing & Live Projects",
+        topics: [
+          "Portfolio Building",
+          "Resume Preparation",
+          "Freelancing Platforms",
+          "Client Reporting",
+          "Interview Preparation",
+          "Real-World Analytics Projects",
+        ],
+      },
+    ],
+
+    // ── Skills (flat list for filtering/tags brochure p.6) ──
+    skills: [
+      "SQL",
+      "NumPy",
+      "tableau",
+      "pandas",
+      "Jupyter",
+      "Power BI",
+      "Python",
+    ],
+
+    // ── Tools & Platforms (brochure p.6) ──
+    tools: [
+      "SQL",
+      "NumPy",
+      "tableau",
+      "pandas",
+      "Jupyter",
+      "Power BI",
+      "Python",
+    ],
+
+    // ── Sample Projects (brochure pp.6-7) ──
+    sampleProjects: [
+      {
+        id: 1,
+        title: "Sales Performance Dashboard",
+        skills: [
+          "Excel",
+          "Power BI",
+          "Data Visualization",
+          "KPI Tracking",
+          "Dashboard Design",
+          "Business Reporting",
+        ],
+        description:
+          "Create an interactive sales dashboard to analyze revenue, customer growth, and product performance. Students will work with real datasets and generate visual business insights.",
+      },
+      {
+        id: 2,
+        title: "Customer Behaviour Analysis",
+        skills: [
+          "Python",
+          "Pandas",
+          "Data Cleaning",
+          "Exploratory Data Analysis",
+          "Data Visualization",
+        ],
+        description:
+          "Analyze customer purchasing behavior to identify trends and buying patterns. Students will clean datasets, perform analysis, and visualize customer insights.",
+      },
+      {
+        id: 3,
+        title: "E-Commerce Data Analytics Project",
+        skills: [
+          "SQL",
+          "Database Management",
+          "Query Optimization",
+          "Reporting",
+          "Business Analytics",
+        ],
+        description:
+          "Work on an e-commerce database to analyze orders, customer activity, and product sales. Students will write SQL queries and generate analytical reports.",
+      },
+      {
+        id: 4,
+        title: "HR Analytics Dashboard",
+        skills: [
+          "Power BI",
+          "Tableau",
+          "Data Visualization",
+          "Employee Data Analysis",
+          "Dashboard Creation",
+        ],
+        description:
+          "Design an HR analytics dashboard to track employee performance, attrition rates, and hiring metrics for better workforce management.",
+      },
+      {
+        id: 5,
+        title: "Social Media Analytics System",
+        skills: [
+          "Python",
+          "Data Analysis",
+          "Visualization",
+          "Trend Analysis",
+          "Reporting",
+        ],
+        description:
+          "Analyze social media engagement data to identify audience trends and campaign performance. Students will generate reports and actionable insights.",
+      },
+    ],
+
+    // ── Career Opportunities (brochure p.8) ──
+    careerRoles: [
+      "Data Analyst",
+      "Business Analyst",
+      "BI Analyst",
+      "Data Visualization Specialist",
+      "Reporting Analyst",
+      "SQL Developer",
+      "Power BI Developer",
+    ],
+
+    hiringCompanies: [
+      "Flipkart",
+      "VOIS",
+      "Wipro",
+      "TCS",
+      "Cognizant",
+      "Startups and Fintech Companies",
+    ],
+
+    // ── Outcomes ──
+    outcomes: [
+      "Run successful data analytics operations",
+      "Design interactive dashboards and automated reports",
+      "Perform end-to-end data cleaning and transformations",
+      "Extract powerful metrics using advanced SQL database logic",
+    ],
+
+    // ── Full Learning Outcomes ──
+    learningOutcomes: [
+      "Learn and apply Excel advanced functions and macro dashboard design",
+      "Write multi-table SQL queries, aggregates, and database joins",
+      "Utilize Python libraries including NumPy and Pandas for data mining",
+      "Build dynamic tracking visuals inside Power BI and Tableau platforms",
+      "Incorporate key statistical evaluations including mathematical hypotheses",
+      "Manage real-world business KPIs and complex corporate diagnostics",
+    ],
+
+    // ── Target Audience ──
+    targetAudience: ["Students", "Job-seekers", "Professionals"],
+
+    // ── Certificates (brochure p.9) ──
+    certificates: [
+      {
+        type: "Certificate of Course Completion",
+        issuedBy: ["Alocodes", "Alomonx Technology"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [{ role: "Authorized Signatory", title: "Acedemic Head" }],
+        description:
+          "Successfully completed the course training program at Alocodes, demonstrating dedication, consistency, and a strong commitment to learning and skill development.",
+        imageUrl: "/course_completion_alocodes.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+      {
+        type: "Certificate of Internship Completion",
+        issuedBy: ["Alomonx Technology", "Alocodes"],
+        certifications: [
+          "ISO 9001:2015",
+          "MSME (Ministry of MSME, Govt. of India)",
+        ],
+        signatories: [
+          { role: "Authorized Signatory", title: "Acedemic HHead" },
+        ],
+        description:
+          "Successfully completed the industrial internship as a role variant at Alomonx Technology, demonstrating dedication, professionalism, and strong technical skills.",
+        imageUrl: "/intercert_demo.jpeg",
+        certificateIdSample: "AL/26/712358424563",
+      },
+    ],
+
+    // ── Instructors ──
+    instructors: [
+      {
+        name: "Arjun Mehta",
+        role: "Senior Data Analyst",
+        avatar: "/avatars/man_ava.jpg",
+      },
+    ],
+
+    // ── Curriculum Summary ──
+    curriculumSummary: {
+      totalModules: 8,
+      totalDuration: "50+ hours on-demand video",
+    },
+
+    // ── Reviews ──
+    reviews: [
+      {
+        name: "Priya S.",
+        time: "1 week ago",
+        rating: 5,
+        comment:
+          "The Power BI and SQL modules were incredibly detailed. Creating real sales dashboards helped me land interviews immediately.",
+      },
+    ],
+
+    // ── Testimonial ──
+    testimonial: {
+      quote: "Unlock the power of data to drive better business decisions.",
+      author: "Priya S., Business BI Analyst",
+    },
+
+    brochure: {
+      title: "Data Analytics Brochure",
+      fileUrl: "/brochures/data-analytics.pdf",
+      fileType: "pdf",
+      fileSize: "2.5 MB",
       lastUpdated: "May 2026",
     },
   },

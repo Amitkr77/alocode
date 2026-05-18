@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 
-const CONTACT_EMAIL = "alocodes2@gmail.com";
+const CONTACT_EMAIL = "alocodes.edu@gmail.com";
 
 export default function page() {
   const [submitted, setSubmitted] = useState(false);

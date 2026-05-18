@@ -459,10 +459,10 @@ const sections = [
           <br />
           Email:{" "}
           <a
-            href="mailto:support@alocodes.in"
+            href="mailto:alocodes.edu@gmail.com"
             className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
           >
-            support@alocodes.in
+            alocodes.edu@gmail.com
           </a>
           <br />
           Website:{" "}
@@ -598,7 +598,7 @@ export default function PrivacyPolicy() {
           <div className="border-t border-border pt-10 text-sm font-bold text-muted-foreground text-center">
             Your privacy matters to us. Questions?{" "}
             <a
-              href="mailto:support@alocodes.in"
+              href="mailto:alocodes.edu@gmail.com"
               className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
             >
               Contact us
