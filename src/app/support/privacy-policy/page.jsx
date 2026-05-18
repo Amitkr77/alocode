@@ -9,198 +9,485 @@ import {
   UserCheck,
   RefreshCw,
   Phone,
+  CheckCircle,
+  MessageSquare,
+  Cookie,
+  Link,
+  Baby,
+  Archive,
+  Monitor,
+  MapPin,
+  Scale,
+  ShieldCheck,
 } from "lucide-react";
 
 const sections = [
   {
-    id: "information-we-collect",
+    id: "introduction",
+    number: "00",
+    title: "Introduction",
+    icon: ShieldCheck,
+    content: (
+      <>
+        <p>
+          This Privacy Policy forms part of the Terms and Conditions of{" "}
+          <strong>Alocodes.in</strong>, powered by{" "}
+          <strong>Alomonx Technologies</strong> ("Company", "we", "our", or
+          "us"). By accessing or using our website, applications, courses,
+          workshops, or services, you expressly agree to the collection, use,
+          storage, and processing of your personal information as described in
+          this Privacy Policy.
+        </p>
+        <p>
+          We are committed to protecting your privacy and ensuring the security
+          of your personal information. Please read this Privacy Policy
+          carefully to understand how your information is collected and used.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "acceptance",
     number: "01",
+    title: "Acceptance of Privacy Policy",
+    icon: CheckCircle,
+    content: (
+      <>
+        <p>
+          By using our platform, website, mobile applications, or services, you:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>Agree to the terms of this Privacy Policy.</li>
+          <li>Consent to the collection and processing of your information.</li>
+          <li>
+            Acknowledge that your information may be used as described in this
+            policy.
+          </li>
+        </ul>
+        <p>
+          If you do not agree with this Privacy Policy, please do not use our
+          platform or services.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "information-we-collect",
+    number: "02",
     title: "Information We Collect",
     icon: Database,
     content: (
       <>
         <p>
-          We collect information you provide directly to us when you create an
-          account, enroll in a course, or contact us for support. This includes:
+          To provide our educational services effectively, we may collect the
+          following information:
         </p>
-        <ul className="mt-2 space-y-2">
-          <li>
-            <strong>Account data:</strong> name, email address, password, and
-            profile picture.
-          </li>
-          <li>
-            <strong>Payment data:</strong> billing address and payment method
-            details (processed securely via our payment provider).
-          </li>
-          <li>
-            <strong>Usage data:</strong> pages visited, courses accessed,
-            progress, and time spent on the Platform.
-          </li>
-          <li>
-            <strong>Device data:</strong> IP address, browser type, operating
-            system, and referring URLs.
-          </li>
+        <p>
+          <strong>Personal Information</strong>
+        </p>
+        <ul className="mt-1 space-y-2">
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Mobile number</li>
+          <li>Date of birth or age verification</li>
+          <li>Billing and payment details</li>
+          <li>Educational background</li>
+          <li>Profile photographs (optional)</li>
+          <li>Social media account information (if linked)</li>
+        </ul>
+        <p>
+          <strong>Technical Information</strong>
+        </p>
+        <ul className="mt-1 space-y-2">
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Device information</li>
+          <li>Operating system</li>
+          <li>Login activity</li>
+          <li>Usage behavior and analytics</li>
+        </ul>
+        <p>
+          <strong>Course and Learning Data</strong>
+        </p>
+        <ul className="mt-1 space-y-2">
+          <li>Course enrollments</li>
+          <li>Progress reports</li>
+          <li>Assignments and submissions</li>
+          <li>Internship participation</li>
+          <li>Certificates earned</li>
+          <li>Feedback and reviews</li>
         </ul>
       </>
     ),
   },
   {
     id: "how-we-use",
-    number: "02",
-    title: "How We Use Your Information",
+    number: "03",
+    title: "Use of Personal Information",
     icon: Eye,
     content: (
       <>
+        <p>We use your information for purposes including:</p>
+        <ul className="mt-2 space-y-2">
+          <li>Providing access to courses and educational services.</li>
+          <li>Managing user accounts and authentication.</li>
+          <li>Processing payments and transactions.</li>
+          <li>Improving platform functionality and user experience.</li>
+          <li>
+            Sending important updates, notifications, and support messages.
+          </li>
+          <li>
+            Providing internship, certification, and career-related services.
+          </li>
+          <li>Conducting research, analytics, and performance improvements.</li>
+          <li>Preventing fraud, abuse, and unauthorized activities.</li>
+          <li>Complying with legal obligations.</li>
+        </ul>
         <p>
-          Alocodes uses the information we collect to operate, improve, and
-          personalise the Platform. Specifically, we use your data to:
+          We only collect and use information necessary to provide our services
+          efficiently.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "communication",
+    number: "04",
+    title: "Communication and Marketing",
+    icon: MessageSquare,
+    content: (
+      <>
+        <p>
+          We may communicate with users through emails, SMS notifications, phone
+          calls, WhatsApp messages, and push notifications. These communications
+          may include:
         </p>
         <ul className="mt-2 space-y-2">
-          <li>Create and manage your account and course enrollments.</li>
-          <li>Process payments and send receipts or invoices.</li>
-          <li>
-            Send transactional emails such as password resets and course
-            updates.
-          </li>
-          <li>
-            Analyse usage patterns to improve content and platform performance.
-          </li>
-          <li>
-            Detect and prevent fraud, abuse, or violations of our Terms of
-            Service.
-          </li>
+          <li>Course updates and technical support</li>
+          <li>Announcements and promotional offers</li>
+          <li>Internship or placement opportunities</li>
+          <li>Newsletters and educational content</li>
         </ul>
+        <p>
+          Users may opt out of promotional communications at any time. However,
+          administrative and service-related communications may still be
+          necessary.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "cookies",
+    number: "05",
+    title: "Cookies and Tracking Technologies",
+    icon: Cookie,
+    content: (
+      <>
+        <p>
+          Alocodes.in may use cookies, web beacons, pixels, and similar tracking
+          technologies to improve user experience. Cookies may help us:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>Remember user preferences</li>
+          <li>Improve website performance</li>
+          <li>Analyze traffic and usage trends</li>
+          <li>Provide personalized content</li>
+          <li>Maintain secure login sessions</li>
+        </ul>
+        <p>
+          Users can disable cookies through browser settings; however, some
+          platform features may not function properly.
+        </p>
       </>
     ),
   },
   {
     id: "sharing",
-    number: "03",
-    title: "Sharing of Information",
+    number: "06",
+    title: "Data Sharing and Disclosure",
     icon: Share2,
     content: (
       <>
         <p>
-          We do not sell your personal information. We may share your data only
-          in the following limited circumstances:
+          We do not sell users' personal information to third parties. However,
+          we may share information with:
         </p>
         <ul className="mt-2 space-y-2">
-          <li>
-            <strong>Service providers:</strong> trusted third parties that help
-            us operate the Platform (e.g. payment processors, email services,
-            analytics tools).
-          </li>
-          <li>
-            <strong>Legal requirements:</strong> when required by law,
-            regulation, or valid legal process.
-          </li>
-          <li>
-            <strong>Business transfers:</strong> in connection with a merger,
-            acquisition, or sale of assets, your data may be transferred to the
-            successor entity.
-          </li>
+          <li>Payment gateway providers</li>
+          <li>Hosting and cloud service providers</li>
+          <li>Internship and hiring partners</li>
+          <li>Technical support providers</li>
+          <li>Government authorities when legally required</li>
+          <li>Service providers assisting in business operations</li>
         </ul>
+        <p>
+          All such third parties are expected to maintain confidentiality and
+          data protection standards.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "third-party",
+    number: "07",
+    title: "Third-Party Services and Links",
+    icon: Link,
+    content: (
+      <>
+        <p>
+          Our platform may contain links to third-party websites, applications,
+          or services. Please note:
+        </p>
+        <ul className="mt-2 space-y-2">
+          <li>We do not control third-party platforms.</li>
+          <li>Their privacy practices may differ from ours.</li>
+          <li>We are not responsible for their content or policies.</li>
+        </ul>
+        <p>
+          Users are encouraged to review third-party privacy policies before
+          sharing information.
+        </p>
       </>
     ),
   },
   {
     id: "data-security",
-    number: "04",
+    number: "08",
     title: "Data Security",
     icon: Lock,
     content: (
       <>
         <p>
-          We take reasonable technical and organisational measures to protect
-          your personal information against unauthorised access, alteration,
-          disclosure, or destruction. All data in transit is encrypted via TLS,
-          and passwords are stored using industry-standard hashing algorithms.
+          The security of user information is important to us. We implement
+          reasonable technical and organizational measures to protect personal
+          data against unauthorized access, data loss, misuse, alteration, and
+          disclosure.
         </p>
         <p>
-          However, no method of transmission over the internet is 100% secure.
-          We encourage you to use a strong, unique password and to notify us
-          immediately if you suspect any unauthorised access to your account.
+          Although we strive to protect your information, no internet-based
+          system can guarantee complete security. Users are responsible for
+          maintaining the confidentiality of their passwords and account
+          credentials.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "childrens-privacy",
+    number: "09",
+    title: "Children's Privacy",
+    icon: Baby,
+    content: (
+      <>
+        <p>
+          Alocodes.in does not knowingly collect personal information from
+          children below the age permitted under applicable law without parental
+          consent.
+        </p>
+        <p>
+          If a parent or guardian believes that a child has provided personal
+          information without consent, they may contact us to request deletion
+          of such information.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "retention",
+    number: "10",
+    title: "Retention of Information",
+    icon: Archive,
+    content: (
+      <>
+        <p>We retain personal information only for as long as necessary to:</p>
+        <ul className="mt-2 space-y-2">
+          <li>Provide services</li>
+          <li>Maintain legal compliance</li>
+          <li>Resolve disputes</li>
+          <li>Enforce agreements</li>
+          <li>Improve educational experiences</li>
+        </ul>
+        <p>
+          When information is no longer required, we may securely delete or
+          anonymize it.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "monitoring",
+    number: "11",
+    title: "Monitoring and Platform Usage",
+    icon: Monitor,
+    content: (
+      <>
+        <p>We may monitor platform activity to:</p>
+        <ul className="mt-2 space-y-2">
+          <li>Improve educational services</li>
+          <li>Ensure compliance with platform policies</li>
+          <li>Prevent unauthorized usage</li>
+          <li>Detect technical or security issues</li>
+          <li>Enhance user experience</li>
+        </ul>
+        <p>
+          Monitoring may include usage analytics, login activity, and
+          interaction tracking.
         </p>
       </>
     ),
   },
   {
     id: "your-rights",
-    number: "05",
-    title: "Your Rights",
+    number: "12",
+    title: "User Rights and Choices",
     icon: UserCheck,
     content: (
       <>
+        <p>Users may have the right to:</p>
+        <ul className="mt-2 space-y-2">
+          <li>Access their personal information</li>
+          <li>Request corrections or updates</li>
+          <li>Withdraw consent where applicable</li>
+          <li>Request deletion of data</li>
+          <li>Manage communication preferences</li>
+        </ul>
         <p>
-          Depending on your location, you may have the following rights
-          regarding your personal data:
+          Requests regarding personal information may be submitted through our
+          support channels.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "confidentiality",
+    number: "13",
+    title: "Confidentiality",
+    icon: ShieldCheck,
+    content: (
+      <>
+        <p>
+          All employees, trainers, affiliates, and service providers associated
+          with Alocodes.in are expected to maintain confidentiality regarding
+          user data.
+        </p>
+        <p>
+          Personal information is only accessible to authorized personnel for
+          legitimate operational purposes.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "location",
+    number: "14",
+    title: "Location Information",
+    icon: MapPin,
+    content: (
+      <>
+        <p>
+          We may collect approximate location information through IP addresses
+          to:
         </p>
         <ul className="mt-2 space-y-2">
-          <li>
-            <strong>Access:</strong> request a copy of the personal data we hold
-            about you.
-          </li>
-          <li>
-            <strong>Correction:</strong> ask us to correct inaccurate or
-            incomplete information.
-          </li>
-          <li>
-            <strong>Deletion:</strong> request that we delete your account and
-            associated data.
-          </li>
-          <li>
-            <strong>Portability:</strong> receive your data in a
-            machine-readable format.
-          </li>
-          <li>
-            <strong>Opt-out:</strong> unsubscribe from marketing emails at any
-            time via the link in any email we send.
-          </li>
+          <li>Customize educational experiences</li>
+          <li>Improve regional services</li>
+          <li>Enhance security and fraud prevention</li>
         </ul>
+        <p>
+          We do not collect precise GPS location data unless explicitly
+          permitted by the user.
+        </p>
       </>
     ),
   },
   {
     id: "updates",
-    number: "06",
-    title: "Policy Updates",
+    number: "15",
+    title: "Changes to Privacy Policy",
     icon: RefreshCw,
     content: (
       <>
         <p>
-          We may update this Privacy Policy from time to time to reflect changes
-          in our practices or applicable law. When we make material changes, we
-          will notify you by email or by posting a prominent notice on the
-          Platform before the changes take effect.
+          As technology and services evolve, we may update this Privacy Policy
+          from time to time.
         </p>
-        <p>
-          Your continued use of the Platform after the effective date of the
-          revised policy constitutes your acceptance of the changes.
-        </p>
+        <ul className="mt-2 space-y-2">
+          <li>Updated versions will be posted on the platform.</li>
+          <li>
+            Significant changes may be communicated through email or
+            notifications.
+          </li>
+          <li>
+            Continued use of the platform after updates constitutes acceptance
+            of revised policies.
+          </li>
+        </ul>
+        <p>Users are encouraged to review this Privacy Policy periodically.</p>
+      </>
+    ),
+  },
+  {
+    id: "legal-compliance",
+    number: "16",
+    title: "Legal Compliance",
+    icon: Scale,
+    content: (
+      <>
+        <p>We may disclose personal information if required to:</p>
+        <ul className="mt-2 space-y-2">
+          <li>Comply with applicable laws</li>
+          <li>Respond to legal requests</li>
+          <li>Enforce our Terms and Conditions</li>
+          <li>Protect platform security and user rights</li>
+        </ul>
       </>
     ),
   },
   {
     id: "contact",
-    number: "07",
-    title: "Contact Us",
+    number: "17",
+    title: "Contact Information",
     icon: Phone,
     content: (
       <>
         <p>
-          If you have any questions, concerns, or requests regarding this
-          Privacy Policy, please contact us at{" "}
-          <a
-            href="mailto:alocodes2@gmail.com"
-            className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
-          >
-            alocodes2@gmail.com
-          </a>
-          . We will respond within 48 hours.
+          For questions, complaints, or requests regarding this Privacy Policy,
+          users may contact:
         </p>
         <p>
-          For data deletion or portability requests, please include your full
-          name and registered email address so we can verify your identity.
+          <strong>Alocodes.in</strong> – Powered by Alomonx Technologies
+          <br />
+          Email:{" "}
+          <a
+            href="mailto:support@alocodes.in"
+            className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
+          >
+            support@alocodes.in
+          </a>
+          <br />
+          Website:{" "}
+          <a
+            href="https://alocodes.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
+          >
+            https://alocodes.in
+          </a>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "consent",
+    number: "18",
+    title: "Consent",
+    icon: CheckCircle,
+    content: (
+      <>
+        <p>
+          By accessing or using Alocodes.in, you acknowledge that you have read,
+          understood, and agreed to this Privacy Policy in its entirety.
         </p>
       </>
     ),
@@ -208,7 +495,7 @@ const sections = [
 ];
 
 export default function PrivacyPolicy() {
-  const [activeSection, setActiveSection] = useState("information-we-collect");
+  const [activeSection, setActiveSection] = useState("introduction");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -241,7 +528,7 @@ export default function PrivacyPolicy() {
           Privacy Policy
         </h1>
         <p className="text-md font-medium text-muted-foreground">
-          Last updated May 07, 2026 · Effective immediately
+          Alocodes.in · Powered by Alomonx Technology · Effective immediately
         </p>
       </div>
 
@@ -257,7 +544,7 @@ export default function PrivacyPolicy() {
               <li key={s.id}>
                 <button
                   onClick={() => scrollTo(s.id)}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-md font-medium transition-colors
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors
                     ${
                       activeSection === s.id
                         ? "bg-primary/10 text-primary font-semibold"
@@ -311,7 +598,7 @@ export default function PrivacyPolicy() {
           <div className="border-t border-border pt-10 text-sm font-bold text-muted-foreground text-center">
             Your privacy matters to us. Questions?{" "}
             <a
-              href="mailto:alocodes2@gmail.com"
+              href="mailto:support@alocodes.in"
               className="text-primary border-b border-primary/30 hover:border-primary transition-colors"
             >
               Contact us
