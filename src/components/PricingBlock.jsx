@@ -1,16 +1,15 @@
-"use client";
+// reference only
 import React, { useState } from "react";
 import {
   Video,
   Code2,
-  Infinity,
   Smartphone,
   Award,
   BookOpen,
   CreditCard,
   ChevronDown,
+  Tag,
 } from "lucide-react";
-import Link from "next/link";
 
 function Item({ icon: Icon, text }) {
   return (
@@ -29,22 +28,73 @@ export default function PricingBlock({
 }) {
   const [showEmi, setShowEmi] = useState(false);
 
+  const hasDiscount =
+    pricing.discount > 0 &&
+    pricing.finalPrice &&
+    pricing.finalPrice < pricing.fullPrice;
+
+  const savedAmount = pricing.fullPrice - pricing.finalPrice;
+
   return (
     <div className="p-4">
-      {/* Full price */}
-      <div className="flex items-end gap-2 mb-1">
+      {/* Discount badge */}
+      {hasDiscount && (
+        <div className="mb-3 space-y-2">
+          <div className="flex items-center gap-2">
+            <span
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-black tracking-wide"
+              style={{
+                background: "rgba(239,68,68,0.12)",
+                color: "#ef4444",
+                border: "1px solid rgba(239,68,68,0.25)",
+              }}
+            >
+              <Tag size={10} />
+              {pricing.discount}% OFF
+            </span>
+            <span className="text-xs text-muted-foreground">
+              You save ₹{savedAmount.toLocaleString("en-IN")}
+            </span>
+          </div>
+          <p
+            className="text-xs font-semibold flex items-center gap-1.5"
+            style={{ color: "#f97316" }}
+          >
+            <span
+              className="inline-block w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ background: "#f97316" }}
+            />
+            Limited time offer — grab it before it expires!
+          </p>
+        </div>
+      )}
+
+      {/* Price row */}
+      <div className="flex items-end gap-3 mb-4">
+        {/* Final / discounted price */}
         <span
           className="text-3xl font-black text-foreground"
-          style={{ fontFamily: "'Georgia', serif" }}
+          style={{ fontFamily: "'Georgia', serif", lineHeight: 1 }}
         >
-          ₹{pricing.fullPrice}
+          ₹
+          {(hasDiscount
+            ? pricing.finalPrice
+            : pricing.fullPrice
+          ).toLocaleString("en-IN")}
         </span>
-        <span className="text-sm font-medium mb-1 text-muted-foreground">
-          full course
-        </span>
+
+        {/* Struck-through original price */}
+        {hasDiscount && (
+          <span
+            className="text-base font-medium mb-0.5 line-through"
+            style={{ color: "var(--muted-foreground)", opacity: 0.6 }}
+          >
+            ₹{pricing.fullPrice.toLocaleString("en-IN")}
+          </span>
+        )}
       </div>
 
-      {/* EMI toggle button */}
+      {/* EMI toggle */}
       {pricing.emi?.available && (
         <div className="mb-4">
           <button
@@ -67,7 +117,6 @@ export default function PricingBlock({
             />
           </button>
 
-          {/* EMI breakdown — shown on toggle */}
           {showEmi && (
             <div
               className="mt-2 rounded-xl overflow-hidden"
@@ -111,7 +160,9 @@ export default function PricingBlock({
                       )}
                     </span>
                   </div>
-                  <span className="font-bold text-foreground">₹{amt}</span>
+                  <span className="font-bold text-foreground">
+                    ₹{amt.toLocaleString("en-IN")}
+                  </span>
                 </div>
               ))}
 
@@ -125,7 +176,10 @@ export default function PricingBlock({
               >
                 <span className="text-muted-foreground font-medium">Total</span>
                 <span className="font-black text-foreground">
-                  ₹{pricing.emi.installments.reduce((a, b) => a + b, 0)}
+                  ₹
+                  {pricing.emi.installments
+                    .reduce((a, b) => a + b, 0)
+                    .toLocaleString("en-IN")}
                 </span>
               </div>
             </div>
@@ -133,9 +187,10 @@ export default function PricingBlock({
         </div>
       )}
 
+      {/* Enroll CTA */}
       <button
         onClick={onEnroll}
-        className="w-full h-10 rounded-full font-bold mb-2 transition-all cursor-pointer"
+        className="w-full h-10 rounded-full font-bold mb-4 transition-all cursor-pointer"
         style={{
           background: "var(--primary)",
           color: "var(--primary-foreground)",
@@ -144,6 +199,7 @@ export default function PricingBlock({
       >
         Enroll Now
       </button>
+
       {/* Course includes */}
       <div
         className="space-y-3 pt-3"

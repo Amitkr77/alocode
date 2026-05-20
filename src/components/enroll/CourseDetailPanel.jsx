@@ -7,6 +7,7 @@ import {
   BadgeCheck,
   Captions,
   CheckCircle,
+  Tag,
 } from "lucide-react";
 import { MetaPill } from "./ui/MetaPill";
 import { EmiAccordion } from "./ui/EmiAccordion";
@@ -37,7 +38,14 @@ export function CourseDetailPanel({ course }) {
 
   const pricing = course.pricing;
   const fullPrice = pricing?.fullPrice ?? 0;
+  const finalPrice = pricing?.finalPrice;
+  const discount = pricing?.discount ?? 0;
   const emiAvailable = pricing?.emi?.available ?? false;
+
+  const hasDiscount =
+    discount > 0 && finalPrice != null && finalPrice < fullPrice;
+  const savedAmount = hasDiscount ? fullPrice - finalPrice : 0;
+  const displayPrice = hasDiscount ? finalPrice : fullPrice;
 
   return (
     <div>
@@ -158,16 +166,59 @@ export function CourseDetailPanel({ course }) {
       {/* Pricing */}
       {pricing && (
         <div className="px-6 py-5">
-          <div className="flex items-end gap-2 mb-1">
+          {/* Discount badge */}
+          {hasDiscount && (
+            <div className="mb-3 space-y-2">
+              <div className="flex items-center gap-2">
+                <span
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-black tracking-wide"
+                  style={{
+                    background: "rgba(239,68,68,0.12)",
+                    color: "#ef4444",
+                    border: "1px solid rgba(239,68,68,0.25)",
+                  }}
+                >
+                  <Tag size={10} />
+                  {discount}% OFF
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  You save ₹{savedAmount.toLocaleString("en-IN")}
+                </span>
+              </div>
+              <p
+                className="text-xs font-semibold flex items-center gap-1.5"
+                style={{ color: "#f97316" }}
+              >
+                <span
+                  className="inline-block w-1.5 h-1.5 rounded-full animate-pulse"
+                  style={{ background: "#f97316" }}
+                />
+                Limited time offer — grab it before it expires!
+              </p>
+            </div>
+          )}
+
+          {/* Price row */}
+          <div className="flex items-end gap-3 mb-4">
             <span
               className="text-3xl font-black text-foreground"
-              style={{ fontFamily: "'Georgia', serif" }}
+              style={{ fontFamily: "'Georgia', serif", lineHeight: 1 }}
             >
-              ₹{fullPrice.toLocaleString("en-IN")}
+              ₹{displayPrice.toLocaleString("en-IN")}
             </span>
-            <span className="text-sm text-muted-foreground mb-1">
-              full course
-            </span>
+            {hasDiscount && (
+              <span
+                className="text-base font-medium mb-0.5 line-through"
+                style={{ color: "var(--muted-foreground)", opacity: 0.6 }}
+              >
+                ₹{fullPrice.toLocaleString("en-IN")}
+              </span>
+            )}
+            {!hasDiscount && (
+              <span className="text-sm text-muted-foreground mb-1">
+                full course
+              </span>
+            )}
           </div>
 
           {emiAvailable && <EmiAccordion emi={pricing.emi} />}

@@ -28,7 +28,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -364,7 +366,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -751,7 +755,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -1114,7 +1120,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -1479,7 +1487,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -1836,7 +1846,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -2194,7 +2206,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -2572,7 +2586,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
@@ -2934,7 +2950,9 @@ const courses = [
 
     // ── Pricing ──
     pricing: {
-      fullPrice: 7499,
+      fullPrice: 9999,
+      discount: 25,
+      finalPrice: 7499,
       emi: {
         available: true,
         installments: [4499, 3000],
